@@ -2,10 +2,10 @@ import Link from 'next/link'
 import CompanyLogo from '@/components/CompanyLogo'
 
 const stats = [
-  { value: '24+', label: 'years in Costa Rica\'s tech ecosystem' },
-  { value: '400+', label: 'high-value jobs created across all partnerships' },
-  { value: '<1%', label: 'average turnover — industry average is 13%' },
-  { value: '$900M+', label: 'in client revenue with CR teams at the core' },
+  { value: '24+', label: 'years in Costa Rica\'s tech ecosystem', color: '#2574A7' },
+  { value: '400+', label: 'high-value jobs created across all partnerships', color: '#2574A7' },
+  { value: '<1%', label: 'average turnover — industry average is 13%', color: '#00A79D' },
+  { value: '$900M+', label: 'in client revenue with CR teams at the core', color: '#2574A7' },
 ]
 
 const services = [
@@ -58,7 +58,7 @@ export default function HomePage() {
           {/* Left column — text */}
           <div>
             <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] text-black max-w-3xl mb-6">
               Your tech team in Costa Rica,<br />operational in 30 days.
             </h1>
             <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
@@ -86,7 +86,7 @@ export default function HomePage() {
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
                 Trusted by leading tech and data companies
               </p>
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
+              <div className="flex flex-nowrap items-center gap-6 overflow-hidden">
                 <CompanyLogo company="targusinfo" variant="card" />
                 <CompanyLogo company="verisk" variant="card" />
                 <CompanyLogo company="ltv-co" variant="card" />
@@ -104,7 +104,7 @@ export default function HomePage() {
                 key={i}
                 className="bg-[#F4F7FA] border border-[#D8E2EA] rounded-[8px] p-[18px]"
               >
-                <p className="text-[28px] font-bold text-[#2574A7] leading-none mb-2">{s.value}</p>
+                <p className="text-[28px] font-bold leading-none mb-2" style={{ color: s.color }}>{s.value}</p>
                 <p className="text-[11px] font-light text-[#5A6A7A] leading-snug">{s.label}</p>
               </div>
             ))}
@@ -113,7 +113,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Services ── */}
-      <section className="bg-[#F7FAFB] w-full py-20">
+      <section className="bg-[#F4F7FA] w-full py-20">
       <div className="max-w-7xl mx-auto px-6">
         <p className="eyebrow mb-4">What we do</p>
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-3 max-w-xl">
