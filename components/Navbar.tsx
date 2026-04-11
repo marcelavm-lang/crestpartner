@@ -18,22 +18,17 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+          <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
             <g transform="translate(50,50)">
-              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(0)"/>
-              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(0)"/>
-              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(22)"/>
-              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(22)"/>
-              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(44)"/>
-              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(44)"/>
-              <line x1="0" y1="-36" x2="0" y2="-22" stroke="#2574A7" strokeWidth="5.5" strokeLinecap="round" transform="rotate(88)"/>
-              <circle cx="0" cy="-40" r="3.5" fill="#2574A7" transform="rotate(88)"/>
-              <line x1="0" y1="-34" x2="0" y2="-21" stroke="#2574A7" strokeWidth="5" strokeLinecap="round" transform="rotate(132)"/>
-              <circle cx="0" cy="-38" r="3.5" fill="#2574A7" transform="rotate(132)"/>
-              <line x1="0" y1="-30" x2="0" y2="-18" stroke="#2574A7" strokeWidth="4.5" strokeLinecap="round" transform="rotate(176)"/>
-              <circle cx="0" cy="-34" r="3" fill="#2574A7" transform="rotate(176)"/>
-              <line x1="0" y1="-30" x2="0" y2="-18" stroke="#2574A7" strokeWidth="4.5" strokeLinecap="round" transform="rotate(220)"/>
-              <circle cx="0" cy="-34" r="3" fill="#2574A7" transform="rotate(220)"/>
+              {[0,20,40,60,80,100,120,140,160,180,200,220].map((angle, i) => (
+                <g key={i} transform={`rotate(${angle})`}>
+                  <line x1="0" y1={i < 4 ? -38 : -32} x2="0" y2="-20"
+                    stroke={i < 5 ? '#00A79D' : '#2574A7'}
+                    strokeWidth={i < 4 ? 6 : 5} strokeLinecap="round"/>
+                  <circle cx="0" cy={i < 4 ? -42 : -36} r={i < 4 ? 4 : 3}
+                    fill={i < 5 ? '#00A79D' : '#2574A7'}/>
+                </g>
+              ))}
             </g>
           </svg>
           <span style={{ fontSize: '14px', fontWeight: 700, letterSpacing: '0.05em', color: '#000' }}>

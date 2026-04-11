@@ -86,12 +86,28 @@ export default function HomePage() {
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
                 Trusted by leading tech and data companies
               </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                {['TargusInfo', 'Verisk', 'LTV Co.', '66degrees', 'Think Unlimited', 'Strategio'].map((name) => (
-                  <span key={name} className="text-xs font-medium px-3 py-1.5 border border-gray-200 rounded text-gray-500 bg-gray-50">
-                    {name}
-                  </span>
-                ))}
+              <div className="mt-6 overflow-hidden relative">
+                <div className="flex animate-scroll gap-8 w-max">
+                  {[
+                    { name: 'TargusInfo', href: 'https://en.wikipedia.org/wiki/TargusInfo' },
+                    { name: 'Verisk', href: 'https://verisk.com' },
+                    { name: 'LTV Co.', href: 'https://ltv.com' },
+                    { name: '66degrees', href: 'https://66degrees.com' },
+                    { name: 'Think Unlimited', href: 'https://thinkunlimited.co' },
+                    { name: 'Strategio', href: 'https://strategio.com' },
+                    { name: 'TargusInfo', href: 'https://en.wikipedia.org/wiki/TargusInfo' },
+                    { name: 'Verisk', href: 'https://verisk.com' },
+                    { name: 'LTV Co.', href: 'https://ltv.com' },
+                    { name: '66degrees', href: 'https://66degrees.com' },
+                    { name: 'Think Unlimited', href: 'https://thinkunlimited.co' },
+                    { name: 'Strategio', href: 'https://strategio.com' },
+                  ].map((item, i) => (
+                    <a key={i} href={item.href} target="_blank" rel="noopener noreferrer"
+                      className="text-sm font-semibold px-5 py-2 border border-gray-200 rounded-full text-gray-500 bg-white whitespace-nowrap cursor-pointer hover:border-blue-400 hover:text-blue-600 transition-colors">
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
