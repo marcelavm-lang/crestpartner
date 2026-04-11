@@ -32,13 +32,20 @@ export default function CompanyLogo({
   const w = Math.round(cfg.width * scale)
   const h = Math.round(cfg.height * scale)
 
+  /* For card variant, normalise all logos to the same visual height */
+  const cardHeight = 28
+  const cardStyle: React.CSSProperties =
+    variant === 'card'
+      ? { objectFit: 'contain' as const, height: cardHeight, width: 'auto' }
+      : { objectFit: 'contain' as const, maxWidth: '100%' }
+
   return (
     <Image
       src={cfg.src}
       alt={company}
       width={w}
       height={h}
-      style={{ objectFit: 'contain', maxWidth: '100%' }}
+      style={cardStyle}
       priority={variant === 'page'}
     />
   )
