@@ -86,7 +86,7 @@ export default function HomePage() {
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
                 Trusted by leading tech and data companies
               </p>
-              <div className="flex flex-nowrap items-center gap-6 overflow-hidden">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
                 <CompanyLogo company="targusinfo" variant="card" />
                 <CompanyLogo company="verisk" variant="card" />
                 <CompanyLogo company="ltv-co" variant="card" />
