@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue: #2574A7;
+  --teal: #00A79D;
+  --black: #000000;
+  --gray-light: #F4F7FA;
+  --gray-mid: #E8EDF2;
+  --muted: #5A6A7A;
+  --border: #D8E2EA;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #000000;
+  background: #ffffff;
+}
+
+/* Typography utilities */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00A79D;
+}
