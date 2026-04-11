@@ -54,57 +54,58 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <section className="max-w-7xl mx-auto px-6 pt-20 pb-16">
-        <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
-        <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
-          Your tech team in Costa Rica,<br />operational in 30 days.
-        </h1>
-        <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
-          We help U.S. tech and data companies recruit, build and run high-performing engineering teams
-          in Costa Rica — same time zone, a fraction of the cost, zero operational friction.
-          One partner. Complete accountability.
-        </p>
-        <div className="flex flex-wrap gap-3 mb-16">
-          <Link
-            href="/contact"
-            className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
-          >
-            Talk to our team
-          </Link>
-          <Link
-            href="/case-studies"
-            className="border border-[#D8E2EA] text-black font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
-          >
-            See case studies →
-          </Link>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Left column — text */}
+          <div>
+            <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
+            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
+              Your tech team in Costa Rica,<br />operational in 30 days.
+            </h1>
+            <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
+              We help U.S. tech and data companies recruit, build and run high-performing engineering teams
+              in Costa Rica — same time zone, a fraction of the cost, zero operational friction.
+              One partner. Complete accountability.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-16">
+              <Link
+                href="/contact"
+                className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
+              >
+                Talk to our team
+              </Link>
+              <Link
+                href="/case-studies"
+                className="border border-[#D8E2EA] text-black font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
+              >
+                See case studies →
+              </Link>
+            </div>
 
-        {/* Social proof logos */}
-        <div>
-          <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
-            Trusted by leading tech and data companies
-          </p>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
-            <CompanyLogo company="targusinfo" variant="card" />
-            <CompanyLogo company="verisk" variant="card" />
-            <CompanyLogo company="ltv-co" variant="card" />
-            <CompanyLogo company="66degrees" variant="card" />
-            <CompanyLogo company="think-unlimited" variant="card" />
-            <CompanyLogo company="strategio" variant="card" />
+            {/* Social proof logos */}
+            <div>
+              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
+                Trusted by leading tech and data companies
+              </p>
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
+                <CompanyLogo company="targusinfo" variant="card" />
+                <CompanyLogo company="verisk" variant="card" />
+                <CompanyLogo company="ltv-co" variant="card" />
+                <CompanyLogo company="66degrees" variant="card" />
+                <CompanyLogo company="think-unlimited" variant="card" />
+                <CompanyLogo company="strategio" variant="card" />
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── Stats Band ── */}
-      <section className="border-y border-[#D8E2EA]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4">
+          {/* Right column — stats grid 2x2 */}
+          <div className="grid grid-cols-2 gap-4">
             {stats.map((s, i) => (
               <div
                 key={i}
-                className={`py-10 px-6 ${i < stats.length - 1 ? 'border-r border-[#D8E2EA]' : ''}`}
+                className="bg-[#F4F7FA] border border-[#D8E2EA] rounded-[8px] p-[18px]"
               >
-                <p className="text-[36px] font-bold text-[#2574A7] leading-none mb-2">{s.value}</p>
-                <p className="text-[13px] text-[#5A6A7A] font-light leading-snug">{s.label}</p>
+                <p className="text-[28px] font-bold text-[#2574A7] leading-none mb-2">{s.value}</p>
+                <p className="text-[11px] font-light text-[#5A6A7A] leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
