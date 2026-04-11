@@ -2,8 +2,6 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import LogoMark from './LogoMark'
-
 const navLinks = [
   { label: 'Services', href: '/services' },
   { label: 'Case studies', href: '/case-studies' },
@@ -19,12 +17,28 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white border-b border-[#D8E2EA]">
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <LogoMark size={44} />
-          <div className="flex flex-col leading-none gap-[3px]">
-            <span className="font-bold text-[17px] tracking-[0.12em] uppercase text-black">CREST</span>
-            <span className="font-light text-[11px] tracking-[0.22em] uppercase text-[#00A79D]">PARTNERS</span>
-          </div>
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+            <g transform="translate(50,50)">
+              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(0)"/>
+              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(0)"/>
+              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(22)"/>
+              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(22)"/>
+              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(44)"/>
+              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(44)"/>
+              <line x1="0" y1="-36" x2="0" y2="-22" stroke="#2574A7" strokeWidth="5.5" strokeLinecap="round" transform="rotate(88)"/>
+              <circle cx="0" cy="-40" r="3.5" fill="#2574A7" transform="rotate(88)"/>
+              <line x1="0" y1="-34" x2="0" y2="-21" stroke="#2574A7" strokeWidth="5" strokeLinecap="round" transform="rotate(132)"/>
+              <circle cx="0" cy="-38" r="3.5" fill="#2574A7" transform="rotate(132)"/>
+              <line x1="0" y1="-30" x2="0" y2="-18" stroke="#2574A7" strokeWidth="4.5" strokeLinecap="round" transform="rotate(176)"/>
+              <circle cx="0" cy="-34" r="3" fill="#2574A7" transform="rotate(176)"/>
+              <line x1="0" y1="-30" x2="0" y2="-18" stroke="#2574A7" strokeWidth="4.5" strokeLinecap="round" transform="rotate(220)"/>
+              <circle cx="0" cy="-34" r="3" fill="#2574A7" transform="rotate(220)"/>
+            </g>
+          </svg>
+          <span style={{ fontSize: '14px', fontWeight: 700, letterSpacing: '0.05em', color: '#000' }}>
+            CREST PARTNERS
+          </span>
         </Link>
 
         {/* Desktop links */}

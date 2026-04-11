@@ -86,13 +86,12 @@ export default function HomePage() {
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
                 Trusted by leading tech and data companies
               </p>
-              <div className="flex flex-nowrap items-center gap-6">
-                <CompanyLogo company="targusinfo" variant="card" />
-                <CompanyLogo company="verisk" variant="card" />
-                <CompanyLogo company="ltv-co" variant="card" />
-                <CompanyLogo company="66degrees" variant="card" />
-                <CompanyLogo company="think-unlimited" variant="card" />
-                <CompanyLogo company="strategio" variant="card" />
+              <div className="flex flex-wrap gap-2 mt-4">
+                {['TargusInfo', 'Verisk', 'LTV Co.', '66degrees', 'Think Unlimited', 'Strategio'].map((name) => (
+                  <span key={name} className="text-xs font-medium px-3 py-1.5 border border-gray-200 rounded text-gray-500 bg-gray-50">
+                    {name}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
