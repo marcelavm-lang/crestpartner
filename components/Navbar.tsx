@@ -23,9 +23,9 @@ export default function Navbar() {
           <Image
             src="/crest-logo.png"
             alt="Crest Partner"
-            width={160}
-            height={82}
-            className="h-10 w-auto"
+            width={200}
+            height={103}
+            className="h-14 w-auto"
             priority
           />
         </Link>
