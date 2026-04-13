@@ -65,26 +65,39 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="max-w-7xl mx-auto px-6 pt-20 pb-16">
-        <p className="eyebrow mb-5">Services</p>
-        <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] max-w-3xl mb-5">
-          Everything you need to operate in Costa Rica — under one roof.
-        </h1>
-        <p className="text-[17px] text-[#5A6A7A] font-light max-w-2xl">
-          We don't connect you with vendors. We are the vendor — for every layer of your Costa Rica operation.
-        </p>
-      </section>
-
-      {/* ── Trust Bar ── */}
-      <section className="border-y border-[#D8E2EA]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {trustBar.map((t, i) => (
-              <div key={i} className={`py-8 px-6 ${i < trustBar.length - 1 ? 'border-r border-[#D8E2EA]' : ''}`}>
-                <p className="text-[28px] font-bold text-[#2574A7] leading-none mb-1">{t.value}</p>
-                <p className="text-[12px] text-[#5A6A7A] font-light leading-snug">{t.label}</p>
-              </div>
-            ))}
+      <section className="px-12 py-20 border-b border-gray-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Columna izquierda */}
+          <div>
+            <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Services</p>
+            <h1 className="text-5xl font-bold leading-tight mb-5">
+              Everything you need to operate in Costa Rica — under one roof.
+            </h1>
+            <p className="text-base font-light text-gray-500 leading-relaxed mb-8">
+              We don't connect you with vendors. We are the vendor — for every layer of your Costa Rica operation.
+            </p>
+            <div className="flex gap-3">
+              <Link href="/contact" className="px-6 py-3 bg-blue-600 text-white text-sm font-bold rounded-lg">Talk to our team</Link>
+              <Link href="/case-studies" className="px-6 py-3 border border-gray-200 text-sm rounded-lg">See case studies →</Link>
+            </div>
+          </div>
+          {/* Columna derecha — 3 service cards */}
+          <div className="flex flex-col gap-3">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">01 — Launch</div>
+              <div className="text-base font-bold text-gray-900 mb-1">Launch your Costa Rica operation</div>
+              <div className="text-sm font-light text-gray-500">Legal entity, back office and compliance — fully operational in 30 days.</div>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">02 — Build</div>
+              <div className="text-base font-bold text-gray-900 mb-1">Build and lead your nearshore tech team</div>
+              <div className="text-sm font-light text-gray-500">Recruiting, assessments, onboarding, payroll and retention — less than 1% turnover.</div>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">03 — Operate</div>
+              <div className="text-base font-bold text-gray-900 mb-1">Run your back office — completely</div>
+              <div className="text-sm font-light text-gray-500">Accounting, legal, HR and office management — ongoing, every day.</div>
+            </div>
           </div>
         </div>
       </section>
@@ -144,10 +157,10 @@ export default function ServicesPage() {
             {/* Visual panel */}
             <div className="bg-white rounded-[12px] p-8 border border-[#D8E2EA] order-2 md:order-1">
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">Results</p>
-              <div className="space-y-5">
+              <div className="space-y-5 mb-5">
                 {[
                   { val: '<1%', desc: 'involuntary turnover — industry avg 13%', color: 'text-[#2574A7]' },
-                  { val: '97.6', desc: 'GPTW Trust Index · 98/100 eNPS — among the highest scores globally', color: 'text-[#00A79D]' },
+                  { val: '98/100', desc: 'eNPS score at LTV Co. — auditors asked to recheck', color: 'text-[#00A79D]' },
                   { val: '25 yrs', desc: 'recruiting in the Costa Rica tech market', color: 'text-[#2574A7]' },
                 ].map((s) => (
                   <div key={s.val} className="flex items-start gap-4 pb-5 border-b border-[#D8E2EA] last:border-0 last:pb-0">
@@ -155,6 +168,20 @@ export default function ServicesPage() {
                     <p className="text-[13px] text-[#5A6A7A] font-light leading-snug pt-1">{s.desc}</p>
                   </div>
                 ))}
+              </div>
+              <div className="grid grid-cols-1 gap-3">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="text-xl font-bold text-teal-500">97.6</div>
+                  <div className="text-xs text-gray-500 mt-1">GPTW Trust Index — among the highest scores globally</div>
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="text-xl font-bold text-blue-600">500+</div>
+                  <div className="text-xs text-gray-500 mt-1">Professionals placed and retained</div>
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="text-xl font-bold text-blue-600">25+</div>
+                  <div className="text-xs text-gray-500 mt-1">Years recruiting in the Costa Rica tech market</div>
+                </div>
               </div>
             </div>
 
