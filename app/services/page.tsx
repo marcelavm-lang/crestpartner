@@ -170,18 +170,18 @@ export default function ServicesPage() {
                 ))}
               </div>
               <div className="grid grid-cols-1 gap-3">
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <Link href="#launch" className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
                   <div className="text-xl font-bold text-teal-500">97.6</div>
                   <div className="text-xs text-gray-500 mt-1">GPTW Trust Index — among the highest scores globally</div>
-                </div>
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                </Link>
+                <Link href="#build" className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-[#2574A7] hover:bg-[#F0F7FF] transition-colors block">
                   <div className="text-xl font-bold text-blue-600">500+</div>
                   <div className="text-xs text-gray-500 mt-1">Professionals placed and retained</div>
-                </div>
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                </Link>
+                <Link href="#operate" className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-[#2574A7] hover:bg-[#F0F7FF] transition-colors block">
                   <div className="text-xl font-bold text-blue-600">25+</div>
                   <div className="text-xs text-gray-500 mt-1">Years recruiting in the Costa Rica tech market</div>
-                </div>
+                </Link>
               </div>
             </div>
 
