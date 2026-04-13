@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const trustBar = [
-  { value: '24+', label: 'years in Costa Rica\'s tech market' },
+  { value: '25+', label: 'Years in Costa Rica\'s tech market' },
   { value: '<1%', label: 'turnover across all partnerships' },
   { value: '6', label: 'companies with full operations built from zero' },
   { value: '30', label: 'days average time to fully operational' },
@@ -9,7 +9,7 @@ const trustBar = [
 
 const launchChecklist = [
   'Legal entity creation — registration, structure and documentation',
-  'Employer of record — full Costa Rican labor law compliance from day one',
+  'Legal entity administration — your people work directly for you, under your brand, with full Costa Rican labor law compliance',
   'Accounting & financial setup — bookkeeping, tax compliance and reporting',
   'Office setup — facilities, equipment and operational infrastructure',
   'Regulatory compliance — ongoing monitoring and legal updates',
@@ -32,7 +32,7 @@ const operateChecklist = [
 ]
 
 const proofCards = [
-  { company: 'LTV Co.', result: '$400M exit', note: '120-person engineering hub · 98/100 eNPS · 0% turnover' },
+  { company: 'LTV Co.', result: '$400M exit', note: '120-person engineering hub · 97.6 GPTW Trust Index · 98/100 eNPS · 0% turnover' },
   { company: '66degrees', result: '0% turnover', note: 'Google Cloud Partner of the Year 2024 & 2025 · 11+ years' },
   { company: 'Verisk / Infutor', result: '55x revenue growth', note: '$250M exit · First data intelligence company in CR' },
 ]
@@ -147,8 +147,8 @@ export default function ServicesPage() {
               <div className="space-y-5">
                 {[
                   { val: '<1%', desc: 'involuntary turnover — industry avg 13%', color: 'text-[#2574A7]' },
-                  { val: '98/100', desc: 'eNPS score at LTV Co. — auditors asked to recheck', color: 'text-[#00A79D]' },
-                  { val: '24 yrs', desc: 'recruiting in the Costa Rica tech market', color: 'text-[#2574A7]' },
+                  { val: '97.6', desc: 'GPTW Trust Index · 98/100 eNPS — among the highest scores globally', color: 'text-[#00A79D]' },
+                  { val: '25 yrs', desc: 'recruiting in the Costa Rica tech market', color: 'text-[#2574A7]' },
                 ].map((s) => (
                   <div key={s.val} className="flex items-start gap-4 pb-5 border-b border-[#D8E2EA] last:border-0 last:pb-0">
                     <p className={`text-[28px] font-bold leading-none shrink-0 ${s.color}`}>{s.val}</p>
