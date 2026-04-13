@@ -43,12 +43,7 @@ const founders = [
   {
     name: 'Marcela Villalta',
     role: 'Co-founder & CEO, Crest Partners',
-    fwdRole: 'Curriculum design, implementation and partnerships at Forward CR',
-  },
-  {
-    name: 'Cristian Chacón',
-    role: 'Financial Compliance Analyst, Crest Partners',
-    fwdRole: 'Co-founder, Forward Costa Rica',
+    fwdRole: 'Led the technology vertical at Forward CR — from program design from scratch to full implementation. Responsible for the technical curriculum, structure and execution of FWD Academy.',
   },
 ]
 
@@ -88,8 +83,7 @@ export default function ImpactPage() {
                 Education, sport and art that develop people and strengthen communities.
               </h2>
               <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed mb-5">
-                Forward Costa Rica is an independent non-profit co-founded by Marcela Villalta and
-                Cristian Chacón. Its mission is to develop young Costa Ricans through three pillars —
+                Forward Costa Rica is an independent non-profit co-founded by Marcela Villalta. Its mission is to develop young Costa Ricans through three pillars —
                 technology education, sports and arts — all completely free for those who pass the
                 admission process.
               </p>
@@ -136,10 +130,10 @@ export default function ImpactPage() {
             Why our founders helped build it.
           </h2>
           <p className="text-[17px] text-white/70 font-light leading-relaxed max-w-2xl mb-12">
-            After 25+ years operating in Costa Rica's tech ecosystem, Marcela Villalta and Cristian
-            Chacón saw firsthand that the talent pipeline needed investment — not just consumption.
-            The professionals they work with every day come from communities worth investing in.
-            Forward CR was born from that conviction.
+            After 25+ years operating in Costa Rica's tech ecosystem, Marcela Villalta saw firsthand
+            that the talent pipeline needed investment — not just consumption. The professionals she
+            works with every day come from communities worth investing in. Forward CR was born from
+            that conviction — and Marcela led the technology side of it from the ground up.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {founders.map((f) => (
