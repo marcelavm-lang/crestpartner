@@ -103,12 +103,12 @@ export default function HomePage() {
               <div className="text-xs text-[#5A6A7A] mt-1">High-value jobs created</div>
             </div>
             <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
-              <div className="text-[30px] font-bold text-[#00A79D]">&lt;1%</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">Avg. turnover — industry avg. 13%</div>
-            </div>
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
               <div className="text-[30px] font-bold text-[#2574A7]">$1B+</div>
               <div className="text-xs text-[#5A6A7A] mt-1">Client revenue</div>
+            </div>
+            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
+              <div className="text-[30px] font-bold text-[#00A79D]">&lt;1%</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">Avg. turnover — industry avg. 13%</div>
             </div>
             <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
               <div className="text-[30px] font-bold text-[#00A79D]">98/100</div>
@@ -116,7 +116,7 @@ export default function HomePage() {
             </div>
             <div className="bg-[#F7FAFB] border border-[#B3E5E2] rounded-[10px] p-5">
               <div className="text-sm font-bold text-[#00A79D]">GPTW</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">Great Place to Work certified — auditors asked to verify</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">97.6 Trust Index · Great Place to Work — one of the highest scores globally</div>
             </div>
           </div>
 
