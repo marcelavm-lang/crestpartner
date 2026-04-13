@@ -2,10 +2,10 @@ import Link from 'next/link'
 import CompanyLogo from '@/components/CompanyLogo'
 
 const stats = [
-  { value: '24+', label: 'years in Costa Rica\'s tech ecosystem', color: '#2574A7' },
-  { value: '400+', label: 'high-value jobs created across all partnerships', color: '#2574A7' },
-  { value: '<1%', label: 'average turnover — industry average is 13%', color: '#00A79D' },
-  { value: '$900M+', label: 'in client revenue with CR teams at the core', color: '#2574A7' },
+  { value: '25+', label: 'years in Costa Rica\'s tech ecosystem' },
+  { value: '500+', label: 'high-value jobs created across all partnerships' },
+  { value: '<1%', label: 'average turnover — industry average is 13%' },
+  { value: '$1B+', label: 'in client revenue with CR teams at the core' },
 ]
 
 const services = [
@@ -13,7 +13,7 @@ const services = [
     num: '01',
     title: 'Launch',
     headline: 'Launch your Costa Rica operation',
-    text: 'Legal entity, employer of record, back office and compliance setup — fully operational before your first hire.',
+    text: 'Legal entity administration — your people work directly for you, under your brand, with full Costa Rican labor law compliance. Back office setup fully operational before your first hire.',
     tag: 'Operational in 30 days.',
   },
   {
@@ -54,83 +54,65 @@ export default function HomePage() {
     <>
       {/* ── Hero ── */}
       <section className="max-w-7xl mx-auto px-6 pt-20 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {/* Left column — text */}
-          <div>
-            <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] text-black max-w-3xl mb-6">
-              Your tech team in Costa Rica,<br />operational in 30 days.
-            </h1>
-            <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
-              We help U.S. tech and data companies recruit, build and run high-performing engineering teams
-              in Costa Rica — same time zone, a fraction of the cost, zero operational friction.
-              One partner. Complete accountability.
-            </p>
-            <div className="flex flex-wrap gap-3 mb-16">
-              <Link
-                href="/contact"
-                className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
-              >
-                Talk to our team
-              </Link>
-              <Link
-                href="/case-studies"
-                className="border border-[#D8E2EA] text-black font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
-              >
-                See case studies →
-              </Link>
-            </div>
+        <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
+        <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
+          Costa Rica's most proven tech operation partner.
+        </h1>
+        <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
+          We help U.S. tech and data companies recruit, build and run high-performing engineering teams
+          in Costa Rica — same time zone, a fraction of the cost, zero operational friction.
+          One partner. Complete accountability.
+        </p>
+        <div className="flex flex-wrap gap-3 mb-16">
+          <Link
+            href="/contact"
+            className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
+          >
+            Talk to our team
+          </Link>
+          <Link
+            href="/case-studies"
+            className="border border-[#D8E2EA] text-black font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
+          >
+            See case studies →
+          </Link>
+        </div>
 
-            {/* Social proof logos */}
-            <div>
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
-                Trusted by leading tech and data companies
-              </p>
-            </div>
+        {/* Social proof logos */}
+        <div className="overflow-hidden w-full">
+          <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
+            Trusted by leading tech and data companies
+          </p>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
+            <CompanyLogo company="targusinfo" variant="card" />
+            <CompanyLogo company="verisk" variant="card" />
+            <CompanyLogo company="ltv-co" variant="card" />
+            <CompanyLogo company="66degrees" variant="card" />
+            <CompanyLogo company="think-unlimited" variant="card" />
+            <CompanyLogo company="strategio" variant="card" />
           </div>
+        </div>
+      </section>
 
-          {/* Right column — stats grid 2x2 */}
-          <div className="grid grid-cols-2 gap-4">
+      {/* ── Stats Band ── */}
+      <section className="border-y border-[#D8E2EA]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {stats.map((s, i) => (
               <div
                 key={i}
-                className="bg-[#F4F7FA] border border-[#D8E2EA] rounded-[8px] p-[18px]"
+                className={`py-10 px-6 ${i < stats.length - 1 ? 'border-r border-[#D8E2EA]' : ''}`}
               >
-                <p className="text-[28px] font-bold leading-none mb-2" style={{ color: s.color }}>{s.value}</p>
-                <p className="text-[11px] font-light text-[#5A6A7A] leading-snug">{s.label}</p>
+                <p className="text-[36px] font-bold text-[#2574A7] leading-none mb-2">{s.value}</p>
+                <p className="text-[13px] text-[#5A6A7A] font-light leading-snug">{s.label}</p>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Full-width scrolling logo banner */}
-        <div className="mt-8 w-screen relative left-1/2 right-1/2 -mx-[50vw] overflow-hidden">
-          <div className="flex animate-scroll gap-8 w-max py-2">
-            {[
-              { name: 'TargusInfo', href: '/case-studies#targusinfo' },
-              { name: 'Verisk', href: '/case-studies#verisk' },
-              { name: 'LTV Co.', href: '/case-studies#ltv' },
-              { name: '66degrees', href: '/case-studies#66degrees' },
-              { name: 'Think Unlimited', href: '/case-studies#think-unlimited' },
-              { name: 'Strategio', href: '/case-studies#strategio' },
-              { name: 'TargusInfo', href: '/case-studies#targusinfo' },
-              { name: 'Verisk', href: '/case-studies#verisk' },
-              { name: 'LTV Co.', href: '/case-studies#ltv' },
-              { name: '66degrees', href: '/case-studies#66degrees' },
-              { name: 'Think Unlimited', href: '/case-studies#think-unlimited' },
-              { name: 'Strategio', href: '/case-studies#strategio' },
-            ].map((logo, i) => (
-              <a key={i} href={logo.href}
-                className="text-sm font-semibold px-5 py-2 border border-gray-200 rounded-full text-gray-500 bg-white whitespace-nowrap hover:border-blue-400 hover:text-blue-600 transition-colors">
-                {logo.name}
-              </a>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── Services ── */}
-      <section className="bg-[#F4F7FA] w-full py-20">
+      <section className="bg-[#F7FAFB] w-full py-20">
       <div className="max-w-7xl mx-auto px-6">
         <p className="eyebrow mb-4">What we do</p>
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-3 max-w-xl">
@@ -173,7 +155,7 @@ export default function HomePage() {
             Every company started at zero. None of them stayed there.
           </h2>
           <p className="text-[16px] text-[#5A6A7A] font-light mb-12">
-            Six partnerships. Six complete operations built from the ground up.
+            A track record of complete operations built from the ground up — across industries, team sizes and timelines. These are some of them.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {cases.map((c) => (
@@ -234,8 +216,7 @@ export default function HomePage() {
               {[
                 'Design, build and run end to end',
                 'One partner, full accountability',
-                '24 years inside the market',
-                'Train next generation through Forward CR',
+                '25+ years inside the market',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 w-4 h-4 rounded-full bg-[#00A79D] shrink-0 flex items-center justify-center">
@@ -257,25 +238,11 @@ export default function HomePage() {
           <div className="max-w-2xl">
             <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">Social impact</p>
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-5">
-              We don't just hire Costa Rican talent. We create it.
+              Growth only makes sense when everyone grows.
             </h2>
-            <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed mb-10">
-              Our founders co-created Forward Costa Rica — a non-profit that trains young Costa Ricans in
-              fullstack development, English and professional skills. Entirely free.
+            <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed">
+              That's why our founders co-created Forward Costa Rica — a non-profit committed to developing the next generation of tech professionals in Costa Rica. Not as a program we run, but as a cause we believe in.
             </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {[
-              { value: 'Free', label: 'all programs, 100% scholarship-based' },
-              { value: '3', label: 'programs: tech, English, employability' },
-              { value: 'CR', label: 'talent pipeline that feeds the ecosystem' },
-              { value: '2', label: 'Crest Partners founders as co-creators of Forward' },
-            ].map((s) => (
-              <div key={s.value} className="bg-white border border-[#D8E2EA] rounded-[10px] p-6">
-                <p className="text-[32px] font-bold text-[#00A79D] leading-none mb-2">{s.value}</p>
-                <p className="text-[13px] text-[#5A6A7A] font-light leading-snug">{s.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
