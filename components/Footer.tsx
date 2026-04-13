@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import LogoMark from './LogoMark'
+import Image from 'next/image'
 
 const services = [
   { label: 'Launch', href: '/services#launch' },
@@ -21,9 +21,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <LogoMark size={28} />
-              <span className="font-bold text-[14px] tracking-tight text-black">Crest Partners</span>
+            <Link href="/" className="flex items-center mb-4">
+              <Image
+                src="/crest-logo.png"
+                alt="Crest Partners"
+                width={160}
+                height={83}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-[13px] text-[#5A6A7A] leading-relaxed font-light">
               Nearshore tech operations company based in Costa Rica. We design, build and run

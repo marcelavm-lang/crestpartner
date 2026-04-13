@@ -230,9 +230,11 @@ export default function HomePage() {
             <ul className="space-y-4">
               {[
                 'Present and step back',
-                'Multiple vendors',
+                'Multiple vendors — no single accountability',
                 'Know the pitch, not the execution',
-                'No investment in talent pipeline',
+                'Cultural misalignment and communication friction',
+                'High turnover, constant recruiting cycles',
+                'Generic solutions, not built for your company',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 w-4 h-4 rounded-full border border-[#D8E2EA] shrink-0" />
