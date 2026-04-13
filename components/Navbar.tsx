@@ -26,7 +26,7 @@ export default function Navbar() {
             alt="Crest Partner"
             width={200}
             height={103}
-            className="h-10 w-auto"
+            className="h-12 w-auto"
             priority
           />
         </Link>
