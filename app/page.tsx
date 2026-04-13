@@ -1,13 +1,6 @@
 import Link from 'next/link'
 import CompanyLogo from '@/components/CompanyLogo'
 
-const stats = [
-  { value: '25+', label: 'years in Costa Rica\'s tech ecosystem' },
-  { value: '500+', label: 'high-value jobs created across all partnerships' },
-  { value: '<1%', label: 'average turnover — industry average is 13%' },
-  { value: '$1B+', label: 'in client revenue with CR teams at the core' },
-]
-
 const services = [
   {
     num: '01',
@@ -49,65 +42,102 @@ const badgeColor: Record<string, string> = {
   New: 'bg-[#E6F7F6] text-[#00A79D]',
 }
 
+const logoChips = [
+  { name: 'TargusInfo', href: '/case-studies/targusinfo' },
+  { name: 'Verisk', href: '/case-studies/verisk' },
+  { name: 'LTV Co.', href: '/case-studies/ltv-co' },
+  { name: '66degrees', href: '/case-studies/66degrees' },
+  { name: 'Think Unlimited', href: '/case-studies/think-unlimited' },
+  { name: 'Strategio', href: '/case-studies/strategio' },
+  // duplicated for infinite scroll
+  { name: 'TargusInfo', href: '/case-studies/targusinfo' },
+  { name: 'Verisk', href: '/case-studies/verisk' },
+  { name: 'LTV Co.', href: '/case-studies/ltv-co' },
+  { name: '66degrees', href: '/case-studies/66degrees' },
+  { name: 'Think Unlimited', href: '/case-studies/think-unlimited' },
+  { name: 'Strategio', href: '/case-studies/strategio' },
+]
+
 export default function HomePage() {
   return (
     <>
       {/* ── Hero ── */}
       <section className="max-w-7xl mx-auto px-6 pt-20 pb-16">
-        <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
-        <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
-          Costa Rica's most proven tech operation partner.
-        </h1>
-        <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
-          We help U.S. tech and data companies recruit, build and run high-performing engineering teams
-          in Costa Rica — same time zone, a fraction of the cost, zero operational friction.
-          One partner. Complete accountability.
-        </p>
-        <div className="flex flex-wrap gap-3 mb-16">
-          <Link
-            href="/contact"
-            className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
-          >
-            Talk to our team
-          </Link>
-          <Link
-            href="/case-studies"
-            className="border border-[#D8E2EA] text-black font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
-          >
-            See case studies →
-          </Link>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        {/* Social proof logos */}
-        <div className="overflow-hidden w-full">
-          <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">
-            Trusted by leading tech and data companies
-          </p>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
-            <CompanyLogo company="targusinfo" variant="card" />
-            <CompanyLogo company="verisk" variant="card" />
-            <CompanyLogo company="ltv-co" variant="card" />
-            <CompanyLogo company="66degrees" variant="card" />
-            <CompanyLogo company="think-unlimited" variant="card" />
-            <CompanyLogo company="strategio" variant="card" />
-          </div>
-        </div>
-      </section>
-
-      {/* ── Stats Band ── */}
-      <section className="border-y border-[#D8E2EA]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4">
-            {stats.map((s, i) => (
-              <div
-                key={i}
-                className={`py-10 px-6 ${i < stats.length - 1 ? 'border-r border-[#D8E2EA]' : ''}`}
+          {/* Left column */}
+          <div>
+            <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
+            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
+              Costa Rica's most proven tech operation partner.
+            </h1>
+            <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
+              We help U.S. tech and data companies recruit, build and run high-performing engineering teams
+              in Costa Rica — same time zone, a fraction of the cost, zero operational friction.
+              One partner. Complete accountability.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-10">
+              <Link
+                href="/contact"
+                className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
               >
-                <p className="text-[36px] font-bold text-[#2574A7] leading-none mb-2">{s.value}</p>
-                <p className="text-[13px] text-[#5A6A7A] font-light leading-snug">{s.label}</p>
+                Talk to our team
+              </Link>
+              <Link
+                href="/case-studies"
+                className="border border-[#D8E2EA] text-black font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
+              >
+                See case studies →
+              </Link>
+            </div>
+
+            {/* Animated logo banner */}
+            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">
+              Trusted by leading tech and data companies
+            </p>
+            <div className="mt-2 overflow-hidden w-full">
+              <div className="flex animate-scroll gap-3 w-max">
+                {logoChips.map((logo, i) => (
+                  <Link
+                    key={i}
+                    href={logo.href}
+                    className="text-sm font-medium px-4 py-2 border border-[#D8E2EA] rounded-full text-[#5A6A7A] bg-white whitespace-nowrap hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
+                  >
+                    {logo.name}
+                  </Link>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
+
+          {/* Right column — 6 stats cards */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
+              <div className="text-[30px] font-bold text-[#2574A7]">25+</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">Years in Costa Rica</div>
+            </div>
+            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
+              <div className="text-[30px] font-bold text-[#2574A7]">500+</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">High-value jobs created</div>
+            </div>
+            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
+              <div className="text-[30px] font-bold text-[#00A79D]">&lt;1%</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">Avg. turnover — industry avg. 13%</div>
+            </div>
+            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
+              <div className="text-[30px] font-bold text-[#2574A7]">$1B+</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">Client revenue</div>
+            </div>
+            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
+              <div className="text-[30px] font-bold text-[#00A79D]">98/100</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">eNPS score</div>
+            </div>
+            <div className="bg-[#F7FAFB] border border-[#B3E5E2] rounded-[10px] p-5">
+              <div className="text-sm font-bold text-[#00A79D]">GPTW</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">Great Place to Work certified — auditors asked to verify</div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -228,6 +258,24 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+            <div className="mt-6 pt-6 border-t border-[#D8E2EA] grid grid-cols-2 gap-3">
+              <div>
+                <div className="text-xl font-bold text-[#2574A7]">$1B+</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">Client revenue</div>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-[#00A79D]">&lt;1%</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">Avg. turnover</div>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-[#2574A7]">500+</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">Jobs created</div>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-[#00A79D]">GPTW</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">Certified · 98/100 eNPS</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
