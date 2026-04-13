@@ -26,20 +26,21 @@ const services = [
 ]
 
 const cases = [
-  { name: 'TargusInfo', slug: 'targusinfo', logo: 'targusinfo' as const, period: '2001–2007', badge: 'Origin', stats: '200+ collaborators · $650M Neustar exit' },
-  { name: 'Verisk Marketing Solutions', slug: 'verisk', logo: 'verisk' as const, period: '2007–2013', badge: 'Pioneer', stats: '55x revenue · $250M exit' },
-  { name: '66degrees', slug: '66degrees', logo: '66degrees' as const, period: '2014–present', badge: 'Active', stats: '11+ years · 0% turnover' },
-  { name: 'LTV Co.', slug: 'ltv-co', logo: 'ltv-co' as const, period: '2015–2025', badge: 'Flagship', stats: '13x revenue · $400M exit · 98/100 eNPS' },
-  { name: 'Think Unlimited', slug: 'think-unlimited', logo: 'think-unlimited' as const, period: '2023–present', badge: 'Active', stats: '0% turnover · 100% product built in CR' },
-  { name: 'Strategio', slug: 'strategio', logo: 'strategio' as const, period: '2025–present', badge: 'New', stats: '8 collaborators · Talent vertical' },
+  { name: 'TargusInfo', slug: 'targusinfo', logo: 'targusinfo' as const, period: '2001–2007', badge: 'Data Operations', stats: '200+ collaborators · $650M Neustar exit' },
+  { name: 'Verisk Marketing Solutions', slug: 'verisk', logo: 'verisk' as const, period: '2007–2013', badge: 'Consumer Identity', stats: '55x revenue · $250M exit' },
+  { name: '66degrees', slug: '66degrees', logo: '66degrees' as const, period: '2014–present', badge: 'Cloud & DevOps', stats: '11+ years · 0% turnover' },
+  { name: 'LTV Co.', slug: 'ltv-co', logo: 'ltv-co' as const, period: '2015–2025', badge: 'Consumer Data', stats: '13x revenue · $400M exit · 98/100 eNPS' },
+  { name: 'Think Unlimited', slug: 'think-unlimited', logo: 'think-unlimited' as const, period: '2023–present', badge: 'AI & Sales Tech', stats: '0% turnover · 100% product built in CR' },
+  { name: 'Strategio', slug: 'strategio', logo: 'strategio' as const, period: '2025–present', badge: 'Talent Operations', stats: '8 collaborators · Talent vertical' },
 ]
 
 const badgeColor: Record<string, string> = {
-  Origin: 'bg-[#F4F7FA] text-[#5A6A7A]',
-  Pioneer: 'bg-[#F4F7FA] text-[#5A6A7A]',
-  Active: 'bg-[#E6F7F6] text-[#00A79D]',
-  Flagship: 'bg-[#EBF4FA] text-[#2574A7]',
-  New: 'bg-[#E6F7F6] text-[#00A79D]',
+  'Data Operations': 'bg-[#F4F7FA] text-[#5A6A7A]',
+  'Consumer Identity': 'bg-[#F4F7FA] text-[#5A6A7A]',
+  'Cloud & DevOps': 'bg-[#E6F7F6] text-[#00A79D]',
+  'Consumer Data': 'bg-[#EBF4FA] text-[#2574A7]',
+  'AI & Sales Tech': 'bg-[#E6F7F6] text-[#00A79D]',
+  'Talent Operations': 'bg-[#E6F7F6] text-[#00A79D]',
 }
 
 const logoChips = [
