@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   description:
     'We help U.S. tech and data companies recruit, build and run high-performing engineering teams in Costa Rica — same time zone, a fraction of the cost, zero operational friction.',
   keywords: 'nearshore, Costa Rica, tech team, engineering, outsourcing, staff augmentation',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
 }
 
 export default function RootLayout({

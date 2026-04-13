@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
+
 const navLinks = [
   { label: 'Services', href: '/services' },
   { label: 'Case studies', href: '/case-studies' },
@@ -17,23 +19,15 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white border-b border-[#D8E2EA]">
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
-            <g transform="translate(50,50)">
-              {[0,20,40,60,80,100,120,140,160,180,200,220].map((angle, i) => (
-                <g key={i} transform={`rotate(${angle})`}>
-                  <line x1="0" y1={i < 4 ? -38 : -32} x2="0" y2="-20"
-                    stroke={i < 5 ? '#00A79D' : '#2574A7'}
-                    strokeWidth={i < 4 ? 6 : 5} strokeLinecap="round"/>
-                  <circle cx="0" cy={i < 4 ? -42 : -36} r={i < 4 ? 4 : 3}
-                    fill={i < 5 ? '#00A79D' : '#2574A7'}/>
-                </g>
-              ))}
-            </g>
-          </svg>
-          <span style={{ fontSize: '14px', fontWeight: 700, letterSpacing: '0.05em', color: '#000' }}>
-            CREST PARTNERS
-          </span>
+        <Link href="/" className="flex items-center shrink-0">
+          <Image
+            src="/crest-logo.png"
+            alt="Crest Partner"
+            width={160}
+            height={82}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}
