@@ -76,7 +76,7 @@ export default function HomePage() {
               in Costa Rica — same time zone, a fraction of the cost, zero operational friction.
               One partner. Complete accountability.
             </p>
-            <div className="flex flex-wrap gap-3 mb-10">
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
                 className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
@@ -89,24 +89,6 @@ export default function HomePage() {
               >
                 See case studies →
               </Link>
-            </div>
-
-            {/* Animated logo banner */}
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">
-              Trusted by leading tech and data companies
-            </p>
-            <div className="mt-2 overflow-hidden w-full">
-              <div className="flex animate-scroll gap-3 w-max">
-                {logoChips.map((logo, i) => (
-                  <Link
-                    key={i}
-                    href={logo.href}
-                    className="text-sm font-medium px-4 py-2 border border-[#D8E2EA] rounded-full text-[#5A6A7A] bg-white whitespace-nowrap hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
-                  >
-                    {logo.name}
-                  </Link>
-                ))}
-              </div>
             </div>
           </div>
 
@@ -138,6 +120,26 @@ export default function HomePage() {
             </div>
           </div>
 
+        </div>
+
+        {/* Animated logo banner — full width below both columns */}
+        <div className="mt-12">
+          <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">
+            Trusted by leading tech and data companies
+          </p>
+          <div className="overflow-hidden w-full">
+            <div className="flex animate-scroll gap-3 w-max">
+              {logoChips.map((logo, i) => (
+                <Link
+                  key={i}
+                  href={logo.href}
+                  className="text-sm font-medium px-4 py-2 border border-[#D8E2EA] rounded-full text-[#5A6A7A] bg-white whitespace-nowrap hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
+                >
+                  {logo.name}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
