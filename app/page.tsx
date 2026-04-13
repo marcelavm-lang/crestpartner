@@ -293,6 +293,14 @@ export default function HomePage() {
             <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed">
               That's why our founders co-created Forward Costa Rica — a non-profit committed to developing the next generation of tech professionals in Costa Rica. Not as a program we run, but as a cause we believe in.
             </p>
+            <a
+              href="https://www.fwdcostarica.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-6 px-6 py-3 border border-[#D8E2EA] rounded-[8px] text-sm font-bold text-[#5A6A7A] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
+            >
+              Visit Forward Costa Rica →
+            </a>
           </div>
         </div>
       </section>

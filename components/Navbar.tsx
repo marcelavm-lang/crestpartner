@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState } from 'react'
 
 const navLinks = [
@@ -20,15 +19,28 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white border-b border-[#D8E2EA]">
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0">
-          <Image
-            src="/crest-logo.png"
-            alt="Crest Partner"
-            width={200}
-            height={103}
-            className="h-14 w-auto"
-            priority
-          />
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
+          <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+            <g transform="translate(50,50)">
+              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(0)"/>
+              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(0)"/>
+              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(22)"/>
+              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(22)"/>
+              <line x1="0" y1="-38" x2="0" y2="-22" stroke="#00A79D" strokeWidth="6" strokeLinecap="round" transform="rotate(44)"/>
+              <circle cx="0" cy="-42" r="4" fill="#00A79D" transform="rotate(44)"/>
+              <line x1="0" y1="-36" x2="0" y2="-22" stroke="#2574A7" strokeWidth="5.5" strokeLinecap="round" transform="rotate(88)"/>
+              <circle cx="0" cy="-40" r="3.5" fill="#2574A7" transform="rotate(88)"/>
+              <line x1="0" y1="-34" x2="0" y2="-21" stroke="#2574A7" strokeWidth="5" strokeLinecap="round" transform="rotate(132)"/>
+              <circle cx="0" cy="-38" r="3.5" fill="#2574A7" transform="rotate(132)"/>
+              <line x1="0" y1="-30" x2="0" y2="-18" stroke="#2574A7" strokeWidth="4.5" strokeLinecap="round" transform="rotate(176)"/>
+              <circle cx="0" cy="-34" r="3" fill="#2574A7" transform="rotate(176)"/>
+              <line x1="0" y1="-30" x2="0" y2="-18" stroke="#2574A7" strokeWidth="4.5" strokeLinecap="round" transform="rotate(220)"/>
+              <circle cx="0" cy="-34" r="3" fill="#2574A7" transform="rotate(220)"/>
+            </g>
+          </svg>
+          <span style={{ fontWeight: 700, fontSize: '14px', letterSpacing: '0.05em' }}>
+            CREST PARTNERS
+          </span>
         </Link>
 
         {/* Desktop links */}
