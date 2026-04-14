@@ -92,7 +92,7 @@ export default function WhoWeArePage() {
               25 years building Costa Rica's tech ecosystem — from the inside.
             </h1>
             <p className="text-base font-light text-gray-500 leading-relaxed">
-              We didn't arrive to take advantage of Costa Rica's talent. We started here in 2001 — before nearshore had a name — and we've been building it from the inside ever since. Our founders have lived the model as operators, not just advisors.
+              Before anyone called it nearshore, our founders started building here. 25 years later, the companies they helped grow have exited at $400M, won Google Cloud Partner of the Year, and built teams that never left. That's not a strategy. That's a track record.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3">
