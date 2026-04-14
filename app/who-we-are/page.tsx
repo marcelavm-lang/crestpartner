@@ -16,6 +16,41 @@ const values = [
 ]
 
 
+const garyExpertise = [
+  'General management',
+  'Strategic planning',
+  'SaaS & Big Data',
+  'Private equity & M&A',
+  'Business development',
+  'Harvard KSC certified',
+]
+
+const legalExpertise = [
+  'Entity setup & corporate law',
+  'Labor & employment law',
+  'IP & trademark protection',
+  'Data privacy & regulatory',
+  'Antitrust & competition',
+  'Commercial contracts',
+]
+
+function ExpertiseGrid({ items }: { items: string[] }) {
+  return (
+    <div className="grid grid-cols-2 gap-3">
+      {items.map((area) => (
+        <div key={area} className="flex items-start gap-2.5">
+          <span className="mt-1 w-3.5 h-3.5 rounded-full bg-[#00A79D] shrink-0 flex items-center justify-center">
+            <svg width="7" height="5" viewBox="0 0 7 5" fill="none">
+              <path d="M1 2.5L2.5 4L6 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+          <span className="text-[13px] text-black font-light leading-snug">{area}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function WhoWeArePage() {
   return (
     <>
@@ -124,44 +159,72 @@ export default function WhoWeArePage() {
       </section>
 
       {/* ── Partners ── */}
-      <section className="max-w-7xl mx-auto px-12 py-16 border-t border-gray-200">
-        <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Partners</p>
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">Strategic & legal partners</h2>
-        <p className="text-sm font-light text-gray-500 mb-10">The partners who extend our capabilities — in business development, legal and regulatory matters.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="bg-[#F4F7FA] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-8">Partners</p>
+
           {/* Gary */}
-          <div className="bg-white border border-gray-200 rounded-xl p-6">
-            <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center text-purple-600 font-bold text-lg flex-shrink-0">GW</div>
-              <div>
-                <div className="text-base font-bold text-gray-900">Gary Walter</div>
-                <div className="text-sm text-blue-600 font-medium mt-1">Strategic Partner</div>
+          <div className="bg-white border border-[#D8E2EA] rounded-[12px] p-8 mb-6">
+            <div className="flex flex-col md:flex-row md:items-start gap-8">
+              <div className="md:w-1/2">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-[20px] font-bold text-black">Gary Walter</h3>
+                    <p className="text-[13px] text-[#2574A7] font-bold">Strategic Partner</p>
+                  </div>
+                  <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px] shrink-0">
+                    Strategic Partner
+                  </span>
+                </div>
+                <p className="text-[14px] text-[#5A6A7A] font-light leading-relaxed mb-5">
+                  Mid-market acceleration executive with extensive background in general management, strategic planning, SaaS and Big Data. Led Infutor Data Solutions from $1M to $250M — with the Costa Rica team at the core of that growth. Brings the operator perspective of someone who has lived the model from the client side for over a decade.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['SaaS & Big Data', 'Private equity', 'M&A', 'Harvard KSC certified'].map((a) => (
+                    <span key={a} className="text-[10px] font-bold text-[#2574A7] bg-[#EBF4FA] border border-[#D8E2EA] px-2.5 py-1 rounded-[6px]">
+                      {a}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="md:w-1/2">
+                <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Expertise areas</p>
+                <ExpertiseGrid items={garyExpertise} />
               </div>
             </div>
-            <p className="text-sm font-light text-gray-500 leading-relaxed mb-4">Mid-market acceleration executive with extensive background in general management, strategic planning, SaaS and Big Data. Led Infutor Data Solutions from $1M to $250M — with the Costa Rica team at the core of that growth. Brings the operator perspective of someone who has lived the model from the client side for over a decade.</p>
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-500">SaaS & Big Data</span>
-              <span className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-500">Private equity</span>
-              <span className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-500">M&A</span>
-              <span className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-500">Harvard KSC certified</span>
-            </div>
           </div>
+
           {/* Marco */}
-          <div className="bg-white border border-gray-200 rounded-xl p-6">
-            <div className="flex items-start gap-4 mb-4">
-              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 font-bold text-lg flex-shrink-0">ML</div>
-              <div>
-                <div className="text-base font-bold text-gray-900">Marco López Volio</div>
-                <div className="text-sm text-blue-600 font-medium mt-1">Legal Partner · Zurcher Odio & Raven</div>
+          <div className="bg-white border border-[#D8E2EA] rounded-[12px] p-8">
+            <div className="flex flex-col md:flex-row md:items-start gap-8">
+              <div className="md:w-1/2">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-[20px] font-bold text-black">Marco López Volio</h3>
+                    <p className="text-[13px] text-[#2574A7] font-bold">Legal Partner · Zurcher Odio & Raven</p>
+                  </div>
+                  <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px] shrink-0">
+                    Legal Partner
+                  </span>
+                </div>
+                <p className="text-[14px] text-[#5A6A7A] font-light leading-relaxed mb-5">
+                  Partner & Director of the IP & Regulatory Department at Zurcher Odio & Raven — one of Costa Rica's most recognized law firms. 20+ years advising multinational companies in regulatory, antitrust, intellectual property, data privacy and compliance. All Crest Partners client entities are backed by his firm.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['Chambers & Partners IP', 'Chambers & Partners Antitrust', 'Leaders League Band 1 IP', 'INTA Annual Meeting 2026'].map((a) => (
+                    <span key={a} className="text-[10px] font-bold text-[#2574A7] bg-[#EBF4FA] border border-[#D8E2EA] px-2.5 py-1 rounded-[6px]">
+                      {a}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="md:w-1/2">
+                <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Expertise areas</p>
+                <ExpertiseGrid items={legalExpertise} />
               </div>
             </div>
-            <p className="text-sm font-light text-gray-500 leading-relaxed mb-4">Partner & Director of the IP & Regulatory Department at Zurcher Odio & Raven — one of Costa Rica's most recognized law firms. 20+ years advising multinational companies in regulatory, antitrust, intellectual property, data privacy and compliance. All Crest Partners client entities are backed by his firm.</p>
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-500">Chambers & Partners · IP</span>
-              <span className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-500">Chambers & Partners · Antitrust</span>
-              <span className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-500">Leaders League Band 1 · IP</span>
-            </div>
           </div>
+
         </div>
       </section>
 
