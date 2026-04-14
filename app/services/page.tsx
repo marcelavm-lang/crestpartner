@@ -218,9 +218,9 @@ export default function ServicesPage() {
 
           {/* Visual panel */}
           <div className="bg-[#F4F7FA] rounded-[12px] p-8 border border-[#D8E2EA]">
-            <div className="border border-[#D8E2EA] bg-white rounded-[10px] p-5 mb-6">
-              <p className="text-[28px] font-bold text-[#2574A7] leading-none mb-1">6</p>
-              <p className="text-[12px] text-[#5A6A7A] font-light">active back offices managed right now</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-4">
+              <div className="text-2xl font-bold text-blue-600 mb-1">25 years</div>
+              <div className="text-sm font-light text-gray-500 leading-relaxed">of operational experience. AI-enhanced tools. Zero gaps.</div>
             </div>
             <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Back office coverage</p>
             <div className="grid grid-cols-2 gap-3">
