@@ -156,30 +156,30 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             {/* Visual panel */}
             <div className="bg-white rounded-[12px] p-8 border border-[#D8E2EA] order-2 md:order-1">
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">Results</p>
-              <div className="space-y-5 mb-5">
-                {[
-                  { val: '<1%', desc: 'involuntary turnover — industry avg 13%', color: 'text-[#2574A7]' },
-                  { val: '98/100', desc: 'eNPS score at LTV Co. — auditors asked to recheck', color: 'text-[#00A79D]' },
-                  { val: '25 yrs', desc: 'recruiting in the Costa Rica tech market', color: 'text-[#2574A7]' },
-                ].map((s) => (
-                  <div key={s.val} className="flex items-start gap-4 pb-5 border-b border-[#D8E2EA] last:border-0 last:pb-0">
-                    <p className={`text-[28px] font-bold leading-none shrink-0 ${s.color}`}>{s.val}</p>
-                    <p className="text-[13px] text-[#5A6A7A] font-light leading-snug pt-1">{s.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-1 gap-3">
+              <div className="flex flex-col gap-3">
+                <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Results</p>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-xl font-bold text-teal-500">97.6</div>
-                  <div className="text-xs text-gray-500 mt-1">GPTW Trust Index — among the highest scores globally</div>
+                  <div className="text-2xl font-bold text-teal-500">&lt;1%</div>
+                  <div className="text-xs text-gray-500 mt-1">Involuntary turnover — industry avg. 13%</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-xl font-bold text-blue-600">500+</div>
+                  <div className="text-2xl font-bold text-blue-600">$1B+</div>
+                  <div className="text-xs text-gray-500 mt-1">Combined client revenue across all partnerships</div>
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-blue-600">500+</div>
                   <div className="text-xs text-gray-500 mt-1">Professionals placed and retained</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-xl font-bold text-blue-600">25+</div>
+                  <div className="text-2xl font-bold text-teal-500">97.6</div>
+                  <div className="text-xs text-gray-500 mt-1">GPTW Trust Index — among the highest scores globally</div>
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-blue-600">98/100</div>
+                  <div className="text-xs text-gray-500 mt-1">eNPS — Employee Net Promoter Score at LTV Co.</div>
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-blue-600">25+</div>
                   <div className="text-xs text-gray-500 mt-1">Years recruiting in the Costa Rica tech market</div>
                 </div>
               </div>
