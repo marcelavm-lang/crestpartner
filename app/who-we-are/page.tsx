@@ -84,30 +84,42 @@ export default function WhoWeArePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="max-w-7xl mx-auto px-6 pt-20 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <section className="px-12 py-20 border-b border-gray-200">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="eyebrow mb-5">Who we are</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-5">
-              24 years building Costa Rica's tech ecosystem — from the inside.
+            <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Who we are</p>
+            <h1 className="text-5xl font-bold leading-tight mb-5">
+              25 years building Costa Rica's tech ecosystem — from the inside.
             </h1>
-            <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed">
-              We didn't arrive to take advantage of Costa Rica's talent. We started here in 2001 —
-              before nearshore had a name — and we've been building it from the inside ever since.
+            <p className="text-base font-light text-gray-500 leading-relaxed">
+              We didn't arrive to take advantage of Costa Rica's talent. We started here in 2001 — before nearshore had a name — and we've been building it from the inside ever since. Our founders have lived the model as operators, not just advisors.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 self-center">
-            {[
-              { val: '2001', label: 'Year we started in Costa Rica' },
-              { val: '400+', label: 'High-value jobs created' },
-              { val: '<1%', label: 'Average turnover' },
-              { val: '98/100', label: 'eNPS score at LTV Co.' },
-            ].map((s) => (
-              <div key={s.val} className="border border-[#D8E2EA] rounded-[10px] p-5">
-                <p className="text-[26px] font-bold text-[#2574A7] leading-none mb-1.5">{s.val}</p>
-                <p className="text-[12px] text-[#5A6A7A] font-light leading-snug">{s.label}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-3xl font-bold text-blue-600">2001</div>
+              <div className="text-xs text-gray-500 mt-1">Year of our first partnership — before nearshore had a name</div>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-3xl font-bold text-blue-600">500+</div>
+              <div className="text-xs text-gray-500 mt-1">High-value tech jobs created in Costa Rica</div>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-3xl font-bold text-teal-500">&lt;1%</div>
+              <div className="text-xs text-gray-500 mt-1">Involuntary turnover across all partnerships</div>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-3xl font-bold text-blue-600">$1B+</div>
+              <div className="text-xs text-gray-500 mt-1">Combined client revenue</div>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-2xl font-bold text-teal-500">97.6</div>
+              <div className="text-xs text-gray-500 mt-1">Great Place to Work Trust Index — among the highest scores globally</div>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="text-2xl font-bold text-blue-600">98/100</div>
+              <div className="text-xs text-gray-500 mt-1">eNPS — Employee Net Promoter Score</div>
+            </div>
           </div>
         </div>
       </section>
