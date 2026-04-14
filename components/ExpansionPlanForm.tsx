@@ -1,7 +1,55 @@
 'use client'
 
 import { useState } from 'react'
-import ReactMarkdown from 'react-markdown'
+
+function MarkdownRenderer({ text }: { text: string }) {
+  const lines = text.split('\n')
+  const elements: React.ReactNode[] = []
+  let listBuffer: string[] = []
+
+  const flushList = () => {
+    if (listBuffer.length > 0) {
+      elements.push(
+        <ul key={`ul-${elements.length}`} className="list-disc pl-5 space-y-1 mb-3">
+          {listBuffer.map((item, i) => (
+            <li key={i} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">
+              {renderInline(item)}
+            </li>
+          ))}
+        </ul>
+      )
+      listBuffer = []
+    }
+  }
+
+  const renderInline = (str: string) => {
+    const parts = str.split(/(\*\*[^*]+\*\*)/)
+    return parts.map((part, i) =>
+      part.startsWith('**') && part.endsWith('**')
+        ? <strong key={i} className="font-bold text-black">{part.slice(2, -2)}</strong>
+        : part
+    )
+  }
+
+  lines.forEach((line, i) => {
+    if (line.startsWith('## ')) {
+      flushList()
+      elements.push(<h2 key={i} className="text-[15px] font-bold text-black mt-5 mb-2">{line.slice(3)}</h2>)
+    } else if (line.startsWith('### ')) {
+      flushList()
+      elements.push(<h3 key={i} className="text-[13px] font-bold text-black mt-4 mb-1.5">{line.slice(4)}</h3>)
+    } else if (line.match(/^[-*] /)) {
+      listBuffer.push(line.slice(2))
+    } else if (line.trim() === '') {
+      flushList()
+    } else {
+      flushList()
+      elements.push(<p key={i} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed mb-2">{renderInline(line)}</p>)
+    }
+  })
+  flushList()
+  return <>{elements}</>
+}
 
 const INDUSTRIES = ['Tech', 'Data & Analytics', 'AI', 'Cloud', 'SaaS', 'Other']
 const PROFILES = [
@@ -136,13 +184,8 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           )}
         </div>
         <div className="flex-1 overflow-y-auto">
-          <div className="prose prose-sm max-w-none text-[#1a1a1a]
-            prose-headings:font-bold prose-headings:text-black prose-headings:mt-5 prose-headings:mb-2
-            prose-h2:text-base prose-h3:text-sm
-            prose-p:text-[13px] prose-p:text-[#5A6A7A] prose-p:leading-relaxed prose-p:font-light
-            prose-li:text-[13px] prose-li:text-[#5A6A7A] prose-li:font-light
-            prose-strong:text-black prose-strong:font-bold">
-            <ReactMarkdown>{plan}</ReactMarkdown>
+          <div className="text-[#1a1a1a]">
+            <MarkdownRenderer text={plan} />
           </div>
         </div>
         <div className="pt-5 mt-5 border-t border-[#D8E2EA] flex gap-3">
