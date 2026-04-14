@@ -83,21 +83,21 @@ export default function ServicesPage() {
           </div>
           {/* Columna derecha — 3 service cards */}
           <div className="flex flex-col gap-3">
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+            <Link href="#launch" className="bg-gray-50 border border-gray-200 rounded-lg p-5 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
               <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">01 — Launch</div>
               <div className="text-base font-bold text-gray-900 mb-1">Launch your Costa Rica operation</div>
               <div className="text-sm font-light text-gray-500">Legal entity, back office and compliance — fully operational in 30 days.</div>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+            </Link>
+            <Link href="#build" className="bg-gray-50 border border-gray-200 rounded-lg p-5 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
               <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">02 — Build</div>
               <div className="text-base font-bold text-gray-900 mb-1">Build and lead your nearshore tech team</div>
               <div className="text-sm font-light text-gray-500">Recruiting, assessments, onboarding, payroll and retention — less than 1% turnover.</div>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+            </Link>
+            <Link href="#operate" className="bg-gray-50 border border-gray-200 rounded-lg p-5 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
               <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">03 — Operate</div>
               <div className="text-base font-bold text-gray-900 mb-1">Run your back office — completely</div>
               <div className="text-sm font-light text-gray-500">Accounting, legal, HR and office management — ongoing, every day.</div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -127,7 +127,7 @@ export default function ServicesPage() {
             <div className="space-y-3">
               {[
                 { day: 'Day 1', label: 'Kickoff & legal entity' },
-                { day: 'Day 5', label: 'Employer of record live' },
+                { day: 'Day 5', label: 'Legal entity active · compliance infrastructure live' },
                 { day: 'Day 10', label: 'Back office operational' },
                 { day: 'Day 30', label: 'Fully operational', highlight: true },
               ].map((item) => (
@@ -170,18 +170,18 @@ export default function ServicesPage() {
                 ))}
               </div>
               <div className="grid grid-cols-1 gap-3">
-                <Link href="#launch" className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-xl font-bold text-teal-500">97.6</div>
                   <div className="text-xs text-gray-500 mt-1">GPTW Trust Index — among the highest scores globally</div>
-                </Link>
-                <Link href="#build" className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-[#2574A7] hover:bg-[#F0F7FF] transition-colors block">
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-xl font-bold text-blue-600">500+</div>
                   <div className="text-xs text-gray-500 mt-1">Professionals placed and retained</div>
-                </Link>
-                <Link href="#operate" className="bg-gray-50 border border-gray-200 rounded-lg p-4 hover:border-[#2574A7] hover:bg-[#F0F7FF] transition-colors block">
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-xl font-bold text-blue-600">25+</div>
                   <div className="text-xs text-gray-500 mt-1">Years recruiting in the Costa Rica tech market</div>
-                </Link>
+                </div>
               </div>
             </div>
 
