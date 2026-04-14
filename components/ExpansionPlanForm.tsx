@@ -1,54 +1,61 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-function MarkdownRenderer({ text }: { text: string }) {
+function renderInline(str: string): React.ReactNode {
+  const parts = str.split(/(\*\*[^*]+\*\*)/)
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.startsWith('**') && part.endsWith('**') ? (
+          <strong key={i} className="font-bold text-black">{part.slice(2, -2)}</strong>
+        ) : (
+          <React.Fragment key={i}>{part}</React.Fragment>
+        )
+      )}
+    </>
+  )
+}
+
+function MarkdownRenderer({ text }: { text: string }): React.ReactElement {
   const lines = text.split('\n')
-  const elements: React.ReactNode[] = []
-  let listBuffer: string[] = []
+  const result: React.ReactElement[] = []
+  const listItems: string[] = []
 
-  const flushList = () => {
-    if (listBuffer.length > 0) {
-      elements.push(
-        <ul key={`ul-${elements.length}`} className="list-disc pl-5 space-y-1 mb-3">
-          {listBuffer.map((item, i) => (
-            <li key={i} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">
+  const flushList = (key: string) => {
+    if (listItems.length > 0) {
+      result.push(
+        <ul key={key} className="list-disc pl-5 space-y-1 mb-3">
+          {listItems.map((item, j) => (
+            <li key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">
               {renderInline(item)}
             </li>
           ))}
         </ul>
       )
-      listBuffer = []
+      listItems.length = 0
     }
-  }
-
-  const renderInline = (str: string) => {
-    const parts = str.split(/(\*\*[^*]+\*\*)/)
-    return parts.map((part, i) =>
-      part.startsWith('**') && part.endsWith('**')
-        ? <strong key={i} className="font-bold text-black">{part.slice(2, -2)}</strong>
-        : part
-    )
   }
 
   lines.forEach((line, i) => {
     if (line.startsWith('## ')) {
-      flushList()
-      elements.push(<h2 key={i} className="text-[15px] font-bold text-black mt-5 mb-2">{line.slice(3)}</h2>)
+      flushList(`ul-${i}`)
+      result.push(<h2 key={i} className="text-[15px] font-bold text-black mt-5 mb-2">{line.slice(3)}</h2>)
     } else if (line.startsWith('### ')) {
-      flushList()
-      elements.push(<h3 key={i} className="text-[13px] font-bold text-black mt-4 mb-1.5">{line.slice(4)}</h3>)
-    } else if (line.match(/^[-*] /)) {
-      listBuffer.push(line.slice(2))
+      flushList(`ul-${i}`)
+      result.push(<h3 key={i} className="text-[13px] font-bold text-black mt-4 mb-1.5">{line.slice(4)}</h3>)
+    } else if (/^[-*] /.test(line)) {
+      listItems.push(line.slice(2))
     } else if (line.trim() === '') {
-      flushList()
+      flushList(`ul-${i}`)
     } else {
-      flushList()
-      elements.push(<p key={i} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed mb-2">{renderInline(line)}</p>)
+      flushList(`ul-${i}`)
+      result.push(<p key={i} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed mb-2">{renderInline(line)}</p>)
     }
   })
-  flushList()
-  return <>{elements}</>
+  flushList('ul-end')
+
+  return <>{result}</>
 }
 
 const INDUSTRIES = ['Tech', 'Data & Analytics', 'AI', 'Cloud', 'SaaS', 'Other']
