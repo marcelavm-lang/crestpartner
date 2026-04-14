@@ -27,7 +27,7 @@ export default function Footer() {
                 alt="Crest Partners"
                 width={160}
                 height={83}
-                className="h-10 w-auto"
+                className="h-14 w-auto"
               />
             </Link>
             <p className="text-[13px] text-[#5A6A7A] leading-relaxed font-light">

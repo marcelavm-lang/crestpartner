@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-[#D8E2EA]">
-      <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
@@ -26,7 +26,7 @@ export default function Navbar() {
             alt="Crest Partner"
             width={200}
             height={103}
-            className="h-12 w-auto"
+            className="h-16 w-auto"
             priority
           />
         </Link>
