@@ -278,7 +278,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-xl font-bold text-[#00A79D]">GPTW</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">Certified · 98/100 eNPS</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">97.6/100 Trust Index · Great Place to Work — one of the highest scores globally</div>
               </div>
             </div>
           </div>
