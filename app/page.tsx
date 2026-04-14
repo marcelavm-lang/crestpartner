@@ -116,7 +116,7 @@ export default function HomePage() {
               <div className="text-xs text-[#5A6A7A] mt-1">eNPS score</div>
             </div>
             <div className="bg-[#F7FAFB] border border-[#B3E5E2] rounded-[10px] p-5">
-              <div className="text-sm font-bold text-[#00A79D]">GPTW</div>
+              <div className="text-sm font-bold text-[#00A79D]">97.6/100</div>
               <div className="text-xs text-[#5A6A7A] mt-1">97.6/100 Trust Index · Great Place to Work — one of the highest scores globally</div>
             </div>
           </div>
@@ -277,7 +277,7 @@ export default function HomePage() {
                 <div className="text-xs text-[#5A6A7A] mt-1">Jobs created</div>
               </div>
               <div>
-                <div className="text-xl font-bold text-[#00A79D]">GPTW</div>
+                <div className="text-xl font-bold text-[#00A79D]">97.6/100</div>
                 <div className="text-xs text-[#5A6A7A] mt-1">97.6/100 Trust Index · Great Place to Work — one of the highest scores globally</div>
               </div>
             </div>
