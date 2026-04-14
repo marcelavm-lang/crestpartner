@@ -156,8 +156,9 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             {/* Visual panel */}
             <div className="bg-white rounded-[12px] p-8 border border-[#D8E2EA] order-2 md:order-1">
-              <div className="flex flex-col gap-3">
-                <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-2">Results</p>
+              <div>
+                <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Results</p>
+                <div className="grid grid-cols-2 gap-3">
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-2xl font-bold text-teal-500">&lt;1%</div>
                   <div className="text-xs text-gray-500 mt-1">Involuntary turnover — industry avg. 13%</div>
@@ -182,6 +183,7 @@ export default function ServicesPage() {
                   <div className="text-2xl font-bold text-blue-600">25+</div>
                   <div className="text-xs text-gray-500 mt-1">Years recruiting in the Costa Rica tech market</div>
                 </div>
+              </div>
               </div>
             </div>
 
