@@ -11,6 +11,7 @@ const navLinks = [
   { label: 'Who we are', href: '/who-we-are' },
   { label: 'Social impact', href: '/impact' },
   { label: 'Careers', href: '/careers' },
+  { label: 'Build your plan', href: '/expansion-plan', highlight: true },
 ]
 
 export default function Navbar() {
@@ -34,13 +35,23 @@ export default function Navbar() {
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[13.5px] font-400 text-black hover:text-[#2574A7] transition-colors"
-            >
-              {link.label}
-            </Link>
+            link.highlight ? (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[13px] font-bold text-[#2574A7] border border-[#2574A7] px-4 py-1.5 rounded-[8px] hover:bg-[#2574A7] hover:text-white transition-colors"
+              >
+                {link.label} →
+              </Link>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[13.5px] font-400 text-black hover:text-[#2574A7] transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </div>
 
