@@ -12,7 +12,7 @@ export default function ExpansionPlanPage() {
 
         {/* Page header */}
         <div className="max-w-2xl mb-12">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#00A79D] mb-3">Free tool</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#00A79D] mb-3">AI-Powered · Free</p>
           <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-5">
             Build your Costa Rica expansion plan
           </h1>

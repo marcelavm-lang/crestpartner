@@ -2,56 +2,8 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-
-// ── Markdown renderer ──────────────────────────────────────────────────────
-function MarkdownRenderer({ text }: { text: string }) {
-  const sections = text.split('\n\n').filter(Boolean)
-  return (
-    <div className="space-y-3">
-      {sections.map((section, i) => {
-        const lines = section.split('\n')
-        const first = lines[0]
-        if (first.startsWith('## ')) {
-          return (
-            <div key={i}>
-              <h2 className="text-[15px] font-bold text-black mt-5 mb-1.5">{first.slice(3)}</h2>
-              {lines.slice(1).map((l, j) => l.trim() ? (
-                <p key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">{l}</p>
-              ) : null)}
-            </div>
-          )
-        }
-        if (first.startsWith('### ')) {
-          return (
-            <div key={i}>
-              <h3 className="text-[13px] font-bold text-black mt-3 mb-1">{first.slice(4)}</h3>
-              {lines.slice(1).map((l, j) => l.trim() ? (
-                <p key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">{l}</p>
-              ) : null)}
-            </div>
-          )
-        }
-        if (lines.every(l => /^[-*] /.test(l.trim()) || l.trim() === '')) {
-          return (
-            <ul key={i} className="list-disc pl-5 space-y-1">
-              {lines.filter(l => /^[-*] /.test(l.trim())).map((l, j) => (
-                <li key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">
-                  {l.replace(/^[-*] /, '').replace(/\*\*([^*]+)\*\*/g, '$1')}
-                </li>
-              ))}
-            </ul>
-          )
-        }
-        const cleaned = section.replace(/\*\*([^*]+)\*\*/g, '$1')
-        return (
-          <p key={i} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">
-            {cleaned}
-          </p>
-        )
-      })}
-    </div>
-  )
-}
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 // ── Constants ──────────────────────────────────────────────────────────────
 const INDUSTRIES = ['Tech', 'Data & Analytics', 'AI & Machine Learning', 'Cloud & DevOps', 'SaaS', 'E-commerce', 'Other']
@@ -225,7 +177,40 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         )}
 
         <div className="flex-1 overflow-y-auto border-t border-[#F4F7FA] pt-4">
-          <MarkdownRenderer text={plan} />
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              table: ({ ...props }) => (
+                <table className="w-full border-collapse border border-gray-200 my-4 text-sm" {...props} />
+              ),
+              th: ({ ...props }) => (
+                <th className="border border-gray-200 bg-gray-50 px-4 py-2 text-left font-bold text-gray-700" {...props} />
+              ),
+              td: ({ ...props }) => (
+                <td className="border border-gray-200 px-4 py-2 text-gray-600" {...props} />
+              ),
+              h2: ({ ...props }) => (
+                <h2 className="text-[15px] font-bold text-gray-900 mt-6 mb-2" {...props} />
+              ),
+              h3: ({ ...props }) => (
+                <h3 className="text-[13px] font-bold text-gray-900 mt-4 mb-1" {...props} />
+              ),
+              p: ({ ...props }) => (
+                <p className="text-[13px] text-[#5A6A7A] leading-relaxed mb-3 font-light" {...props} />
+              ),
+              li: ({ ...props }) => (
+                <li className="text-[13px] text-[#5A6A7A] leading-relaxed mb-1 font-light" {...props} />
+              ),
+              ul: ({ ...props }) => (
+                <ul className="list-disc pl-5 mb-3 space-y-0.5" {...props} />
+              ),
+              strong: ({ ...props }) => (
+                <strong className="font-bold text-black" {...props} />
+              ),
+            }}
+          >
+            {plan}
+          </ReactMarkdown>
         </div>
 
         <div className="pt-5 mt-4 border-t border-[#D8E2EA] flex gap-3">

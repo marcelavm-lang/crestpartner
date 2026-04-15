@@ -24,7 +24,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center shrink-0">
           <Image
             src="/crest-logo.png"
-            alt="Crest Partner"
+            alt="Crest Partners"
             width={200}
             height={103}
             className="h-16 w-auto"
