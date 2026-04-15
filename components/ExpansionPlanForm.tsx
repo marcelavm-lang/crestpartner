@@ -2,8 +2,52 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const ReactMarkdown = require('react-markdown').default
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const remarkGfm = require('remark-gfm').default
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const mdComponents: Record<string, any> = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  table: ({ children }: any) => (
+    <table className="w-full border-collapse border border-gray-200 my-4 text-sm">{children}</table>
+  ),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  thead: ({ children }: any) => <thead className="bg-gray-50">{children}</thead>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tbody: ({ children }: any) => <tbody>{children}</tbody>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  tr: ({ children }: any) => <tr>{children}</tr>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  th: ({ children }: any) => (
+    <th className="border border-gray-200 bg-gray-50 px-4 py-2 text-left font-bold text-gray-700">{children}</th>
+  ),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  td: ({ children }: any) => (
+    <td className="border border-gray-200 px-4 py-2 text-gray-600">{children}</td>
+  ),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  h2: ({ children }: any) => (
+    <h2 className="text-[15px] font-bold text-gray-900 mt-6 mb-2">{children}</h2>
+  ),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  h3: ({ children }: any) => (
+    <h3 className="text-[13px] font-bold text-gray-900 mt-4 mb-1">{children}</h3>
+  ),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  p: ({ children }: any) => (
+    <p className="text-[13px] text-[#5A6A7A] leading-relaxed mb-3 font-light">{children}</p>
+  ),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  li: ({ children }: any) => (
+    <li className="text-[13px] text-[#5A6A7A] leading-relaxed mb-1 font-light">{children}</li>
+  ),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ul: ({ children }: any) => <ul className="list-disc pl-5 mb-3 space-y-0.5">{children}</ul>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  strong: ({ children }: any) => <strong className="font-bold text-black">{children}</strong>,
+}
 
 // ── Constants ──────────────────────────────────────────────────────────────
 const INDUSTRIES = ['Tech', 'Data & Analytics', 'AI & Machine Learning', 'Cloud & DevOps', 'SaaS', 'E-commerce', 'Other']
@@ -177,47 +221,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         )}
 
         <div className="flex-1 overflow-y-auto border-t border-[#F4F7FA] pt-4">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              table: ({ node, ...props }) => (
-                <table className="w-full border-collapse border border-gray-200 my-4 text-sm" {...props} />
-              ),
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              th: ({ node, isHeader, ...props }) => (
-                <th className="border border-gray-200 bg-gray-50 px-4 py-2 text-left font-bold text-gray-700" {...props} />
-              ),
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              td: ({ node, isHeader, ...props }) => (
-                <td className="border border-gray-200 px-4 py-2 text-gray-600" {...props} />
-              ),
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              h2: ({ node, ...props }) => (
-                <h2 className="text-[15px] font-bold text-gray-900 mt-6 mb-2" {...props} />
-              ),
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              h3: ({ node, ...props }) => (
-                <h3 className="text-[13px] font-bold text-gray-900 mt-4 mb-1" {...props} />
-              ),
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              p: ({ node, ...props }) => (
-                <p className="text-[13px] text-[#5A6A7A] leading-relaxed mb-3 font-light" {...props} />
-              ),
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              li: ({ node, ordered, ...props }) => (
-                <li className="text-[13px] text-[#5A6A7A] leading-relaxed mb-1 font-light" {...props} />
-              ),
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              ul: ({ node, ordered, ...props }) => (
-                <ul className="list-disc pl-5 mb-3 space-y-0.5" {...props} />
-              ),
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              strong: ({ node, ...props }) => (
-                <strong className="font-bold text-black" {...props} />
-              ),
-            }}
-          >
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
             {plan}
           </ReactMarkdown>
         </div>
