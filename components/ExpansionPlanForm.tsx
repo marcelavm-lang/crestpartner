@@ -78,7 +78,7 @@ const TIMELINES = [
   { value: 'Still exploring', label: 'Still exploring', sub: 'Just researching' },
 ]
 
-interface FormData {
+interface PlanFormData {
   companyName: string
   industry: string
   teamSize: string
@@ -91,7 +91,7 @@ interface FormData {
   contactEmail: string
 }
 
-const initial: FormData = {
+const initial: PlanFormData = {
   companyName: '',
   industry: '',
   teamSize: '',
@@ -126,7 +126,7 @@ function StepDot({ n, current }: { n: number; current: number }) {
 
 export default function ExpansionPlanForm({ onClose }: { onClose?: () => void }) {
   const [step, setStep] = useState(1)
-  const [form, setForm] = useState<FormData>(initial)
+  const [form, setForm] = useState<PlanFormData>(initial)
   const [loading, setLoading] = useState(false)
   const [plan, setPlan] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
