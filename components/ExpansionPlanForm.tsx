@@ -146,7 +146,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
   const [form, setForm] = useState<PlanFormData>(initial)
   const [loading, setLoading] = useState(false)
   const [plan, setPlan] = useState<string | null>(null)
-  const [costs, setCosts] = useState<{ setup: number; managementFee: number; headcount: number } | null>(null)
+  const [costs, setCosts] = useState<{ setup: number; managementFee: number; recruitingFee: number; totalSalaries: number; totalYear1: number; headcount: number } | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   const canNext = (): boolean => {
@@ -204,18 +204,26 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         </div>
 
         {costs && (
-          <div className="grid grid-cols-3 gap-2 mb-5">
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[8px] p-3 text-center">
-              <div className="text-[15px] font-bold text-[#2574A7]">${costs.setup.toLocaleString()}</div>
-              <div className="text-[10px] text-[#5A6A7A] mt-0.5">Setup</div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+              <div className="text-lg font-bold text-blue-600">${costs.setup.toLocaleString()}</div>
+              <div className="text-xs text-gray-500 mt-1">One-time setup</div>
             </div>
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[8px] p-3 text-center">
-              <div className="text-[15px] font-bold text-[#2574A7]">${(costs.managementFee / 1000).toFixed(0)}k/yr</div>
-              <div className="text-[10px] text-[#5A6A7A] mt-0.5">Management</div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+              <div className="text-lg font-bold text-blue-600">${costs.managementFee.toLocaleString()}/yr</div>
+              <div className="text-xs text-gray-500 mt-1">Management fee</div>
             </div>
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[8px] p-3 text-center">
-              <div className="text-[15px] font-bold text-[#00A79D]">{costs.headcount}</div>
-              <div className="text-[10px] text-[#5A6A7A] mt-0.5">Headcount</div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+              <div className="text-lg font-bold text-teal-500">${costs.recruitingFee.toLocaleString()}</div>
+              <div className="text-xs text-gray-500 mt-1">Recruiting fees</div>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
+              <div className="text-lg font-bold text-blue-600">${costs.totalSalaries.toLocaleString()}</div>
+              <div className="text-xs text-gray-500 mt-1">Est. total salaries</div>
+            </div>
+            <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 text-center col-span-2 md:col-span-1">
+              <div className="text-lg font-bold text-teal-600">${costs.totalYear1.toLocaleString()}</div>
+              <div className="text-xs text-teal-600 mt-1 font-bold">Total Year 1</div>
             </div>
           </div>
         )}

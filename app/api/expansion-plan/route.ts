@@ -12,6 +12,11 @@ export async function POST(req: NextRequest) {
   else if (headcount > 10) managementFee = 30000
   else if (headcount > 5) managementFee = 24000
 
+  const avgSalary = 55000
+  const totalSalaries = headcount * avgSalary
+  const recruitingFee = Math.round((avgSalary / 12) * headcount)
+  const totalYear1 = setupCost + managementFee + recruitingFee + totalSalaries
+
   const userMessage = `
     Company: ${body.company}
     Industry: ${body.industry}
@@ -95,6 +100,6 @@ Keep the tone confident, specific and consultative. Reference Crest Partners' tr
 
   return NextResponse.json({
     plan: text,
-    costs: { setup: setupCost, managementFee, headcount },
+    costs: { setup: setupCost, managementFee, recruitingFee, totalSalaries, totalYear1, headcount },
   })
 }
