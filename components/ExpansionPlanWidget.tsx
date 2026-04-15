@@ -23,12 +23,16 @@ export default function ExpansionPlanWidget() {
       {/* Modal backdrop */}
       {open && (
         <div
-          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-end md:items-center justify-center md:p-4"
           onClick={(e) => { if (e.target === e.currentTarget) setOpen(false) }}
         >
-          {/* Modal panel */}
-          <div className="bg-white rounded-[16px] shadow-2xl w-full max-w-lg max-h-[90vh] flex flex-col overflow-hidden">
-            <div className="flex-1 overflow-y-auto p-8">
+          {/* Modal panel — fullscreen on mobile, card on desktop */}
+          <div className="bg-white w-full md:rounded-[16px] md:max-w-lg md:max-h-[90vh] h-[95dvh] md:h-auto flex flex-col overflow-hidden shadow-2xl md:rounded-t-[16px] rounded-t-[20px]">
+            {/* Mobile drag handle */}
+            <div className="md:hidden flex justify-center pt-3 pb-1 shrink-0">
+              <div className="w-10 h-1 bg-[#D8E2EA] rounded-full" />
+            </div>
+            <div className="flex-1 overflow-y-auto p-6 md:p-8">
               <ExpansionPlanForm onClose={() => setOpen(false)} />
             </div>
           </div>
