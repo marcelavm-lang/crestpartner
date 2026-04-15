@@ -15,9 +15,9 @@ function MarkdownRenderer({ text }: { text: string }) {
           return (
             <div key={i}>
               <h2 className="text-[15px] font-bold text-black mt-4 mb-1">{first.slice(3)}</h2>
-              {lines.slice(1).map((l, j) => l.trim() && (
+              {lines.slice(1).map((l, j) => l.trim() ? (
                 <p key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">{l}</p>
-              ))}
+              ) : null)}
             </div>
           )
         }
@@ -26,9 +26,9 @@ function MarkdownRenderer({ text }: { text: string }) {
           return (
             <div key={i}>
               <h3 className="text-[13px] font-bold text-black mt-3 mb-1">{first.slice(4)}</h3>
-              {lines.slice(1).map((l, j) => l.trim() && (
+              {lines.slice(1).map((l, j) => l.trim() ? (
                 <p key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">{l}</p>
-              ))}
+              ) : null)}
             </div>
           )
         }
