@@ -2,60 +2,57 @@
 
 import React, { useState } from 'react'
 
-function renderInline(str: string): React.ReactNode {
-  const parts = str.split(/(\*\*[^*]+\*\*)/)
+function MarkdownRenderer({ text }: { text: string }) {
+  const sections = text.split('\n\n').filter(Boolean)
+
   return (
-    <>
-      {parts.map((part, i) =>
-        part.startsWith('**') && part.endsWith('**') ? (
-          <strong key={i} className="font-bold text-black">{part.slice(2, -2)}</strong>
-        ) : (
-          <React.Fragment key={i}>{part}</React.Fragment>
+    <div className="space-y-3">
+      {sections.map((section, i) => {
+        const lines = section.split('\n')
+        const first = lines[0]
+
+        if (first.startsWith('## ')) {
+          return (
+            <div key={i}>
+              <h2 className="text-[15px] font-bold text-black mt-4 mb-1">{first.slice(3)}</h2>
+              {lines.slice(1).map((l, j) => l.trim() && (
+                <p key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">{l}</p>
+              ))}
+            </div>
+          )
+        }
+
+        if (first.startsWith('### ')) {
+          return (
+            <div key={i}>
+              <h3 className="text-[13px] font-bold text-black mt-3 mb-1">{first.slice(4)}</h3>
+              {lines.slice(1).map((l, j) => l.trim() && (
+                <p key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">{l}</p>
+              ))}
+            </div>
+          )
+        }
+
+        if (lines.every(l => /^[-*] /.test(l.trim()) || l.trim() === '')) {
+          return (
+            <ul key={i} className="list-disc pl-5 space-y-1">
+              {lines.filter(l => /^[-*] /.test(l.trim())).map((l, j) => (
+                <li key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">
+                  {l.replace(/^[-*] /, '')}
+                </li>
+              ))}
+            </ul>
+          )
+        }
+
+        return (
+          <p key={i} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">
+            {section}
+          </p>
         )
-      )}
-    </>
+      })}
+    </div>
   )
-}
-
-function MarkdownRenderer({ text }: { text: string }): React.ReactElement {
-  const lines = text.split('\n')
-  const result: React.ReactElement[] = []
-  const listItems: string[] = []
-
-  const flushList = (key: string) => {
-    if (listItems.length > 0) {
-      result.push(
-        <ul key={key} className="list-disc pl-5 space-y-1 mb-3">
-          {listItems.map((item, j) => (
-            <li key={j} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">
-              {renderInline(item)}
-            </li>
-          ))}
-        </ul>
-      )
-      listItems.length = 0
-    }
-  }
-
-  lines.forEach((line, i) => {
-    if (line.startsWith('## ')) {
-      flushList(`ul-${i}`)
-      result.push(<h2 key={i} className="text-[15px] font-bold text-black mt-5 mb-2">{line.slice(3)}</h2>)
-    } else if (line.startsWith('### ')) {
-      flushList(`ul-${i}`)
-      result.push(<h3 key={i} className="text-[13px] font-bold text-black mt-4 mb-1.5">{line.slice(4)}</h3>)
-    } else if (/^[-*] /.test(line)) {
-      listItems.push(line.slice(2))
-    } else if (line.trim() === '') {
-      flushList(`ul-${i}`)
-    } else {
-      flushList(`ul-${i}`)
-      result.push(<p key={i} className="text-[13px] text-[#5A6A7A] font-light leading-relaxed mb-2">{renderInline(line)}</p>)
-    }
-  })
-  flushList('ul-end')
-
-  return <>{result}</>
 }
 
 const INDUSTRIES = ['Tech', 'Data & Analytics', 'AI', 'Cloud', 'SaaS', 'Other']
