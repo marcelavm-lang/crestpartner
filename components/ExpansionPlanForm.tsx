@@ -180,31 +180,40 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
-              table: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              table: ({ node, ...props }) => (
                 <table className="w-full border-collapse border border-gray-200 my-4 text-sm" {...props} />
               ),
-              th: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              th: ({ node, isHeader, ...props }) => (
                 <th className="border border-gray-200 bg-gray-50 px-4 py-2 text-left font-bold text-gray-700" {...props} />
               ),
-              td: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              td: ({ node, isHeader, ...props }) => (
                 <td className="border border-gray-200 px-4 py-2 text-gray-600" {...props} />
               ),
-              h2: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              h2: ({ node, ...props }) => (
                 <h2 className="text-[15px] font-bold text-gray-900 mt-6 mb-2" {...props} />
               ),
-              h3: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              h3: ({ node, ...props }) => (
                 <h3 className="text-[13px] font-bold text-gray-900 mt-4 mb-1" {...props} />
               ),
-              p: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              p: ({ node, ...props }) => (
                 <p className="text-[13px] text-[#5A6A7A] leading-relaxed mb-3 font-light" {...props} />
               ),
-              li: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              li: ({ node, ordered, ...props }) => (
                 <li className="text-[13px] text-[#5A6A7A] leading-relaxed mb-1 font-light" {...props} />
               ),
-              ul: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              ul: ({ node, ordered, ...props }) => (
                 <ul className="list-disc pl-5 mb-3 space-y-0.5" {...props} />
               ),
-              strong: ({ ...props }) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              strong: ({ node, ...props }) => (
                 <strong className="font-bold text-black" {...props} />
               ),
             }}
