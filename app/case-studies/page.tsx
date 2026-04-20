@@ -116,29 +116,29 @@ export default function CaseStudiesPage() {
     <>
       {/* ── Hero ── */}
       <section className="max-w-7xl mx-auto px-6 pt-20 pb-16">
-        <p className="eyebrow mb-5">Case studies</p>
-        <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] max-w-3xl mb-6">
-          Every company started at zero. None of them stayed there.
-        </h1>
-        <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed max-w-3xl">
-          From a $250M data exit to the Google Cloud Partner of the Year. From 8 people to 200+.
-          From $1M to $400M in revenue. Different companies, different industries, different sizes —
-          and in every case: less than 1% turnover, a Great Place to Work certification with a score
-          so high auditors asked to recheck it, and teams that became core to how those companies grew.
-          These are not coincidences. This is the model.
-        </p>
-      </section>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left column */}
+          <div>
+            <p className="eyebrow mb-5">Case studies</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-6">
+              Every company started at zero. None of them stayed there.
+            </h1>
+            <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed">
+              From a $250M data exit to the Google Cloud Partner of the Year. From 8 people to 200+.
+              From $1M to $400M in revenue. Different companies, different industries, different sizes —
+              and in every case: less than 1% turnover, a Great Place to Work certification, and teams
+              that became core to how those companies grew. These are not coincidences. This is the model.
+            </p>
+          </div>
 
-      {/* ── Impact Band ── */}
-      <section className="border-y border-[#D8E2EA]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-5">
+          {/* Right column — stat cards */}
+          <div className="grid grid-cols-2 gap-4">
             {impactBand.map((item, i) => (
               <div
                 key={i}
-                className={`py-8 px-5 ${i < impactBand.length - 1 ? 'border-r border-[#D8E2EA]' : ''}`}
+                className={`bg-white border border-[#D8E2EA] rounded-[12px] p-6 ${i === impactBand.length - 1 ? 'col-span-2 md:col-span-1' : ''}`}
               >
-                <p className={`text-[26px] font-bold leading-none mb-1.5 ${item.highlight ? 'text-[#00A79D]' : 'text-[#2574A7]'}`}>
+                <p className={`text-[32px] font-bold leading-none mb-2 ${item.highlight ? 'text-[#00A79D]' : 'text-[#2574A7]'}`}>
                   {item.value}
                 </p>
                 <p className="text-[12px] text-[#5A6A7A] font-light leading-snug">{item.label}</p>
@@ -253,7 +253,7 @@ export default function CaseStudiesPage() {
             {testimonials.map((t, i) => (
               <div key={i} className="border border-white/10 rounded-[10px] p-8">
                 <p className="text-[18px] text-white font-light italic leading-relaxed mb-6">
-                  "{t.quote}"
+                  {t.quote}"
                 </p>
                 <p className="text-[13px] font-bold text-[#00A79D]">{t.author}</p>
                 <p className="text-[12px] text-white/50 font-light">{t.sub}</p>
@@ -272,7 +272,7 @@ export default function CaseStudiesPage() {
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/contact"
-              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors"
+              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bw-gray-50 transition-colors"
             >
               Talk to our team
             </Link>
