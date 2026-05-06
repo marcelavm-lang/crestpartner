@@ -16,10 +16,10 @@ const spartan = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Crest Partners — Nearshore Tech Operations in Costa Rica',
+  title: 'Crest Partners — Build Your Tech Operation in Costa Rica',
   description:
-    'We help U.S. tech and data companies recruit, build and run high-performing engineering teams in Costa Rica — same time zone, a fraction of the cost, zero operational friction.',
-  keywords: 'nearshore, Costa Rica, tech team, engineering, outsourcing, staff augmentation',
+    'We help tech companies establish their own dedicated entity in Costa Rica — your team, your brand, fully administered by us. Not outsourcing. Ownership.',
+  keywords: 'Costa Rica operations, dedicated entity, tech expansion, Latin America hub, nearshore operations, dedicated team',
   icons: {
     icon: [
       { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
