@@ -202,6 +202,34 @@ export default function WhyCostaRicaPage() {
         </div>
       </section>
 
+      {/* ── Regional Hub ── */}
+      <section className="px-12 py-16 border-b border-gray-200 bg-black">
+        <div className="max-w-3xl">
+          <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Costa Rica as a regional hub</p>
+          <h2 className="text-3xl font-bold text-white leading-tight mb-5">
+            Not just where your team lives.<br/>
+            The operational hub for your entire Latin American presence.
+          </h2>
+          <p className="text-base font-light text-white/70 leading-relaxed mb-8">
+            Costa Rica's political stability, English proficiency, legal infrastructure and central location make it the natural choice for companies that want more than a satellite office — they want a regional anchor. Several of our clients use their Costa Rica operation as the command center for teams and operations across Latin America.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="border border-white/10 rounded-lg p-5">
+              <div className="text-sm font-bold text-white mb-2">Central time zone</div>
+              <div className="text-sm font-light text-white/60 leading-relaxed">Aligned with the U.S. and overlapping with all of Latin America — the ideal coordination point for regional operations.</div>
+            </div>
+            <div className="border border-white/10 rounded-lg p-5">
+              <div className="text-sm font-bold text-white mb-2">Political & legal stability</div>
+              <div className="text-sm font-light text-white/60 leading-relaxed">75+ years of democracy and a clear legal framework for foreign entities — the most reliable foundation in the region.</div>
+            </div>
+            <div className="border border-white/10 rounded-lg p-5">
+              <div className="text-sm font-bold text-white mb-2">Regional connectivity</div>
+              <div className="text-sm font-light text-white/60 leading-relaxed">Direct flights to major Latin American cities, strong banking infrastructure and a growing network of multinational operations.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Talent Section ── */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -211,8 +239,8 @@ export default function WhyCostaRicaPage() {
             </h2>
             <div className="grid grid-cols-2 gap-4 mt-6">
               {[
-                { val: '24 yrs', label: 'recruiting in CR' },
-                { val: '400+', label: 'professionals placed' },
+                { val: '25 yrs', label: 'recruiting in CR' },
+                { val: '500+', label: 'professionals placed' },
                 { val: '<1%', label: 'turnover' },
                 { val: '11 yrs', label: 'longest partnership' },
               ].map((s) => (
