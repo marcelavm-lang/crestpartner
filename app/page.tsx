@@ -6,7 +6,7 @@ const services = [
     num: '01',
     title: 'Launch',
     headline: 'Launch your Costa Rica operation',
-    text: 'Legal entity administration — your people work directly for you, under your brand, with full Costa Rican labor law compliance. Back office setup fully operational before your first hire.',
+    text: 'We set up your own legal entity in Costa Rica — your company, your brand, your operation. Your team works directly for you, not through us. We handle all the legal, compliance and back office infrastructure behind it.',
     tag: 'Operational in 30 days.',
   },
   {
@@ -73,9 +73,9 @@ export default function HomePage() {
               Costa Rica's most proven tech operation partner.
             </h1>
             <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
-              We help U.S. tech and data companies recruit, build and run high-performing engineering teams
-              in Costa Rica — same time zone, a fraction of the cost, zero operational friction.
-              One partner. Complete accountability.
+              Your company. Your team. Your Costa Rica operation — built, staffed and administered by us.
+              We help tech companies establish their own dedicated entity in Costa Rica and build the
+              engineering team that runs inside it. Not outsourcing. Ownership.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -152,8 +152,9 @@ export default function HomePage() {
           One partner. Every layer of your operation.
         </h2>
         <p className="text-[16px] text-[#5A6A7A] font-light max-w-xl mb-12">
-          Legal, HR, payroll, compliance, recruiting, back office and culture — we don't connect you
-          with vendors. We are the vendor.
+          We set up your legal entity in Costa Rica, recruit your team directly under your brand, and
+          manage all the administrative infrastructure behind it — legal, HR, payroll and compliance.
+          Your people work for you. We make sure everything around them works perfectly.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((s) => (
@@ -221,7 +222,7 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-6 py-20">
         <p className="eyebrow mb-4">Why Crest Partners</p>
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-12 max-w-2xl">
-          We don't introduce you to Costa Rica. We build your operation inside it.
+          This is not outsourcing. This is your operation — built inside Costa Rica.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Other providers */}
@@ -252,6 +253,7 @@ export default function HomePage() {
                 'Design, build and run end to end',
                 'One partner, full accountability',
                 '25+ years inside the market',
+                'Costa Rica as your Latin American hub — not just a team, a regional anchor',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 w-4 h-4 rounded-full bg-[#00A79D] shrink-0 flex items-center justify-center">
