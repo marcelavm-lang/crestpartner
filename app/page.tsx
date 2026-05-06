@@ -70,12 +70,11 @@ export default function HomePage() {
           <div>
             <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
             <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
-              Costa Rica's most proven tech operation partner.
+              Your company. Your team. Your Costa Rica operation.
             </h1>
             <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
-              Your company. Your team. Your Costa Rica operation — built, staffed and administered by us.
-              We help tech companies establish their own dedicated entity in Costa Rica and build the
-              engineering team that runs inside it. Not outsourcing. Ownership.
+              Built, staffed and administered by us. We help tech companies establish their own dedicated
+              entity in Costa Rica and build the engineering team that runs inside it. Not outsourcing. Ownership.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
