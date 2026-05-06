@@ -31,8 +31,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-[13px] text-[#5A6A7A] leading-relaxed font-light">
-              Nearshore tech operations company based in Costa Rica. We design, build and run
-              engineering teams for U.S. tech and data companies.
+              We help tech companies establish and operate their own dedicated tech entity in Costa Rica — your team, your brand, fully administered by us.
             </p>
           </div>
 
