@@ -143,6 +143,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Header Video ── */}
+      <section className="w-full bg-black">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full object-cover max-h-[640px]"
+          src="/Header.mp4"
+        />
+      </section>
+
       {/* ── Services ── */}
       <section className="bg-[#F7FAFB] w-full py-20">
       <div className="max-w-7xl mx-auto px-6">
