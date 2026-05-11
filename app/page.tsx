@@ -62,97 +62,104 @@ const logoChips = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="max-w-7xl mx-auto px-6 pt-20 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* ── Hero (video background) ── */}
+      <section className="relative w-full overflow-hidden min-h-screen flex flex-col">
 
-          {/* Left column */}
-          <div>
-            <p className="eyebrow mb-5">Nearshore tech operations — Costa Rica</p>
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
-              Your next engineering hub. Built in Costa Rica. Owned by you.
-            </h1>
-            <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
-              Built, staffed and administered by us. We help tech companies establish their own dedicated
-              entity in Costa Rica and build the engineering team that runs inside it. Not outsourcing. Ownership.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
-              >
-                Talk to our team
-              </Link>
-              <Link
-                href="/case-studies"
-                className="border border-[#D8E2EA] text-black font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
-              >
-                See case studies →
-              </Link>
-            </div>
-          </div>
-
-          {/* Right column — 6 stats cards */}
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
-              <div className="text-[30px] font-bold text-[#2574A7]">25+</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">Years in Costa Rica</div>
-            </div>
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
-              <div className="text-[30px] font-bold text-[#2574A7]">500+</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">High-value jobs created</div>
-            </div>
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
-              <div className="text-[30px] font-bold text-[#2574A7]">$1B+</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">Client revenue</div>
-            </div>
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
-              <div className="text-[30px] font-bold text-[#00A79D]">&lt;1%</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">Avg. turnover — industry avg. 13%</div>
-            </div>
-            <div className="bg-[#F7FAFB] border border-[#D8E2EA] rounded-[10px] p-5">
-              <div className="text-[30px] font-bold text-[#00A79D]">98/100</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">eNPS score</div>
-            </div>
-            <div className="bg-[#F7FAFB] border border-[#B3E5E2] rounded-[10px] p-5">
-              <div className="text-[30px] font-bold text-[#00A79D]">97.6/100</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">97.6/100 Trust Index · Great Place to Work — one of the highest scores globally</div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Animated logo banner — full width below both columns */}
-        <div className="mt-12">
-          <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">
-            Trusted by leading tech and data companies
-          </p>
-          <div className="overflow-hidden w-full">
-            <div className="flex animate-scroll gap-3 w-max">
-              {logoChips.map((logo, i) => (
-                <Link
-                  key={i}
-                  href={logo.href}
-                  className="text-sm font-medium px-4 py-2 border border-[#D8E2EA] rounded-full text-[#5A6A7A] bg-white whitespace-nowrap hover:border-[#2574A7] hover:text-[#2574A7] transition-colors"
-                >
-                  {logo.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Header Video ── */}
-      <section className="w-full bg-black">
+        {/* Video background */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full object-cover max-h-[640px]"
+          className="absolute inset-0 w-full h-full object-cover"
           src="/Header.mp4"
         />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            {/* Left column */}
+            <div>
+              <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-5">
+                Nearshore tech operations — Costa Rica
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-white max-w-3xl mb-6">
+                Your next engineering hub. Built in Costa Rica. Owned by you.
+              </h1>
+              <p className="text-[17px] text-white/70 font-light leading-relaxed max-w-2xl mb-10">
+                Built, staffed and administered by us. We help tech companies establish their own dedicated
+                entity in Costa Rica and build the engineering team that runs inside it. Not outsourcing. Ownership.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
+                >
+                  Talk to our team
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="border border-white/40 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
+                >
+                  See case studies →
+                </Link>
+              </div>
+            </div>
+
+            {/* Right column — stats cards (glass) */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#4AABDC]">25+</div>
+                <div className="text-xs text-white/60 mt-1">Years in Costa Rica</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#4AABDC]">500+</div>
+                <div className="text-xs text-white/60 mt-1">High-value jobs created</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#4AABDC]">$1B+</div>
+                <div className="text-xs text-white/60 mt-1">Client revenue</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#00A79D]">&lt;1%</div>
+                <div className="text-xs text-white/60 mt-1">Avg. turnover — industry avg. 13%</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#00A79D]">98/100</div>
+                <div className="text-xs text-white/60 mt-1">eNPS score</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#00A79D]">97.6/100</div>
+                <div className="text-xs text-white/60 mt-1">Trust Index · Great Place to Work</div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Animated logo banner */}
+          <div className="mt-16">
+            <p className="text-[11px] font-bold tracking-widest uppercase text-white/40 mb-4">
+              Trusted by leading tech and data companies
+            </p>
+            <div className="overflow-hidden w-full">
+              <div className="flex animate-scroll gap-3 w-max">
+                {logoChips.map((logo, i) => (
+                  <Link
+                    key={i}
+                    href={logo.href}
+                    className="text-sm font-medium px-4 py-2 border border-white/20 rounded-full text-white/70 bg-white/5 whitespace-nowrap hover:border-white/50 hover:text-white transition-colors"
+                  >
+                    {logo.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ── Services ── */}
