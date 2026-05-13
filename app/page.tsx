@@ -88,7 +88,7 @@ export default function HomePage() {
                 Nearshore tech operations — Costa Rica
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-white max-w-3xl mb-6">
-                Your next engineering hub. Built in Costa Rica. Owned by you.
+                Build your engineering hub in Costa Rica — owned by you, operated with us.
               </h1>
               <p className="text-[17px] text-white/70 font-light leading-relaxed max-w-2xl mb-10">
                 Built, staffed and administered by us. We help tech companies establish their own dedicated
