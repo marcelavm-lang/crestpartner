@@ -160,7 +160,7 @@ export default function WhoWeArePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="px-12 py-20 border-b border-gray-200">
+      <section className="px-6 md:px-12 py-16 md:py-20 border-b border-gray-200">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Who we are</p>
@@ -171,7 +171,7 @@ export default function WhoWeArePage() {
               Before anyone called it nearshore, our founders started building here. 25 years later, the companies they helped grow have exited at $400M, won Google Cloud Partner of the Year, and built teams that never left. That's not a strategy. That's a track record.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
               { val: '2001', label: 'Year of our first partnership — before nearshore had a name', color: 'text-[#2574A7]' },
               { val: '500+', label: 'High-value tech jobs created in Costa Rica', color: 'text-[#2574A7]' },

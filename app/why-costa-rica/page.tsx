@@ -203,7 +203,7 @@ export default function WhyCostaRicaPage() {
       </section>
 
       {/* ── Regional Hub ── */}
-      <section className="px-12 py-16 border-b border-gray-200 bg-black">
+      <section className="px-6 md:px-12 py-14 md:py-16 border-b border-gray-200 bg-black">
         <div className="max-w-3xl">
           <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Costa Rica as a regional hub</p>
           <h2 className="text-3xl font-bold text-white leading-tight mb-5">

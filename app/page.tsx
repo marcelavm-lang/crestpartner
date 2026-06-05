@@ -63,7 +63,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero (video background) ── */}
-      <section className="relative w-full overflow-hidden min-h-screen flex flex-col">
+      <section className="relative w-full overflow-hidden min-h-[600px] md:min-h-screen flex flex-col">
 
         {/* Video background */}
         <video
@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/60" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
             {/* Left column */}
