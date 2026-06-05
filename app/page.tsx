@@ -88,11 +88,10 @@ export default function HomePage() {
                 Nearshore tech operations — Costa Rica
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-white max-w-3xl mb-6">
-                Build your engineering hub in Costa Rica — owned by you, operated with us.
+                Your engineering hub in Costa Rica — owned by you, built by us.
               </h1>
               <p className="text-[17px] text-white/70 font-light leading-relaxed max-w-2xl mb-10">
-                Built, staffed and administered by us. We help tech companies establish their own dedicated
-                entity in Costa Rica and build the engineering team that runs inside it. Not outsourcing. Ownership.
+                We establish your dedicated legal entity in Costa Rica, recruit your engineering team, and run the back-office so you can focus on the work. Your entity. Your people. Your IP. Not outsourcing. Ownership.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
