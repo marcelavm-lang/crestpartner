@@ -23,7 +23,7 @@ const team = [
       'HR & people strategy',
       'Culture model design',
       'Entity setup & management',
-      'Forward CR curriculum',
+      'Inclusive tech education',
       'U.S. client relations',
     ],
   },
