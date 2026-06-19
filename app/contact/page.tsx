@@ -107,7 +107,7 @@ export default function ContactPage() {
 
               {/* Email */}
               <a
-                href="mailto:info@techcollective.com"
+                href="mailto:info@crestpartners.com"
                 className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4 hover:border-[#2574A7] transition-colors group block"
               >
                 <div className="w-9 h-9 rounded-[8px] bg-[#EBF4FA] flex items-center justify-center shrink-0">
@@ -118,7 +118,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[14px] font-bold text-black group-hover:text-[#2574A7] transition-colors">Email</p>
-                  <p className="text-[12px] text-[#5A6A7A] font-light">info@techcollective.com</p>
+                  <p className="text-[12px] text-[#5A6A7A] font-light">info@crestpartners.com</p>
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#2574A7] transition-colors">→</span>
               </a>
