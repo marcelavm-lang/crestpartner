@@ -52,8 +52,8 @@ const team = [
     name: 'Roberto Fernandez',
     title: 'Co-founder & CTO',
     badge: 'Co-founder',
-    bio: '19+ years in software development and data engineering. Grew from developer to Director of Engineering and VP of Product Engineering across some of the most data-intensive companies in the U.S. market. Leads all technical delivery and engineering hiring for Crest Partners clients.',
-    tags: ['Software architecture', 'Engineering leadership', 'Data engineering'],
+    bio: '20+ years in software development, data engineering and modern systems architecture. Grew from developer to Director of Engineering and VP of Product Engineering across some of the most data-intensive companies in the U.S. market. Brings an AI-first mindset and a continuous focus on emerging tech to every engagement. Leads all technical delivery and engineering hiring for Crest Partners clients.',
+    tags: ['Engineering vision & strategy', 'AI strategy & adoption', 'Technical executive leadership', 'Modernization architecture'],
     expertise: [
       'Software development',
       'Data engineering',
