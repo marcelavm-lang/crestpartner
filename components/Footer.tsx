@@ -69,10 +69,10 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <a
-                  href="mailto:info@techcollective.com"
+                  href="mailto:info@crestpartners.com"
                   className="text-[13px] text-black hover:text-[#2574A7] transition-colors"
                 >
-                  info@techcollective.com
+                  info@crestpartners.com
                 </a>
               </li>
               <li>
@@ -103,9 +103,6 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-[12px] text-[#5A6A7A]">
             © 2025 Crest Partners · San José, Costa Rica
-          </p>
-          <p className="text-[12px] text-[#5A6A7A]">
-            info@techcollective.com
           </p>
         </div>
       </div>
