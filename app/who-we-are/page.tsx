@@ -5,7 +5,7 @@ import Image from 'next/image'
 const values = [
   { title: 'Full accountability', text: 'We don\'t hand off. We own the result.' },
   { title: 'Culture is strategy', text: 'Less than 1% turnover doesn\'t happen by accident.' },
-  { title: 'Ecosystem, not extraction', text: 'We invest in Costa Rica\'s talent through Forward CR.' },
+  { title: 'Built around one table', text: 'Same time zone, same work culture, same execution as your HQ.' },
 ]
 
 const team = [
