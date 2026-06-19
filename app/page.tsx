@@ -116,8 +116,8 @@ export default function HomePage() {
                 <div className="text-xs text-white/60 mt-1">Years in Costa Rica</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
-                <div className="text-[30px] font-bold text-[#4AABDC]">500+</div>
-                <div className="text-xs text-white/60 mt-1">High-value jobs created</div>
+                <div className="text-[30px] font-bold text-[#4AABDC]">1000+</div>
+                <div className="text-xs text-white/60 mt-1">High-value tech jobs created</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
                 <div className="text-[30px] font-bold text-[#4AABDC]">$1B+</div>
@@ -294,8 +294,8 @@ export default function HomePage() {
                 <div className="text-xs text-[#5A6A7A] mt-1">Avg. turnover</div>
               </div>
               <div>
-                <div className="text-xl font-bold text-[#2574A7]">500+</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">Jobs created</div>
+                <div className="text-xl font-bold text-[#2574A7]">1000+</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">High-value tech jobs created</div>
               </div>
               <div>
                 <div className="text-xl font-bold text-[#00A79D]">97.6/100</div>
