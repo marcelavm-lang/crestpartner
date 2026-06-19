@@ -337,12 +337,14 @@ export default function HomePage() {
             Tell us about your company — we'll design your expansion plan in 48 hours.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contact"
+            <a
+              href="https://calendly.com/marcelavm/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors tracking-wide"
             >
               Schedule a call
-            </Link>
+            </a>
             <Link
               href="/case-studies"
               className="border border-white/50 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
