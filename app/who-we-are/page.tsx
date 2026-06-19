@@ -350,7 +350,6 @@ export default function WhoWeArePage() {
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">Social impact</p>
             <h2 className="text-3xl font-bold text-black mb-5">
               Democratizing tech education for those locked out by economics.
             </h2>
