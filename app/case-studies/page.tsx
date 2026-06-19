@@ -94,7 +94,7 @@ const impactBand = [
 
 const testimonials = [
   {
-    quote: 'She built a world-class engineering hub from scratch. We would never have accomplished our goals without her.',
+    quote: 'They built a world-class engineering hub from scratch. We would never have accomplished our goals without them.',
     author: 'Co-founder & Executive, LTV Co.',
     sub: '$400M exit',
   },
@@ -185,7 +185,7 @@ export default function CaseStudiesPage() {
             </div>
             <div className="bg-white border border-[#D8E2EA] rounded-[10px] p-5 mb-5">
               <p className="text-[13px] text-[#5A6A7A] font-light italic leading-relaxed mb-3">
-                "We would never have accomplished our goals without her."
+                "We would never have accomplished our goals without them."
               </p>
               <p className="text-[12px] font-bold text-black">— Co-founder & Executive, LTV Co.</p>
             </div>
@@ -253,7 +253,7 @@ export default function CaseStudiesPage() {
             {testimonials.map((t, i) => (
               <div key={i} className="border border-white/10 rounded-[10px] p-8">
                 <p className="text-[18px] text-white font-light italic leading-relaxed mb-6">
-                  {t.quote}"
+                  "{t.quote}"
                 </p>
                 <p className="text-[13px] font-bold text-[#00A79D]">{t.author}</p>
                 <p className="text-[12px] text-white/50 font-light">{t.sub}</p>
@@ -272,7 +272,7 @@ export default function CaseStudiesPage() {
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/contact"
-              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bw-gray-50 transition-colors"
+              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors"
             >
               Talk to our team
             </Link>
