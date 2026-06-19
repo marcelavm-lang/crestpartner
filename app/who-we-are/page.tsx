@@ -17,7 +17,7 @@ const team = [
     title: 'Co-founder & CEO',
     badge: 'Co-founder',
     bio: '25+ years building tech operations in Costa Rica for U.S. companies. Architect of the culture model behind less than 1% turnover and a 97.6 GPTW Trust Index — among the highest scores globally. Former Country Manager at LTV Co. (f.k.a. BeenVerified). Co-founder of Forward Costa Rica.',
-    tags: ['Culture & operations', 'Entity setup', 'Team building', 'Forward CR'],
+    tags: ['Business architecture', 'Org & culture design', 'Nearshore entity model', 'Social tech impact'],
     expertise: [
       'Operations leadership',
       'HR & people strategy',
