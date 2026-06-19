@@ -71,7 +71,7 @@ export default function ContactPage() {
             {/* Contact option cards */}
             <div className="space-y-3 mb-10">
               {/* Schedule a call */}
-              <div className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4 hover:border-[#2574A7] transition-colors cursor-pointer group">
+              <a href="https://calendly.com/marcelavm/30min" target="_blank" rel="noopener noreferrer" className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4 hover:border-[#2574A7] transition-colors cursor-pointer group">
                 <div className="w-9 h-9 rounded-[8px] bg-[#EBF4FA] flex items-center justify-center shrink-0">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <rect x="1" y="3" width="14" height="12" rx="2" stroke="#2574A7" strokeWidth="1.5" />
@@ -83,7 +83,7 @@ export default function ContactPage() {
                   <p className="text-[12px] text-[#5A6A7A] font-light">Pick a time that works for you</p>
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#2574A7] transition-colors">→</span>
-              </div>
+              </a>
 
               {/* WhatsApp */}
               <a
