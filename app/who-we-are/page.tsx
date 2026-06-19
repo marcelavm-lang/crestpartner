@@ -352,11 +352,10 @@ export default function WhoWeArePage() {
           <div>
             <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">Social impact</p>
             <h2 className="text-3xl font-bold text-black mb-5">
-              We don't just hire Costa Rican talent. We create it.
+              Democratizing tech education for those locked out by economics.
             </h2>
             <p className="text-[15px] text-[#5A6A7A] font-light leading-relaxed">
-              Our founders co-created Forward Costa Rica — a non-profit that trains young Costa Ricans
-              in fullstack development, English and professional skills. Entirely free.
+              Forward Costa Rica — co-founded by our team — delivers full-stack engineering, English and professional skills training to young Costa Ricans who couldn't otherwise afford it. Entirely free.
             </p>
           </div>
           <div>
