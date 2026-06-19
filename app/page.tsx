@@ -271,6 +271,8 @@ export default function HomePage() {
                 'One partner, full accountability',
                 '25+ years inside the market',
                 'Costa Rica as your Latin American hub — not just a team, a regional anchor',
+                'Your entity, your IP, your people',
+                'Less than 1% turnover, by design',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 w-4 h-4 rounded-full bg-[#00A79D] shrink-0 flex items-center justify-center">
