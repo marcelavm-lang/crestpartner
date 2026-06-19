@@ -9,7 +9,6 @@ const navLinks = [
   { label: 'Case studies', href: '/case-studies' },
   { label: 'Why Costa Rica', href: '/why-costa-rica' },
   { label: 'Who we are', href: '/who-we-are' },
-  { label: 'Social impact', href: '/impact' },
   { label: 'Careers', href: '/careers' },
   { label: 'Build your plan', href: '/expansion-plan', highlight: true },
 ]
