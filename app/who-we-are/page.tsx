@@ -173,7 +173,7 @@ export default function WhoWeArePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {[
               { val: '2001', label: 'Year of our first partnership — before nearshore had a name', color: 'text-[#2574A7]' },
-              { val: '500+', label: 'High-value tech jobs created in Costa Rica', color: 'text-[#2574A7]' },
+              { val: '1000+', label: 'High-value tech jobs created in Costa Rica', color: 'text-[#2574A7]' },
               { val: '<1%', label: 'Involuntary turnover across all partnerships', color: 'text-[#00A79D]' },
               { val: '$1B+', label: 'Combined client revenue', color: 'text-[#2574A7]' },
               { val: '97.6', label: 'Great Place to Work Trust Index — among the highest scores globally', color: 'text-[#00A79D]' },
