@@ -281,12 +281,14 @@ export default function ServicesPage() {
             Ready to build your Costa Rica team?
           </h2>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
-            <Link
-              href="/contact"
+            <a
+              href="https://calendly.com/marcelavm/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors"
             >
               Schedule a call
-            </Link>
+            </a>
             <Link
               href="/case-studies"
               className="border border-white/50 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
