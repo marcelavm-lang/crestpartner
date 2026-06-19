@@ -168,8 +168,8 @@ export default function ServicesPage() {
                   <div className="text-xs text-gray-500 mt-1">Combined client revenue across all partnerships</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-blue-600">500+</div>
-                  <div className="text-xs text-gray-500 mt-1">Professionals placed and retained</div>
+                  <div className="text-2xl font-bold text-blue-600">1000+</div>
+                  <div className="text-xs text-gray-500 mt-1">High-value tech jobs created</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-2xl font-bold text-teal-500">97.6</div>
