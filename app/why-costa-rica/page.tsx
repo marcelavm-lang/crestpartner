@@ -240,7 +240,7 @@ export default function WhyCostaRicaPage() {
             <div className="grid grid-cols-2 gap-4 mt-6">
               {[
                 { val: '25 yrs', label: 'recruiting in CR' },
-                { val: '500+', label: 'professionals placed' },
+                { val: '1000+', label: 'High-value tech jobs created' },
                 { val: '<1%', label: 'turnover' },
                 { val: '11 yrs', label: 'longest partnership' },
               ].map((s) => (
