@@ -112,6 +112,16 @@ const POSITION_LEVELS = [
 ] as const
 
 const GROUPS = ['Engineering', 'QA', 'Data Engineering', 'DevOps & Cloud', 'Product', 'UI/UX Design', 'Data Science', 'Business Analysis'] as const
+const GROUP_TO_PROFILE: Record<string, string[]> = {
+  'Engineering':        ['Software Engineers', 'Engineering Leadership'],
+  'QA':                ['QA Engineers'],
+  'Data Engineering':  ['Data Engineers'],
+  'DevOps & Cloud':    ['DevOps & Cloud Engineers'],
+  'Product':           ['Product Managers'],
+  'UI/UX Design':      ['UI/UX Designers'],
+  'Data Science':      ['Data Scientists'],
+  'Business Analysis': ['Business Analysts'],
+}
 const GROUP_COLORS: Record<string, string> = {
   'Engineering':        'text-[#2574A7]',
   'QA':                'text-[#00A79D]',
@@ -221,23 +231,29 @@ function Checkbox({ checked, onChange, label, sub }: { checked: boolean; onChang
 }
 
 // ── Counter row ─────────────────────────────────────────────────────────────
-function CounterRow({ label, years, color, value, onDec, onInc }: {
+function CounterRow({ label, years, color, value, onDec, onInc, annualRange }: {
   label: string; years: string; color: string; value: number
   onDec: () => void; onInc: () => void
+  annualRange?: string
 }) {
   return (
-    <div className="flex items-center justify-between p-3 border border-[#D8E2EA] rounded-[8px] bg-white">
-      <div>
+    <div className={`flex items-center justify-between p-3 rounded-[8px] transition-colors ${
+      value > 0 ? 'bg-[#EBF4FA] border border-[#2574A7]' : 'bg-white border border-[#D8E2EA]'
+    }`}>
+      <div className="flex-1 min-w-0">
         <span className={`text-[13px] font-bold ${color}`}>{label}</span>
         <span className="text-[11px] text-[#5A6A7A] font-light ml-2">{years}</span>
+        {annualRange && (
+          <div className="text-[10px] text-[#5A6A7A] mt-0.5">{annualRange}/yr</div>
+        )}
       </div>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 ml-3 shrink-0">
         <button type="button" onClick={onDec}
-          className="w-7 h-7 rounded-full border border-[#D8E2EA] flex items-center justify-center text-[#5A6A7A] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors text-lg leading-none"
+          className="w-7 h-7 rounded-full border border-[#D8E2EA] flex items-center justify-center text-[#5A6A7A] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors text-lg leading-none bg-white"
         >−</button>
         <span className="text-[15px] font-bold text-black w-5 text-center">{value}</span>
         <button type="button" onClick={onInc}
-          className="w-7 h-7 rounded-full border border-[#D8E2EA] flex items-center justify-center text-[#5A6A7A] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors text-lg leading-none"
+          className="w-7 h-7 rounded-full border border-[#D8E2EA] flex items-center justify-center text-[#5A6A7A] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors text-lg leading-none bg-white"
         >+</button>
       </div>
     </div>
@@ -252,21 +268,42 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
   const [plan, setPlan] = useState<string | null>(null)
   const [costs, setCosts] = useState<{ setup: number; managementFee: number; recruitingFee: number; totalSalaries: number; totalYear1: number; headcount: number } | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [openGroups, setOpenGroups] = useState<Set<string>>(new Set())
 
   const canNext = (): boolean => {
     if (step === 1) return !!(form.companyName && form.industry && form.usTeamSize)
-    if (step === 2) return form.profiles.length > 0 && totalHeadcount(form.seniority) > 0
+    if (step === 2) return totalHeadcount(form.seniority) > 0
     if (step === 3) return form.services.length > 0
     if (step === 4) return !!form.timeline
     if (step === 5) return !!(form.contactName && form.contactEmail)
     return true
   }
 
+  function toggleGroup(group: string) {
+    setOpenGroups(prev => {
+      const s = new Set(prev)
+      if (s.has(group)) s.delete(group)
+      else s.add(group)
+      return s
+    })
+  }
+
   function adjustPosition(key: PositionKey, delta: number) {
-    setForm(f => ({
-      ...f,
-      seniority: { ...f.seniority, [key]: Math.max(0, f.seniority[key] + delta) }
-    }))
+    setForm(f => {
+      const newSeniority = { ...f.seniority, [key]: Math.max(0, f.seniority[key] + delta) }
+      const level = POSITION_LEVELS.find(l => l.key === key)
+      const group = level?.group || ''
+      const groupProfiles = GROUP_TO_PROFILE[group] || []
+      const groupLevels = POSITION_LEVELS.filter(l => l.group === group)
+      const groupHasHeadcount = groupLevels.some(l => newSeniority[l.key as PositionKey] > 0)
+      let newProfiles = [...f.profiles]
+      if (groupHasHeadcount) {
+        groupProfiles.forEach(p => { if (!newProfiles.includes(p)) newProfiles.push(p) })
+      } else {
+        newProfiles = newProfiles.filter(p => !groupProfiles.includes(p))
+      }
+      return { ...f, seniority: newSeniority, profiles: newProfiles }
+    })
   }
 
   async function handleSubmit() {
@@ -420,87 +457,86 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           </div>
         )}
 
-        {/* Step 2 — Profiles + Team composition */}
+        {/* Step 2 — Team composition accordion */}
         {step === 2 && (
-          <div className="space-y-5">
+          <div className="space-y-3">
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-2">Profiles needed</label>
-              <div className="grid grid-cols-1 gap-2">
-                {PROFILES.map(p => (
-                  <Checkbox key={p} checked={form.profiles.includes(p)}
-                    onChange={() => setForm({ ...form, profiles: toggle(form.profiles, p) })}
-                    label={p}
-                  />
-                ))}
-              </div>
+              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1">Team composition</label>
+              <p className="text-[11px] text-[#5A6A7A] font-light mb-3">Expand a category and select how many professionals you need at each level. Salaries shown in USD/yr, all CR social charges included.</p>
             </div>
 
-            <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1">Team composition &amp; headcount</label>
-              <p className="text-[11px] text-[#5A6A7A] font-light mb-3">Select how many professionals you need at each level.</p>
+            {/* Accordion groups */}
+            <div className="space-y-2">
+              {GROUPS.map(group => {
+                const levels = POSITION_LEVELS.filter(l => l.group === group)
+                const groupCount = levels.reduce((sum, l) => sum + form.seniority[l.key as PositionKey], 0)
+                const isOpen = openGroups.has(group)
+                const gColor = GROUP_COLORS[group]
 
-              {/* Salary reference table — all groups */}
-              <div className="bg-[#F4F7FA] rounded-[10px] p-4 mb-4 border border-[#D8E2EA]">
-                <p className="text-[10px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-3">Salary reference · Costa Rica (USD/year, all social charges included)</p>
-                {GROUPS.map((group, gi) => (
-                  <div key={group} className={gi < GROUPS.length - 1 ? 'mb-4' : ''}>
-                    <p className={`text-[9px] font-bold tracking-widest uppercase ${GROUP_COLORS[group]} mb-1.5`}>{group}</p>
-                    <table className="w-full text-[11px]">
-                      <thead>
-                        <tr className="text-[#5A6A7A] border-b border-[#D8E2EA]">
-                          <th className="text-left font-bold pb-1.5 pr-2">Position</th>
-                          <th className="text-left font-bold pb-1.5 pr-2">Exp.</th>
-                          <th className="text-right font-bold pb-1.5">Annual (all-in)</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {POSITION_LEVELS.filter(l => l.group === group).map(l => (
-                          <tr key={l.key} className="border-b border-[#EAEEF2] last:border-0">
-                            <td className={`py-1.5 pr-2 font-bold ${l.color}`}>{l.label}</td>
-                            <td className="py-1.5 pr-2 text-[#5A6A7A] whitespace-nowrap">{l.years}</td>
-                            <td className="py-1.5 text-right font-bold text-black whitespace-nowrap">{l.annualRange}</td>
-                          </tr>
+                return (
+                  <div key={group} className={`border rounded-[10px] overflow-hidden transition-all ${
+                    groupCount > 0 ? 'border-[#2574A7]' : 'border-[#D8E2EA]'
+                  }`}>
+                    {/* Header */}
+                    <button
+                      type="button"
+                      onClick={() => toggleGroup(group)}
+                      className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${
+                        groupCount > 0 ? 'bg-[#EBF4FA]' : 'bg-white hover:bg-[#F4F7FA]'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <span className={`text-[13px] font-bold ${gColor}`}>{group}</span>
+                        {groupCount > 0 && (
+                          <span className="bg-[#2574A7] text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">
+                            {groupCount} {groupCount === 1 ? 'person' : 'people'}
+                          </span>
+                        )}
+                      </div>
+                      <svg
+                        width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        className={`shrink-0 transition-transform duration-200 text-[#5A6A7A] ${isOpen ? 'rotate-180' : ''}`}
+                        stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                      >
+                        <path d="M3 5L7 9L11 5"/>
+                      </svg>
+                    </button>
+
+                    {/* Expanded counters */}
+                    {isOpen && (
+                      <div className="px-3 pb-3 pt-2 space-y-2 border-t border-[#D8E2EA] bg-[#FAFCFE]">
+                        {levels.map(l => (
+                          <CounterRow
+                            key={l.key}
+                            label={l.label}
+                            years={l.years}
+                            color={l.color}
+                            annualRange={l.annualRange}
+                            value={form.seniority[l.key as PositionKey]}
+                            onDec={() => adjustPosition(l.key as PositionKey, -1)}
+                            onInc={() => adjustPosition(l.key as PositionKey, 1)}
+                          />
                         ))}
-                      </tbody>
-                    </table>
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
-
-              {/* Counters — all groups */}
-              {GROUPS.map(group => (
-                <div key={group} className="mb-4">
-                  <p className={`text-[10px] font-bold tracking-widest uppercase ${GROUP_COLORS[group]} mb-2`}>{group}</p>
-                  <div className="space-y-2">
-                    {POSITION_LEVELS.filter(l => l.group === group).map(l => (
-                      <CounterRow
-                        key={l.key}
-                        label={l.label}
-                        years={l.years}
-                        color={l.color}
-                        value={form.seniority[l.key as PositionKey]}
-                        onDec={() => adjustPosition(l.key as PositionKey, -1)}
-                        onInc={() => adjustPosition(l.key as PositionKey, 1)}
-                      />
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-              {/* Totals */}
-              {totalHeadcount(form.seniority) > 0 && (
-                <div className="mt-2 pt-3 border-t border-[#D8E2EA] space-y-1.5">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[12px] font-bold text-[#5A6A7A]">Total headcount</span>
-                    <span className="text-[20px] font-bold text-[#2574A7]">{totalHeadcount(form.seniority)}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[11px] text-[#5A6A7A] font-light">Est. annual cost (incl. 34% CR social charges)</span>
-                    <span className="text-[13px] font-bold text-[#00A79D]">${estimatedSalaries(form.seniority).toLocaleString()}/yr</span>
-                  </div>
-                </div>
-              )}
+                )
+              })}
             </div>
+
+            {/* Totals */}
+            {totalHeadcount(form.seniority) > 0 && (
+              <div className="mt-1 pt-3 border-t border-[#D8E2EA] space-y-1.5">
+                <div className="flex justify-between items-center">
+                  <span className="text-[12px] font-bold text-[#5A6A7A]">Total headcount</span>
+                  <span className="text-[20px] font-bold text-[#2574A7]">{totalHeadcount(form.seniority)}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[11px] text-[#5A6A7A] font-light">Est. annual cost (incl. 34% CR social charges)</span>
+                  <span className="text-[13px] font-bold text-[#00A79D]">${estimatedSalaries(form.seniority).toLocaleString()}/yr</span>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
