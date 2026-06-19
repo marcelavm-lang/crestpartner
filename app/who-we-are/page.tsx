@@ -34,15 +34,15 @@ const team = [
     name: 'José Villalta',
     title: 'Co-founder & Head of Data Operations',
     badge: 'Co-founder',
-    bio: '25+ years in data engineering and product management. Grew through every technical and operational layer of one of Costa Rica\'s most sophisticated data intelligence operations — from production supervisor to Country Manager. Deep expertise in building and scaling data teams for U.S. enterprise clients.',
-    tags: ['Data engineering', 'Product management', 'Country operations'],
+    bio: '25+ years building and scaling data operations for U.S. enterprise clients. Grew through every layer of one of Costa Rica\'s most sophisticated data intelligence operations — from production supervisor to Country Manager. Combines deep technical expertise in data engineering with the operator\'s perspective of someone who has run a country-level tech operation end to end.',
+    tags: ['Data operations strategy', 'Enterprise-scale data architecture', 'Country-level operations leadership', 'Technical-operational integration'],
     expertise: [
-      'Data engineering & pipelines',
-      'Product management',
-      'Operations management',
-      'Country management',
-      'Technical leadership',
-      'U.S. enterprise clients',
+      'Enterprise data operations',
+      'Data architecture & pipelines',
+      'Product strategy',
+      'Country operations management',
+      'Cross-functional technical leadership',
+      'U.S. enterprise delivery',
     ],
   },
   {
@@ -55,12 +55,12 @@ const team = [
     bio: '20+ years in software development, data engineering and modern systems architecture. Grew from developer to Director of Engineering and VP of Product Engineering across some of the most data-intensive companies in the U.S. market. Brings an AI-first mindset and a continuous focus on emerging tech to every engagement. Leads all technical delivery and engineering hiring for Crest Partners clients.',
     tags: ['Engineering vision & strategy', 'AI strategy & adoption', 'Technical executive leadership', 'Modernization architecture'],
     expertise: [
-      'Software development',
+      'Software architecture',
       'Data engineering',
-      'Engineering management',
-      'VP-level product engineering',
-      'Technical recruiting',
-      'U.S. market delivery',
+      'Engineering org leadership',
+      'Product engineering leadership',
+      'Engineering talent strategy',
+      'Cross-border tech delivery',
     ],
   },
   {
@@ -164,7 +164,7 @@ export default function WhoWeArePage() {
           <div>
             <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Who we are</p>
             <h1 className="text-5xl font-bold leading-tight mb-5">
-              25 years building Costa Rica's tech ecosystem — from the inside.
+              25+ years building Costa Rica's tech ecosystem — from the inside.
             </h1>
             <p className="text-base font-light text-gray-500 leading-relaxed">
               Before anyone called it nearshore, our founders started building here. 25 years later, the companies they helped grow have exited at $400M, won Google Cloud Partner of the Year, and built teams that never left. That's not a strategy. That's a track record.
