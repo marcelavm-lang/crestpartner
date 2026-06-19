@@ -88,15 +88,14 @@ const team = [
     name: 'Cristian Chacón',
     title: 'Financial Compliance Analyst',
     badge: 'Accounting',
-    bio: 'CPI-certified accountant with multinational experience. Manages payroll, tax compliance, financial reporting and day-to-day accounting for Costa Rican entities — the operational backbone that keeps everything running. Co-founder of Forward Costa Rica.',
-    tags: ['CPI certified', 'Payroll', 'Tax compliance', 'Forward CR co-founder'],
+    bio: 'CPI-certified accountant with multinational experience. Manages payroll, tax compliance, financial reporting and day-to-day accounting for Costa Rican entities — the operational backbone that keeps everything running.',
+    tags: ['CPI certified', 'Payroll', 'Tax compliance', 'Financial reporting'],
     expertise: [
       'CPI certified',
       'Payroll management',
       'Tax compliance',
       'Financial reporting',
       'Accounting operations',
-      'Forward CR co-founder',
     ],
   },
 ]
@@ -377,7 +376,6 @@ export default function WhoWeArePage() {
             <div className="mt-6 pt-5 border-t border-[#D8E2EA]">
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-3">Crest Partners co-founders</p>
               <p className="text-[13px] text-black font-light">Marcela Villalta — curriculum design</p>
-              <p className="text-[13px] text-black font-light">Cristian Chacón — co-founder Forward CR</p>
             </div>
           </div>
         </div>
