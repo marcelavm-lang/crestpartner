@@ -56,12 +56,14 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <Link
-            href="/contact"
+          <a
+            href="https://calendly.com/marcelavm/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#2574A7] text-white text-[13px] font-bold px-5 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
           >
             Get started
-          </Link>
+          </a>
         </div>
 
         {/* Mobile hamburger */}
@@ -89,13 +91,15 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
+          <a
+            href="https://calendly.com/marcelavm/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-2 bg-[#2574A7] text-white text-[13px] font-bold px-5 py-2.5 rounded-[8px] text-center hover:bg-[#1f6391] transition-colors"
           >
             Get started
-          </Link>
+          </a>
         </div>
       )}
     </header>
