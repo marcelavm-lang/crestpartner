@@ -241,7 +241,7 @@ function CounterRow({ label, years, color, value, onDec, onInc, annualRange }: {
       value > 0 ? 'border border-[#2574A7]' : 'border border-[#D8E2EA]'
     }`}>
       <div className="flex-1 min-w-0">
-        <span className="text-[13px] font-semibold text-black">{label}</span>
+        <span className="text-[14px] font-medium text-black">{label}</span>
         <span className="text-[11px] text-[#5A6A7A] font-light ml-2">{years}</span>
         {annualRange && (
           <div className="text-[10px] text-[#5A6A7A] mt-0.5">{annualRange}/yr</div>
@@ -471,7 +471,6 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
                 const levels = POSITION_LEVELS.filter(l => l.group === group)
                 const groupCount = levels.reduce((sum, l) => sum + form.seniority[l.key as PositionKey], 0)
                 const isOpen = openGroups.has(group)
-                const gColor = GROUP_COLORS[group]
 
                 return (
                   <div key={group} className={`border rounded-[10px] overflow-hidden transition-all ${
@@ -481,12 +480,12 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
                     <button
                       type="button"
                       onClick={() => toggleGroup(group)}
-                      className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${
+                      className={`w-full flex items-center justify-between px-4 py-3.5 text-left transition-colors ${
                         groupCount > 0 ? 'bg-[#EBF4FA]' : 'bg-white hover:bg-[#F4F7FA]'
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
-                        <span className="text-[13px] font-bold text-black">{group}</span>
+                        <span className="text-[15px] font-medium text-black">{group}</span>
                         {groupCount > 0 && (
                           <span className="bg-[#2574A7] text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">
                             {groupCount} {groupCount === 1 ? 'person' : 'people'}
