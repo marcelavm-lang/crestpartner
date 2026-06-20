@@ -486,7 +486,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
                       }`}
                     >
                       <div className="flex items-center gap-2.5">
-                        <span className={`text-[13px] font-bold ${gColor}`}>{group}</span>
+                        <span className="text-[13px] font-bold text-black">{group}</span>
                         {groupCount > 0 && (
                           <span className="bg-[#2574A7] text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">
                             {groupCount} {groupCount === 1 ? 'person' : 'people'}
