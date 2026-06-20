@@ -62,8 +62,8 @@ const logoChips = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero (video background) — centered ── */}
-      <section className="relative w-full overflow-hidden min-h-[600px] md:min-h-[90vh] flex flex-col">
+      {/* ── Hero (video background) ── */}
+      <section className="relative w-full overflow-hidden min-h-[600px] md:min-h-screen flex flex-col">
 
         {/* Video background */}
         <video
@@ -78,79 +78,85 @@ export default function HomePage() {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60" />
 
-        {/* Centered content */}
-        <div className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-6 pt-24 pb-12 w-full">
-          <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-5">
-            Nearshore tech operations — Costa Rica
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-[60px] font-bold leading-[1.1] text-white max-w-4xl mb-6">
-            Your engineering hub in Costa Rica — owned by you, built by us.
-          </h1>
-          <p className="text-[17px] text-white/90 font-light leading-relaxed max-w-2xl mb-10">
-            We establish your dedicated legal entity in Costa Rica, recruit your engineering team, and run the back-office so you can focus on the work. Your entity. Your people. Your IP. Not outsourcing. Ownership.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Link
-              href="/contact"
-              className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
-            >
-              Talk to our team
-            </Link>
-            <Link
-              href="/case-studies"
-              className="border border-white/40 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
-            >
-              See case studies →
-            </Link>
-          </div>
-        </div>
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-20 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-        {/* Animated logo banner — bottom of hero */}
-        <div className="relative z-10 w-full pb-10 px-6">
-          <p className="text-[11px] font-bold tracking-widest uppercase text-white/40 mb-4 text-center">
-            Trusted by leading tech and data companies
-          </p>
-          <div className="overflow-hidden w-full">
-            <div className="flex animate-scroll gap-3 w-max">
-              {logoChips.map((logo, i) => (
+            {/* Left column */}
+            <div>
+              <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-5">
+                Nearshore tech operations — Costa Rica
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-white max-w-3xl mb-6">
+                Your engineering hub in Costa Rica — owned by you, built by us.
+              </h1>
+              <p className="text-[17px] text-white/70 font-light leading-relaxed max-w-2xl mb-10">
+                We establish your dedicated legal entity in Costa Rica, recruit your engineering team, and run the back-office so you can focus on the work. Your entity. Your people. Your IP. Not outsourcing. Ownership.
+              </p>
+              <div className="flex flex-wrap gap-3">
                 <Link
-                  key={i}
-                  href={logo.href}
-                  className="text-sm font-medium px-4 py-2 border border-white/20 rounded-full text-white/70 bg-white/5 whitespace-nowrap hover:border-white/50 hover:text-white transition-colors"
+                  href="/contact"
+                  className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
                 >
-                  {logo.name}
+                  Talk to our team
                 </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Stats Band ── */}
-      <section className="bg-white border-b border-[#D8E2EA]">
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <div className="grid grid-cols-2 lg:grid-cols-6">
-            {([
-              { num: '25+',      label: 'Years in\nCosta Rica',                    color: 'text-[#2574A7]' },
-              { num: '500+',     label: 'High-value jobs\ncreated',                color: 'text-[#2574A7]' },
-              { num: '$1B+',     label: 'Client\nrevenue',                         color: 'text-[#2574A7]' },
-              { num: '<1%',      label: 'Avg. turnover\n(industry avg. 13%)',      color: 'text-[#00A79D]' },
-              { num: '98/100',   label: 'eNPS\nscore',                             color: 'text-[#00A79D]' },
-              { num: '97.6/100', label: 'Trust Index ·\nGreat Place to Work',     color: 'text-[#00A79D]' },
-            ] as const).map((stat, i) => (
-              <div
-                key={i}
-                className={[
-                  'flex flex-col items-center text-center px-4 py-8',
-                  i % 2 === 0 ? 'border-r border-[#E8EEF3]' : '',
-                  i < 4 ? 'border-b border-[#E8EEF3] lg:border-b-0' : '',
-                  i < 5 ? 'lg:border-r border-[#E8EEF3]' : '',
-                ].filter(Boolean).join(' ')}
-              >
-                <span className={`text-[36px] md:text-[42px] font-bold leading-none ${stat.color}`}>{stat.num}</span>
-                <span className="text-[12px] text-[#5A6A7A] mt-2.5 leading-snug whitespace-pre-line">{stat.label}</span>
+                <Link
+                  href="/case-studies"
+                  className="border border-white/40 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
+                >
+                  See case studies →
+                </Link>
               </div>
-            ))}
+            </div>
+
+            {/* Right column — stats cards (glass) */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#4AABDC]">25+</div>
+                <div className="text-xs text-white/60 mt-1">Years in Costa Rica</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#4AABDC]">1000+</div>
+                <div className="text-xs text-white/60 mt-1">High-value tech jobs created</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#4AABDC]">$1B+</div>
+                <div className="text-xs text-white/60 mt-1">Client revenue</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#00A79D]">&lt;1%</div>
+                <div className="text-xs text-white/60 mt-1">Avg. turnover — industry avg. 13%</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#00A79D]">98/100</div>
+                <div className="text-xs text-white/60 mt-1">eNPS score</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
+                <div className="text-[30px] font-bold text-[#00A79D]">97.6/100</div>
+                <div className="text-xs text-white/60 mt-1">Trust Index · Great Place to Work</div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Animated logo banner */}
+          <div className="mt-16">
+            <p className="text-[11px] font-bold tracking-widest uppercase text-white/40 mb-4">
+              Trusted by leading tech and data companies
+            </p>
+            <div className="overflow-hidden w-full">
+              <div className="flex animate-scroll gap-3 w-max">
+                {logoChips.map((logo, i) => (
+                  <Link
+                    key={i}
+                    href={logo.href}
+                    className="text-sm font-medium px-4 py-2 border border-white/20 rounded-full text-white/70 bg-white/5 whitespace-nowrap hover:border-white/50 hover:text-white transition-colors"
+                  >
+                    {logo.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
