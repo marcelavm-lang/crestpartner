@@ -237,11 +237,11 @@ function CounterRow({ label, years, color, value, onDec, onInc, annualRange }: {
   annualRange?: string
 }) {
   return (
-    <div className={`flex items-center justify-between p-3 rounded-[8px] transition-colors ${
-      value > 0 ? 'bg-[#EBF4FA] border border-[#2574A7]' : 'bg-white border border-[#D8E2EA]'
+    <div className={`flex items-center justify-between p-3 rounded-[8px] transition-colors bg-white ${
+      value > 0 ? 'border border-[#2574A7]' : 'border border-[#D8E2EA]'
     }`}>
       <div className="flex-1 min-w-0">
-        <span className={`text-[13px] font-bold ${color}`}>{label}</span>
+        <span className="text-[13px] font-semibold text-black">{label}</span>
         <span className="text-[11px] text-[#5A6A7A] font-light ml-2">{years}</span>
         {annualRange && (
           <div className="text-[10px] text-[#5A6A7A] mt-0.5">{annualRange}/yr</div>
