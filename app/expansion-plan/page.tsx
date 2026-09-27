@@ -21,7 +21,7 @@ export default function ExpansionPlanPage() {
           </h1>
           <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed">
             Answer 5 quick questions and get a personalized plan — team structure, timeline and cost
-            considerations — generated in seconds by our AI advisor, trained on 25 years of Crest
+            considerations — generated in seconds by our AI advisor, built on 25 years of Crest
             Partners experience.
           </p>
         </div>

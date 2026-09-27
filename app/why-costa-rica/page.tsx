@@ -10,8 +10,8 @@ export const metadata = pageMetadata({
 
 const heroStats = [
   { value: '75+', label: 'years of uninterrupted democracy' },
-  { value: 'CST', label: 'same time zone as Chicago' },
-  { value: '#1', label: 'English proficiency in Central America' },
+  { value: 'CST', label: 'Central Time year-round — no daylight saving' },
+  { value: 'Top 2', label: 'English proficiency in Central America (EF EPI 2024)' },
   { value: 'No', label: 'Military since 1948 — budget invested in education instead' },
 ]
 
@@ -29,9 +29,9 @@ const valueCards = [
     color: 'text-[#00A79D]',
   },
   {
-    val: '0',
-    title: 'Time zone gap with U.S.',
-    text: 'Same working hours as your U.S. team. No async delays, no overnight handoffs. Real collaboration.',
+    val: '0–2',
+    title: 'Hours from any U.S. office',
+    text: 'Central Time year-round, no daylight saving. Full overlap with U.S. business hours — no overnight handoffs.',
     color: 'text-[#2574A7]',
   },
 ]
@@ -44,8 +44,8 @@ const reasons = [
   },
   {
     num: '02',
-    title: 'Full English proficiency',
-    text: '#1 in Central America. Engineers who communicate clearly, collaborate fluently and integrate seamlessly.',
+    title: 'Strong English proficiency',
+    text: 'Top 2 in Central America on the EF English Proficiency Index. Engineers who communicate clearly, collaborate fluently and integrate seamlessly.',
   },
   {
     num: '03',
@@ -55,7 +55,7 @@ const reasons = [
   {
     num: '04',
     title: 'Same time zone',
-    text: 'CST, full overlap with U.S. business hours. Real-time collaboration, every day.',
+    text: 'Central Time year-round — full overlap with U.S. business hours. Real-time collaboration, every day.',
   },
   {
     num: '05',

@@ -75,7 +75,7 @@ export default function ServicesPage() {
               Everything you need to operate in Costa Rica — under one roof.
             </h1>
             <p className="text-[16px] font-normal text-[#3E4C59] leading-relaxed mb-8">
-              We don't connect you with vendors. We are the vendor — for every layer of your Costa Rica operation.
+              We don't hand you a list of vendors. We run every layer of your Costa Rica operation ourselves — one team, one point of accountability.
             </p>
             <div className="flex flex-wrap gap-3">
               <BookCallLink className="px-6 py-3 bg-[#2574A7] text-white text-sm font-bold rounded-lg hover:bg-[#1f6391] transition-colors" />
@@ -125,11 +125,12 @@ export default function ServicesPage() {
               <p className="text-[12px] text-[#5A6A7A] font-normal">average time to fully operational</p>
             </div>
             <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Timeline</p>
+            {/* TODO: confirm timelines with legal (Marco) */}
             <div className="space-y-3">
               {[
-                { day: 'Day 1', label: 'Kickoff & legal entity' },
-                { day: 'Day 5', label: 'Legal entity active · compliance infrastructure live' },
-                { day: 'Day 10', label: 'Back office operational' },
+                { day: 'Week 1', label: 'Kickoff & entity filing' },
+                { day: 'Weeks 1–3', label: 'Registrations, banking & payroll setup' },
+                { day: 'Weeks 2–4', label: 'Back office live · first hires' },
                 { day: 'Day 30', label: 'Fully operational', highlight: true },
               ].map((item) => (
                 <div
@@ -138,7 +139,7 @@ export default function ServicesPage() {
                     item.highlight ? 'bg-[#00A79D] text-white' : 'bg-white border border-[#D8E2EA]'
                   }`}
                 >
-                  <span className={`text-[11px] font-bold ${item.highlight ? 'text-white/80' : 'text-[#5A6A7A]'}`}>
+                  <span className={`text-[11px] font-bold w-[68px] shrink-0 ${item.highlight ? 'text-white/80' : 'text-[#5A6A7A]'}`}>
                     {item.day}
                   </span>
                   <span className={`text-[13px] font-medium ${item.highlight ? 'text-white' : 'text-black'}`}>

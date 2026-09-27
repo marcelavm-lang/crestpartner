@@ -249,12 +249,12 @@ export default function HomePage() {
             <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">Other providers</p>
             <ul className="space-y-4">
               {[
-                'Present and step back',
+                'Your team is employed by the vendor',
+                'Your IP is protected only by contract',
                 'Multiple vendors — no single accountability',
-                'Know the pitch, not the execution',
-                'Cultural misalignment and communication friction',
                 'High turnover, constant recruiting cycles',
-                'Generic solutions, not built for your company',
+                'Leaving means starting over',
+                'Generic setup, not built for your company',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 w-4 h-4 rounded-full border border-[#D8E2EA] shrink-0" />
