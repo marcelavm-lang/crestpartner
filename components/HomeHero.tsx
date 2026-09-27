@@ -42,10 +42,6 @@ export default function HomeHero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_1fr] gap-10 lg:gap-14 items-center">
           {/* ── Left column ── */}
           <div className="min-w-0">
-            <p className="text-[12px] md:text-[13px] font-bold uppercase tracking-[0.14em] text-[#5FD4CB] mb-5">
-              Your own company in Costa Rica{' '}
-              <span className="whitespace-nowrap">· Since 2001</span>
-            </p>
             <h1 className="text-[38px] leading-[1.08] md:text-[52px] lg:text-[48px] xl:text-[62px] lg:leading-[1.04] font-bold text-white mb-6">
               Your engineering hub in Costa Rica. Owned by you. Run by us.
             </h1>
