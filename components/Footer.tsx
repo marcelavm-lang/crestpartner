@@ -25,11 +25,12 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
               <Image
-                src="/crest-logo.png"
+                src="/crest-partners-logo/svg/crest-partners-logo-color.svg"
                 alt="Crest Partners"
-                width={160}
-                height={53}
-                className="h-14 w-auto"
+                width={607}
+                height={79}
+                unoptimized
+                className="h-[26px] w-auto"
               />
             </Link>
             <p className="text-[#3E4C59] leading-relaxed font-normal text-[16px]">

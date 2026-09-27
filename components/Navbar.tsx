@@ -22,12 +22,13 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
-            src="/crest-logo.png"
+            src="/crest-partners-logo/svg/crest-partners-logo-color.svg"
             alt="Crest Partners"
-            width={200}
-            height={66}
-            className="h-16 w-auto"
+            width={607}
+            height={79}
+            unoptimized
             priority
+            className="h-6 lg:h-[30px] w-auto"
           />
         </Link>
 

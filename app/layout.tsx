@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
     ],
     apple: [
-      { url: '/favicon-180.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon-180.png', sizes: '180x180', type: 'image/png' },
     ],
   },
 }
@@ -49,7 +49,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'Crest Partners',
   url: SITE.url,
-  logo: `${SITE.url.replace(/\/$/, '')}/crest-logo.png`,
+  logo: `${SITE.url.replace(/\/$/, '')}/crest-partners-logo/png/crest-partners-logo-color-1200.png`,
   email: SITE.email,
   telephone: '+506 8891-3444',
   address: {

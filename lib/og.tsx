@@ -5,6 +5,19 @@ import { join } from 'node:path'
 export const OG_SIZE = { width: 1200, height: 630 }
 export const OG_CONTENT_TYPE = 'image/png'
 
+/** Reverso (dark-background) logo as a data URI for Satori. */
+async function loadReversoLogo(): Promise<string | null> {
+  try {
+    const svg = await readFile(
+      join(process.cwd(), 'public', 'crest-partners-logo', 'svg', 'crest-partners-logo-reverso.svg')
+    )
+    return `data:image/svg+xml;base64,${svg.toString('base64')}`
+  } catch (err) {
+    console.error('[og] Could not load reverso logo:', err)
+    return null
+  }
+}
+
 async function loadSpartan() {
   try {
     const dir = join(process.cwd(), 'public', 'fonts')
@@ -32,7 +45,7 @@ export async function renderOgImage({
   title: string
   subtitle?: string
 }) {
-  const fonts = await loadSpartan()
+  const [fonts, logo] = await Promise.all([loadSpartan(), loadReversoLogo()])
   return new ImageResponse(
     (
       <div
@@ -61,10 +74,14 @@ export async function renderOgImage({
           </div>
         )}
         <div style={{ display: 'flex', alignItems: 'center', marginTop: 56 }}>
-          <div style={{ width: 56, height: 6, background: '#5FD4CB', marginRight: 20 }} />
-          <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, letterSpacing: 6, color: '#5FD4CB' }}>
-            CREST PARTNERS
-          </div>
+          {logo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={logo} width={370} height={48} alt="Crest Partners" />
+          ) : (
+            <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, letterSpacing: 6, color: '#5FD4CB' }}>
+              CREST PARTNERS
+            </div>
+          )}
         </div>
       </div>
     ),
