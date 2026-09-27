@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import CompanyLogo from '@/components/CompanyLogo'
+import { BookCallLink } from '@/components/CtaLinks'
 
 type Tag = 'all' | 'active' | 'exit' | 'data' | 'cloud' | 'talent'
 
@@ -123,10 +124,10 @@ export default function CaseStudiesPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-6">
               Every company started at zero. None of them stayed there.
             </h1>
-            <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed">
+            <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed">
               From a $250M data exit to the Google Cloud Partner of the Year. From 8 people to 200+.
-              From $1M to $400M in revenue. Different companies, different industries, different sizes —
-              and in every case: less than 1% turnover, a Great Place to Work certification, and teams
+              From one person on the ground to a $400M exit. Different companies, different industries, different sizes —
+              and in every case: less than 1% involuntary turnover, a Great Place to Work certification, and teams
               that became core to how those companies grew. These are not coincidences. This is the model.
             </p>
           </div>
@@ -141,7 +142,7 @@ export default function CaseStudiesPage() {
                 <p className={`text-[32px] font-bold leading-none mb-2 ${item.highlight ? 'text-[#00A79D]' : 'text-[#2574A7]'}`}>
                   {item.value}
                 </p>
-                <p className="text-[12px] text-[#5A6A7A] font-light leading-snug">{item.label}</p>
+                <p className="text-[12px] text-[#5A6A7A] font-normal leading-snug">{item.label}</p>
               </div>
             ))}
           </div>
@@ -161,7 +162,7 @@ export default function CaseStudiesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-5 leading-snug">
               From $30M to $400M — and Costa Rica was at the center of it.
             </h2>
-            <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed mb-8">
+            <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed mb-8">
               LTV Co. arrived in Costa Rica with one person and a vision. Ten years later they exited
               at $400M with a 120-person engineering and data hub.
             </p>
@@ -178,13 +179,13 @@ export default function CaseStudiesPage() {
           <div className="bg-[#F4F7FA] rounded-[12px] p-8 border border-[#D8E2EA]">
             <div className="bg-white border border-[#D8E2EA] rounded-[10px] p-5 mb-5">
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-3">GPTW</p>
-              <p className="text-[13px] text-black font-light leading-relaxed">
+              <p className="text-[13px] text-black font-normal leading-relaxed">
                 Score so high that auditors asked to verify — LTV Co. ranked{' '}
                 <strong>#1 Best Company for Young Professionals in CR</strong>
               </p>
             </div>
             <div className="bg-white border border-[#D8E2EA] rounded-[10px] p-5 mb-5">
-              <p className="text-[13px] text-[#5A6A7A] font-light italic leading-relaxed mb-3">
+              <p className="text-[#3E4C59] font-normal italic leading-relaxed mb-3 text-[16px]">
                 "We would never have accomplished our goals without them."
               </p>
               <p className="text-[12px] font-bold text-black">— Co-founder & Executive, LTV Co.</p>
@@ -198,7 +199,7 @@ export default function CaseStudiesPage() {
               ].map((s) => (
                 <div key={s.val} className="bg-white border border-[#D8E2EA] rounded-[8px] p-4">
                   <p className="text-[20px] font-bold text-[#2574A7] leading-none mb-1">{s.val}</p>
-                  <p className="text-[11px] text-[#5A6A7A] font-light">{s.label}</p>
+                  <p className="text-[11px] text-[#5A6A7A] font-normal">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -238,7 +239,7 @@ export default function CaseStudiesPage() {
                 <div className="mb-4 h-12 flex items-center">
                   <CompanyLogo company={c.logo} variant="card" />
                 </div>
-                <p className="text-[13px] text-[#5A6A7A] font-light mb-3">{c.stats}</p>
+                <p className="text-[13px] text-[#5A6A7A] font-normal mb-3">{c.stats}</p>
                 <p className="text-[12px] text-[#00A79D] font-bold italic">"{c.tagline}"</p>
               </Link>
             ))}
@@ -252,11 +253,11 @@ export default function CaseStudiesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
               <div key={i} className="border border-white/10 rounded-[10px] p-8">
-                <p className="text-[18px] text-white font-light italic leading-relaxed mb-6">
+                <p className="text-[18px] text-white font-normal italic leading-relaxed mb-6">
                   "{t.quote}"
                 </p>
                 <p className="text-[13px] font-bold text-[#00A79D]">{t.author}</p>
-                <p className="text-[12px] text-white/50 font-light">{t.sub}</p>
+                <p className="text-[12px] text-white/50 font-normal">{t.sub}</p>
               </div>
             ))}
           </div>
@@ -270,12 +271,7 @@ export default function CaseStudiesPage() {
             Ready to write your own story?
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contact"
-              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors"
-            >
-              Talk to our team
-            </Link>
+            <BookCallLink className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors" />
             <Link
               href="/services"
               className="border border-white/50 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"

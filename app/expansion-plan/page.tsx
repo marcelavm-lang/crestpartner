@@ -1,4 +1,5 @@
 import ExpansionPlanForm from '@/components/ExpansionPlanForm'
+import { BookCallLink } from '@/components/CtaLinks'
 
 export const metadata = {
   title: 'Expansion Plan Generator — Crest Partners',
@@ -16,7 +17,7 @@ export default function ExpansionPlanPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-5">
             Build your Costa Rica expansion plan
           </h1>
-          <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed">
+          <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed">
             Answer 5 quick questions and get a personalized plan — team structure, timeline and cost
             considerations — generated in seconds by our AI advisor, trained on 25 years of Crest
             Partners experience.
@@ -40,13 +41,13 @@ export default function ExpansionPlanPage() {
               <div className="space-y-4">
                 {[
                   { val: '25+', label: 'Years in Costa Rica\'s tech market', color: 'text-[#2574A7]' },
-                  { val: '<1%', label: 'Involuntary turnover — industry avg. 13%', color: 'text-[#00A79D]' },
+                  { val: '<1%', label: 'Involuntary turnover — industry avg. 13%', color: 'text-[#00A79D]' }, // TODO: cite source for 13% industry avg
                   { val: '$1B+', label: 'Combined client revenue', color: 'text-[#2574A7]' },
-                  { val: '97.6', label: 'GPTW Trust Index — one of the highest scores globally', color: 'text-[#00A79D]' },
+                  { val: '97.6', label: 'GPTW Trust Index at LTV Co. — one of the highest scores globally', color: 'text-[#00A79D]' },
                 ].map((s) => (
                   <div key={s.val} className="flex items-start gap-3 pb-4 border-b border-[#F4F7FA] last:border-0 last:pb-0">
                     <span className={`text-[22px] font-bold shrink-0 ${s.color}`}>{s.val}</span>
-                    <span className="text-[12px] text-[#5A6A7A] font-light leading-snug pt-1">{s.label}</span>
+                    <span className="text-[12px] text-[#5A6A7A] font-normal leading-snug pt-1">{s.label}</span>
                   </div>
                 ))}
               </div>
@@ -54,15 +55,12 @@ export default function ExpansionPlanPage() {
 
             <div className="bg-[#EBF4FA] border border-[#B3D4EC] rounded-[12px] p-5">
               <p className="text-[13px] font-bold text-[#2574A7] mb-2">Prefer to talk?</p>
-              <p className="text-[12px] text-[#5A6A7A] font-light mb-4 leading-relaxed">
+              <p className="text-[#3E4C59] font-normal mb-4 leading-relaxed text-[16px]">
                 Skip the form and get on a call with our team. We'll design your plan in 48 hours.
               </p>
-              <a
-                href="/contact"
-                className="inline-block bg-[#2574A7] text-white font-bold text-[12px] px-4 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors"
-              >
-                Schedule a call →
-              </a>
+              <BookCallLink className="inline-block bg-[#2574A7] text-white font-bold text-[12px] px-4 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors">
+                Book a 30-min call →
+              </BookCallLink>
             </div>
           </div>
 

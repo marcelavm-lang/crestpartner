@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { SITE } from '@/lib/site'
+import { BookCallLink, WhatsAppLink } from '@/components/CtaLinks'
 
 const services = [
   { label: 'Launch', href: '/services#launch' },
@@ -26,11 +28,11 @@ export default function Footer() {
                 src="/crest-logo.png"
                 alt="Crest Partners"
                 width={160}
-                height={83}
+                height={53}
                 className="h-14 w-auto"
               />
             </Link>
-            <p className="text-[13px] text-[#5A6A7A] leading-relaxed font-light">
+            <p className="text-[#3E4C59] leading-relaxed font-normal text-[16px]">
               We help tech companies establish and operate their own dedicated tech entity in Costa Rica — your team, your brand, fully administered by us.
             </p>
           </div>
@@ -69,29 +71,19 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <a
-                  href="mailto:info@crestpartners.com"
+                  href={`mailto:${SITE.email}`}
                   className="text-[13px] text-black hover:text-[#2574A7] transition-colors"
                 >
-                  info@crestpartners.com
+                  {SITE.email}
                 </a>
               </li>
               <li>
-                <a
-                  href="https://wa.me/50688911344"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[13px] text-black hover:text-[#2574A7] transition-colors"
-                >
-                  WhatsApp: +506 8891-3444
-                </a>
+                <WhatsAppLink className="text-[13px] text-black hover:text-[#2574A7] transition-colors" />
               </li>
               <li>
-                <Link
-                  href="/contact"
-                  className="text-[13px] text-[#2574A7] font-semibold hover:underline transition-colors"
-                >
-                  Get started →
-                </Link>
+                <BookCallLink className="text-[13px] text-[#2574A7] font-semibold hover:underline transition-colors">
+                  Book a 30-min call →
+                </BookCallLink>
               </li>
             </ul>
           </div>
@@ -102,7 +94,7 @@ export default function Footer() {
       <div className="border-t border-[#D8E2EA]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-[12px] text-[#5A6A7A]">
-            © 2025 Crest Partners · San José, Costa Rica
+            © {new Date().getFullYear()} Crest Partners · San José, Costa Rica
           </p>
         </div>
       </div>

@@ -1,11 +1,5 @@
 import Link from 'next/link'
-
-const trustBar = [
-  { value: '25+', label: 'Years in Costa Rica\'s tech market' },
-  { value: '<1%', label: 'turnover across all partnerships' },
-  { value: '6', label: 'companies with full operations built from zero' },
-  { value: '30', label: 'days average time to fully operational' },
-]
+import { BookCallLink } from '@/components/CtaLinks'
 
 const launchChecklist = [
   'Legal entity creation — registration, structure and documentation',
@@ -54,7 +48,7 @@ function Checklist({ items }: { items: string[] }) {
               <path d="M1 3L3 5L7 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
-          <span className="text-[14px] text-black font-light leading-snug">{item}</span>
+          <span className="text-[14px] text-black font-normal leading-snug">{item}</span>
         </li>
       ))}
     </ul>
@@ -65,38 +59,38 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="px-12 py-20 border-b border-gray-200">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Columna izquierda */}
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Services</p>
-            <h1 className="text-5xl font-bold leading-tight mb-5">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#00A79D] mb-3">Services</p>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
               Everything you need to operate in Costa Rica — under one roof.
             </h1>
-            <p className="text-base font-light text-gray-500 leading-relaxed mb-8">
+            <p className="text-[16px] font-normal text-[#3E4C59] leading-relaxed mb-8">
               We don't connect you with vendors. We are the vendor — for every layer of your Costa Rica operation.
             </p>
-            <div className="flex gap-3">
-              <Link href="/contact" className="px-6 py-3 bg-blue-600 text-white text-sm font-bold rounded-lg">Talk to our team</Link>
+            <div className="flex flex-wrap gap-3">
+              <BookCallLink className="px-6 py-3 bg-[#2574A7] text-white text-sm font-bold rounded-lg hover:bg-[#1f6391] transition-colors" />
               <Link href="/case-studies" className="px-6 py-3 border border-gray-200 text-sm rounded-lg">See case studies →</Link>
             </div>
           </div>
           {/* Columna derecha — 3 service cards */}
           <div className="flex flex-col gap-3">
             <Link href="#launch" className="bg-gray-50 border border-gray-200 rounded-lg p-5 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
-              <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">01 — Launch</div>
+              <div className="text-xs font-bold text-[#00A79D] tracking-widest uppercase mb-2">01 — Launch</div>
               <div className="text-base font-bold text-gray-900 mb-1">Launch your Costa Rica operation</div>
-              <div className="text-sm font-light text-gray-500">Legal entity, back office and compliance — fully operational in 30 days.</div>
+              <div className="text-sm font-normal text-[#5A6A7A]">Legal entity, back office and compliance — fully operational in 30 days.</div>
             </Link>
             <Link href="#build" className="bg-gray-50 border border-gray-200 rounded-lg p-5 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
-              <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">02 — Build</div>
+              <div className="text-xs font-bold text-[#00A79D] tracking-widest uppercase mb-2">02 — Build</div>
               <div className="text-base font-bold text-gray-900 mb-1">Build and lead your nearshore tech team</div>
-              <div className="text-sm font-light text-gray-500">Recruiting, assessments, onboarding, payroll and retention — less than 1% turnover.</div>
+              <div className="text-sm font-normal text-[#5A6A7A]">Recruiting, assessments, onboarding, payroll and retention — less than 1% involuntary turnover.</div>
             </Link>
             <Link href="#operate" className="bg-gray-50 border border-gray-200 rounded-lg p-5 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
-              <div className="text-xs font-bold text-teal-500 tracking-widest uppercase mb-2">03 — Operate</div>
+              <div className="text-xs font-bold text-[#00A79D] tracking-widest uppercase mb-2">03 — Operate</div>
               <div className="text-base font-bold text-gray-900 mb-1">Run your back office — completely</div>
-              <div className="text-sm font-light text-gray-500">Accounting, legal, HR and office management — ongoing, every day.</div>
+              <div className="text-sm font-normal text-[#5A6A7A]">Accounting, legal, HR and office management — ongoing, every day.</div>
             </Link>
           </div>
         </div>
@@ -110,8 +104,8 @@ export default function ServicesPage() {
             <h2 className="text-3xl font-bold text-black mb-4 leading-snug">
               Launch your Costa Rica operation in 30 days
             </h2>
-            <p className="text-[15px] text-[#5A6A7A] font-light leading-relaxed mb-8">
-              Legal entity, employer of record, compliance, back office and office setup — fully operational
+            <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">
+              Legal entity, compliance, back office and office setup — fully operational
               before your first hire.
             </p>
             <Checklist items={launchChecklist} />
@@ -121,7 +115,7 @@ export default function ServicesPage() {
           <div className="bg-[#F4F7FA] rounded-[12px] p-8 border border-[#D8E2EA]">
             <div className="border border-[#D8E2EA] bg-white rounded-[10px] p-5 mb-6">
               <p className="text-[28px] font-bold text-[#2574A7] leading-none mb-1">30 days</p>
-              <p className="text-[12px] text-[#5A6A7A] font-light">average time to fully operational</p>
+              <p className="text-[12px] text-[#5A6A7A] font-normal">average time to fully operational</p>
             </div>
             <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Timeline</p>
             <div className="space-y-3">
@@ -157,31 +151,31 @@ export default function ServicesPage() {
             {/* Visual panel */}
             <div className="bg-white rounded-[12px] p-8 border border-[#D8E2EA] order-2 md:order-1">
               <div>
-                <p className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Results</p>
+                <p className="text-xs font-bold tracking-widest uppercase text-[#5A6A7A] mb-3">Results</p>
                 <div className="grid grid-cols-2 gap-3">
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-teal-500">&lt;1%</div>
-                  <div className="text-xs text-gray-500 mt-1">Involuntary turnover — industry avg. 13%</div>
+                  <div className="text-2xl font-bold text-[#00A79D]">&lt;1%</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">Involuntary turnover — industry avg. 13%{/* TODO: cite source for 13% industry avg */}</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-blue-600">$1B+</div>
-                  <div className="text-xs text-gray-500 mt-1">Combined client revenue across all partnerships</div>
+                  <div className="text-2xl font-bold text-[#2574A7]">$1B+</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">Combined client revenue across all partnerships</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-blue-600">1000+</div>
-                  <div className="text-xs text-gray-500 mt-1">High-value tech jobs created</div>
+                  <div className="text-2xl font-bold text-[#2574A7]">1000+</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">High-value tech jobs created</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-teal-500">97.6</div>
-                  <div className="text-xs text-gray-500 mt-1">GPTW Trust Index — among the highest scores globally</div>
+                  <div className="text-2xl font-bold text-[#00A79D]">97.6</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">GPTW Trust Index at LTV Co. — among the highest scores globally</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-blue-600">98/100</div>
-                  <div className="text-xs text-gray-500 mt-1">eNPS — Employee Net Promoter Score at LTV Co.</div>
+                  <div className="text-2xl font-bold text-[#2574A7]">98/100</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">eNPS at LTV Co.</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-blue-600">25+</div>
-                  <div className="text-xs text-gray-500 mt-1">Years recruiting in the Costa Rica tech market</div>
+                  <div className="text-2xl font-bold text-[#2574A7]">25+</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">Years recruiting in the Costa Rica tech market</div>
                 </div>
               </div>
               </div>
@@ -192,7 +186,7 @@ export default function ServicesPage() {
               <h2 className="text-3xl font-bold text-black mb-4 leading-snug">
                 Build and lead your nearshore tech team
               </h2>
-              <p className="text-[15px] text-[#5A6A7A] font-light leading-relaxed mb-8">
+              <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">
                 We find the right people, assess them rigorously, onboard them into your culture and keep
                 them engaged for the long term.
               </p>
@@ -210,7 +204,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl font-bold text-black mb-4 leading-snug">
               Run your back office — completely and continuously
             </h2>
-            <p className="text-[15px] text-[#5A6A7A] font-light leading-relaxed mb-8">
+            <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">
               Accounting, legal, compliance, HR administration and office management — ongoing, every day.
             </p>
             <Checklist items={operateChecklist} />
@@ -219,8 +213,8 @@ export default function ServicesPage() {
           {/* Visual panel */}
           <div className="bg-[#F4F7FA] rounded-[12px] p-8 border border-[#D8E2EA]">
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-4">
-              <div className="text-2xl font-bold text-blue-600 mb-1">25 years</div>
-              <div className="text-sm font-light text-gray-500 leading-relaxed">of operational experience. AI-enhanced tools. Zero gaps.</div>
+              <div className="text-2xl font-bold text-[#2574A7] mb-1">25 years</div>
+              <div className="text-[16px] font-normal text-[#3E4C59] leading-relaxed">of operational experience. AI-enhanced tools. Zero gaps.</div>
             </div>
             <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Back office coverage</p>
             <div className="grid grid-cols-2 gap-3">
@@ -249,7 +243,7 @@ export default function ServicesPage() {
               <div key={c.company} className="border border-white/10 rounded-[10px] p-7">
                 <p className="text-[22px] font-bold text-[#2574A7] mb-2">{c.result}</p>
                 <p className="text-[16px] font-bold text-white mb-2">{c.company}</p>
-                <p className="text-[13px] text-white/60 font-light">{c.note}</p>
+                <p className="text-[13px] text-white/60 font-normal">{c.note}</p>
               </div>
             ))}
           </div>
@@ -268,7 +262,7 @@ export default function ServicesPage() {
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">{step.num}</p>
               <h3 className="text-[16px] font-bold text-black mb-1">{step.title}</h3>
               <p className="text-[12px] text-[#2574A7] font-bold mb-3">{step.sub}</p>
-              <p className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">{step.desc}</p>
+              <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -281,14 +275,7 @@ export default function ServicesPage() {
             Ready to build your Costa Rica team?
           </h2>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
-            <a
-              href="https://calendly.com/marcelavm/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors"
-            >
-              Schedule a call
-            </a>
+            <BookCallLink className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors" />
             <Link
               href="/case-studies"
               className="border border-white/50 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"

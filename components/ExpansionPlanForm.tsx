@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import Link from 'next/link'
+import { BookCallLink } from '@/components/CtaLinks'
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const ReactMarkdown = require('react-markdown').default
 // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -37,11 +37,11 @@ const mdComponents: Record<string, any> = {
   ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   p: ({ children }: any) => (
-    <p className="text-[13px] text-[#5A6A7A] leading-relaxed mb-3 font-light">{children}</p>
+    <p className="text-[#3E4C59] leading-relaxed mb-3 font-normal text-[16px]">{children}</p>
   ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   li: ({ children }: any) => (
-    <li className="text-[13px] text-[#5A6A7A] leading-relaxed mb-1 font-light">{children}</li>
+    <li className="text-[#3E4C59] leading-relaxed mb-1 font-normal text-[16px]">{children}</li>
   ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ul: ({ children }: any) => <ul className="list-disc pl-5 mb-3 space-y-0.5">{children}</ul>,
@@ -52,11 +52,6 @@ const mdComponents: Record<string, any> = {
 // ── Constants ──────────────────────────────────────────────────────────────
 const INDUSTRIES = ['Tech', 'Data & Analytics', 'AI & Machine Learning', 'Cloud & DevOps', 'SaaS', 'E-commerce', 'Other']
 const US_TEAM_SIZES = ['1–10', '11–50', '51–200', '200+']
-const PROFILES = [
-  'Software Engineers', 'Data Engineers', 'DevOps & Cloud Engineers',
-  'QA Engineers', 'Product Managers', 'Engineering Leadership',
-  'UI/UX Designers', 'Data Scientists', 'Business Analysts', 'Other',
-]
 const SERVICES = [
   { id: 'launch', label: 'Launch', sub: 'Set up legal entity in Costa Rica' },
   { id: 'build', label: 'Build', sub: 'Recruit and manage the team' },
@@ -121,16 +116,6 @@ const GROUP_TO_PROFILE: Record<string, string[]> = {
   'UI/UX Design':      ['UI/UX Designers'],
   'Data Science':      ['Data Scientists'],
   'Business Analysis': ['Business Analysts'],
-}
-const GROUP_COLORS: Record<string, string> = {
-  'Engineering':        'text-[#2574A7]',
-  'QA':                'text-[#00A79D]',
-  'Data Engineering':  'text-[#6C5CE7]',
-  'DevOps & Cloud':    'text-[#27AE60]',
-  'Product':           'text-[#D4890A]',
-  'UI/UX Design':      'text-[#E91E8C]',
-  'Data Science':      'text-[#E24B4A]',
-  'Business Analysis': 'text-[#5A6A7A]',
 }
 
 type PositionKey = typeof POSITION_LEVELS[number]['key']
@@ -224,14 +209,14 @@ function Checkbox({ checked, onChange, label, sub }: { checked: boolean; onChang
       </div>
       <div>
         <div className="text-[13px] text-black font-medium leading-tight">{label}</div>
-        {sub && <div className="text-[11px] text-[#5A6A7A] font-light mt-0.5">{sub}</div>}
+        {sub && <div className="text-[11px] text-[#5A6A7A] font-normal mt-0.5">{sub}</div>}
       </div>
     </label>
   )
 }
 
 // ── Counter row ─────────────────────────────────────────────────────────────
-function CounterRow({ label, years, color, value, onDec, onInc, annualRange }: {
+function CounterRow({ label, years, value, onDec, onInc, annualRange }: {
   label: string; years: string; color: string; value: number
   onDec: () => void; onInc: () => void
   annualRange?: string
@@ -242,7 +227,7 @@ function CounterRow({ label, years, color, value, onDec, onInc, annualRange }: {
     }`}>
       <div className="flex-1 min-w-0">
         <span className="text-[14px] font-medium text-black">{label}</span>
-        <span className="text-[11px] text-[#5A6A7A] font-light ml-2">{years}</span>
+        <span className="text-[11px] text-[#5A6A7A] font-normal ml-2">{years}</span>
         {annualRange && (
           <div className="text-[10px] text-[#5A6A7A] mt-0.5">{annualRange}/yr</div>
         )}
@@ -326,6 +311,8 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           services: form.services,
           timeline: form.timeline,
           name: form.contactName,
+          email: form.contactEmail,
+          contactCompany: form.contactCompany,
           message: form.message,
         }),
       })
@@ -358,24 +345,24 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         {costs && (
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-              <div className="text-lg font-bold text-blue-600">${costs.setup.toLocaleString()}</div>
-              <div className="text-xs text-gray-500 mt-1">One-time setup</div>
+              <div className="text-lg font-bold text-[#2574A7]">${costs.setup.toLocaleString()}</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">One-time setup</div>
             </div>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-              <div className="text-lg font-bold text-blue-600">${costs.managementFee.toLocaleString()}/yr</div>
-              <div className="text-xs text-gray-500 mt-1">Management fee</div>
+              <div className="text-lg font-bold text-[#2574A7]">${costs.managementFee.toLocaleString()}/yr</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">Management fee</div>
             </div>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-              <div className="text-lg font-bold text-teal-500">${costs.recruitingFee.toLocaleString()}</div>
-              <div className="text-xs text-gray-500 mt-1">Recruiting fees</div>
+              <div className="text-lg font-bold text-[#00A79D]">${costs.recruitingFee.toLocaleString()}</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">Recruiting fees</div>
             </div>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-              <div className="text-lg font-bold text-blue-600">${costs.totalSalaries.toLocaleString()}</div>
-              <div className="text-xs text-gray-500 mt-1">Est. total comp</div>
+              <div className="text-lg font-bold text-[#2574A7]">${costs.totalSalaries.toLocaleString()}</div>
+              <div className="text-xs text-[#5A6A7A] mt-1">Est. total comp</div>
             </div>
             <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 text-center col-span-2 md:col-span-1">
-              <div className="text-lg font-bold text-teal-600">${costs.totalYear1.toLocaleString()}</div>
-              <div className="text-xs text-teal-600 mt-1 font-bold">Total Year 1</div>
+              <div className="text-lg font-bold text-[#00A79D]">${costs.totalYear1.toLocaleString()}</div>
+              <div className="text-xs text-[#00A79D] mt-1 font-bold">Total Year 1</div>
             </div>
           </div>
         )}
@@ -387,13 +374,11 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         </div>
 
         <div className="pt-5 mt-4 border-t border-[#D8E2EA] flex gap-3">
-          <Link
-            href="/contact"
+          <BookCallLink
             className="flex-1 bg-[#2574A7] text-white font-bold text-[13px] py-3 rounded-[8px] text-center hover:bg-[#1f6391] transition-colors"
-            onClick={onClose}
           >
-            Schedule a call with our team →
-          </Link>
+            Book a 30-min call →
+          </BookCallLink>
           <button
             onClick={() => { setPlan(null); setCosts(null); setStep(1); setForm(initial) }}
             className="px-4 py-3 border border-[#D8E2EA] text-[#5A6A7A] text-[13px] rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors shrink-0"
@@ -411,7 +396,10 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
       <div className="flex items-start justify-between mb-2">
         <div>
           <p className="text-xs font-bold tracking-widest uppercase text-[#00A79D] mb-1">Expansion Plan Generator</p>
-          <h2 className="text-xl font-bold text-black leading-snug">Build your Costa Rica expansion plan</h2>
+          {/* In the modal this is the only heading; on /expansion-plan the page H1 already says it. */}
+          {onClose && (
+            <h2 className="text-xl font-bold text-black leading-snug">Build your Costa Rica expansion plan</h2>
+          )}
         </div>
         {onClose && (
           <button onClick={onClose} className="text-[#5A6A7A] hover:text-black text-xl leading-none ml-4 mt-1 shrink-0">✕</button>
@@ -462,7 +450,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           <div className="space-y-3">
             <div>
               <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1">Team composition</label>
-              <p className="text-[11px] text-[#5A6A7A] font-light mb-3">Expand a category and select how many professionals you need at each level. Salaries shown in USD/yr, all CR social charges included.</p>
+              <p className="text-[11px] text-[#5A6A7A] font-normal mb-3">Expand a category and select how many professionals you need at each level. Salaries shown in USD/yr, all CR social charges included.</p>
             </div>
 
             {/* Accordion groups */}
@@ -531,7 +519,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
                   <span className="text-[20px] font-bold text-[#2574A7]">{totalHeadcount(form.seniority)}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-[11px] text-[#5A6A7A] font-light">Est. annual cost (incl. 34% CR social charges)</span>
+                  <span className="text-[11px] text-[#5A6A7A] font-normal">Est. annual cost (incl. 34% CR social charges)</span>
                   <span className="text-[13px] font-bold text-[#00A79D]">${estimatedSalaries(form.seniority).toLocaleString()}/yr</span>
                 </div>
               </div>
@@ -565,7 +553,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
               >
                 <div>
                   <div className="text-[14px] font-bold text-black">{t.label}</div>
-                  <div className="text-[12px] text-[#5A6A7A] font-light">{t.sub}</div>
+                  <div className="text-[12px] text-[#5A6A7A] font-normal">{t.sub}</div>
                 </div>
                 <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                   form.timeline === t.value ? 'border-[#2574A7] bg-[#2574A7]' : 'border-[#D8E2EA]'
@@ -581,7 +569,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         {step === 5 && (
           <div className="space-y-4">
             <h3 className="text-[14px] font-bold text-black mb-1">Your details</h3>
-            <p className="text-[12px] text-[#5A6A7A] font-light -mt-1 mb-3">To receive your personalized plan.</p>
+            <p className="text-[12px] text-[#5A6A7A] font-normal -mt-1 mb-3">To receive your personalized plan.</p>
             <div>
               <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Full name</label>
               <input type="text" value={form.contactName}

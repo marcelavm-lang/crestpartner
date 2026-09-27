@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import CompanyLogo from '@/components/CompanyLogo'
+import { BookCallLink } from '@/components/CtaLinks'
 
 const services = [
   {
@@ -29,7 +30,7 @@ const cases = [
   { name: 'TargusInfo', slug: 'targusinfo', logo: 'targusinfo' as const, period: '2001–2007', badge: 'Data Operations', stats: '200+ collaborators · $650M Neustar exit' },
   { name: 'Verisk Marketing Solutions', slug: 'verisk', logo: 'verisk' as const, period: '2007–2013', badge: 'Consumer Identity', stats: '55x revenue · $250M exit' },
   { name: '66degrees', slug: '66degrees', logo: '66degrees' as const, period: '2014–present', badge: 'Cloud & DevOps', stats: '11+ years · 0% turnover' },
-  { name: 'LTV Co.', slug: 'ltv-co', logo: 'ltv-co' as const, period: '2015–2025', badge: 'Consumer Data', stats: '13x revenue · $400M exit · 98/100 eNPS' },
+  { name: 'LTV Co.', slug: 'ltv-co', logo: 'ltv-co' as const, period: '2015–2025', badge: 'Consumer Data', stats: '13x revenue · $400M exit · 98/100 eNPS at LTV Co.' },
   { name: 'Think Unlimited', slug: 'think-unlimited', logo: 'think-unlimited' as const, period: '2023–present', badge: 'AI & Sales Tech', stats: '0% turnover · 100% product built in CR' },
   { name: 'Strategio', slug: 'strategio', logo: 'strategio' as const, period: '2025–present', badge: 'Talent Operations', stats: '8 collaborators · Talent vertical' },
 ]
@@ -44,13 +45,6 @@ const badgeColor: Record<string, string> = {
 }
 
 const logoChips = [
-  { name: 'TargusInfo', href: '/case-studies/targusinfo' },
-  { name: 'Verisk', href: '/case-studies/verisk' },
-  { name: 'LTV Co.', href: '/case-studies/ltv-co' },
-  { name: '66degrees', href: '/case-studies/66degrees' },
-  { name: 'Think Unlimited', href: '/case-studies/think-unlimited' },
-  { name: 'Strategio', href: '/case-studies/strategio' },
-  // duplicated for infinite scroll
   { name: 'TargusInfo', href: '/case-studies/targusinfo' },
   { name: 'Verisk', href: '/case-studies/verisk' },
   { name: 'LTV Co.', href: '/case-studies/ltv-co' },
@@ -84,22 +78,17 @@ export default function HomePage() {
 
             {/* Left column */}
             <div>
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-5">
+              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5FD4CB] mb-5">
                 Nearshore tech operations — Costa Rica
               </p>
               <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-white max-w-3xl mb-6">
                 Your engineering hub in Costa Rica — owned by you, built by us.
               </h1>
-              <p className="text-[17px] text-white/70 font-light leading-relaxed max-w-2xl mb-10">
+              <p className="text-[17px] text-white/70 font-normal leading-relaxed max-w-2xl mb-10">
                 We establish your dedicated legal entity in Costa Rica, recruit your engineering team, and run the back-office so you can focus on the work. Your entity. Your people. Your IP. Not outsourcing. Ownership.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
-                >
-                  Talk to our team
-                </Link>
+                <BookCallLink className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide" />
                 <Link
                   href="/case-studies"
                   className="border border-white/40 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
@@ -125,15 +114,15 @@ export default function HomePage() {
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
                 <div className="text-[30px] font-bold text-[#00A79D]">&lt;1%</div>
-                <div className="text-xs text-white/60 mt-1">Avg. turnover — industry avg. 13%</div>
+                <div className="text-xs text-white/60 mt-1">Involuntary turnover — industry avg. 13%{/* TODO: cite source for 13% industry avg */}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
                 <div className="text-[30px] font-bold text-[#00A79D]">98/100</div>
-                <div className="text-xs text-white/60 mt-1">eNPS score</div>
+                <div className="text-xs text-white/60 mt-1">eNPS at LTV Co.</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
-                <div className="text-[30px] font-bold text-[#00A79D]">97.6/100</div>
-                <div className="text-xs text-white/60 mt-1">Trust Index · Great Place to Work</div>
+                <div className="text-[30px] font-bold text-[#00A79D]">97.6</div>
+                <div className="text-xs text-white/60 mt-1">GPTW Trust Index at LTV Co.</div>
               </div>
             </div>
 
@@ -146,14 +135,20 @@ export default function HomePage() {
             </p>
             <div className="overflow-hidden w-full">
               <div className="flex animate-scroll gap-3 w-max">
-                {logoChips.map((logo, i) => (
-                  <Link
-                    key={i}
-                    href={logo.href}
-                    className="text-sm font-medium px-4 py-2 border border-white/20 rounded-full text-white/70 bg-white/5 whitespace-nowrap hover:border-white/50 hover:text-white transition-colors"
-                  >
-                    {logo.name}
-                  </Link>
+                {/* Original set + a duplicate (for the seamless loop) hidden from assistive tech */}
+                {[false, true].map((isCopy) => (
+                  <div key={String(isCopy)} className="flex gap-3" aria-hidden={isCopy ? 'true' : undefined}>
+                    {logoChips.map((logo) => (
+                      <Link
+                        key={logo.href}
+                        href={logo.href}
+                        tabIndex={isCopy ? -1 : undefined}
+                        className="text-sm font-medium px-4 py-2 border border-white/20 rounded-full text-white/70 bg-white/5 whitespace-nowrap hover:border-white/50 hover:text-white transition-colors"
+                      >
+                        {logo.name}
+                      </Link>
+                    ))}
+                  </div>
                 ))}
               </div>
             </div>
@@ -168,7 +163,7 @@ export default function HomePage() {
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-3 max-w-xl">
           One partner. Every layer of your operation.
         </h2>
-        <p className="text-[16px] text-[#5A6A7A] font-light max-w-xl mb-12">
+        <p className="text-[16px] text-[#3E4C59] font-normal max-w-xl mb-12">
           We set up your legal entity in Costa Rica, recruit your team directly under your brand, and
           manage all the administrative infrastructure behind it — legal, HR, payroll and compliance.
           Your people work for you. We make sure everything around them works perfectly.
@@ -180,7 +175,7 @@ export default function HomePage() {
                 {s.num} — {s.title}
               </p>
               <h3 className="text-[18px] font-bold text-black mb-3 leading-snug">{s.headline}</h3>
-              <p className="text-[14px] text-[#5A6A7A] font-light leading-relaxed mb-6">{s.text}</p>
+              <p className="text-[#3E4C59] font-normal leading-relaxed mb-6 text-[16px]">{s.text}</p>
               <span className="inline-block text-[11px] font-bold tracking-wide text-[#2574A7] bg-[#EBF4FA] px-3 py-1.5 rounded-[6px]">
                 {s.tag}
               </span>
@@ -205,7 +200,7 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-3 max-w-2xl">
             Every company started at zero. None of them stayed there.
           </h2>
-          <p className="text-[16px] text-[#5A6A7A] font-light mb-12">
+          <p className="text-[16px] text-[#3E4C59] font-normal mb-12">
             A track record of complete operations built from the ground up — across industries, team sizes and timelines. These are some of them.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -220,7 +215,7 @@ export default function HomePage() {
                 <div className="mb-4 h-12 flex items-center">
                   <CompanyLogo company={c.logo} variant="card" />
                 </div>
-                <p className="text-[13px] text-[#5A6A7A] font-light">{c.stats}</p>
+                <p className="text-[13px] text-[#5A6A7A] font-normal">{c.stats}</p>
               </Link>
             ))}
           </div>
@@ -256,7 +251,7 @@ export default function HomePage() {
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 w-4 h-4 rounded-full border border-[#D8E2EA] shrink-0" />
-                  <span className="text-[14px] text-[#5A6A7A] font-light">{item}</span>
+                  <span className="text-[16px] text-[#3E4C59] font-normal">{item}</span>
                 </li>
               ))}
             </ul>
@@ -291,15 +286,15 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-xl font-bold text-[#00A79D]">&lt;1%</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">Avg. turnover</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">Involuntary turnover — industry avg. 13%{/* TODO: cite source for 13% industry avg */}</div>
               </div>
               <div>
                 <div className="text-xl font-bold text-[#2574A7]">1000+</div>
                 <div className="text-xs text-[#5A6A7A] mt-1">High-value tech jobs created</div>
               </div>
               <div>
-                <div className="text-xl font-bold text-[#00A79D]">97.6/100</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">97.6/100 Trust Index · Great Place to Work — one of the highest scores globally</div>
+                <div className="text-xl font-bold text-[#00A79D]">97.6</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">GPTW Trust Index at LTV Co. — one of the highest scores globally</div>
               </div>
             </div>
           </div>
@@ -314,7 +309,7 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-5">
               Growth only makes sense when everyone grows.
             </h2>
-            <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed">
+            <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed">
               That's why our founders co-created Forward Costa Rica — a non-profit committed to developing the next generation of tech professionals in Costa Rica. Not as a program we run, but as a cause we believe in.
             </p>
             <a
@@ -335,18 +330,11 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Ready to build your team in Costa Rica?
           </h2>
-          <p className="text-[17px] text-white/80 font-light mb-10">
+          <p className="text-[17px] text-white/80 font-normal mb-10">
             Tell us about your company — we'll design your expansion plan in 48 hours.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="https://calendly.com/marcelavm/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors tracking-wide"
-            >
-              Schedule a call
-            </a>
+            <BookCallLink className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors tracking-wide" />
             <Link
               href="/case-studies"
               className="border border-white/50 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"

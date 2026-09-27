@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import Link from 'next/link'
+import { BookCallLink } from '@/components/CtaLinks'
 
 /* ─────────────────────────────────────────
    Animation variants
@@ -208,7 +209,7 @@ export default function LandingPage() {
           {/* Subheadline */}
           <motion.p
             variants={fadeUp}
-            className="text-[18px] md:text-[20px] text-[#6B7280] font-light leading-relaxed max-w-2xl mb-10"
+            className="text-[18px] md:text-[20px] text-[#3E4C59] font-normal leading-relaxed max-w-2xl mb-10"
           >
             We help US companies launch, hire, and operate high-performing engineering teams in Costa Rica —
             fully owned, fully integrated, and built for long-term scale.
@@ -238,12 +239,7 @@ export default function LandingPage() {
               Get your expansion plan
               <ArrowRight />
             </a>
-            <a
-              href="/contact"
-              className="inline-flex items-center bg-white border border-[#D1D5DB] text-[#0A0F1E] font-bold text-[14px] px-7 py-3.5 rounded-[10px] hover:border-[#2574A7] hover:text-[#2574A7] transition-all duration-200"
-            >
-              Schedule a call
-            </a>
+            <BookCallLink className="inline-flex items-center bg-white border border-[#D1D5DB] text-[#0A0F1E] font-bold text-[14px] px-7 py-3.5 rounded-[10px] hover:border-[#2574A7] hover:text-[#2574A7] transition-all duration-200" />
           </motion.div>
 
           {/* Trust strip */}
@@ -298,7 +294,7 @@ export default function LandingPage() {
                 ].map(item => (
                   <li key={item} className="flex items-start gap-3">
                     <XIcon />
-                    <span className="text-[14px] text-[#6B7280] font-light leading-snug">{item}</span>
+                    <span className="text-[14px] text-[#6B7280] font-normal leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -402,7 +398,7 @@ export default function LandingPage() {
                 <h3 className="text-[24px] font-bold text-[#0A0F1E] mb-4 group-hover:text-[#2574A7] transition-colors">
                   {card.title}
                 </h3>
-                <p className="text-[14px] text-[#6B7280] font-light leading-relaxed mb-8">{card.desc}</p>
+                <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">{card.desc}</p>
                 <span
                   className="inline-block text-[11px] font-bold tracking-wide px-3 py-1.5 rounded-[6px]"
                   style={{ color: card.color, background: card.bg }}
@@ -485,7 +481,7 @@ export default function LandingPage() {
                   <FeatureIcon name={f.icon} />
                 </div>
                 <h3 className="text-[15px] font-bold text-white mb-3">{f.title}</h3>
-                <p className="text-[13px] font-light leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                <p className="text-[13px] font-normal leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
                   {f.desc}
                 </p>
               </motion.div>
@@ -525,7 +521,7 @@ export default function LandingPage() {
                 >
                   {m.val}
                 </p>
-                <p className="text-[12px] text-[#6B7280] font-light leading-snug">{m.label}</p>
+                <p className="text-[12px] text-[#6B7280] font-normal leading-snug">{m.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -584,7 +580,7 @@ export default function LandingPage() {
                   <span className="text-[12px] text-[#9CA3AF]">{c.period}</span>
                 </div>
                 <h3 className="text-[28px] font-bold text-[#0A0F1E] mb-4 tracking-tight">{c.company}</h3>
-                <p className="text-[14px] text-[#6B7280] font-light leading-relaxed mb-8">{c.desc}</p>
+                <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">{c.desc}</p>
                 <div className="pt-5 border-t border-[#F3F4F6]">
                   <span className="text-[14px] font-bold" style={{ color: c.color }}>
                     {c.metric}
@@ -634,7 +630,7 @@ export default function LandingPage() {
                 Ready to build your engineering hub in Costa Rica?
               </h2>
               <p
-                className="text-[17px] font-light leading-relaxed mb-10"
+                className="text-[17px] font-normal leading-relaxed mb-10"
                 style={{ color: 'rgba(255,255,255,0.5)' }}
               >
                 Tell us about your company and we'll design a tailored expansion plan in 48 hours.
@@ -648,7 +644,7 @@ export default function LandingPage() {
                 ].map(b => (
                   <div key={b} className="flex items-center gap-3">
                     <CheckIcon />
-                    <span className="text-[14px] font-light" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                    <span className="text-[14px] font-normal" style={{ color: 'rgba(255,255,255,0.6)' }}>
                       {b}
                     </span>
                   </div>
@@ -672,7 +668,7 @@ export default function LandingPage() {
                     </svg>
                   </div>
                   <h3 className="text-[22px] font-bold text-white mb-3">We'll be in touch within 48 hours.</h3>
-                  <p className="text-[14px] font-light" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  <p className="text-[14px] font-normal" style={{ color: 'rgba(255,255,255,0.45)' }}>
                     Our team will review your information and reach out with a tailored expansion plan.
                   </p>
                 </div>
@@ -756,9 +752,9 @@ export default function LandingPage() {
 
                   <p className="text-center text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
                     Or{' '}
-                    <a href="/contact" className="underline hover:opacity-60 transition-opacity">
-                      schedule a call
-                    </a>{' '}
+                    <BookCallLink className="underline hover:opacity-60 transition-opacity">
+                      book a 30-min call
+                    </BookCallLink>{' '}
                     with our team
                   </p>
                 </form>
@@ -776,7 +772,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
               <p className="text-[14px] font-bold text-[#0A0F1E] mb-2">Crest Partners</p>
-              <p className="text-[13px] text-[#6B7280] font-light max-w-md leading-relaxed">
+              <p className="text-[#3E4C59] font-normal max-w-md leading-relaxed text-[16px]">
                 We help technology companies build and scale engineering operations in Costa Rica —
                 fully owned, long-term, and built to last.
               </p>
@@ -785,16 +781,14 @@ export default function LandingPage() {
               <a href="#get-plan" className="text-[13px] font-bold text-[#2574A7] hover:underline">
                 Get expansion plan
               </a>
-              <a href="/contact" className="text-[13px] text-[#6B7280] hover:text-[#2574A7] transition-colors">
-                Schedule a call
-              </a>
+              <BookCallLink className="text-[13px] text-[#6B7280] hover:text-[#2574A7] transition-colors" />
               <Link href="/case-studies" className="text-[13px] text-[#6B7280] hover:text-[#2574A7] transition-colors">
                 Case studies
               </Link>
             </div>
           </div>
           <div className="mt-10 pt-6 border-t border-[#F3F4F6]">
-            <p className="text-[11px] text-[#9CA3AF]">© 2025 Crest Partners · San José, Costa Rica</p>
+            <p className="text-[11px] text-[#9CA3AF]">© {new Date().getFullYear()} Crest Partners · San José, Costa Rica</p>
           </div>
         </div>
       </footer>
@@ -807,12 +801,7 @@ export default function LandingPage() {
         >
           Get expansion plan
         </a>
-        <a
-          href="/contact"
-          className="px-5 border border-[#D1D5DB] text-[#0A0F1E] text-[13px] font-bold py-3 rounded-[8px] whitespace-nowrap"
-        >
-          Schedule call
-        </a>
+        <BookCallLink className="px-4 border border-[#D1D5DB] text-[#0A0F1E] text-[12px] font-bold py-3 rounded-[8px] whitespace-nowrap" />
       </div>
     </div>
   )

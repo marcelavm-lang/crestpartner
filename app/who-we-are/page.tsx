@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
+import { BookCallLink } from '@/components/CtaLinks'
 
 const values = [
   { title: 'Full accountability', text: 'We don\'t hand off. We own the result.' },
@@ -128,7 +129,7 @@ function ExpertiseGrid({ items }: { items: string[] }) {
               <path d="M1 2.5L2.5 4L6 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
-          <span className="text-[13px] text-black font-light leading-snug">{area}</span>
+          <span className="text-[13px] text-black font-normal leading-snug">{area}</span>
         </div>
       ))}
     </div>
@@ -159,29 +160,29 @@ export default function WhoWeArePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="px-6 md:px-12 py-16 md:py-20 border-b border-gray-200">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Who we are</p>
-            <h1 className="text-5xl font-bold leading-tight mb-5">
+      <section className="border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 pt-20 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="min-w-0">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#00A79D] mb-3">Who we are</p>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
               25+ years building Costa Rica's tech ecosystem — from the inside.
             </h1>
-            <p className="text-base font-light text-gray-500 leading-relaxed">
+            <p className="text-[16px] font-normal text-[#3E4C59] leading-relaxed">
               Before anyone called it nearshore, our founders started building here. 25 years later, the companies they helped grow have exited at $400M, won Google Cloud Partner of the Year, and built teams that never left. That's not a strategy. That's a track record.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 min-w-0">
             {[
               { val: '2001', label: 'Year of our first partnership — before nearshore had a name', color: 'text-[#2574A7]' },
               { val: '1000+', label: 'High-value tech jobs created in Costa Rica', color: 'text-[#2574A7]' },
               { val: '<1%', label: 'Involuntary turnover across all partnerships', color: 'text-[#00A79D]' },
               { val: '$1B+', label: 'Combined client revenue', color: 'text-[#2574A7]' },
-              { val: '97.6', label: 'Great Place to Work Trust Index — among the highest scores globally', color: 'text-[#00A79D]' },
-              { val: '98/100', label: 'eNPS — Employee Net Promoter Score', color: 'text-[#2574A7]' },
+              { val: '97.6', label: 'GPTW Trust Index at LTV Co. — among the highest scores globally', color: 'text-[#00A79D]' },
+              { val: '98/100', label: 'eNPS at LTV Co.', color: 'text-[#2574A7]' },
             ].map((s) => (
-              <div key={s.val} className="bg-gray-50 border border-gray-200 rounded-lg p-5">
-                <div className={`text-3xl font-bold ${s.color}`}>{s.val}</div>
-                <div className="text-xs text-gray-500 mt-1">{s.label}</div>
+              <div key={s.val} className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-5 min-w-0">
+                <div className={`text-2xl sm:text-3xl font-bold ${s.color}`}>{s.val}</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">{s.label}</div>
               </div>
             ))}
           </div>
@@ -195,7 +196,7 @@ export default function WhoWeArePage() {
             {values.map((v, i) => (
               <div key={i} className={`py-10 px-6 ${i < values.length - 1 ? 'md:border-r border-[#D8E2EA]' : ''}`}>
                 <h3 className="text-[15px] font-bold text-black mb-2">{v.title}</h3>
-                <p className="text-[13px] text-[#5A6A7A] font-light">{v.text}</p>
+                <p className="text-[13px] text-[#5A6A7A] font-normal">{v.text}</p>
               </div>
             ))}
           </div>
@@ -214,7 +215,7 @@ export default function WhoWeArePage() {
 
                 {/* Left column */}
                 <div className="md:w-1/2">
-                  <div className="flex items-start justify-between mb-5">
+                  <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
                     <div className="flex items-center gap-4">
                       <Avatar {...person} size="lg" />
                       <div>
@@ -222,11 +223,11 @@ export default function WhoWeArePage() {
                         <p className="text-[13px] text-[#2574A7] font-bold mt-0.5">{person.title}</p>
                       </div>
                     </div>
-                    <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px] shrink-0 ml-4">
+                    <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px] shrink-0">
                       {person.badge}
                     </span>
                   </div>
-                  <p className="text-[14px] text-[#5A6A7A] font-light leading-relaxed mb-5">
+                  <p className="text-[#3E4C59] font-normal leading-relaxed mb-5 text-[16px]">
                     {person.bio}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -259,7 +260,7 @@ export default function WhoWeArePage() {
           <div className="bg-white border border-[#D8E2EA] rounded-[12px] p-8 mb-6">
             <div className="flex flex-col md:flex-row md:items-start gap-8">
               <div className="md:w-1/2">
-                <div className="flex items-start justify-between mb-5">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
                   <div className="flex items-center gap-4">
                     <div className="relative w-20 h-20 rounded-full overflow-hidden bg-[#EBF4FA] flex items-center justify-center text-[#2574A7] font-bold text-xl shrink-0">
                       <Image
@@ -277,11 +278,11 @@ export default function WhoWeArePage() {
                       <p className="text-[13px] text-[#2574A7] font-bold mt-0.5">Strategic Partner</p>
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px] shrink-0 ml-4">
+                  <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px] shrink-0">
                     Strategic Partner
                   </span>
                 </div>
-                <p className="text-[14px] text-[#5A6A7A] font-light leading-relaxed mb-5">
+                <p className="text-[#3E4C59] font-normal leading-relaxed mb-5 text-[16px]">
                   Mid-market acceleration executive with extensive background in general management, strategic planning, SaaS and Big Data. Led Infutor Data Solutions from $1M to $250M — with the Costa Rica team at the core of that growth. Brings the operator perspective of someone who has lived the model from the client side for over a decade.
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -303,7 +304,7 @@ export default function WhoWeArePage() {
           <div className="bg-white border border-[#D8E2EA] rounded-[12px] p-8">
             <div className="flex flex-col md:flex-row md:items-start gap-8">
               <div className="md:w-1/2">
-                <div className="flex items-start justify-between mb-5">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
                   <div className="flex items-center gap-4">
                     <div className="relative w-20 h-20 rounded-full overflow-hidden bg-[#EBF4FA] flex items-center justify-center text-[#2574A7] font-bold text-xl shrink-0">
                       <Image
@@ -321,15 +322,15 @@ export default function WhoWeArePage() {
                       <p className="text-[13px] text-[#2574A7] font-bold mt-0.5">Legal Partner · Zurcher Odio & Raven</p>
                     </div>
                   </div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px] shrink-0 ml-4">
+                  <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px] shrink-0">
                     Legal Partner
                   </span>
                 </div>
-                <p className="text-[14px] text-[#5A6A7A] font-light leading-relaxed mb-5">
+                <p className="text-[#3E4C59] font-normal leading-relaxed mb-5 text-[16px]">
                   Partner & Director of the IP & Regulatory Department at Zurcher Odio & Raven — one of Costa Rica's most recognized law firms. 20+ years advising multinational companies in regulatory, antitrust, intellectual property, data privacy and compliance. All Crest Partners client entities are backed by his firm.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {['Chambers & Partners IP', 'Chambers & Partners Antitrust', 'Leaders League Band 1 IP', 'INTA Annual Meeting 2026'].map((a) => (
+                  {['Chambers & Partners IP', 'Chambers & Partners Antitrust', 'Leaders League Band 1 IP'].map((a) => (
                     <span key={a} className="text-[10px] font-bold text-[#2574A7] bg-[#EBF4FA] border border-[#D8E2EA] px-2.5 py-1 rounded-[6px]">
                       {a}
                     </span>
@@ -353,7 +354,7 @@ export default function WhoWeArePage() {
             <h2 className="text-3xl font-bold text-black mb-5">
               Democratizing tech education for those locked out by economics.
             </h2>
-            <p className="text-[15px] text-[#5A6A7A] font-light leading-relaxed">
+            <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">
               Forward Costa Rica — co-founded by our team — delivers full-stack engineering, English and professional skills training to young Costa Ricans who couldn't otherwise afford it. Entirely free.
             </p>
           </div>
@@ -366,14 +367,14 @@ export default function WhoWeArePage() {
                 '03  Employability & professional skills',
                 '04  Sports & arts formation',
               ].map((p) => (
-                <li key={p} className="flex items-center gap-3 text-[14px] text-black font-light border-b border-[#D8E2EA] pb-3 last:border-0">
+                <li key={p} className="flex items-center gap-3 text-[14px] text-black font-normal border-b border-[#D8E2EA] pb-3 last:border-0">
                   {p}
                 </li>
               ))}
             </ul>
             <div className="mt-6 pt-5 border-t border-[#D8E2EA]">
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-3">Crest Partners co-founders</p>
-              <p className="text-[13px] text-black font-light">Marcela Villalta — curriculum design</p>
+              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-3">Crest Partners co-founder</p>
+              <p className="text-[13px] text-black font-normal">Marcela Villalta — curriculum design</p>
             </div>
           </div>
         </div>
@@ -384,17 +385,12 @@ export default function WhoWeArePage() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-8">Want to work with us?</h2>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contact"
-              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors"
-            >
-              Talk to our team
-            </Link>
+            <BookCallLink className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors" />
             <Link
               href="/careers"
               className="border border-white/50 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
             >
-              View open positions →
+              Join our team →
             </Link>
           </div>
         </div>

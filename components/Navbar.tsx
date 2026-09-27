@@ -3,13 +3,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
+import { BookCallLink } from '@/components/CtaLinks'
 
 const navLinks = [
   { label: 'Services', href: '/services' },
   { label: 'Case studies', href: '/case-studies' },
   { label: 'Why Costa Rica', href: '/why-costa-rica' },
   { label: 'Who we are', href: '/who-we-are' },
-  { label: 'Careers', href: '/careers' },
   { label: 'Build your plan', href: '/expansion-plan', highlight: true },
 ]
 
@@ -25,7 +25,7 @@ export default function Navbar() {
             src="/crest-logo.png"
             alt="Crest Partners"
             width={200}
-            height={103}
+            height={66}
             className="h-16 w-auto"
             priority
           />
@@ -56,14 +56,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:block">
-          <a
-            href="https://calendly.com/marcelavm/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#2574A7] text-white text-[13px] font-bold px-5 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide"
-          >
-            Get started
-          </a>
+          <BookCallLink className="bg-[#2574A7] text-white text-[13px] font-bold px-5 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide whitespace-nowrap" />
         </div>
 
         {/* Mobile hamburger */}
@@ -91,15 +84,10 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://calendly.com/marcelavm/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+          <BookCallLink
             onClick={() => setOpen(false)}
             className="mt-2 bg-[#2574A7] text-white text-[13px] font-bold px-5 py-2.5 rounded-[8px] text-center hover:bg-[#1f6391] transition-colors"
-          >
-            Get started
-          </a>
+          />
         </div>
       )}
     </header>

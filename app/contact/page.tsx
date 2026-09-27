@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { SITE } from '@/lib/site'
+import { BookCallLink, WhatsAppLink } from '@/components/CtaLinks'
 
 const trustSignals = [
   {
@@ -36,6 +38,8 @@ const buildOptions = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [failed, setFailed] = useState(false)
   const [form, setForm] = useState({
     firstName: '',
     lastName: '',
@@ -43,15 +47,34 @@ export default function ContactPage() {
     email: '',
     goal: '',
     message: '',
+    website: '', // honeypot
   })
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
+    if (sending) return
+    setSending(true)
+    setFailed(false)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.status === 200) {
+        setSubmitted(true)
+      } else {
+        setFailed(true)
+      }
+    } catch {
+      setFailed(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -64,14 +87,14 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-5 max-w-sm">
               Let's talk about building your team in Costa Rica.
             </h1>
-            <p className="text-[16px] text-[#5A6A7A] font-light mb-10">
+            <p className="text-[16px] text-[#3E4C59] font-normal mb-10">
               Tell us about your company — we'll get back to you within 24 hours. No commitment required.
             </p>
 
             {/* Contact option cards */}
             <div className="space-y-3 mb-10">
-              {/* Schedule a call */}
-              <a href="https://calendly.com/marcelavm/30min" target="_blank" rel="noopener noreferrer" className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4 hover:border-[#2574A7] transition-colors cursor-pointer group">
+              {/* Book a 30-min call */}
+              <BookCallLink className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4 hover:border-[#2574A7] transition-colors cursor-pointer group">
                 <div className="w-9 h-9 rounded-[8px] bg-[#EBF4FA] flex items-center justify-center shrink-0">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <rect x="1" y="3" width="14" height="12" rx="2" stroke="#2574A7" strokeWidth="1.5" />
@@ -79,19 +102,14 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[14px] font-bold text-black group-hover:text-[#2574A7] transition-colors">Schedule a call</p>
-                  <p className="text-[12px] text-[#5A6A7A] font-light">Pick a time that works for you</p>
+                  <p className="text-[14px] font-bold text-black group-hover:text-[#2574A7] transition-colors">Book a 30-min call</p>
+                  <p className="text-[12px] text-[#5A6A7A] font-normal">Pick a time that works for you</p>
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#2574A7] transition-colors">→</span>
-              </a>
+              </BookCallLink>
 
               {/* WhatsApp */}
-              <a
-                href="https://wa.me/50688911344"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4 hover:border-[#00A79D] transition-colors group block"
-              >
+              <WhatsAppLink className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4 hover:border-[#00A79D] transition-colors group block">
                 <div className="w-9 h-9 rounded-[8px] bg-[#E6F7F6] flex items-center justify-center shrink-0">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M8 1C4.13 1 1 4.13 1 8c0 1.25.33 2.43.9 3.44L1 15l3.65-.87A7 7 0 1 0 8 1z" stroke="#00A79D" strokeWidth="1.5" strokeLinejoin="round" />
@@ -100,14 +118,14 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[14px] font-bold text-black group-hover:text-[#00A79D] transition-colors">WhatsApp</p>
-                  <p className="text-[12px] text-[#5A6A7A] font-light">+506 8891-3444</p>
+                  <p className="text-[12px] text-[#5A6A7A] font-normal">{SITE.whatsappDisplay}</p>
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#00A79D] transition-colors">→</span>
-              </a>
+              </WhatsAppLink>
 
               {/* Email */}
               <a
-                href="mailto:info@crestpartners.com"
+                href={`mailto:${SITE.email}`}
                 className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4 hover:border-[#2574A7] transition-colors group block"
               >
                 <div className="w-9 h-9 rounded-[8px] bg-[#EBF4FA] flex items-center justify-center shrink-0">
@@ -118,7 +136,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[14px] font-bold text-black group-hover:text-[#2574A7] transition-colors">Email</p>
-                  <p className="text-[12px] text-[#5A6A7A] font-light">info@crestpartners.com</p>
+                  <p className="text-[12px] text-[#5A6A7A] font-normal">{SITE.email}</p>
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#2574A7] transition-colors">→</span>
               </a>
@@ -131,7 +149,7 @@ export default function ContactPage() {
                   <div className="w-1.5 h-1.5 rounded-full bg-[#00A79D] mt-2 shrink-0" />
                   <div>
                     <p className="text-[13px] font-bold text-black">{t.title}</p>
-                    <p className="text-[12px] text-[#5A6A7A] font-light">{t.text}</p>
+                    <p className="text-[12px] text-[#5A6A7A] font-normal">{t.text}</p>
                   </div>
                 </div>
               ))}
@@ -148,14 +166,22 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <h2 className="text-[22px] font-bold text-black mb-2">Message sent!</h2>
-                <p className="text-[14px] text-[#5A6A7A] font-light">
+                <p className="text-[14px] text-[#5A6A7A] font-normal">
                   We'll get back to you within 24 hours — from a founder, not a sales rep.
                 </p>
               </div>
             ) : (
               <>
                 <h2 className="text-[20px] font-bold text-black mb-6">Tell us about your company</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 relative">
+                  {/* Honeypot — hidden from people; bots fill it in */}
+                  <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+                    <label>
+                      Website
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={handleChange} />
+                    </label>
+                  </div>
+
                   {/* First + Last name */}
                   <div className="grid grid-cols-2 gap-3">
                     <div>
@@ -169,7 +195,7 @@ export default function ContactPage() {
                         value={form.firstName}
                         onChange={handleChange}
                         className="w-full border border-[#D8E2EA] rounded-[8px] px-3.5 py-2.5 text-[14px] text-black bg-white focus:outline-none focus:border-[#2574A7] transition-colors"
-                        placeholder="Marcela"
+                        placeholder="Jane"
                       />
                     </div>
                     <div>
@@ -183,7 +209,7 @@ export default function ContactPage() {
                         value={form.lastName}
                         onChange={handleChange}
                         className="w-full border border-[#D8E2EA] rounded-[8px] px-3.5 py-2.5 text-[14px] text-black bg-white focus:outline-none focus:border-[#2574A7] transition-colors"
-                        placeholder="Villalta"
+                        placeholder="Doe"
                       />
                     </div>
                   </div>
@@ -216,7 +242,7 @@ export default function ContactPage() {
                       value={form.email}
                       onChange={handleChange}
                       className="w-full border border-[#D8E2EA] rounded-[8px] px-3.5 py-2.5 text-[14px] text-black bg-white focus:outline-none focus:border-[#2574A7] transition-colors"
-                      placeholder="marcela@company.com"
+                      placeholder="jane@company.com"
                     />
                   </div>
 
@@ -248,6 +274,7 @@ export default function ContactPage() {
                     <textarea
                       name="message"
                       rows={4}
+                      maxLength={5000}
                       value={form.message}
                       onChange={handleChange}
                       className="w-full border border-[#D8E2EA] rounded-[8px] px-3.5 py-2.5 text-[14px] text-black bg-white focus:outline-none focus:border-[#2574A7] transition-colors resize-none"
@@ -258,12 +285,23 @@ export default function ContactPage() {
                   {/* Submit */}
                   <button
                     type="submit"
-                    className="w-full bg-[#2574A7] text-white font-bold text-[13px] tracking-widest py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors uppercase"
+                    disabled={sending}
+                    aria-busy={sending}
+                    className="w-full bg-[#2574A7] text-white font-bold text-[13px] tracking-widest py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors uppercase disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send message →
+                    {sending ? 'Sending…' : 'Send message →'}
                   </button>
 
-                  <p className="text-[11px] text-center text-[#5A6A7A] font-light">
+                  {failed && (
+                    <p role="alert" className="text-[14px] text-[#B42318] bg-[#FEF3F2] border border-[#FECDCA] rounded-[8px] px-4 py-3">
+                      Something went wrong. Email us at{' '}
+                      <a href={`mailto:${SITE.email}`} className="font-bold underline">{SITE.email}</a>{' '}
+                      or message us on{' '}
+                      <WhatsAppLink className="font-bold underline">WhatsApp</WhatsAppLink>.
+                    </p>
+                  )}
+
+                  <p className="text-[11px] text-center text-[#5A6A7A] font-normal">
                     We respond within 24 hours — always from a founder, never from a sales rep.
                   </p>
                 </form>

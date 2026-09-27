@@ -5,7 +5,7 @@ export default function NotFound() {
     <section className="max-w-7xl mx-auto px-6 py-32 text-center">
       <p className="eyebrow mb-4">404</p>
       <h1 className="text-4xl font-bold text-black mb-4">Page not found.</h1>
-      <p className="text-[16px] text-[#5A6A7A] font-light mb-10">
+      <p className="text-[16px] text-[#3E4C59] font-normal mb-10">
         The page you're looking for doesn't exist.
       </p>
       <Link

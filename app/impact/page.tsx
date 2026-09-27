@@ -1,4 +1,3 @@
-import Link from 'next/link'
 
 export const metadata = {
   title: 'Impact — Crest Partners',
@@ -56,7 +55,7 @@ export default function ImpactPage() {
         <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-black max-w-3xl mb-6">
           Growth only makes sense when everyone grows.
         </h1>
-        <p className="text-[17px] text-[#5A6A7A] font-light leading-relaxed max-w-2xl mb-10">
+        <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed max-w-2xl mb-10">
           That's why our founders co-created Forward Costa Rica — a non-profit committed to developing
           the next generation of tech professionals in Costa Rica. Not as a program we run, but as a
           cause we believe in.
@@ -82,12 +81,12 @@ export default function ImpactPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
                 Education, sport and art that develop people and strengthen communities.
               </h2>
-              <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed mb-5">
+              <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed mb-5">
                 Forward Costa Rica is an independent non-profit co-founded by Marcela Villalta. Its mission is to develop young Costa Ricans through three pillars —
                 technology education, sports and arts — all completely free for those who pass the
                 admission process.
               </p>
-              <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed">
+              <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed">
                 All programs are fully funded. No economic support or meals included — the scholarship
                 focuses exclusively on the learning process.
               </p>
@@ -98,7 +97,7 @@ export default function ImpactPage() {
               {pillars.map((p) => (
                 <div key={p.title} className="bg-white border border-[#D8E2EA] rounded-[10px] p-6">
                   <p className="text-[14px] font-bold text-[#2574A7] mb-2">{p.title}</p>
-                  <p className="text-[14px] text-[#5A6A7A] font-light leading-relaxed">{p.text}</p>
+                  <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">{p.text}</p>
                 </div>
               ))}
             </div>
@@ -117,7 +116,7 @@ export default function ImpactPage() {
           {approach.map((a) => (
             <div key={a.title} className="border border-[#D8E2EA] rounded-[10px] p-8 hover:border-[#00A79D] transition-colors">
               <p className="text-[14px] font-bold text-[#00A79D] mb-3">{a.title}</p>
-              <p className="text-[14px] text-[#5A6A7A] font-light leading-relaxed">{a.text}</p>
+              <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">{a.text}</p>
             </div>
           ))}
         </div>
@@ -129,7 +128,7 @@ export default function ImpactPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 max-w-2xl">
             Why our founders helped build it.
           </h2>
-          <p className="text-[17px] text-white/70 font-light leading-relaxed max-w-2xl mb-12">
+          <p className="text-[17px] text-white/70 font-normal leading-relaxed max-w-2xl mb-12">
             After 25+ years operating in Costa Rica's tech ecosystem, Marcela Villalta saw firsthand
             that the talent pipeline needed investment — not just consumption. The professionals she
             works with every day come from communities worth investing in. Forward CR was born from
@@ -139,8 +138,8 @@ export default function ImpactPage() {
             {founders.map((f) => (
               <div key={f.name} className="border border-white/20 rounded-[10px] p-8">
                 <p className="text-[18px] font-bold text-white mb-1">{f.name}</p>
-                <p className="text-[13px] text-[#00A79D] font-light mb-4">{f.role}</p>
-                <p className="text-[14px] text-white/60 font-light leading-relaxed">{f.fwdRole}</p>
+                <p className="text-[13px] text-[#00A79D] font-normal mb-4">{f.role}</p>
+                <p className="text-[14px] text-white/60 font-normal leading-relaxed">{f.fwdRole}</p>
               </div>
             ))}
           </div>
@@ -151,7 +150,7 @@ export default function ImpactPage() {
       <section className="bg-[#F4F7FA] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-[22px] md:text-[26px] font-light text-black leading-relaxed mb-6">
+            <p className="text-[22px] md:text-[26px] font-normal text-black leading-relaxed mb-6">
               "My experience at FWD was incredibly enriching. I learned a skill that allowed me to enter
               the tech industry. Thanks to FWD, I can say I improved my professional situation."
             </p>
@@ -168,7 +167,7 @@ export default function ImpactPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Want to support Forward Costa Rica?
           </h2>
-          <p className="text-[17px] text-white/80 font-light mb-10">
+          <p className="text-[17px] text-white/80 font-normal mb-10">
             Forward CR is an independent non-profit. If you'd like to learn more, collaborate or get
             involved, reach out directly.
           </p>

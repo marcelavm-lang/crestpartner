@@ -39,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={spartan.variable}>
-      <body className="font-spartan antialiased">
+      <body className="font-spartan antialiased pb-16 md:pb-0">
         <Navbar />
         <main>{children}</main>
         <Footer />

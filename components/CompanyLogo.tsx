@@ -8,6 +8,16 @@ interface Config {
   height: number
 }
 
+const NAMES: Record<Company, string> = {
+  targusinfo: 'TargusInfo',
+  verisk: 'Verisk',
+  '66degrees': '66degrees',
+  'ltv-co': 'LTV Co.',
+  'think-unlimited': 'Think Unlimited',
+  strategio: 'Strategio',
+  fwd: 'Forward Costa Rica',
+}
+
 const configs: Record<Company, Config> = {
   targusinfo:        { src: '/logos/targusinfo.png',      width: 180, height: 39  },
   verisk:            { src: '/logos/verisk.png',           width: 220, height: 66  },
@@ -35,10 +45,11 @@ export default function CompanyLogo({
   return (
     <Image
       src={cfg.src}
-      alt={company}
+      alt={`${NAMES[company]} logo`}
       width={w}
       height={h}
-      style={{ objectFit: 'contain', maxWidth: '100%' }}
+      sizes={`${w}px`}
+      style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
       priority={variant === 'page'}
     />
   )

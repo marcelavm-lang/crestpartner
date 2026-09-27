@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { LEADS_FROM, LEADS_TO, EMAIL_RE, getResend, renderFields } from '@/lib/email'
 
 export const runtime = 'nodejs'
 
@@ -190,8 +191,48 @@ Keep the tone confident, specific and consultative. Reference Crest Partners' tr
     return NextResponse.json({ error: 'Unexpected response format' }, { status: 500 })
   }
 
+  // Notify the team about the new lead. Never block or break plan generation.
+  await notifyLead(body, text, { setupCost, managementFee, recruitingFee, totalSalaries, totalYear1, headcount }, seniorityLines)
+
   return NextResponse.json({
     plan: text,
     costs: { setup: setupCost, managementFee, recruitingFee, totalSalaries, totalYear1, headcount },
   })
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function notifyLead(body: any, plan: string, costs: Record<string, number>, seniorityLines: string) {
+  try {
+    const resend = getResend()
+    if (!resend) return
+    const email = typeof body.email === 'string' ? body.email.trim() : ''
+    const company = body.company || body.contactCompany || 'Unknown company'
+    const money = (n: number) => `$${Math.round(n).toLocaleString('en-US')}`
+    const { html, text } = renderFields([
+      ['Name', body.name],
+      ['Email', email],
+      ['Company', company],
+      ['Industry', body.industry],
+      ['Current U.S. team size', body.usTeamSize],
+      ['Profiles', Array.isArray(body.profiles) ? body.profiles.join(', ') : ''],
+      ['Total headcount', costs.headcount],
+      ['Seniority breakdown', seniorityLines.replace(/^\s+-\s*/gm, '• ')],
+      ['Services', Array.isArray(body.services) ? body.services.join(', ') : ''],
+      ['Timeline', body.timeline],
+      ['Notes', body.message],
+      ['Est. total Year 1', money(costs.totalYear1)],
+    ])
+    const planText = String(plan)
+    const { error } = await resend.emails.send({
+      from: LEADS_FROM,
+      to: LEADS_TO,
+      ...(EMAIL_RE.test(email) ? { replyTo: email } : {}),
+      subject: `New expansion plan: ${company} — ${costs.headcount} hire(s)`,
+      html: `<h2 style="font-family:Arial,sans-serif">New expansion plan lead</h2>${html}<h3 style="font-family:Arial,sans-serif">Generated plan</h3><pre style="white-space:pre-wrap;font-family:Arial,sans-serif;font-size:13px">${planText.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</pre>`,
+      text: `${text}\n\n--- Generated plan ---\n${planText}`,
+    })
+    if (error) console.error('[expansion-plan] Resend error:', error)
+  } catch (err) {
+    console.error('[expansion-plan] Failed to send lead email:', err)
+  }
 }

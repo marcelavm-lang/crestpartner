@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { BookCallLink } from '@/components/CtaLinks'
 
 const heroStats = [
   { value: '75+', label: 'years of uninterrupted democracy' },
@@ -15,8 +16,8 @@ const valueCards = [
     color: 'text-[#2574A7]',
   },
   {
-    val: '10+',
-    title: 'Years average partnership',
+    val: '11+',
+    title: 'Years — our longest active partnership',
     text: 'When a team stays, institutional knowledge compounds. The engineers who built your system are still there to scale it.',
     color: 'text-[#00A79D]',
   },
@@ -42,7 +43,7 @@ const reasons = [
   {
     num: '03',
     title: 'World-class universities',
-    text: 'UCR, TEC, ULACIT — we\'ve been recruiting from these institutions for 24 years.',
+    text: 'UCR, TEC, ULACIT — we\'ve been recruiting from these institutions for 25+ years.',
   },
   {
     num: '04',
@@ -67,7 +68,7 @@ const comparisonRows = [
   { factor: 'Political stability', cr: '75+ yrs', other: 'Variable' },
   { factor: 'Legal framework', cr: 'Clear & proven', other: 'Complex' },
   { factor: 'Cultural alignment', cr: 'Very high', other: 'Moderate' },
-  { factor: 'Talent retention', cr: '<1% turnover*', other: '13–25% avg' },
+  { factor: 'Talent retention', cr: '<1% involuntary turnover*', other: '13–25% avg' },
 ]
 
 const talentProfiles = [
@@ -97,7 +98,7 @@ export default function WhyCostaRicaPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-5">
               A proven market. A proven model. Built for the long term.
             </h1>
-            <p className="text-[16px] text-[#5A6A7A] font-light leading-relaxed">
+            <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed">
               The professionals here are built differently — creative, resourceful, resilient, committed.
               They don't just fill a role. They own it. That's the product of a country that chose
               education and stability over everything else, for generations. Our clients don't outsource
@@ -109,7 +110,7 @@ export default function WhyCostaRicaPage() {
             {heroStats.map((s) => (
               <div key={s.value} className="border border-[#D8E2EA] rounded-[10px] p-5">
                 <p className="text-[26px] font-bold text-[#2574A7] leading-none mb-1.5">{s.value}</p>
-                <p className="text-[12px] text-[#5A6A7A] font-light leading-snug">{s.label}</p>
+                <p className="text-[12px] text-[#5A6A7A] font-normal leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
@@ -123,7 +124,7 @@ export default function WhyCostaRicaPage() {
           <h2 className="text-3xl font-bold text-white mb-4 max-w-2xl">
             The question isn't what a developer costs per hour. It's what your operation delivers over time.
           </h2>
-          <p className="text-[15px] text-white/60 font-light max-w-2xl mb-12">
+          <p className="text-[15px] text-white/60 font-normal max-w-2xl mb-12">
             When you factor in retention, recruiting cycles, onboarding time, communication alignment and
             operational continuity — the total return of building in the right market compounds significantly.
           </p>
@@ -132,7 +133,7 @@ export default function WhyCostaRicaPage() {
               <div key={c.val} className="border border-white/10 rounded-[10px] p-7">
                 <p className={`text-[40px] font-bold leading-none mb-3 ${c.color}`}>{c.val}</p>
                 <p className="text-[15px] font-bold text-white mb-3">{c.title}</p>
-                <p className="text-[13px] text-white/60 font-light leading-relaxed">{c.text}</p>
+                <p className="text-[13px] text-white/60 font-normal leading-relaxed">{c.text}</p>
               </div>
             ))}
           </div>
@@ -150,7 +151,7 @@ export default function WhyCostaRicaPage() {
             <div key={r.num} className="border border-[#D8E2EA] rounded-[10px] p-7 hover:border-[#2574A7] transition-colors">
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">{r.num}</p>
               <h3 className="text-[16px] font-bold text-black mb-2">{r.title}</h3>
-              <p className="text-[13px] text-[#5A6A7A] font-light leading-relaxed">{r.text}</p>
+              <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">{r.text}</p>
             </div>
           ))}
         </div>
@@ -164,8 +165,8 @@ export default function WhyCostaRicaPage() {
               <h2 className="text-3xl font-bold text-black mb-5">
                 The factors that matter most when choosing where to build.
               </h2>
-              <p className="text-[15px] text-[#5A6A7A] font-light leading-relaxed">
-                Every market has trade-offs. After 24 years helping U.S. companies choose where to
+              <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">
+                Every market has trade-offs. After 25+ years helping U.S. companies choose where to
                 build, these are the factors that consistently tip the decision.
               </p>
             </div>
@@ -184,18 +185,18 @@ export default function WhyCostaRicaPage() {
               {comparisonRows.map((row, i) => (
                 <div key={i} className={`grid grid-cols-3 ${i < comparisonRows.length - 1 ? 'border-b border-[#D8E2EA]' : ''}`}>
                   <div className="p-4">
-                    <p className="text-[13px] text-black font-light">{row.factor}</p>
+                    <p className="text-[13px] text-black font-normal">{row.factor}</p>
                   </div>
                   <div className="p-4 border-l border-[#D8E2EA] bg-[#F9FEFE]">
                     <p className="text-[13px] text-[#00A79D] font-bold">{row.cr}</p>
                   </div>
                   <div className="p-4 border-l border-[#D8E2EA]">
-                    <p className="text-[13px] text-[#5A6A7A] font-light">{row.other}</p>
+                    <p className="text-[13px] text-[#5A6A7A] font-normal">{row.other}</p>
                   </div>
                 </div>
               ))}
               <div className="px-4 py-3 bg-[#F4F7FA] border-t border-[#D8E2EA]">
-                <p className="text-[11px] text-[#5A6A7A] font-light">*With the right operator and culture model</p>
+                <p className="text-[11px] text-[#5A6A7A] font-normal">*With the right operator and culture model</p>
               </div>
             </div>
           </div>
@@ -203,30 +204,32 @@ export default function WhyCostaRicaPage() {
       </section>
 
       {/* ── Regional Hub ── */}
-      <section className="px-6 md:px-12 py-14 md:py-16 border-b border-gray-200 bg-black">
+      <section className="py-14 md:py-16 border-b border-gray-200 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl">
-          <p className="text-xs font-bold tracking-widest uppercase text-teal-500 mb-3">Costa Rica as a regional hub</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#00A79D] mb-3">Costa Rica as a regional hub</p>
           <h2 className="text-3xl font-bold text-white leading-tight mb-5">
             Not just where your team lives.<br/>
             The operational hub for your entire Latin American presence.
           </h2>
-          <p className="text-base font-light text-white/70 leading-relaxed mb-8">
+          <p className="text-base font-normal text-white/70 leading-relaxed mb-8">
             Costa Rica's political stability, English proficiency, legal infrastructure and central location make it the natural choice for companies that want more than a satellite office — they want a regional anchor. Several of our clients use their Costa Rica operation as the command center for teams and operations across Latin America.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="border border-white/10 rounded-lg p-5">
               <div className="text-sm font-bold text-white mb-2">Central time zone</div>
-              <div className="text-sm font-light text-white/60 leading-relaxed">Aligned with the U.S. and overlapping with all of Latin America — the ideal coordination point for regional operations.</div>
+              <div className="text-sm font-normal text-white/60 leading-relaxed">Aligned with the U.S. and overlapping with all of Latin America — the ideal coordination point for regional operations.</div>
             </div>
             <div className="border border-white/10 rounded-lg p-5">
               <div className="text-sm font-bold text-white mb-2">Political & legal stability</div>
-              <div className="text-sm font-light text-white/60 leading-relaxed">75+ years of democracy and a clear legal framework for foreign entities — the most reliable foundation in the region.</div>
+              <div className="text-sm font-normal text-white/60 leading-relaxed">75+ years of democracy and a clear legal framework for foreign entities — the most reliable foundation in the region.</div>
             </div>
             <div className="border border-white/10 rounded-lg p-5">
               <div className="text-sm font-bold text-white mb-2">Regional connectivity</div>
-              <div className="text-sm font-light text-white/60 leading-relaxed">Direct flights to major Latin American cities, strong banking infrastructure and a growing network of multinational operations.</div>
+              <div className="text-sm font-normal text-white/60 leading-relaxed">Direct flights to major Latin American cities, strong banking infrastructure and a growing network of multinational operations.</div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -241,12 +244,12 @@ export default function WhyCostaRicaPage() {
               {[
                 { val: '25 yrs', label: 'recruiting in CR' },
                 { val: '1000+', label: 'High-value tech jobs created' },
-                { val: '<1%', label: 'turnover' },
+                { val: '<1%', label: 'involuntary turnover' },
                 { val: '11 yrs', label: 'longest partnership' },
               ].map((s) => (
                 <div key={s.val} className="border border-[#D8E2EA] rounded-[10px] p-4">
                   <p className="text-[22px] font-bold text-[#2574A7] leading-none mb-1">{s.val}</p>
-                  <p className="text-[11px] text-[#5A6A7A] font-light">{s.label}</p>
+                  <p className="text-[11px] text-[#5A6A7A] font-normal">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -257,7 +260,7 @@ export default function WhyCostaRicaPage() {
               {talentProfiles.map((p) => (
                 <li key={p} className="flex items-center gap-3 py-3.5 border-b border-[#D8E2EA] last:border-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00A79D] shrink-0" />
-                  <span className="text-[14px] text-black font-light">{p}</span>
+                  <span className="text-[14px] text-black font-normal">{p}</span>
                 </li>
               ))}
             </ul>
@@ -273,7 +276,7 @@ export default function WhyCostaRicaPage() {
             {fundamentals.map((f) => (
               <div key={f.val} className="bg-white border border-[#D8E2EA] rounded-[10px] p-6">
                 <p className="text-[32px] font-bold text-[#2574A7] leading-none mb-2">{f.val}</p>
-                <p className="text-[13px] text-[#5A6A7A] font-light">{f.label}</p>
+                <p className="text-[13px] text-[#5A6A7A] font-normal">{f.label}</p>
               </div>
             ))}
           </div>
@@ -285,12 +288,7 @@ export default function WhyCostaRicaPage() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-8">Ready to build here?</h2>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contact"
-              className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors"
-            >
-              Talk to our team
-            </Link>
+            <BookCallLink className="bg-white text-[#2574A7] font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-gray-50 transition-colors" />
             <Link
               href="/case-studies"
               className="border border-white/50 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
