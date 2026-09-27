@@ -32,7 +32,11 @@ export default function HomeHero() {
     <section className="relative isolate overflow-hidden bg-[#0E2233] text-white">
       {/* Background: poster/video under a navy overlay */}
       <HeroVideo />
-      <div className="absolute inset-0 bg-[#0E2233]/[0.88]" aria-hidden="true" />
+      {/* Overlay: uniform on mobile/tablet (poster only), left-to-right gradient on desktop so the video shows */}
+      <div
+        className="absolute inset-0 bg-[rgba(14,34,51,0.70)] lg:bg-transparent lg:bg-[linear-gradient(90deg,rgba(14,34,51,0.85)_0%,rgba(14,34,51,0.60)_40%,rgba(14,34,51,0.20)_100%)]"
+        aria-hidden="true"
+      />
 
       <div className="relative max-w-7xl mx-auto px-6 pt-12 md:pt-20 lg:pt-24 pb-12 md:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_1fr] gap-10 lg:gap-14 items-center">
@@ -45,7 +49,7 @@ export default function HomeHero() {
             <h1 className="text-[38px] leading-[1.08] md:text-[52px] lg:text-[48px] xl:text-[62px] lg:leading-[1.04] font-bold text-white mb-6">
               Your engineering hub in Costa Rica. Owned by you. Run by us.
             </h1>
-            <p className="text-[18px] md:text-[20px] leading-relaxed text-[#C9D5E0] max-w-[36rem] mb-8">
+            <p className="text-[18px] md:text-[20px] leading-relaxed text-[#C9D5E0] max-w-[36rem] mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               We set up your Costa Rican legal entity, hire engineers under your brand, and run payroll,
               HR, accounting and compliance — so the team, the IP and the upside stay yours.
             </p>
@@ -58,13 +62,13 @@ export default function HomeHero() {
                 Get your expansion plan in 5 min →
               </Link>
             </div>
-            <p className="text-[15px] text-[#9FB3C4]">
+            <p className="text-[15px] text-[#9FB3C4] [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               A founder replies within 24 hours — never a sales rep.
             </p>
           </div>
 
           {/* ── Right column: "Who owns what?" ── */}
-          <div className="min-w-0 bg-[#14304A] border border-[#2A4B68] rounded-[16px] p-3 sm:p-6 lg:p-5 xl:p-7">
+          <div className="min-w-0 bg-[rgba(20,48,74,0.62)] backdrop-blur-[6px] border border-[#2A4B68] rounded-[16px] p-3 sm:p-6 lg:p-5 xl:p-7">
             <table className="w-full table-fixed border-collapse text-left text-[12px] leading-snug sm:text-[15px] lg:text-[14px] xl:text-[15px]">
               <caption className="text-left text-[17px] sm:text-[19px] font-bold text-white mb-4">
                 Who owns what?

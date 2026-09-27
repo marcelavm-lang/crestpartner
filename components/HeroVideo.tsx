@@ -6,14 +6,14 @@ import Image from 'next/image'
 /**
  * Background media for the Home hero.
  * - Poster (first frame) always renders, so there's never a blank hero.
- * - The video only mounts on screens ≥768px and when the user hasn't asked for
+ * - The video only mounts on screens ≥1024px and when the user hasn't asked for
  *   reduced motion — mobile visitors never download it.
  */
 export default function HeroVideo() {
   const [playVideo, setPlayVideo] = useState(false)
 
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px) and (prefers-reduced-motion: no-preference)')
+    const mq = window.matchMedia('(min-width: 1024px) and (prefers-reduced-motion: no-preference)')
     const update = () => setPlayVideo(mq.matches)
     update()
     mq.addEventListener('change', update)

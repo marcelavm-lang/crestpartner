@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-[#D8E2EA]">
-      <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4 xl:gap-6">
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0">
           <Image
@@ -28,12 +28,12 @@ export default function Navbar() {
             height={79}
             unoptimized
             priority
-            className="h-6 lg:h-[30px] w-auto"
+            className="h-6 lg:h-[26px] xl:h-[30px] w-auto"
           />
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-7">
           {navLinks.map((link) => (
             link.highlight ? (
               <Link
@@ -57,7 +57,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden lg:block">
-          <BookCallLink className="bg-[#2574A7] text-white text-[13px] font-bold px-5 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide whitespace-nowrap" />
+          <BookCallLink className="bg-[#2574A7] text-white text-[13px] font-bold px-4 xl:px-5 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors whitespace-nowrap" />
         </div>
 
         {/* Mobile hamburger */}
