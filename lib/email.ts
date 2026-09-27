@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 import { SITE } from '@/lib/site'
 
 export const LEADS_TO = SITE.email
-export const LEADS_FROM = 'Crest Partners Website <website@crestpartners.com>'
+export const LEADS_FROM = 'Crest Partners Website <website@crestpartnerscr.com>'
 
 /** Returns a Resend client, or null (and logs) when RESEND_API_KEY is missing. */
 export function getResend(): Resend | null {

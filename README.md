@@ -45,4 +45,4 @@ npm start
 ## Notes
 - Calendly link in `/contact` is a placeholder — replace with real URL when ready
 - WhatsApp link: https://wa.me/50688913444 (see `lib/site.ts`)
-- Contact email: info@techcollective.com
+- Contact email: contact@crestpartnerscr.com (see `lib/site.ts`)
