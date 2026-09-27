@@ -1,5 +1,12 @@
 import Link from 'next/link'
 import { SITE } from '@/lib/site'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata = pageMetadata({
+  title: 'Careers | Crest Partners',
+  description: "Join the team building Costa Rica's tech future.",
+  path: '/careers',
+})
 
 export default function CareersPage() {
   return (

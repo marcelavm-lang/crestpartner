@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react'
 import { SITE } from '@/lib/site'
+import { trackEvent } from '@/lib/analytics'
 
 type LinkProps = {
   className?: string
@@ -17,7 +18,10 @@ export function BookCallLink({ className, children, onClick }: LinkProps) {
       target="_blank"
       rel="noopener noreferrer"
       className={className}
-      onClick={onClick}
+      onClick={() => {
+        trackEvent('calendly_click')
+        onClick?.()
+      }}
     >
       {children ?? 'Book a 30-min call'}
     </a>
@@ -32,7 +36,10 @@ export function WhatsAppLink({ className, children, onClick }: LinkProps) {
       target="_blank"
       rel="noopener noreferrer"
       className={className}
-      onClick={onClick}
+      onClick={() => {
+        trackEvent('whatsapp_click')
+        onClick?.()
+      }}
     >
       {children ?? `WhatsApp: ${SITE.whatsappDisplay}`}
     </a>

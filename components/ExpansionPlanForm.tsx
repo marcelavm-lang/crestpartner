@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { BookCallLink } from '@/components/CtaLinks'
+import { trackEvent } from '@/lib/analytics'
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const ReactMarkdown = require('react-markdown').default
 // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -320,6 +321,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
       if (data.error) throw new Error(data.error)
       setPlan(data.plan)
       setCosts(data.costs)
+      trackEvent('expansion_plan_completed', { headcount: hc, timeline: form.timeline || null })
       setStep(6)
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Something went wrong. Please try again.')

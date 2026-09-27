@@ -1,5 +1,12 @@
 import Link from 'next/link'
 import { BookCallLink } from '@/components/CtaLinks'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata = pageMetadata({
+  title: 'Why Costa Rica for Your Engineering Team | Crest Partners',
+  description: 'Stability, English proficiency, U.S.-aligned hours and talent retention — why tech companies build their own teams in Costa Rica.',
+  path: '/why-costa-rica',
+})
 
 const heroStats = [
   { value: '75+', label: 'years of uninterrupted democracy' },

@@ -1,6 +1,13 @@
 import Link from 'next/link'
 import CompanyLogo from '@/components/CompanyLogo'
 import { BookCallLink } from '@/components/CtaLinks'
+import { pageMetadata } from '@/lib/metadata'
+
+export const metadata = pageMetadata({
+  title: 'Crest Partners — Your Engineering Hub in Costa Rica, Owned by You',
+  description: 'We help tech companies establish their own dedicated entity in Costa Rica — your team, your brand, fully administered by us. Not outsourcing. Ownership.',
+  path: '/',
+})
 
 const services = [
   {

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { SITE } from '@/lib/site'
+import { trackEvent } from '@/lib/analytics'
 import { BookCallLink, WhatsAppLink } from '@/components/CtaLinks'
 
 const trustSignals = [
@@ -66,6 +67,7 @@ export default function ContactPage() {
         body: JSON.stringify(form),
       })
       if (res.status === 200) {
+        trackEvent('contact_form_submitted', { goal: form.goal })
         setSubmitted(true)
       } else {
         setFailed(true)

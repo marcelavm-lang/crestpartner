@@ -1,10 +1,12 @@
+import { pageMetadata } from '@/lib/metadata'
 import ExpansionPlanForm from '@/components/ExpansionPlanForm'
 import { BookCallLink } from '@/components/CtaLinks'
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Expansion Plan Generator — Crest Partners',
   description: 'Generate a personalized Costa Rica expansion plan in minutes.',
-}
+  path: '/expansion-plan',
+})
 
 export default function ExpansionPlanPage() {
   return (

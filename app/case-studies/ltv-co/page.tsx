@@ -1,5 +1,16 @@
 import Link from 'next/link'
 import CompanyLogo from '@/components/CompanyLogo'
+import { pageMetadata } from '@/lib/metadata'
+import { getCaseStudy } from '@/lib/case-studies'
+
+const cs = getCaseStudy('ltv-co')
+
+export const metadata = pageMetadata({
+  title: `${cs.client} Case Study | Crest Partners`,
+  description: cs.summary,
+  path: `/case-studies/${cs.slug}`,
+  image: { url: `/case-studies/${cs.slug}/opengraph-image`, alt: `${cs.client} case study — Crest Partners` },
+})
 
 export default function LTVCoPage() {
   return (

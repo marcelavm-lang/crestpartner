@@ -4,6 +4,9 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ExpansionPlanWidget from '@/components/ExpansionPlanWidget'
+import LinkedInInsight from '@/components/LinkedInInsight'
+import { Analytics } from '@vercel/analytics/next'
+import { SITE } from '@/lib/site'
 
 const spartan = localFont({
   src: [
@@ -16,10 +19,19 @@ const spartan = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: 'Crest Partners — Build Your Tech Operation in Costa Rica',
   description:
     'We help tech companies establish their own dedicated entity in Costa Rica — your team, your brand, fully administered by us. Not outsourcing. Ownership.',
   keywords: 'Costa Rica operations, dedicated entity, tech expansion, Latin America hub, nearshore operations, dedicated team',
+  openGraph: {
+    siteName: 'Crest Partners',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
   icons: {
     icon: [
       { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
@@ -30,6 +42,23 @@ export const metadata: Metadata = {
       { url: '/favicon-180.png', sizes: '180x180', type: 'image/png' },
     ],
   },
+}
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Crest Partners',
+  url: SITE.url,
+  logo: `${SITE.url.replace(/\/$/, '')}/crest-logo.png`,
+  email: SITE.email,
+  telephone: '+506 8891-3444',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'San José',
+    addressCountry: 'CR',
+  },
+  // TODO: add the company LinkedIn URL, e.g. ['https://www.linkedin.com/company/<crest-partners>']
+  sameAs: [] as string[],
 }
 
 export default function RootLayout({
@@ -44,6 +73,12 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <ExpansionPlanWidget />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <Analytics />
+        <LinkedInInsight />
       </body>
     </html>
   )

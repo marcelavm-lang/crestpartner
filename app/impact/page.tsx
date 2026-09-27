@@ -1,8 +1,10 @@
+import { pageMetadata } from '@/lib/metadata'
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: 'Impact — Crest Partners',
   description: 'How Crest Partners co-created Forward Costa Rica to develop the next generation of tech professionals in Costa Rica.',
-}
+  path: '/impact',
+})
 
 const pillars = [
   {
