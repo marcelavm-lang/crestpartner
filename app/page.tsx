@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import CompanyLogo from '@/components/CompanyLogo'
+import HomeHero from '@/components/HomeHero'
 import { BookCallLink } from '@/components/CtaLinks'
 import { pageMetadata } from '@/lib/metadata'
 
@@ -51,117 +52,10 @@ const badgeColor: Record<string, string> = {
   'Talent Operations': 'bg-[#E6F7F6] text-[#00A79D]',
 }
 
-const logoChips = [
-  { name: 'TargusInfo', href: '/case-studies/targusinfo' },
-  { name: 'Verisk', href: '/case-studies/verisk' },
-  { name: 'LTV Co.', href: '/case-studies/ltv-co' },
-  { name: '66degrees', href: '/case-studies/66degrees' },
-  { name: 'Think Unlimited', href: '/case-studies/think-unlimited' },
-  { name: 'Strategio', href: '/case-studies/strategio' },
-]
-
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero (video background) ── */}
-      <section className="relative w-full overflow-hidden min-h-[600px] md:min-h-screen flex flex-col">
-
-        {/* Video background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/Header.mp4"
-        />
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 md:pt-28 pb-16 md:pb-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-            {/* Left column */}
-            <div>
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5FD4CB] mb-5">
-                Nearshore tech operations — Costa Rica
-              </p>
-              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-white max-w-3xl mb-6">
-                Your engineering hub in Costa Rica — owned by you, built by us.
-              </h1>
-              <p className="text-[17px] text-white/70 font-normal leading-relaxed max-w-2xl mb-10">
-                We establish your dedicated legal entity in Costa Rica, recruit your engineering team, and run the back-office so you can focus on the work. Your entity. Your people. Your IP. Not outsourcing. Ownership.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <BookCallLink className="bg-[#2574A7] text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors tracking-wide" />
-                <Link
-                  href="/case-studies"
-                  className="border border-white/40 text-white font-bold text-[14px] px-7 py-3.5 rounded-[8px] hover:border-white transition-colors"
-                >
-                  See case studies →
-                </Link>
-              </div>
-            </div>
-
-            {/* Right column — stats cards (glass) */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
-                <div className="text-[30px] font-bold text-[#4AABDC]">25+</div>
-                <div className="text-xs text-white/60 mt-1">Years in Costa Rica</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
-                <div className="text-[30px] font-bold text-[#4AABDC]">1000+</div>
-                <div className="text-xs text-white/60 mt-1">High-value tech jobs created</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
-                <div className="text-[30px] font-bold text-[#4AABDC]">$1B+</div>
-                <div className="text-xs text-white/60 mt-1">Client revenue</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
-                <div className="text-[30px] font-bold text-[#00A79D]">&lt;1%</div>
-                <div className="text-xs text-white/60 mt-1">Involuntary turnover — industry avg. 13%{/* TODO: cite source for 13% industry avg */}</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
-                <div className="text-[30px] font-bold text-[#00A79D]">98/100</div>
-                <div className="text-xs text-white/60 mt-1">eNPS at LTV Co.</div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[10px] p-5">
-                <div className="text-[30px] font-bold text-[#00A79D]">97.6</div>
-                <div className="text-xs text-white/60 mt-1">GPTW Trust Index at LTV Co.</div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Animated logo banner */}
-          <div className="mt-16">
-            <p className="text-[11px] font-bold tracking-widest uppercase text-white/40 mb-4">
-              Trusted by leading tech and data companies
-            </p>
-            <div className="overflow-hidden w-full">
-              <div className="flex animate-scroll gap-3 w-max">
-                {/* Original set + a duplicate (for the seamless loop) hidden from assistive tech */}
-                {[false, true].map((isCopy) => (
-                  <div key={String(isCopy)} className="flex gap-3" aria-hidden={isCopy ? 'true' : undefined}>
-                    {logoChips.map((logo) => (
-                      <Link
-                        key={logo.href}
-                        href={logo.href}
-                        tabIndex={isCopy ? -1 : undefined}
-                        className="text-sm font-medium px-4 py-2 border border-white/20 rounded-full text-white/70 bg-white/5 whitespace-nowrap hover:border-white/50 hover:text-white transition-colors"
-                      >
-                        {logo.name}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* ── Services ── */}
       <section className="bg-[#F7FAFB] w-full py-20">
