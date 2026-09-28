@@ -38,7 +38,11 @@ export default function HomeHero() {
         aria-hidden="true"
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-12 md:pt-20 lg:pt-24 pb-12 md:pb-16">
+      {/* Top fade so the (fixed) navigation stays legible over the brightest video frames */}
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#0E2233]/60 to-transparent" aria-hidden="true" />
+
+      {/* Extra top padding: on Home the navigation floats over the hero */}
+      <div className="relative max-w-7xl mx-auto px-6 pt-32 md:pt-40 lg:pt-44 pb-12 md:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_1fr] gap-10 lg:gap-14 items-center">
           {/* ── Left column ── */}
           <div className="min-w-0">
