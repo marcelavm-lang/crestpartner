@@ -1,41 +1,51 @@
-CREST PARTNERS: LOGO FINAL (opción D)
-=====================================
+CREST PARTNERS: LOGO FINAL
+===========================
+Isotipo "doble cima" + CREST PARTNERS en Michroma (con peso reforzado)
 
 CARPETA svg/: archivos maestros
 Úsalos para el sitio web, las presentaciones, la imprenta y el diseño. Escalan a cualquier tamaño sin perder calidad.
 
-  crest-partners-logo-color.svg          Principal, para fondos claros
-  crest-partners-logo-reverso.svg        A color, para fondos oscuros (azul marino)
-  crest-partners-logo-blanco.svg         Todo en blanco, para fotos o fondos de color
-  crest-partners-logo-una-tinta.svg      Todo en azul marino (sellos, bordados, grabados)
-  crest-partners-logo-negro.svg          Todo en negro (documentos en blanco y negro)
-  crest-partners-logo-descriptor-*.svg   Logo + "ENGINEERING HUBS · COSTA RICA"
-  crest-partners-icono-color.svg         Ícono en cuadro azul marino (apps, favicon)
-  crest-partners-icono-color-sin-fondo.svg
-  crest-partners-icono-blanco.svg
-  crest-partners-icono-una-tinta.svg
-  crest-partners-avatar-social.svg       Cuadrado sin esquinas redondeadas, para LinkedIn y redes (recortan en círculo)
+  Logo horizontal (el principal)
+    crest-partners-logo-color.svg        Fondos claros
+    crest-partners-logo-reverso.svg      Fondos oscuros (azul marino)
+    crest-partners-logo-blanco.svg       Todo en blanco, para fotos o fondos de color
+    crest-partners-logo-una-tinta.svg    Todo en azul marino (sellos, bordados, grabados)
+    crest-partners-logo-negro.svg        Todo en negro (documentos en blanco y negro)
+
+  Logo con descriptor ("Engineering hubs in Costa Rica")
+    crest-partners-logo-descriptor-*.svg   Presentaciones, LinkedIn, documentos
+
+  Logo vertical (símbolo arriba, nombre abajo)
+    crest-partners-logo-vertical-*.svg     Portadas, formatos cuadrados, redes, merch
+
+  Símbolo solo
+    crest-partners-isotipo-*.svg           El símbolo sin texto, en todas las versiones de color
+    crest-partners-icono.svg               Símbolo en cuadro azul marino con esquinas redondeadas (apps, favicon)
+    crest-partners-avatar-social.svg       Cuadrado sin esquinas redondeadas, para LinkedIn y redes (recortan en círculo)
 
 CARPETA png/: listos para usar
   favicon.ico, favicon-16/32/48.png, apple-touch-icon-180.png, icon-192/512.png   Sitio web
-  linkedin-avatar-400.png                     Foto de perfil de LinkedIn
-  crest-partners-logo-firma-email-480.png     Firma de correo (mostrar a 240 px de ancho)
-  crest-partners-logo-*-1200.png              Documentos, Word, Google Docs
+  linkedin-avatar-400.png                          Foto de perfil de LinkedIn
+  crest-partners-logo-firma-email-480.png          Firma de correo (mostrar a 240 px de ancho)
+  crest-partners-logo-color-1200.png / reverso     Documentos, Word, Google Docs
+  crest-partners-logo-descriptor-color-1600.png    Presentaciones
+  crest-partners-logo-vertical-color-800.png       Formatos cuadrados
 
 COLORES
-  Azul marino    #0E2233   "crest"
-  Azul           #2574A7   "partners"
-  Teal           #00A79D   pico (sobre fondo claro)
-  Teal claro     #3CC4B9   pico (sobre fondo oscuro)
-  Azul claro     #9FCDEB   "partners" (sobre fondo oscuro)
+  Azul marino    #0E2233   Texto "CREST PARTNERS" y fondo del ícono
+  Teal claro     #2BD4B4   Inicio del degradado (fondos claros)
+  Teal           #00A79D   Centro del degradado
+  Azul           #2574A7   Final del degradado
+  En fondos oscuros, el degradado es más claro: #3CE0C2, #2BC4B4 y #4FA3E0.
 
 TIPOGRAFÍA
-  League Spartan (Bold 700 en "crest", Regular 400 en "partners", Medium 500 en el descriptor).
-  Es gratuita, con licencia SIL Open Font License, que permite usarla en logos.
-  En los SVG el texto ya está convertido a trazos, así que no hace falta tener la fuente instalada.
+  Nombre: Michroma, con un trazo extra para darle más peso.
+  Descriptor y textos: League Spartan (Medium y Bold).
+  Las dos son gratuitas, con licencia SIL Open Font License, que permite usarlas en logos (ver las licencias incluidas).
+  En los SVG el texto ya está convertido a trazos, así que no hace falta tener las fuentes instaladas.
 
 REGLAS DE USO
-  - Espacio libre alrededor del logo: como mínimo, la altura de la letra "c".
-  - Tamaño mínimo: 100 px de ancho en pantalla y 25 mm impreso. Por debajo de eso, usar el ícono.
+  - Espacio libre alrededor del logo: como mínimo, la mitad de la altura del símbolo.
+  - Tamaño mínimo: 120 px de ancho en pantalla y 30 mm impreso para el logo horizontal. Por debajo de eso, usar el símbolo solo.
   - No estirar, no rotar, no cambiar colores, no agregar sombras.
-  - El pico siempre en teal (o del mismo color que el resto en las versiones de una tinta).
+  - Sobre fotos, usar la versión blanca, o la versión en reverso sobre un área oscura.

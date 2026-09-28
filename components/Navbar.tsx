@@ -24,11 +24,11 @@ export default function Navbar() {
           <Image
             src="/crest-partners-logo/svg/crest-partners-logo-color.svg"
             alt="Crest Partners"
-            width={607}
-            height={79}
+            width={685}
+            height={100}
             unoptimized
             priority
-            className="h-6 lg:h-[26px] xl:h-[30px] w-auto"
+            className="h-[30px] lg:h-[32px] xl:h-[36px] w-auto"
           />
         </Link>
 

@@ -27,10 +27,10 @@ export default function Footer() {
               <Image
                 src="/crest-partners-logo/svg/crest-partners-logo-color.svg"
                 alt="Crest Partners"
-                width={607}
-                height={79}
+                width={685}
+                height={100}
                 unoptimized
-                className="h-[26px] w-auto"
+                className="h-[32px] w-auto"
               />
             </Link>
             <p className="text-[#3E4C59] leading-relaxed font-normal text-[16px]">

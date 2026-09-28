@@ -76,7 +76,7 @@ export async function renderOgImage({
         <div style={{ display: 'flex', alignItems: 'center', marginTop: 56 }}>
           {logo ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={logo} width={370} height={48} alt="Crest Partners" />
+            <img src={logo} width={400} height={58} alt="Crest Partners" />
           ) : (
             <div style={{ display: 'flex', fontSize: 30, fontWeight: 700, letterSpacing: 6, color: '#5FD4CB' }}>
               CREST PARTNERS
