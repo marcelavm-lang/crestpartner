@@ -73,7 +73,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="text-[13px] text-black hover:text-[#2574A7] transition-colors"
+                  className="text-[13px] text-black hover:text-[#2574A7] transition-colors [overflow-wrap:anywhere]"
                 >
                   {SITE.email}
                 </a>

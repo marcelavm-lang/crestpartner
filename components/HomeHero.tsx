@@ -25,6 +25,7 @@ const clientLogos = [
   { name: '66degrees', src: '/logos/white/66degrees.svg', width: 3649, height: 860, h: 20 },
   { name: 'Think Unlimited', src: '/logos/white/think-unlimited.png', width: 1605, height: 842, h: 26 },
   { name: 'Strategio', src: '/logos/white/strategio.png', width: 1280, height: 255, h: 20 },
+  { name: 'Forward Costa Rica', src: '/logos/white/fwd.png', width: 1200, height: 471, h: 30 },
 ]
 
 export default function HomeHero() {
@@ -118,34 +119,47 @@ export default function HomeHero() {
         </div>
 
         {/* ── Results strip ── */}
-        <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-[#2A4B68] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-x-6 gap-y-8">
+        <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-[#2A4B68] grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 lg:max-w-4xl">
           {results.map((r) => (
-            <div key={r.value} className={`lg:col-span-2 ${r.mobile ? '' : 'hidden md:block'}`}>
+            <div key={r.value} className={r.mobile ? '' : 'hidden md:block'}>
               <p className="text-[30px] md:text-[34px] font-bold leading-none text-white mb-2">{r.value}</p>
               <p className="text-[14px] md:text-[15px] leading-snug text-[#9FB3C4]">{r.text}</p>
             </div>
           ))}
+        </div>
 
-          <div className="hidden md:block md:col-span-3 lg:col-span-6 lg:pl-6 lg:border-l lg:border-[#2A4B68]">
-            <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#9FB3C4] mb-4">
-              Teams we&apos;ve built for
-            </p>
-            <ul className="flex flex-wrap items-center gap-x-6 gap-y-4">
-              {clientLogos.map((logo) => (
-                <li key={logo.name} className="flex items-center">
-                  <Image
-                    src={logo.src}
-                    alt={`${logo.name} logo`}
-                    width={logo.width}
-                    height={logo.height}
-                    sizes={`${Math.round((logo.h * logo.width) / logo.height)}px`}
-                    unoptimized={logo.src.endsWith('.svg')}
-                    style={{ height: logo.h, width: 'auto' }}
-                    className="opacity-90"
-                  />
-                </li>
+        {/* ── Logo banner (infinite marquee; pauses on hover, static with reduced motion) ── */}
+        <div className="mt-10 md:mt-12">
+          <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#9FB3C4] mb-5">
+            Teams we&apos;ve built for
+          </p>
+          <div className="group relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_6%,#000_94%,transparent)]">
+            <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused] motion-reduce:animate-none motion-reduce:w-full">
+              {[false, true].map((isCopy) => (
+                <ul
+                  key={String(isCopy)}
+                  aria-hidden={isCopy ? 'true' : undefined}
+                  className={`flex shrink-0 items-center gap-12 md:gap-16 pr-12 md:pr-16 ${
+                    isCopy ? 'motion-reduce:hidden' : 'motion-reduce:flex-wrap motion-reduce:gap-y-6'
+                  }`}
+                >
+                  {clientLogos.map((logo) => (
+                    <li key={logo.name} className="flex items-center">
+                      <Image
+                        src={logo.src}
+                        alt={isCopy ? '' : `${logo.name} logo`}
+                        width={logo.width}
+                        height={logo.height}
+                        sizes={`${Math.round((logo.h * logo.width) / logo.height)}px`}
+                        unoptimized={logo.src.endsWith('.svg')}
+                        style={{ height: logo.h, width: 'auto' }}
+                        className="opacity-90 max-w-none"
+                      />
+                    </li>
+                  ))}
+                </ul>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>

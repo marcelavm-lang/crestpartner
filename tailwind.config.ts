@@ -25,6 +25,7 @@ const config: Config = {
       },
       animation: {
         scroll: 'scroll 20s linear infinite',
+        marquee: 'scroll 32s linear infinite',
       },
       keyframes: {
         scroll: {
