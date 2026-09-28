@@ -20,10 +20,10 @@ const NAMES: Record<Company, string> = {
 
 const configs: Record<Company, Config> = {
   targusinfo:        { src: '/logos/targusinfo.png',      width: 180, height: 39  },
-  verisk:            { src: '/logos/verisk.png',           width: 220, height: 66  },
-  '66degrees':       { src: '/logos/66degrees.png',        width: 240, height: 57  },
-  'ltv-co':          { src: '/logos/ltv-co.png',           width: 80,  height: 80  },
-  'think-unlimited': { src: '/logos/think-unlimited.png',  width: 200, height: 100 },
+  verisk:            { src: '/logos/verisk.svg',           width: 220, height: 54  },
+  '66degrees':       { src: '/logos/66degrees.svg',        width: 240, height: 57  },
+  'ltv-co':          { src: '/logos/ltv-co.svg',           width: 80,  height: 80  },
+  'think-unlimited': { src: '/logos/think-unlimited.png',  width: 200, height: 105 },
   strategio:         { src: '/logos/strategio.png',        width: 220, height: 64  },
   fwd:               { src: '/logos/fwd.png',              width: 200, height: 100 },
 }
@@ -49,6 +49,7 @@ export default function CompanyLogo({
       width={w}
       height={h}
       sizes={`${w}px`}
+      unoptimized={cfg.src.endsWith('.svg')}
       style={{ objectFit: 'contain', maxWidth: '100%', height: 'auto' }}
       priority={variant === 'page'}
     />

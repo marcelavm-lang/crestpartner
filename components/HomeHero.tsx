@@ -20,11 +20,11 @@ const results = [
 // White single-ink versions of the client logos (public/logos/white).
 const clientLogos = [
   { name: 'TargusInfo', src: '/logos/white/targusinfo.png', width: 147, height: 32, h: 18 },
-  { name: 'Verisk', src: '/logos/white/verisk.png', width: 600, height: 180, h: 24 },
-  { name: 'LTV Co.', src: '/logos/white/ltv-co.png', width: 154, height: 156, h: 30 },
-  { name: '66degrees', src: '/logos/white/66degrees.png', width: 600, height: 142, h: 20 },
-  { name: 'Think Unlimited', src: '/logos/white/think-unlimited.png', width: 404, height: 188, h: 28 },
-  { name: 'Strategio', src: '/logos/white/strategio.png', width: 600, height: 123, h: 20 },
+  { name: 'Verisk', src: '/logos/white/verisk.svg', width: 210, height: 52, h: 24 },
+  { name: 'LTV Co.', src: '/logos/ltv-co.svg', width: 60, height: 60, h: 30 },
+  { name: '66degrees', src: '/logos/white/66degrees.svg', width: 3649, height: 860, h: 20 },
+  { name: 'Think Unlimited', src: '/logos/white/think-unlimited.png', width: 1605, height: 842, h: 26 },
+  { name: 'Strategio', src: '/logos/white/strategio.png', width: 1280, height: 255, h: 20 },
 ]
 
 export default function HomeHero() {
@@ -130,7 +130,7 @@ export default function HomeHero() {
             <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#9FB3C4] mb-4">
               Teams we&apos;ve built for
             </p>
-            <ul className="flex flex-wrap items-center gap-x-7 gap-y-4">
+            <ul className="flex flex-wrap items-center gap-x-6 gap-y-4">
               {clientLogos.map((logo) => (
                 <li key={logo.name} className="flex items-center">
                   <Image
@@ -139,6 +139,7 @@ export default function HomeHero() {
                     width={logo.width}
                     height={logo.height}
                     sizes={`${Math.round((logo.h * logo.width) / logo.height)}px`}
+                    unoptimized={logo.src.endsWith('.svg')}
                     style={{ height: logo.h, width: 'auto' }}
                     className="opacity-90"
                   />
