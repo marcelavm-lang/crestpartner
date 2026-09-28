@@ -59,11 +59,11 @@ const partners: Person[] = [
 function Row({ p, index, tag }: { p: Person; index: number; tag: string }) {
   const flip = index % 2 === 0; // alternate portrait side on desktop
   return (
-    <article className={`grid items-center gap-10 lg:gap-[88px] ${flip ? "lg:grid-cols-[1fr_400px]" : "lg:grid-cols-[400px_1fr]"}`}>
-      <div className={`relative aspect-[4/5] w-full max-w-[340px] lg:max-w-none overflow-hidden rounded-sm bg-[#1B2B3A] ${flip ? "lg:order-2" : ""}`}>
-        {/* Full cutout, bottom-aligned with headroom — no cropping or zoom */}
-        <div className="absolute inset-x-[6%] bottom-0 top-[14%]">
-          <Image src={p.img} alt={p.name} fill sizes="(min-width:1024px) 360px, 320px" className="object-contain object-bottom" />
+    <article className={`grid items-center gap-10 lg:gap-[88px] ${flip ? "lg:grid-cols-[1fr_360px]" : "lg:grid-cols-[360px_1fr]"}`}>
+      <div className={`relative aspect-square w-full max-w-[320px] lg:max-w-none overflow-hidden rounded-sm bg-[#1B2B3A] ${flip ? "lg:order-2" : ""}`}>
+        {/* Square frame matching the square cutout: whole photo, bottom-aligned, a little headroom */}
+        <div className="absolute inset-x-[4%] bottom-0 top-[5%]">
+          <Image src={p.img} alt={p.name} fill sizes="(min-width:1024px) 340px, 300px" className="object-contain object-bottom" />
         </div>
       </div>
       <div className="flex flex-col gap-7">
