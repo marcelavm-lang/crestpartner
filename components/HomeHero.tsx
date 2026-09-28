@@ -15,6 +15,10 @@ const results = [
   { value: '$650M', text: "Neustar's acquisition of TargusInfo, with our team inside", mobile: false },
   { value: '$400M', text: 'LTV Co. exit, built on a 120-person Costa Rica hub', mobile: true },
   { value: '11+ yrs', text: 'with 66degrees, and still growing', mobile: true },
+  { value: '$1B+', text: 'combined revenue of the companies we\'ve built for', mobile: false },
+  { value: '1000+', text: 'high-value tech jobs created in Costa Rica', mobile: true },
+  // TODO: cite source for 13% industry avg
+  { value: '<1%', text: 'involuntary turnover — industry avg. 13%', mobile: true },
 ]
 
 // White single-ink versions of the client logos (public/logos/white).
@@ -41,6 +45,8 @@ export default function HomeHero() {
 
       {/* Top fade so the (fixed) navigation stays legible over the brightest video frames */}
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#0E2233]/60 to-transparent" aria-hidden="true" />
+      {/* Bottom fade so the results strip and logo banner stay legible across the whole width */}
+      <div className="absolute inset-x-0 bottom-0 h-[26rem] bg-gradient-to-t from-[#0E2233]/90 via-[#0E2233]/60 to-transparent" aria-hidden="true" />
 
       {/* Extra top padding: on Home the navigation floats over the hero */}
       <div className="relative max-w-7xl mx-auto px-6 pt-32 md:pt-40 lg:pt-44 pb-12 md:pb-16">
@@ -119,11 +125,11 @@ export default function HomeHero() {
         </div>
 
         {/* ── Results strip ── */}
-        <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-[#2A4B68] grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 lg:max-w-4xl">
+        <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-[#2A4B68] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8">
           {results.map((r) => (
             <div key={r.value} className={r.mobile ? '' : 'hidden md:block'}>
-              <p className="text-[30px] md:text-[34px] font-bold leading-none text-white mb-2">{r.value}</p>
-              <p className="text-[14px] md:text-[15px] leading-snug text-[#9FB3C4]">{r.text}</p>
+              <p className="text-[30px] md:text-[34px] lg:text-[32px] xl:text-[34px] font-bold leading-none text-white mb-2 whitespace-nowrap">{r.value}</p>
+              <p className="text-[14px] md:text-[15px] lg:text-[14px] xl:text-[15px] leading-snug text-[#C9D5E0] [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">{r.text}</p>
             </div>
           ))}
         </div>
