@@ -59,26 +59,24 @@ const partners: Person[] = [
 function Row({ p, index, tag }: { p: Person; index: number; tag: string }) {
   const flip = index % 2 === 0; // alternate portrait side on desktop
   return (
-    <article className={`grid items-center gap-10 lg:gap-[88px] ${flip ? "lg:grid-cols-[1fr_360px]" : "lg:grid-cols-[360px_1fr]"}`}>
-      <div className={`relative aspect-square w-full max-w-[320px] lg:max-w-none overflow-hidden rounded-sm bg-[#1B2B3A] ${flip ? "lg:order-2" : ""}`}>
-        {/* Square frame matching the square cutout: whole photo, bottom-aligned, a little headroom */}
-        <div className="absolute inset-x-[4%] bottom-0 top-[5%]">
-          <Image src={p.img} alt={p.name} fill sizes="(min-width:1024px) 340px, 300px" className="object-contain object-bottom" />
-        </div>
+    <article className={`grid items-center gap-10 lg:gap-20 ${flip ? "lg:grid-cols-[1fr_400px]" : "lg:grid-cols-[400px_1fr]"}`}>
+      {/* 4:5 portrait frame (400×500 on desktop); whole photo, no zoom, resting on the bottom edge */}
+      <div className={`relative aspect-[4/5] w-full max-w-[320px] lg:max-w-none overflow-hidden rounded-sm bg-[#1B2B3A] ${flip ? "lg:order-2" : ""}`}>
+        <Image src={p.img} alt={p.name} fill sizes="(min-width:1024px) 400px, 320px" className="object-contain object-bottom" />
       </div>
-      <div className="flex flex-col gap-7">
-        <p className="text-sm font-semibold tracking-[0.16em] text-[#2BD4B4]">
+      <div className="flex flex-col gap-5">
+        <p className="text-[13px] font-semibold tracking-[0.16em] text-[#2BD4B4]">
           {String(index).padStart(2, "0")} — {tag}
         </p>
         <div className="flex flex-col gap-2.5">
-          <h3 className="text-4xl font-bold leading-none text-white lg:text-[52px]">{p.name}</h3>
-          <p className="text-lg font-medium text-[#7FD8CC]">{p.role}</p>
+          <h3 className="text-4xl font-bold leading-none text-white lg:text-[40px]">{p.name}</h3>
+          <p className="text-base font-medium text-[#7FD8CC]">{p.role}</p>
         </div>
-        <p className="text-lg font-normal leading-relaxed text-[#B9C6D2]">{p.bio}</p>
+        <p className="text-base font-normal leading-[1.6] text-[#B9C6D2]">{p.bio}</p>
         <div className="h-px bg-[#26394A]" />
-        <ul className="grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
+        <ul className="grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
           {p.expertise.map((e) => (
-            <li key={e} className="flex items-baseline gap-3 text-base text-[#D5DEE6]">
+            <li key={e} className="flex items-baseline gap-3 text-[15px] text-[#D5DEE6]">
               <span className="h-0.5 w-3.5 shrink-0 -translate-y-1 bg-[#2BD4B4]" aria-hidden />
               {e}
             </li>
