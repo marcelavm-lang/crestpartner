@@ -546,7 +546,7 @@ export default function LandingPage() {
                 company: 'Infutor (now Verisk)',
                 badge: 'Consumer Identity · Data',
                 period: '2007–2014',
-                metric: '$250M exit',
+                metric: '$225M exit',
                 desc: 'Scaled long-term Costa Rica operations supporting global data and analytics teams — from zero to a full operational hub.',
                 color: '#2574A7',
               },

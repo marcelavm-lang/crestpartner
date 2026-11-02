@@ -50,7 +50,7 @@ const partners: Person[] = [
     name: "Gary Walter",
     role: "Strategic Partner",
     img: "/team/gary-walter-cutout.webp",
-    bio: "Mid-market acceleration executive with extensive background in general management, strategic planning, SaaS and Big Data. Led Infutor Data Solutions from $1M to $250M — with the Costa Rica team at the core of that growth. Brings the operator perspective of someone who has lived the model from the client side for over a decade.",
+    bio: "Mid-market acceleration executive with extensive background in general management, strategic planning, SaaS and Big Data. Led Infutor Data Solutions from $1M to its $225M acquisition by Verisk — with the Costa Rica team at the core of that growth. Brings the operator perspective of someone who has lived the model from the client side for over a decade.",
     expertise: ["General management", "SaaS & Big Data", "Business development", "Strategic planning", "Private equity & M&A", "Harvard KSC certified"],
     credentials: ["SaaS & Big Data", "Private equity", "M&A", "Harvard KSC certified"],
   },

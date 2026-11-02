@@ -36,7 +36,7 @@ const cases = [
     badge: 'Consumer Identity',
     badgeColor: 'bg-[#F4F7FA] text-[#5A6A7A]',
     tagline: 'First data intelligence company in CR',
-    stats: '55x revenue · $250M exit',
+    stats: '55x revenue · $225M exit',
     tags: ['exit', 'data'] as Tag[],
   },
   {
@@ -102,7 +102,7 @@ const testimonials = [
   {
     quote: 'Across the entire company, there is not a more respected leader than Marcela Villalta.',
     author: 'Gary Walter, CEO · Infutor',
-    sub: '$250M exit',
+    sub: '$225M exit',
   },
 ]
 
@@ -125,7 +125,7 @@ export default function CaseStudiesPage() {
               Every company started at zero. None of them stayed there.
             </h1>
             <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed">
-              From a $250M data exit to the Google Cloud Partner of the Year. From 8 people to 200+.
+              From a $225M data exit to the Google Cloud Partner of the Year. From 8 people to 200+.
               From one person on the ground to a $400M exit. Different companies, different industries, different sizes —
               and in every case: less than 1% involuntary turnover, a Great Place to Work certification, and teams
               that became core to how those companies grew. These are not coincidences. This is the model.
@@ -193,7 +193,7 @@ export default function CaseStudiesPage() {
             <div className="grid grid-cols-2 gap-3">
               {[
                 { val: '$400M', label: 'exit' },
-                { val: '0%', label: 'turnover' },
+                { val: '<1%', label: 'involuntary turnover' },
                 { val: '#1', label: 'GPTW' },
                 { val: '2 of 2', label: 'global offices in CR' },
               ].map((s) => (

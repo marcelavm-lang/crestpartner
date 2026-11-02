@@ -33,7 +33,7 @@ export default function VeriskPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
         {[
           { value: '55x', label: 'Revenue growth multiple' },
-          { value: '$250M', label: 'Exit valuation' },
+          { value: '$225M', label: 'Acquisition by Verisk' },
           { value: '7 yrs', label: 'Partnership duration' },
         ].map((s) => (
           <div key={s.label} className="border border-[#D8E2EA] rounded-[10px] p-6">
@@ -54,7 +54,7 @@ export default function VeriskPage() {
         </p>
         <h2 className="text-[22px] font-bold text-black mb-4">The outcome</h2>
         <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">
-          Revenue grew 55x over the engagement period. The company was acquired for $250M — with the Costa Rica team as a central driver of value. This partnership cemented Crest Partners' reputation as the go-to operator for data companies expanding into Costa Rica.
+          Revenue grew 55x over the engagement period. In 2022 Verisk acquired the company for $225M — with the Costa Rica team as a central driver of value. This partnership cemented Crest Partners' reputation as the go-to operator for data companies expanding into Costa Rica.
         </p>
       </div>
     </div>
