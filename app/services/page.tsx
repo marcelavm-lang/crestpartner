@@ -38,10 +38,38 @@ const proofCards = [
   { company: 'Infutor (now Verisk)', result: '55x revenue growth', note: '$225M exit · First data intelligence company in CR' },
 ]
 
+// Answers for CTOs — facts already stated on the site, plus time-to-hire confirmed by Marcela (Nov 2026).
+const ctoFaq = [
+  {
+    q: 'How long does it take to hire?',
+    a: 'About one month, from the moment we agree on the role requirements to a signed hire.',
+  },
+  {
+    q: 'Which profiles can you hire?',
+    a: 'Software engineers (full-stack, backend, frontend), data engineers and scientists, DevOps and cloud, QA and automation, product and project managers, UI/UX designers and business analysts — from junior to engineering leadership.',
+  },
+  {
+    q: 'How do you assess candidates?',
+    a: 'We write the job description and recruiting strategy around your stack, then run technical and cultural assessments. No shortcuts on quality.',
+  },
+  {
+    q: 'Who owns the code and the IP?',
+    a: 'Your company. The team is employed by your own Costa Rican entity, so the IP sits in your entity — not with a vendor.',
+  },
+  {
+    q: 'How does the team work with ours?',
+    a: 'Central Time year-round, with full overlap with U.S. business hours. We onboard every hire into your company, your culture and your brand — they work as part of your team, not next to it.',
+  },
+  {
+    q: 'What if we want to run it ourselves later?',
+    a: 'It is already yours. The entity, the people and the know-how stay with your company — there is nothing to transfer.',
+  },
+]
+
 const steps = [
   { num: '01', title: 'Discovery call', sub: '48 hours', desc: 'We get on a call, understand your goals, your stack and your timeline.' },
   { num: '02', title: 'Custom expansion plan', sub: 'Tailored to you', desc: 'We design your Costa Rica operation from scratch — structure, timeline, costs.' },
-  { num: '03', title: 'Launch & hire', sub: 'Day 1–30', desc: 'Legal entity, back office, first hires — all running within 30 days.' },
+  { num: '03', title: 'Launch & recruit', sub: 'Month 1', desc: 'Legal entity and back office running within 30 days. Each hire takes about a month from agreed requirements.' },
   { num: '04', title: 'Ongoing operations', sub: 'Continuous', desc: 'HR, accounting, compliance, culture — we run it so you don\'t have to.' },
 ]
 
@@ -130,7 +158,7 @@ export default function ServicesPage() {
               {[
                 { day: 'Week 1', label: 'Kickoff & entity filing' },
                 { day: 'Weeks 1–3', label: 'Registrations, banking & payroll setup' },
-                { day: 'Weeks 2–4', label: 'Back office live · first hires' },
+                { day: 'Weeks 2–4', label: 'Back office live · recruiting underway' },
                 { day: 'Day 30', label: 'Fully operational', highlight: true },
               ].map((item) => (
                 <div
@@ -202,6 +230,25 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── For engineering leaders ── */}
+      <section id="engineering" className="max-w-7xl mx-auto px-6 py-20">
+        <p className="eyebrow mb-4">For engineering leaders</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 max-w-2xl">
+          What CTOs ask us first.
+        </h2>
+        <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed mb-12 max-w-2xl">
+          Straight answers on hiring speed, talent, quality and ownership.
+        </p>
+        <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {ctoFaq.map((f) => (
+            <div key={f.q} className="border border-[#D8E2EA] rounded-[12px] p-7 bg-white">
+              <dt className="text-[17px] font-bold text-black mb-3">{f.q}</dt>
+              <dd className="text-[16px] text-[#3E4C59] font-normal leading-relaxed">{f.a}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* ── Service Block 3: Operate ── */}
