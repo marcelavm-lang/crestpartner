@@ -7,6 +7,8 @@ type Person = {
   bio: string;
   expertise: string[];
   credentials: string[];
+  /** Optional career path, most recent first: [title, company, years] */
+  career?: [string, string, string][];
   linkedin?: string;
 };
 
@@ -15,9 +17,16 @@ const cofounders: Person[] = [
     name: "Marcela Villalta",
     role: "Co-founder & CEO",
     img: "/team/marcela-villalta-cutout.webp",
-    bio: "25+ years building tech operations in Costa Rica for U.S. companies. Architect of the culture model behind less than 1% involuntary turnover and a 97.6 GPTW Trust Index at LTV Co. — among the highest scores globally. Former Country Manager at LTV Co. (f.k.a. BeenVerified). Co-founder of Forward Costa Rica.",
-    expertise: ["Operations leadership", "Culture model design", "Inclusive tech education", "HR & people strategy", "Entity setup & management", "U.S. client relations"],
-    credentials: ["Business architecture", "Org & culture design", "Nearshore entity model", "Social tech impact"],
+    bio: "25+ years building U.S. technology operations in Costa Rica from the ground up. At TARGUSinfo she hired 500+ people, created six departments and launched three data products; at Infutor she opened the software development and data processing center and built every team behind it; at LTV Co. she architected the culture model behind less than 1% involuntary turnover and a 97.6 GPTW Trust Index. MBA, Universidad de Costa Rica. Co-founder of Forward Costa Rica.",
+    expertise: ["Building tech departments from zero", "Data & software product launches", "Operations leadership", "Culture model design", "Entity setup, legal & finance", "HR & people strategy"],
+    credentials: [], // career path below replaces the tag line
+    career: [
+      ["Co-founder", "Crest Partners", "2006 – present"],
+      ["Country Manager", "LTV Co. (f.k.a. BeenVerified)", "2015 – 2025"],
+      ["President", "Infutor Data Solutions de Costa Rica", "2007 – 2014"],
+      ["Production Manager", "TARGUSinfo (now Neustar)", "2001 – 2007"],
+      ["QA Analyst", "Equifax Costa Rica", "1998 – 2001"],
+    ],
   },
 ];
 
@@ -82,9 +91,29 @@ function Row({ p, index, tag }: { p: Person; index: number; tag: string }) {
             </li>
           ))}
         </ul>
-        <p className="text-xs font-semibold uppercase leading-loose tracking-[0.12em] text-[#7E90A1]">
-          {p.credentials.join(" · ")}
-        </p>
+        {p.career && (
+          <div className="flex flex-col gap-2.5">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#7E90A1]">Career</p>
+            <ol className="flex flex-col">
+              {p.career.map(([title, company, years]) => (
+                <li
+                  key={company}
+                  className="grid grid-cols-[1fr_auto] gap-x-4 border-t border-[#26394A] py-2 text-[15px] first:border-t-0 first:pt-0"
+                >
+                  <span className="text-[#D5DEE6]">
+                    <span className="font-semibold text-white">{title}</span> · {company}
+                  </span>
+                  <span className="whitespace-nowrap text-[#7E90A1]">{years}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+        {p.credentials.length > 0 && (
+          <p className="text-xs font-semibold uppercase leading-loose tracking-[0.12em] text-[#7E90A1]">
+            {p.credentials.join(" · ")}
+          </p>
+        )}
       </div>
     </article>
   );
