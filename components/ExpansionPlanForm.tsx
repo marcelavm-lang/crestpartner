@@ -656,7 +656,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
 
         {loading && (
           <p className="mt-4 text-[12px] text-[#5A6A7A]" aria-live="polite">
-            Our AI advisor is writing your plan — this usually takes 20–30 seconds.
+            We’re preparing your plan — this usually takes 20–30 seconds.
           </p>
         )}
 

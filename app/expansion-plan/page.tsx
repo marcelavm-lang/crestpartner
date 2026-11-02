@@ -15,14 +15,12 @@ export default function ExpansionPlanPage() {
 
         {/* Page header */}
         <div className="max-w-2xl mb-12">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#00A79D] mb-3">Free</p>
           <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-5">
             Build your Costa Rica expansion plan
           </h1>
           <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed">
             Answer 5 quick questions and get a personalized plan — team structure, timeline and cost
-            considerations — generated in seconds by our AI advisor, built on 20 years of Crest
-            Partners experience.
+            considerations — built on 20 years of Crest Partners experience.
           </p>
         </div>
 
