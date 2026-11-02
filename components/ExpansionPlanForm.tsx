@@ -388,25 +388,20 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         </div>
 
         {costs && (
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-              <div className="text-lg font-bold text-[#2574A7]">${costs.setup.toLocaleString()}</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">One-time setup</div>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-              <div className="text-lg font-bold text-[#2574A7]">${costs.managementFee.toLocaleString()}/yr</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">Management fee</div>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-              <div className="text-lg font-bold text-[#00A79D]">${costs.recruitingFee.toLocaleString()}</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">Recruiting fees</div>
-            </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 text-center">
-              <div className="text-lg font-bold text-[#2574A7]">${costs.totalSalaries.toLocaleString()}</div>
-              <div className="text-xs text-[#5A6A7A] mt-1">Est. total comp</div>
-            </div>
-            <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 text-center col-span-2 md:col-span-1">
-              <div className="text-lg font-bold text-[#00A79D]">${costs.totalYear1.toLocaleString()}</div>
+          <div className={`grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 ${onClose ? '' : 'xl:grid-cols-5'}`}>
+            {[
+              { value: `$${costs.setup.toLocaleString()}`, label: 'One-time setup', tone: 'text-[#2574A7]' },
+              { value: `$${costs.managementFee.toLocaleString()}`, label: 'Management fee / yr', tone: 'text-[#2574A7]' },
+              { value: `$${costs.recruitingFee.toLocaleString()}`, label: 'Recruiting fees', tone: 'text-[#00A79D]' },
+              { value: `$${costs.totalSalaries.toLocaleString()}`, label: 'Est. total comp / yr', tone: 'text-[#2574A7]' },
+            ].map((c) => (
+              <div key={c.label} className="min-w-0 bg-gray-50 border border-gray-200 rounded-lg px-2 py-4 text-center">
+                <div className={`text-[16px] sm:text-[17px] font-bold leading-tight tabular-nums ${c.tone}`}>{c.value}</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">{c.label}</div>
+              </div>
+            ))}
+            <div className={`min-w-0 bg-teal-50 border border-teal-200 rounded-lg px-2 py-4 text-center col-span-2 ${onClose ? '' : 'xl:col-span-1'}`}>
+              <div className="text-[16px] sm:text-[17px] font-bold leading-tight tabular-nums text-[#00A79D]">${costs.totalYear1.toLocaleString()}</div>
               <div className="text-xs text-[#00A79D] mt-1 font-bold">Total Year 1</div>
             </div>
           </div>
