@@ -162,6 +162,17 @@ function toggle(arr: string[], val: string) {
   return arr.includes(val) ? arr.filter(x => x !== val) : [...arr, val]
 }
 
+const SERVICE_PARTS = ['launch', 'build', 'operate']
+
+// "All of the above" selects/clears every service; picking all three individually also ticks it.
+function toggleService(selected: string[], id: string): string[] {
+  if (id === 'all') return selected.includes('all') ? [] : [...SERVICE_PARTS, 'all']
+  const parts = toggle(selected.filter(x => x !== 'all'), id)
+  return SERVICE_PARTS.every(p => parts.includes(p)) ? [...parts, 'all'] : parts
+}
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 function totalHeadcount(s: PositionCount): number {
   return (Object.values(s) as number[]).reduce((a, b) => a + b, 0)
 }
@@ -193,9 +204,12 @@ function ProgressBar({ step }: { step: number }) {
 // ── Checkbox ───────────────────────────────────────────────────────────────
 function Checkbox({ checked, onChange, label, sub }: { checked: boolean; onChange: () => void; label: string; sub?: string }) {
   return (
-    <label
+    <button
+      type="button"
+      role="checkbox"
+      aria-checked={checked}
       onClick={onChange}
-      className={`flex items-start gap-3 p-3.5 border rounded-[10px] cursor-pointer transition-colors ${
+      className={`w-full text-left flex items-start gap-3 p-3.5 border rounded-[10px] cursor-pointer transition-colors ${
         checked ? 'border-[#2574A7] bg-[#EBF4FA]' : 'border-[#D8E2EA] hover:border-[#2574A7]'
       }`}
     >
@@ -212,7 +226,7 @@ function Checkbox({ checked, onChange, label, sub }: { checked: boolean; onChang
         <div className="text-[13px] text-black font-medium leading-tight">{label}</div>
         {sub && <div className="text-[11px] text-[#5A6A7A] font-normal mt-0.5">{sub}</div>}
       </div>
-    </label>
+    </button>
   )
 }
 
@@ -256,13 +270,38 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
   const [error, setError] = useState<string | null>(null)
   const [openGroups, setOpenGroups] = useState<Set<string>>(new Set())
 
-  const canNext = (): boolean => {
-    if (step === 1) return !!(form.companyName && form.industry && form.usTeamSize)
-    if (step === 2) return totalHeadcount(form.seniority) > 0
-    if (step === 3) return form.services.length > 0
-    if (step === 4) return !!form.timeline
-    if (step === 5) return !!(form.contactName && form.contactEmail)
-    return true
+  const [showErrors, setShowErrors] = useState(false)
+
+  // What is still missing on the current step (empty = ready to continue).
+  const missing = (): string[] => {
+    const m: string[] = []
+    if (step === 1) {
+      if (!form.companyName.trim()) m.push('your company name')
+      if (!form.industry) m.push('an industry')
+      if (!form.usTeamSize) m.push('your current U.S. team size')
+    }
+    if (step === 2 && totalHeadcount(form.seniority) === 0) m.push('at least one position')
+    if (step === 3 && form.services.length === 0) m.push('at least one service')
+    if (step === 4 && !form.timeline) m.push('a timeline')
+    if (step === 5) {
+      if (!form.contactName.trim()) m.push('your full name')
+      if (!form.contactEmail.trim()) m.push('your work email')
+      else if (!EMAIL_RE.test(form.contactEmail.trim())) m.push('a valid email address')
+    }
+    return m
+  }
+
+  function goNext() {
+    if (missing().length) { setShowErrors(true); return }
+    setShowErrors(false)
+    if (step === 4 && !form.contactCompany) setForm(f => ({ ...f, contactCompany: f.companyName }))
+    setStep(step + 1)
+  }
+
+  function goBack() {
+    setShowErrors(false)
+    setError(null)
+    setStep(step - 1)
   }
 
   function toggleGroup(group: string) {
@@ -293,6 +332,8 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
   }
 
   async function handleSubmit() {
+    if (missing().length) { setShowErrors(true); return }
+    setShowErrors(false)
     setLoading(true)
     setError(null)
     const hc = totalHeadcount(form.seniority)
@@ -311,14 +352,16 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           estimatedSalaries: salaries,
           services: form.services,
           timeline: form.timeline,
-          name: form.contactName,
-          email: form.contactEmail,
+          name: form.contactName.trim(),
+          email: form.contactEmail.trim(),
           contactCompany: form.contactCompany,
           message: form.message,
         }),
       })
-      const data = await res.json()
-      if (data.error) throw new Error(data.error)
+      const data = await res.json().catch(() => null)
+      if (!res.ok || !data || data.error || !data.plan) {
+        throw new Error('We couldn\u2019t generate your plan right now. Please try again in a minute, or book a call and a founder will walk you through it.')
+      }
       setPlan(data.plan)
       setCosts(data.costs)
       trackEvent('expansion_plan_completed', { headcount: hc, timeline: form.timeline || null })
@@ -535,7 +578,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
             <h3 className="text-[14px] font-bold text-black mb-3">Services you need</h3>
             {SERVICES.map(s => (
               <Checkbox key={s.id} checked={form.services.includes(s.id)}
-                onChange={() => setForm({ ...form, services: toggle(form.services, s.id) })}
+                onChange={() => { setShowErrors(false); setForm({ ...form, services: toggleService(form.services, s.id) }) }}
                 label={s.label} sub={s.sub}
               />
             ))}
@@ -547,9 +590,9 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           <div className="space-y-3">
             <h3 className="text-[14px] font-bold text-black mb-3">Timeline</h3>
             {TIMELINES.map(t => (
-              <label key={t.value}
-                onClick={() => setForm({ ...form, timeline: t.value })}
-                className={`flex items-center justify-between p-4 border rounded-[10px] cursor-pointer transition-colors ${
+              <button type="button" key={t.value} role="radio" aria-checked={form.timeline === t.value}
+                onClick={() => { setShowErrors(false); setForm({ ...form, timeline: t.value }) }}
+                className={`w-full text-left flex items-center justify-between p-4 border rounded-[10px] cursor-pointer transition-colors ${
                   form.timeline === t.value ? 'border-[#2574A7] bg-[#EBF4FA]' : 'border-[#D8E2EA] hover:border-[#2574A7]'
                 }`}
               >
@@ -562,7 +605,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
                 }`}>
                   {form.timeline === t.value && <div className="w-2 h-2 rounded-full bg-white" />}
                 </div>
-              </label>
+              </button>
             ))}
           </div>
         )}
@@ -582,7 +625,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
             </div>
             <div>
               <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Company</label>
-              <input type="text" value={form.contactCompany || form.companyName}
+              <input type="text" value={form.contactCompany}
                 onChange={e => setForm({ ...form, contactCompany: e.target.value })}
                 placeholder={form.companyName || 'Acme Corp'}
                 className="w-full border border-[#D8E2EA] rounded-[8px] px-4 py-2.5 text-[14px] focus:outline-none focus:border-[#2574A7] transition-colors"
@@ -610,8 +653,20 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           </div>
         )}
 
+        {showErrors && missing().length > 0 && (
+          <div role="alert" className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-[8px] text-[12px] text-amber-800">
+            Please add {missing().join(', ').replace(/, ([^,]*)$/, ' and $1')} to continue.
+          </div>
+        )}
+
+        {loading && (
+          <p className="mt-4 text-[12px] text-[#5A6A7A]" aria-live="polite">
+            Our AI advisor is writing your plan — this usually takes 20–30 seconds.
+          </p>
+        )}
+
         {error && (
-          <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-[8px] text-[12px] text-red-600">
+          <div role="alert" className="mt-4 p-3 bg-red-50 border border-red-200 rounded-[8px] text-[12px] text-red-600">
             {error}
           </div>
         )}
@@ -620,7 +675,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
       {/* Navigation */}
       <div className="pt-5 mt-4 border-t border-[#D8E2EA] flex justify-between items-center">
         {step > 1 ? (
-          <button onClick={() => setStep(step - 1)}
+          <button type="button" onClick={goBack} disabled={loading}
             className="text-[13px] text-[#5A6A7A] hover:text-black transition-colors font-medium"
           >
             ← Back
@@ -628,14 +683,14 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         ) : <div />}
 
         {step < TOTAL_STEPS ? (
-          <button onClick={() => setStep(step + 1)} disabled={!canNext()}
-            className="bg-[#2574A7] text-white font-bold text-[13px] px-6 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          <button type="button" onClick={goNext}
+            className={`bg-[#2574A7] text-white font-bold text-[13px] px-6 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors ${missing().length ? 'opacity-60' : ''}`}
           >
             Continue →
           </button>
         ) : (
-          <button onClick={handleSubmit} disabled={!canNext() || loading}
-            className="bg-[#2574A7] text-white font-bold text-[13px] px-6 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
+          <button type="button" onClick={handleSubmit} disabled={loading}
+            className={`bg-[#2574A7] text-white font-bold text-[13px] px-6 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors disabled:cursor-wait flex items-center gap-2 ${missing().length && !loading ? 'opacity-60' : ''}`}
           >
             {loading ? (
               <>

@@ -2,9 +2,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import { LEADS_FROM, LEADS_TO, EMAIL_RE, getResend, renderFields } from '@/lib/email'
 
 export const runtime = 'nodejs'
+// Plan generation usually takes 20–30s; give the function room so it never times out mid-plan.
+export const maxDuration = 60
 
 export async function POST(req: NextRequest) {
-  const body = await req.json()
+  const body = await req.json().catch(() => null)
+  if (!body || typeof body.name !== 'string' || !body.name.trim() || typeof body.email !== 'string' || !EMAIL_RE.test(body.email.trim())) {
+    return NextResponse.json({ error: 'Please include your name and a valid email.' }, { status: 400 })
+  }
 
   const setupCost = 2450
   const headcount = body.headcount || 1
@@ -165,7 +170,9 @@ Specific reasons why Costa Rica makes sense for their industry and company size.
 
 Keep the tone confident, specific and consultative. Reference Crest Partners' track record: less than 1% turnover, 20 years in Costa Rica, $1B+ client revenue, 97.6 GPTW Trust Index. Max 600 words.`
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  let response: Response
+  try {
+    response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -178,11 +185,15 @@ Keep the tone confident, specific and consultative. Reference Crest Partners' tr
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],
     }),
-  })
+    })
+  } catch (err) {
+    console.error('[expansion-plan] AI request failed:', err)
+    return NextResponse.json({ error: 'Plan generation failed' }, { status: 502 })
+  }
 
   if (!response.ok) {
-    const err = await response.text()
-    return NextResponse.json({ error: err }, { status: response.status })
+    console.error('[expansion-plan] AI error:', response.status, await response.text())
+    return NextResponse.json({ error: 'Plan generation failed' }, { status: 502 })
   }
 
   const data = await response.json()
