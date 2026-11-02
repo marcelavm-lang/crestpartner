@@ -54,7 +54,7 @@ export default function TargusInfoPage() {
         </p>
         <h2 className="text-[22px] font-bold text-black mb-4">The outcome</h2>
         <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">
-          The Costa Rica team became a core competitive advantage for TARGUSinfo. When Neustar acquired the company for $650M, the CR operation was a key part of the value. This is where the founders developed the model that Crest Partners — and every engagement since — is built on.
+          The Costa Rica team became a core competitive advantage for TARGUSinfo. When Neustar acquired the company for $650M in 2011, the CR operation was a key part of the value. This is where the founders developed the model that Crest Partners — and every engagement since — is built on.
         </p>
       </div>
     </div>

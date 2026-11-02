@@ -12,7 +12,7 @@ const ownershipRows = [
 ]
 
 const results = [
-  { value: '$650M', text: "Neustar's acquisition of TargusInfo, with our team inside", mobile: false },
+  { value: '$650M', text: "Neustar's acquisition of TARGUSinfo, with our founders' team inside", mobile: false },
   { value: '$400M', text: 'LTV Co. exit, built on a 120-person Costa Rica hub', mobile: true },
   { value: '11+ yrs', text: 'with 66degrees, and still growing', mobile: true },
   { value: '$1B+', text: 'combined client revenue', mobile: false },
@@ -23,7 +23,7 @@ const results = [
 
 // White single-ink versions of the client logos (public/logos/white).
 const clientLogos = [
-  { name: 'TargusInfo', src: '/logos/white/targusinfo.png', width: 147, height: 32, h: 18 },
+  { name: 'TARGUSinfo', src: '/logos/white/targusinfo.png', width: 147, height: 32, h: 18 },
   { name: 'Verisk', src: '/logos/white/verisk.svg', width: 210, height: 52, h: 24 },
   { name: 'LTV Co.', src: '/logos/ltv-co.svg', width: 60, height: 60, h: 30 },
   { name: '66degrees', src: '/logos/white/66degrees.svg', width: 3649, height: 860, h: 20 },

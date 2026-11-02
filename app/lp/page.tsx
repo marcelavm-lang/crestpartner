@@ -133,8 +133,8 @@ function FeatureIcon({ name }: { name: IconName }) {
    Marquee companies
 ───────────────────────────────────────── */
 const marqueeItems = [
-  'TargusInfo', 'Verisk', 'LTV Co.', '66degrees', 'Think Unlimited', 'Strategio',
-  'TargusInfo', 'Verisk', 'LTV Co.', '66degrees', 'Think Unlimited', 'Strategio',
+  'TARGUSinfo', 'Infutor (now Verisk)', 'LTV Co.', '66degrees', 'Think Unlimited', 'Strategio',
+  'TARGUSinfo', 'Infutor (now Verisk)', 'LTV Co.', '66degrees', 'Think Unlimited', 'Strategio',
 ]
 
 /* ─────────────────────────────────────────
@@ -543,9 +543,9 @@ export default function LandingPage() {
           <motion.div variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                company: 'Verisk',
+                company: 'Infutor (now Verisk)',
                 badge: 'Consumer Identity · Data',
-                period: '2007–2013',
+                period: '2007–2014',
                 metric: '$250M exit',
                 desc: 'Scaled long-term Costa Rica operations supporting global data and analytics teams — from zero to a full operational hub.',
                 color: '#2574A7',

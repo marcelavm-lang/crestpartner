@@ -18,7 +18,7 @@ const filters: { label: string; value: Tag }[] = [
 
 const cases = [
   {
-    name: 'TargusInfo',
+    name: 'TARGUSinfo',
     slug: 'targusinfo',
     logo: 'targusinfo' as const,
     period: '2001–2007',
@@ -29,10 +29,10 @@ const cases = [
     tags: ['exit', 'data'] as Tag[],
   },
   {
-    name: 'Verisk Marketing Solutions',
+    name: 'Infutor (now Verisk)',
     slug: 'verisk',
     logo: 'verisk' as const,
-    period: '2007–2013',
+    period: '2007–2014',
     badge: 'Consumer Identity',
     badgeColor: 'bg-[#F4F7FA] text-[#5A6A7A]',
     tagline: 'First data intelligence company in CR',

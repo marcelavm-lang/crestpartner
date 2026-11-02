@@ -4,7 +4,7 @@ import { pageMetadata } from '@/lib/metadata'
 // Each /case-studies/<slug> page exports its own metadata, which overrides this.
 export const metadata = pageMetadata({
   title: 'Case Studies — Teams Built in Costa Rica Since 2006 | Crest Partners',
-  description: 'Six companies, from 8 people to 200+: TargusInfo, Verisk, 66degrees, LTV Co., Think Unlimited and Strategio.',
+  description: 'Six companies, from 8 people to 200+: TARGUSinfo, Infutor (now Verisk), 66degrees, LTV Co., Think Unlimited and Strategio.',
   path: '/case-studies',
 })
 

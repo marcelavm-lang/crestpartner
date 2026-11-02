@@ -14,7 +14,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'verisk',
-    client: 'Verisk Marketing Solutions',
+    client: 'Infutor (now part of Verisk)',
     summary: 'From a small analytics team to a 55x revenue multiple.',
   },
   {

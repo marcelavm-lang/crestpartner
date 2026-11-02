@@ -9,7 +9,7 @@ interface Config {
 }
 
 const NAMES: Record<Company, string> = {
-  targusinfo: 'TargusInfo',
+  targusinfo: 'TARGUSinfo',
   verisk: 'Verisk',
   '66degrees': '66degrees',
   'ltv-co': 'LTV Co.',
