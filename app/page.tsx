@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ClientVoices from '@/components/ClientVoices'
 import CompanyLogo from '@/components/CompanyLogo'
 import HomeHero from '@/components/HomeHero'
 import { BookCallLink } from '@/components/CtaLinks'
@@ -193,6 +194,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ClientVoices />
 
       {/* ── Forward CR ── */}
       <section className="bg-[#F4F7FA] py-20">

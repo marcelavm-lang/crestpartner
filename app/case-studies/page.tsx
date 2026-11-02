@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import ClientVoices from '@/components/ClientVoices'
 import { useState } from 'react'
 import CompanyLogo from '@/components/CompanyLogo'
 import { BookCallLink } from '@/components/CtaLinks'
@@ -93,18 +94,6 @@ const impactBand = [
   { value: 'GPTW', label: 'Great Place to Work certified', highlight: false },
 ]
 
-const testimonials = [
-  {
-    quote: 'They built a world-class engineering hub from scratch. We would never have accomplished our goals without them.',
-    author: 'Co-founder & Executive, LTV Co.',
-    sub: '$400M exit',
-  },
-  {
-    quote: 'Across the entire company, there is not a more respected leader than Marcela Villalta.',
-    author: 'Gary Walter, CEO · Infutor',
-    sub: '$225M exit',
-  },
-]
 
 export default function CaseStudiesPage() {
   const [activeFilter, setActiveFilter] = useState<Tag>('all')
@@ -186,9 +175,9 @@ export default function CaseStudiesPage() {
             </div>
             <div className="bg-white border border-[#D8E2EA] rounded-[10px] p-5 mb-5">
               <p className="text-[#3E4C59] font-normal italic leading-relaxed mb-3 text-[16px]">
-                "We would never have accomplished our goals without them."
+                “Watching her scale that office into the large, thriving organization it is today has been one of my favorite professional and personal experiences.”
               </p>
-              <p className="text-[13px] font-bold text-black">— Co-founder & Executive, LTV Co.</p>
+              <p className="text-[13px] font-bold text-black">— Joshua Levy, CEO and Co-Founder</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -247,22 +236,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* ── Testimonials ── */}
-      <section className="bg-[#0E2233] py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((t, i) => (
-              <div key={i} className="border border-white/10 rounded-[10px] p-8">
-                <p className="text-[18px] text-white font-normal italic leading-relaxed mb-6">
-                  "{t.quote}"
-                </p>
-                <p className="text-[14px] font-bold text-[#00A79D]">{t.author}</p>
-                <p className="text-[13px] text-white/50 font-normal">{t.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ClientVoices />
 
       {/* ── CTA ── */}
       <section className="bg-[#2574A7] py-20">
