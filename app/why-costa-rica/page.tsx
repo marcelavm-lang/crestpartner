@@ -19,7 +19,7 @@ const valueCards = [
   {
     val: '<1%',
     title: 'Involuntary turnover',
-    text: 'Replacing a senior engineer costs 50–200% of annual salary. Less than 1% turnover is a compounding financial advantage.',
+    text: 'Replacing a senior engineer costs 50–200% of annual salary. Less than 1% involuntary turnover is a compounding financial advantage.',
     color: 'text-[#2574A7]',
   },
   {
@@ -250,9 +250,9 @@ export default function WhyCostaRicaPage() {
             <div className="grid grid-cols-2 gap-4 mt-6">
               {[
                 { val: '20 yrs', label: 'recruiting in CR' },
-                { val: '1000+', label: 'High-value tech jobs created' },
+                { val: '1000+', label: 'High-value tech jobs created in Costa Rica' },
                 { val: '<1%', label: 'involuntary turnover' },
-                { val: '11 yrs', label: 'longest partnership' },
+                { val: '11+ yrs', label: 'longest active partnership' },
               ].map((s) => (
                 <div key={s.val} className="border border-[#D8E2EA] rounded-[10px] p-4">
                   <p className="text-[22px] font-bold text-[#2574A7] leading-none mb-1">{s.val}</p>

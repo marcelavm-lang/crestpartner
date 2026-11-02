@@ -32,7 +32,7 @@ export default function StrategioPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
         {[
-          { value: '8', label: 'Collaborators placed' },
+          { value: '8', label: 'Collaborators' },
           { value: '2025', label: 'Engagement start year' },
           { value: 'Active', label: 'Ongoing engagement' },
         ].map((s) => (

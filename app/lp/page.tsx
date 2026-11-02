@@ -319,7 +319,7 @@ export default function LandingPage() {
                 {[
                   'Dedicated teams — owned by you',
                   'Full operational ownership & control',
-                  'Long-term retention under 1%',
+                  'Involuntary turnover under 1%',
                   'Direct cultural & brand integration',
                   'Full transparency across operations',
                 ].map(item => (
@@ -370,7 +370,7 @@ export default function LandingPage() {
                 num: '02',
                 title: 'Build',
                 desc: 'Recruit, onboard, and retain high-performing engineering talent directly under your brand — tested, integrated, yours.',
-                tag: '<1% turnover',
+                tag: '<1% involuntary turnover',
                 color: '#00A79D',
                 bg: '#E6F7F6',
               },
@@ -505,10 +505,10 @@ export default function LandingPage() {
           <motion.div variants={stagger} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
               { val: '20', label: 'Years operating in Costa Rica', color: '#2574A7' },
-              { val: '500+', label: 'Professionals hired and retained', color: '#2574A7' },
-              { val: '$1B+', label: 'Client operations built and scaled', color: '#00A79D' },
-              { val: '<1%', label: 'Industry-leading attrition rate', color: '#00A79D' },
-              { val: '97.6', label: 'Great Place to Work Trust Score', color: '#2574A7' },
+              { val: '1000+', label: 'High-value tech jobs created in Costa Rica', color: '#2574A7' },
+              { val: '$1B+', label: 'Combined client revenue', color: '#00A79D' },
+              { val: '<1%', label: 'Involuntary turnover — industry avg. 13%', color: '#00A79D' },
+              { val: '97.6', label: 'GPTW Trust Index at LTV Co.', color: '#2574A7' },
             ].map(m => (
               <motion.div
                 key={m.val}
@@ -562,7 +562,7 @@ export default function LandingPage() {
                 company: 'Strategio',
                 badge: 'Talent Operations',
                 period: '2025–present',
-                metric: '8 professionals',
+                metric: '8 collaborators',
                 desc: 'Supported operational scaling and hiring infrastructure for a growth-stage talent company expanding into Costa Rica.',
                 color: '#2574A7',
               },

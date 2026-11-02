@@ -167,7 +167,7 @@ export default function ServicesPage() {
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-2xl font-bold text-[#2574A7]">$1B+</div>
-                  <div className="text-xs text-[#5A6A7A] mt-1">Combined client revenue across all partnerships</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">Combined client revenue</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-2xl font-bold text-[#2574A7]">1000+</div>

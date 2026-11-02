@@ -58,7 +58,7 @@ export default function ImpactPage() {
           Growth only makes sense when everyone grows.
         </h1>
         <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed max-w-2xl mb-10">
-          That's why our founders co-created Forward Costa Rica — a non-profit committed to developing
+          That's why our co-founder, Marcela Villalta, co-created Forward Costa Rica — a non-profit committed to developing
           the next generation of tech professionals in Costa Rica. Not as a program we run, but as a
           cause we believe in.
         </p>
@@ -128,7 +128,7 @@ export default function ImpactPage() {
       <section className="bg-black py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 max-w-2xl">
-            Why our founders helped build it.
+            Why our co-founder helped build it.
           </h2>
           <p className="text-[17px] text-white/70 font-normal leading-relaxed max-w-2xl mb-12">
             After 25+ years operating in Costa Rica's tech ecosystem, Marcela Villalta saw firsthand

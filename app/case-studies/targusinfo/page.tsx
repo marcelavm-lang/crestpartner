@@ -34,7 +34,7 @@ export default function TargusInfoPage() {
         {[
           { value: '200+', label: 'Collaborators in CR' },
           { value: '$650M', label: 'Neustar acquisition' },
-          { value: '6 yrs', label: 'Partnership duration' },
+          { value: '6 yrs', label: 'Founders in the operation' },
         ].map((s) => (
           <div key={s.label} className="border border-[#D8E2EA] rounded-[10px] p-6">
             <p className="text-[32px] font-bold text-[#2574A7] leading-none mb-2">{s.value}</p>
@@ -50,11 +50,11 @@ export default function TargusInfoPage() {
         </p>
         <h2 className="text-[22px] font-bold text-black mb-4">What we built</h2>
         <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">
-          Crest Partners handled the full operational layer — from incorporating the legal entity to running day-to-day HR, payroll, and back office. We recruited and onboarded over 200 collaborators across engineering, data, and operations. The result was a fully self-sufficient Costa Rica operation that ran seamlessly alongside the U.S. headquarters.
+          Before founding Crest Partners, our founders handled the full operational layer — from incorporating the legal entity to running day-to-day HR, payroll, and back office. They recruited and onboarded over 200 collaborators across engineering, data, and operations. The result was a fully self-sufficient Costa Rica operation that ran seamlessly alongside the U.S. headquarters.
         </p>
         <h2 className="text-[22px] font-bold text-black mb-4">The outcome</h2>
         <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">
-          The Costa Rica team became a core competitive advantage for TARGUSinfo. When Neustar acquired the company for $650M, the CR operation was a key part of the value. This partnership established the Crest Partners model that every subsequent engagement has been built on.
+          The Costa Rica team became a core competitive advantage for TARGUSinfo. When Neustar acquired the company for $650M, the CR operation was a key part of the value. This is where the founders developed the model that Crest Partners — and every engagement since — is built on.
         </p>
       </div>
     </div>

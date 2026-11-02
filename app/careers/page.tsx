@@ -16,7 +16,7 @@ export default function CareersPage() {
         Join the team building Costa Rica's tech future.
       </h1>
       <p className="text-[16px] text-[#3E4C59] font-normal max-w-xl mb-10">
-        We're always looking for exceptional people. Open positions in San José, Costa Rica.
+        We're always looking for exceptional people in San José, Costa Rica.
       </p>
       <Link
         href="/contact"

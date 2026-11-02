@@ -80,13 +80,13 @@ const cases = [
     badge: 'Talent Operations',
     badgeColor: 'bg-[#E6F7F6] text-[#00A79D]',
     tagline: 'A talent company that trusted us with their own team',
-    stats: '8 professionals · Talent vertical',
+    stats: '8 collaborators · Talent vertical',
     tags: ['active', 'talent'] as Tag[],
   },
 ]
 
 const impactBand = [
-  { value: '2006', label: 'Year of our first partnership', highlight: false },
+  { value: '2006', label: 'Crest Partners founded', highlight: false },
   { value: '$1B+', label: 'Combined client revenue', highlight: true },
   { value: '8–200+', label: 'Team size range', highlight: false },
   { value: '<1%', label: 'Average involuntary turnover', highlight: true },
@@ -167,7 +167,7 @@ export default function CaseStudiesPage() {
               at $400M with a 120-person engineering and data hub.
             </p>
             <div className="flex flex-wrap gap-4">
-              {['13x revenue', 'GPTW certified', '120+ team'].map((m) => (
+              {['13x revenue', 'GPTW certified', '120-person hub'].map((m) => (
                 <span key={m} className="text-[12px] font-bold text-[#2574A7] bg-[#EBF4FA] px-3 py-1.5 rounded-[6px]">
                   {m}
                 </span>

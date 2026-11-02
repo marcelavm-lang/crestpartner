@@ -23,7 +23,7 @@ const services = [
     title: 'Build',
     headline: 'Build and lead your nearshore tech team',
     text: 'Recruiting, technical assessments, onboarding, payroll, HR and retention programs — your team, our infrastructure.',
-    tag: 'Less than 1% turnover.',
+    tag: 'Less than 1% involuntary turnover.',
   },
   {
     num: '03',
@@ -168,7 +168,7 @@ export default function HomePage() {
                 '20 years inside the market',
                 'Costa Rica as your Latin American hub — not just a team, a regional anchor',
                 'Your entity, your IP, your people',
-                'Less than 1% turnover, by design',
+                'Less than 1% involuntary turnover, by design',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="mt-1 w-4 h-4 rounded-full bg-[#00A79D] shrink-0 flex items-center justify-center">
@@ -183,7 +183,7 @@ export default function HomePage() {
             <div className="mt-6 pt-6 border-t border-[#D8E2EA] grid grid-cols-2 gap-3">
               <div>
                 <div className="text-xl font-bold text-[#2574A7]">$1B+</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">Client revenue</div>
+                <div className="text-xs text-[#5A6A7A] mt-1">Combined client revenue</div>
               </div>
               <div>
                 <div className="text-xl font-bold text-[#00A79D]">&lt;1%</div>
@@ -211,7 +211,7 @@ export default function HomePage() {
               Growth only makes sense when everyone grows.
             </h2>
             <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed">
-              That's why our founders co-created Forward Costa Rica — a non-profit committed to developing the next generation of tech professionals in Costa Rica. Not as a program we run, but as a cause we believe in.
+              That's why our co-founder, Marcela Villalta, co-created Forward Costa Rica — a non-profit committed to developing the next generation of tech professionals in Costa Rica. Not as a program we run, but as a cause we believe in.
             </p>
             <a
               href="https://www.fwdcostarica.com"

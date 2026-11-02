@@ -4,8 +4,8 @@ import TeamEditorial from '@/components/TeamEditorial'
 
 const values = [
   { title: 'Full accountability', text: 'We don\'t hand off. We own the result.' },
-  { title: 'Culture is strategy', text: 'Less than 1% turnover doesn\'t happen by accident.' },
-  { title: 'Built around one table', text: 'Same time zone, same work culture, same execution as your HQ.' },
+  { title: 'Culture is strategy', text: 'Less than 1% involuntary turnover doesn\'t happen by accident.' },
+  { title: 'Built around one table', text: 'Aligned working hours, same work culture, same execution as your HQ.' },
 ]
 
 export default function WhoWeArePage() {
@@ -25,7 +25,7 @@ export default function WhoWeArePage() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 min-w-0">
             {[
-              { val: '2006', label: 'Year of our first partnership — before nearshore had a name', color: 'text-[#2574A7]' },
+              { val: '2006', label: 'Crest Partners founded — before nearshore had a name', color: 'text-[#2574A7]' },
               { val: '1000+', label: 'High-value tech jobs created in Costa Rica', color: 'text-[#2574A7]' },
               { val: '<1%', label: 'Involuntary turnover across all partnerships', color: 'text-[#00A79D]' },
               { val: '$1B+', label: 'Combined client revenue', color: 'text-[#2574A7]' },
