@@ -46,7 +46,7 @@ const ctoFaq = [
   },
   {
     q: 'Which profiles can you hire?',
-    a: 'Software engineers (full-stack, backend, frontend), data engineers and scientists, DevOps and cloud, QA and automation, product and project managers, UI/UX designers and business analysts — from junior to engineering leadership.',
+    a: 'Software engineers (full-stack, backend, frontend), AI and machine learning engineers, data scientists, data engineers, business intelligence analysts, DevOps and cloud, QA and automation, product and project managers, UI/UX designers and business analysts — from junior to engineering leadership.',
   },
   {
     q: 'How do you assess candidates?',

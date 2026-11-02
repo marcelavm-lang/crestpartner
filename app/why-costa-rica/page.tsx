@@ -80,7 +80,10 @@ const comparisonRows = [
 
 const talentProfiles = [
   'Software Engineers — Full-stack, backend, frontend',
-  'Data Engineers & Scientists — ETL, pipelines, ML, analytics',
+  'AI & Machine Learning Engineers — LLMs, generative AI, MLOps, model deployment',
+  'Data Scientists — Machine learning, statistical modeling, predictive analytics',
+  'Data Engineers — ETL, pipelines, data warehouses, analytics engineering',
+  'Business Intelligence Analysts — Dashboards, reporting, data visualization',
   'DevOps & Cloud Engineers — Kubernetes, CI/CD, GCP, AWS',
   'QA & Automation Engineers — Selenium, Cypress',
   'Product & Project Managers — Agile, Scrum, bilingual',
