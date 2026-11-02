@@ -17,15 +17,15 @@ export default function WhoWeArePage() {
           <div className="min-w-0">
             <p className="text-xs font-bold tracking-widest uppercase text-[#00A79D] mb-3">Who we are</p>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
-              25+ years building Costa Rica's tech ecosystem — from the inside.
+              20 years building Costa Rica's tech ecosystem — from the inside.
             </h1>
             <p className="text-[16px] font-normal text-[#3E4C59] leading-relaxed">
-              Before anyone called it nearshore, our founders started building here. 25 years later, the companies they helped grow have exited at $400M, won Google Cloud Partner of the Year, and built teams that never left. That's not a strategy. That's a track record.
+              Before anyone called it nearshore, our founders started building here. 20 years later, the companies they helped grow have exited at $400M, won Google Cloud Partner of the Year, and built teams that never left. That's not a strategy. That's a track record.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 min-w-0">
             {[
-              { val: '2001', label: 'Year of our first partnership — before nearshore had a name', color: 'text-[#2574A7]' },
+              { val: '2006', label: 'Year of our first partnership — before nearshore had a name', color: 'text-[#2574A7]' },
               { val: '1000+', label: 'High-value tech jobs created in Costa Rica', color: 'text-[#2574A7]' },
               { val: '<1%', label: 'Involuntary turnover across all partnerships', color: 'text-[#00A79D]' },
               { val: '$1B+', label: 'Combined client revenue', color: 'text-[#2574A7]' },
@@ -55,7 +55,7 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      {/* ── Team: co-founders + partners ── */}
+      {/* ── Team: co-founder + partners ── */}
       <TeamEditorial />
 
       {/* ── Forward CR ── */}

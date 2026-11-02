@@ -504,7 +504,7 @@ export default function LandingPage() {
 
           <motion.div variants={stagger} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { val: '25+', label: 'Years operating in Costa Rica', color: '#2574A7' },
+              { val: '20', label: 'Years operating in Costa Rica', color: '#2574A7' },
               { val: '500+', label: 'Professionals hired and retained', color: '#2574A7' },
               { val: '$1B+', label: 'Client operations built and scaled', color: '#00A79D' },
               { val: '<1%', label: 'Industry-leading attrition rate', color: '#00A79D' },

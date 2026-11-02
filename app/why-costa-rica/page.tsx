@@ -50,7 +50,7 @@ const reasons = [
   {
     num: '03',
     title: 'World-class universities',
-    text: 'UCR, TEC, ULACIT — we\'ve been recruiting from these institutions for 25+ years.',
+    text: 'UCR, TEC, ULACIT — we\'ve been recruiting from these institutions for 20 years.',
   },
   {
     num: '04',
@@ -173,7 +173,7 @@ export default function WhyCostaRicaPage() {
                 The factors that matter most when choosing where to build.
               </h2>
               <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">
-                Every market has trade-offs. After 25+ years helping U.S. companies choose where to
+                Every market has trade-offs. After 20 years helping U.S. companies choose where to
                 build, these are the factors that consistently tip the decision.
               </p>
             </div>
@@ -249,7 +249,7 @@ export default function WhyCostaRicaPage() {
             </h2>
             <div className="grid grid-cols-2 gap-4 mt-6">
               {[
-                { val: '25 yrs', label: 'recruiting in CR' },
+                { val: '20 yrs', label: 'recruiting in CR' },
                 { val: '1000+', label: 'High-value tech jobs created' },
                 { val: '<1%', label: 'involuntary turnover' },
                 { val: '11 yrs', label: 'longest partnership' },

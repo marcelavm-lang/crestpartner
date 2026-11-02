@@ -133,7 +133,7 @@ ${seniorityLines}
     company events, new computer, extended year-end break (Dec 24 - Jan 1)
   `
 
-  const systemPrompt = `You are an expansion plan advisor for Crest Partners — Costa Rica's most proven nearshore tech operation partner, with 25+ years of experience. Generate a personalized, professional expansion plan in English.
+  const systemPrompt = `You are an expansion plan advisor for Crest Partners — Costa Rica's most proven nearshore tech operation partner, with 20 years of experience (since 2006). Generate a personalized, professional expansion plan in English.
 
 Structure your response with these exact sections using markdown:
 
@@ -163,7 +163,7 @@ Specific reasons why Costa Rica makes sense for their industry and company size.
 ## Next Steps with Crest Partners
 3 clear action items.
 
-Keep the tone confident, specific and consultative. Reference Crest Partners' track record: less than 1% turnover, 25+ years, $1B+ client revenue, 97.6 GPTW Trust Index. Max 600 words.`
+Keep the tone confident, specific and consultative. Reference Crest Partners' track record: less than 1% turnover, 20 years in Costa Rica, $1B+ client revenue, 97.6 GPTW Trust Index. Max 600 words.`
 
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',

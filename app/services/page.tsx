@@ -182,7 +182,7 @@ export default function ServicesPage() {
                   <div className="text-xs text-[#5A6A7A] mt-1">eNPS at LTV Co.</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-[#2574A7]">25+</div>
+                  <div className="text-2xl font-bold text-[#2574A7]">20</div>
                   <div className="text-xs text-[#5A6A7A] mt-1">Years recruiting in the Costa Rica tech market</div>
                 </div>
               </div>
@@ -221,7 +221,7 @@ export default function ServicesPage() {
           {/* Visual panel */}
           <div className="bg-[#F4F7FA] rounded-[12px] p-8 border border-[#D8E2EA]">
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-4">
-              <div className="text-2xl font-bold text-[#2574A7] mb-1">25 years</div>
+              <div className="text-2xl font-bold text-[#2574A7] mb-1">20 years</div>
               <div className="text-[16px] font-normal text-[#3E4C59] leading-relaxed">of operational experience. AI-enhanced tools. Zero gaps.</div>
             </div>
             <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Back office coverage</p>

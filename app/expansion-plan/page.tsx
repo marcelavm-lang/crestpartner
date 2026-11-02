@@ -21,7 +21,7 @@ export default function ExpansionPlanPage() {
           </h1>
           <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed">
             Answer 5 quick questions and get a personalized plan — team structure, timeline and cost
-            considerations — generated in seconds by our AI advisor, built on 25 years of Crest
+            considerations — generated in seconds by our AI advisor, built on 20 years of Crest
             Partners experience.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function ExpansionPlanPage() {
               <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Why Crest Partners</p>
               <div className="space-y-4">
                 {[
-                  { val: '25+', label: 'Years in Costa Rica\'s tech market', color: 'text-[#2574A7]' },
+                  { val: '20', label: 'Years in Costa Rica\'s tech market', color: 'text-[#2574A7]' },
                   { val: '<1%', label: 'Involuntary turnover — industry avg. 13%', color: 'text-[#00A79D]' }, // TODO: cite source for 13% industry avg
                   { val: '$1B+', label: 'Combined client revenue', color: 'text-[#2574A7]' },
                   { val: '97.6', label: 'GPTW Trust Index at LTV Co. — one of the highest scores globally', color: 'text-[#00A79D]' },

@@ -86,7 +86,7 @@ const cases = [
 ]
 
 const impactBand = [
-  { value: '2001', label: 'Year of our first partnership', highlight: false },
+  { value: '2006', label: 'Year of our first partnership', highlight: false },
   { value: '$1B+', label: 'Combined client revenue', highlight: true },
   { value: '8–200+', label: 'Team size range', highlight: false },
   { value: '<1%', label: 'Average involuntary turnover', highlight: true },

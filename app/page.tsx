@@ -165,7 +165,7 @@ export default function HomePage() {
               {[
                 'Design, build and run end to end',
                 'One partner, full accountability',
-                '25+ years inside the market',
+                '20 years inside the market',
                 'Costa Rica as your Latin American hub — not just a team, a regional anchor',
                 'Your entity, your IP, your people',
                 'Less than 1% turnover, by design',

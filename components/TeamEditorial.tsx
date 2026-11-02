@@ -19,9 +19,12 @@ const cofounders: Person[] = [
     expertise: ["Operations leadership", "Culture model design", "Inclusive tech education", "HR & people strategy", "Entity setup & management", "U.S. client relations"],
     credentials: ["Business architecture", "Org & culture design", "Nearshore entity model", "Social tech impact"],
   },
+];
+
+const partners: Person[] = [
   {
     name: "José Villalta",
-    role: "Co-founder & Head of Data Operations",
+    role: "Partner & Head of Data Operations",
     img: "/team/jose-villalta-cutout.webp",
     bio: "25+ years building and scaling data operations for U.S. enterprise clients. Grew through every layer of one of Costa Rica's most sophisticated data intelligence operations — from production supervisor to Country Manager.",
     expertise: ["Enterprise data operations", "Product strategy", "Cross-functional technical leadership", "Data architecture & pipelines", "Country operations management", "U.S. enterprise delivery"],
@@ -29,15 +32,12 @@ const cofounders: Person[] = [
   },
   {
     name: "Roberto Fernandez",
-    role: "Co-founder & CTO",
+    role: "Partner & CTO",
     img: "/team/roberto-fernandez-cutout.webp",
     bio: "20+ years in software development, data engineering and modern systems architecture. Grew from developer to Director of Engineering and VP of Product Engineering across some of the most data-intensive companies in the U.S. market. Leads all technical delivery and engineering hiring for Crest Partners clients.",
     expertise: ["Software architecture", "Engineering org leadership", "Engineering talent strategy", "Data engineering", "Product engineering leadership", "Cross-border tech delivery"],
     credentials: ["Engineering vision & strategy", "AI strategy & adoption", "Modernization architecture"],
   },
-];
-
-const partners: Person[] = [
   {
     name: "Gary Walter",
     role: "Strategic Partner",
@@ -120,11 +120,11 @@ export default function TeamEditorial() {
             </h2>
           </div>
           <p className="max-w-[420px] text-lg font-normal leading-relaxed text-[#B9C6D2]">
-            Three co-founders with 25+ years building Costa Rica&apos;s tech ecosystem from the inside — and the partners who back every entity we run.
+            A founder-led team with 20 years building Costa Rica&apos;s tech ecosystem from the inside — and the partners who back every entity we run.
           </p>
         </div>
         <div className="flex flex-col gap-[140px]">
-          <Section label="CO-FOUNDERS" people={cofounders} start={1} tag="CO-FOUNDER" />
+          <Section label="CO-FOUNDER" people={cofounders} start={1} tag="CO-FOUNDER" />
           <Section label="PARTNERS" people={partners} start={cofounders.length + 1} tag="PARTNER" />
         </div>
       </div>
