@@ -122,7 +122,7 @@ export default function CaseStudiesPage() {
           <div>
             <p className="eyebrow mb-5">Case studies</p>
             <h1 className="text-4xl md:text-5xl font-bold text-black leading-[1.1] mb-6">
-              Every company started at zero. None of them stayed there.
+              Some companies started at zero. None of them stayed there.
             </h1>
             <p className="text-[16px] text-[#3E4C59] font-normal leading-relaxed">
               From a $225M data exit to the Google Cloud Partner of the Year. From 8 people to 200+.

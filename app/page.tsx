@@ -99,7 +99,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <p className="eyebrow mb-4">Case studies</p>
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-3 max-w-2xl">
-            Every company started at zero. None of them stayed there.
+            Some companies started at zero. None of them stayed there.
           </h2>
           <p className="text-[16px] text-[#3E4C59] font-normal mb-12">
             A track record of complete operations built from the ground up — across industries, team sizes and timelines. These are some of them.
