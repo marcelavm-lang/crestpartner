@@ -107,7 +107,7 @@ export default function ServicesPage() {
       <section id="launch" className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">01 — Launch</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">01 — Launch</p>
             <h2 className="text-3xl font-bold text-black mb-4 leading-snug">
               Launch your Costa Rica operation in 30 days
             </h2>
@@ -122,9 +122,9 @@ export default function ServicesPage() {
           <div className="bg-[#F4F7FA] rounded-[12px] p-8 border border-[#D8E2EA]">
             <div className="border border-[#D8E2EA] bg-white rounded-[10px] p-5 mb-6">
               <p className="text-[28px] font-bold text-[#2574A7] leading-none mb-1">30 days</p>
-              <p className="text-[12px] text-[#5A6A7A] font-normal">average time to fully operational</p>
+              <p className="text-[13px] text-[#5A6A7A] font-normal">average time to fully operational</p>
             </div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Timeline</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Timeline</p>
             {/* TODO: confirm timelines with legal (Marco) */}
             <div className="space-y-3">
               {[
@@ -139,10 +139,10 @@ export default function ServicesPage() {
                     item.highlight ? 'bg-[#00A79D] text-white' : 'bg-white border border-[#D8E2EA]'
                   }`}
                 >
-                  <span className={`text-[11px] font-bold w-[68px] shrink-0 ${item.highlight ? 'text-white/80' : 'text-[#5A6A7A]'}`}>
+                  <span className={`text-[12px] font-bold w-[68px] shrink-0 ${item.highlight ? 'text-white/80' : 'text-[#5A6A7A]'}`}>
                     {item.day}
                   </span>
-                  <span className={`text-[13px] font-medium ${item.highlight ? 'text-white' : 'text-black'}`}>
+                  <span className={`text-[14px] font-medium ${item.highlight ? 'text-white' : 'text-black'}`}>
                     {item.label}
                   </span>
                 </div>
@@ -163,11 +163,11 @@ export default function ServicesPage() {
                 <div className="grid grid-cols-2 gap-3">
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-2xl font-bold text-[#00A79D]">&lt;1%</div>
-                  <div className="text-xs text-[#5A6A7A] mt-1">Involuntary turnover — industry avg. 13%{/* TODO: cite source for 13% industry avg */}</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">Involuntary turnover</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-2xl font-bold text-[#2574A7]">$1B+</div>
-                  <div className="text-xs text-[#5A6A7A] mt-1">Combined client revenue</div>
+                  <div className="text-xs text-[#5A6A7A] mt-1">Combined revenue of client companies</div>
                 </div>
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <div className="text-2xl font-bold text-[#2574A7]">1000+</div>
@@ -190,7 +190,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="order-1 md:order-2">
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">02 — Build</p>
+              <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">02 — Build</p>
               <h2 className="text-3xl font-bold text-black mb-4 leading-snug">
                 Build and lead your nearshore tech team
               </h2>
@@ -208,7 +208,7 @@ export default function ServicesPage() {
       <section id="operate" className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">03 — Operate</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">03 — Operate</p>
             <h2 className="text-3xl font-bold text-black mb-4 leading-snug">
               Run your back office — completely and continuously
             </h2>
@@ -222,9 +222,9 @@ export default function ServicesPage() {
           <div className="bg-[#F4F7FA] rounded-[12px] p-8 border border-[#D8E2EA]">
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-4">
               <div className="text-2xl font-bold text-[#2574A7] mb-1">20 years</div>
-              <div className="text-[16px] font-normal text-[#3E4C59] leading-relaxed">of operational experience. AI-enhanced tools. Zero gaps.</div>
+              <div className="text-[16px] font-normal text-[#3E4C59] leading-relaxed">of operational experience — accounting, legal, HR and office under one team.</div>
             </div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Back office coverage</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Back office coverage</p>
             <div className="grid grid-cols-2 gap-3">
               {['Accounting', 'Legal', 'HR', 'Office'].map((area) => (
                 <div
@@ -240,9 +240,9 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Proof Section ── */}
-      <section className="bg-black py-20">
+      <section className="bg-[#0E2233] py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">Proven results</p>
+          <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">Proven results</p>
           <h2 className="text-3xl font-bold text-white mb-12 max-w-xl">
             The model works. These companies prove it.
           </h2>
@@ -251,7 +251,7 @@ export default function ServicesPage() {
               <div key={c.company} className="border border-white/10 rounded-[10px] p-7">
                 <p className="text-[22px] font-bold text-[#2574A7] mb-2">{c.result}</p>
                 <p className="text-[16px] font-bold text-white mb-2">{c.company}</p>
-                <p className="text-[13px] text-white/60 font-normal">{c.note}</p>
+                <p className="text-[14px] text-white/60 font-normal">{c.note}</p>
               </div>
             ))}
           </div>
@@ -267,9 +267,9 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {steps.map((step) => (
             <div key={step.num} className="border border-[#D8E2EA] rounded-[10px] p-6">
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">{step.num}</p>
+              <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">{step.num}</p>
               <h3 className="text-[16px] font-bold text-black mb-1">{step.title}</h3>
-              <p className="text-[12px] text-[#2574A7] font-bold mb-3">{step.sub}</p>
+              <p className="text-[13px] text-[#2574A7] font-bold mb-3">{step.sub}</p>
               <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">{step.desc}</p>
             </div>
           ))}

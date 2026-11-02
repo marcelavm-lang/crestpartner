@@ -37,28 +37,28 @@ export default function ExpansionPlanPage() {
           {/* Sidebar — takes 2 cols */}
           <div className="lg:col-span-2 space-y-4">
             <div className="bg-white border border-[#D8E2EA] rounded-[12px] p-6">
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Why Crest Partners</p>
+              <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Why Crest Partners</p>
               <div className="space-y-4">
                 {[
                   { val: '20', label: 'Years in Costa Rica\'s tech market', color: 'text-[#2574A7]' },
-                  { val: '<1%', label: 'Involuntary turnover — industry avg. 13%', color: 'text-[#00A79D]' }, // TODO: cite source for 13% industry avg
-                  { val: '$1B+', label: 'Combined client revenue', color: 'text-[#2574A7]' },
+                  { val: '<1%', label: 'Involuntary turnover', color: 'text-[#00A79D]' },
+                  { val: '$1B+', label: 'Combined revenue of client companies', color: 'text-[#2574A7]' },
                   { val: '97.6', label: 'GPTW Trust Index at LTV Co. — one of the highest scores globally', color: 'text-[#00A79D]' },
                 ].map((s) => (
                   <div key={s.val} className="flex items-start gap-3 pb-4 border-b border-[#F4F7FA] last:border-0 last:pb-0">
                     <span className={`text-[22px] font-bold shrink-0 ${s.color}`}>{s.val}</span>
-                    <span className="text-[12px] text-[#5A6A7A] font-normal leading-snug pt-1">{s.label}</span>
+                    <span className="text-[13px] text-[#5A6A7A] font-normal leading-snug pt-1">{s.label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="bg-[#EBF4FA] border border-[#B3D4EC] rounded-[12px] p-5">
-              <p className="text-[13px] font-bold text-[#2574A7] mb-2">Prefer to talk?</p>
+              <p className="text-[14px] font-bold text-[#2574A7] mb-2">Prefer to talk?</p>
               <p className="text-[#3E4C59] font-normal mb-4 leading-relaxed text-[16px]">
                 Skip the form and get on a call with our team. We'll design your plan in 48 hours.
               </p>
-              <BookCallLink className="inline-block bg-[#2574A7] text-white font-bold text-[12px] px-4 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors">
+              <BookCallLink className="inline-block bg-[#2574A7] text-white font-bold text-[13px] px-4 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors">
                 Book a 30-min call →
               </BookCallLink>
             </div>

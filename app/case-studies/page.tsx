@@ -87,7 +87,7 @@ const cases = [
 
 const impactBand = [
   { value: '2006', label: 'Crest Partners founded', highlight: false },
-  { value: '$1B+', label: 'Combined client revenue', highlight: true },
+  { value: '$1B+', label: 'Combined revenue of client companies', highlight: true },
   { value: '8–200+', label: 'Team size range', highlight: false },
   { value: '<1%', label: 'Average involuntary turnover', highlight: true },
   { value: 'GPTW', label: 'Great Place to Work certified', highlight: false },
@@ -142,7 +142,7 @@ export default function CaseStudiesPage() {
                 <p className={`text-[32px] font-bold leading-none mb-2 ${item.highlight ? 'text-[#00A79D]' : 'text-[#2574A7]'}`}>
                   {item.value}
                 </p>
-                <p className="text-[12px] text-[#5A6A7A] font-normal leading-snug">{item.label}</p>
+                <p className="text-[13px] text-[#5A6A7A] font-normal leading-snug">{item.label}</p>
               </div>
             ))}
           </div>
@@ -154,10 +154,10 @@ export default function CaseStudiesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <span className="text-[10px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px]">
+              <span className="text-[12px] font-bold tracking-widest uppercase bg-[#EBF4FA] text-[#2574A7] px-3 py-1.5 rounded-[6px]">
                 Flagship case
               </span>
-              <span className="text-[12px] text-[#5A6A7A]">2015–2025</span>
+              <span className="text-[13px] text-[#5A6A7A]">2015–2025</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-5 leading-snug">
               From $30M to $400M — and Costa Rica was at the center of it.
@@ -168,7 +168,7 @@ export default function CaseStudiesPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               {['13x revenue', 'GPTW certified', '120-person hub'].map((m) => (
-                <span key={m} className="text-[12px] font-bold text-[#2574A7] bg-[#EBF4FA] px-3 py-1.5 rounded-[6px]">
+                <span key={m} className="text-[13px] font-bold text-[#2574A7] bg-[#EBF4FA] px-3 py-1.5 rounded-[6px]">
                   {m}
                 </span>
               ))}
@@ -178,9 +178,9 @@ export default function CaseStudiesPage() {
           {/* Visual panel */}
           <div className="bg-[#F4F7FA] rounded-[12px] p-8 border border-[#D8E2EA]">
             <div className="bg-white border border-[#D8E2EA] rounded-[10px] p-5 mb-5">
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-3">GPTW</p>
-              <p className="text-[13px] text-black font-normal leading-relaxed">
-                Score so high that auditors asked to verify — LTV Co. ranked{' '}
+              <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-3">GPTW</p>
+              <p className="text-[14px] text-black font-normal leading-relaxed">
+                LTV Co. ranked{' '}
                 <strong>#1 Best Company for Young Professionals in CR</strong>
               </p>
             </div>
@@ -188,7 +188,7 @@ export default function CaseStudiesPage() {
               <p className="text-[#3E4C59] font-normal italic leading-relaxed mb-3 text-[16px]">
                 "We would never have accomplished our goals without them."
               </p>
-              <p className="text-[12px] font-bold text-black">— Co-founder & Executive, LTV Co.</p>
+              <p className="text-[13px] font-bold text-black">— Co-founder & Executive, LTV Co.</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
@@ -199,7 +199,7 @@ export default function CaseStudiesPage() {
               ].map((s) => (
                 <div key={s.val} className="bg-white border border-[#D8E2EA] rounded-[8px] p-4">
                   <p className="text-[20px] font-bold text-[#2574A7] leading-none mb-1">{s.val}</p>
-                  <p className="text-[11px] text-[#5A6A7A] font-normal">{s.label}</p>
+                  <p className="text-[12px] text-[#5A6A7A] font-normal">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -216,7 +216,7 @@ export default function CaseStudiesPage() {
               <button
                 key={f.value}
                 onClick={() => setActiveFilter(f.value)}
-                className={`text-[12px] font-bold px-4 py-2 rounded-full border transition-colors ${
+                className={`text-[13px] font-bold px-4 py-2 rounded-full border transition-colors ${
                   activeFilter === f.value
                     ? 'bg-[#2574A7] text-white border-[#2574A7]'
                     : 'bg-white text-black border-[#D8E2EA] hover:border-[#2574A7] hover:text-[#2574A7]'
@@ -231,16 +231,16 @@ export default function CaseStudiesPage() {
             {filtered.map((c) => (
               <Link key={c.name} href={`/case-studies/${c.slug}`} className="bg-white border border-[#D8E2EA] rounded-[10px] p-7 hover:border-[#2574A7] transition-colors block">
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-[6px] ${c.badgeColor}`}>
+                  <span className={`text-[12px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-[6px] ${c.badgeColor}`}>
                     {c.badge}
                   </span>
-                  <span className="text-[12px] text-[#5A6A7A]">{c.period}</span>
+                  <span className="text-[13px] text-[#5A6A7A]">{c.period}</span>
                 </div>
                 <div className="mb-4 h-12 flex items-center">
                   <CompanyLogo company={c.logo} variant="card" />
                 </div>
-                <p className="text-[13px] text-[#5A6A7A] font-normal mb-3">{c.stats}</p>
-                <p className="text-[12px] text-[#00A79D] font-bold italic">"{c.tagline}"</p>
+                <p className="text-[14px] text-[#5A6A7A] font-normal mb-3">{c.stats}</p>
+                <p className="text-[13px] text-[#00A79D] font-bold italic">"{c.tagline}"</p>
               </Link>
             ))}
           </div>
@@ -248,7 +248,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="bg-black py-20">
+      <section className="bg-[#0E2233] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((t, i) => (
@@ -256,8 +256,8 @@ export default function CaseStudiesPage() {
                 <p className="text-[18px] text-white font-normal italic leading-relaxed mb-6">
                   "{t.quote}"
                 </p>
-                <p className="text-[13px] font-bold text-[#00A79D]">{t.author}</p>
-                <p className="text-[12px] text-white/50 font-normal">{t.sub}</p>
+                <p className="text-[14px] font-bold text-[#00A79D]">{t.author}</p>
+                <p className="text-[13px] text-white/50 font-normal">{t.sub}</p>
               </div>
             ))}
           </div>

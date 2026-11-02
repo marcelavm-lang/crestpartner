@@ -15,10 +15,9 @@ const results = [
   { value: '$650M', text: "Neustar's acquisition of TARGUSinfo, with our founders' team inside", mobile: false },
   { value: '$400M', text: 'LTV Co. exit, built on a 120-person Costa Rica hub', mobile: true },
   { value: '11+ yrs', text: 'with 66degrees, and still growing', mobile: true },
-  { value: '$1B+', text: 'combined client revenue', mobile: false },
+  { value: '$1B+', text: 'combined revenue of the companies we support', mobile: false },
   { value: '1000+', text: 'high-value tech jobs created in Costa Rica', mobile: true },
-  // TODO: cite source for 13% industry avg
-  { value: '<1%', text: 'involuntary turnover — industry avg. 13%', mobile: true },
+  { value: '<1%', text: 'involuntary turnover across our client teams', mobile: true },
 ]
 
 // White single-ink versions of the client logos (public/logos/white).

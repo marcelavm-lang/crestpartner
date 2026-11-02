@@ -40,11 +40,11 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Services</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Services</p>
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="text-[13px] text-black hover:text-[#2574A7] transition-colors">
+                  <Link href={s.href} className="text-[14px] text-black hover:text-[#2574A7] transition-colors">
                     {s.label}
                   </Link>
                 </li>
@@ -54,11 +54,11 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Company</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Company</p>
             <ul className="space-y-2.5">
               {company.map((c) => (
                 <li key={c.href}>
-                  <Link href={c.href} className="text-[13px] text-black hover:text-[#2574A7] transition-colors">
+                  <Link href={c.href} className="text-[14px] text-black hover:text-[#2574A7] transition-colors">
                     {c.label}
                   </Link>
                 </li>
@@ -68,21 +68,21 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Contact</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Contact</p>
             <ul className="space-y-2.5">
               <li>
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="text-[13px] text-black hover:text-[#2574A7] transition-colors [overflow-wrap:anywhere]"
+                  className="text-[14px] text-black hover:text-[#2574A7] transition-colors [overflow-wrap:anywhere]"
                 >
                   {SITE.email}
                 </a>
               </li>
               <li>
-                <WhatsAppLink className="text-[13px] text-black hover:text-[#2574A7] transition-colors" />
+                <WhatsAppLink className="text-[14px] text-black hover:text-[#2574A7] transition-colors" />
               </li>
               <li>
-                <BookCallLink className="text-[13px] text-[#2574A7] font-semibold hover:underline transition-colors">
+                <BookCallLink className="text-[14px] text-[#2574A7] font-semibold hover:underline transition-colors">
                   Book a 30-min call →
                 </BookCallLink>
               </li>
@@ -94,7 +94,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-[#D8E2EA]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-[12px] text-[#5A6A7A]">
+          <p className="text-[13px] text-[#5A6A7A]">
             © {new Date().getFullYear()} Crest Partners · San José, Costa Rica
           </p>
         </div>

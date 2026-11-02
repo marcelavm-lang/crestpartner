@@ -191,7 +191,7 @@ export default function LandingPage() {
           {/* Eyebrow */}
           <motion.div variants={fadeUp} className="flex items-center gap-3 mb-8">
             <div className="h-px w-7 bg-[#2574A7]" />
-            <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#2574A7]">
+            <span className="text-[12px] font-bold tracking-[0.18em] uppercase text-[#2574A7]">
               Nearshore Engineering Operations — Costa Rica
             </span>
           </motion.div>
@@ -244,7 +244,7 @@ export default function LandingPage() {
 
           {/* Trust strip */}
           <motion.div variants={fadeIn}>
-            <p className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#9CA3AF] mb-4">
+            <p className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#9CA3AF] mb-4">
               Trusted by leading tech companies
             </p>
             <div className="overflow-hidden">
@@ -252,7 +252,7 @@ export default function LandingPage() {
                 {marqueeItems.map((name, i) => (
                   <span
                     key={i}
-                    className="text-[12px] font-semibold px-4 py-2 border border-[#E5E7EB] rounded-full text-[#6B7280] bg-white whitespace-nowrap"
+                    className="text-[13px] font-semibold px-4 py-2 border border-[#E5E7EB] rounded-full text-[#6B7280] bg-white whitespace-nowrap"
                   >
                     {name}
                   </span>
@@ -269,7 +269,7 @@ export default function LandingPage() {
       <Section className="bg-[#F9FAFB] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#00A79D] mb-4">The problem</p>
+            <p className="text-[12px] font-bold tracking-[0.18em] uppercase text-[#00A79D] mb-4">The problem</p>
             <h2 className="text-[32px] md:text-[44px] font-bold text-[#0A0F1E] leading-tight tracking-tight max-w-2xl">
               Why companies are rethinking traditional outsourcing.
             </h2>
@@ -281,7 +281,7 @@ export default function LandingPage() {
               variants={fadeUp}
               className="bg-white border border-[#E5E7EB] rounded-2xl p-8"
             >
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#9CA3AF] mb-7">
+              <p className="text-[12px] font-bold tracking-[0.2em] uppercase text-[#9CA3AF] mb-7">
                 Traditional Outsourcing
               </p>
               <ul className="space-y-4">
@@ -312,7 +312,7 @@ export default function LandingPage() {
                   transform: 'translate(30%, -30%)',
                 }}
               />
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#00A79D] mb-7">
+              <p className="text-[12px] font-bold tracking-[0.2em] uppercase text-[#00A79D] mb-7">
                 Crest Partners Model
               </p>
               <ul className="space-y-4">
@@ -350,7 +350,7 @@ export default function LandingPage() {
       <Section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#2574A7] mb-4">How it works</p>
+            <p className="text-[12px] font-bold tracking-[0.18em] uppercase text-[#2574A7] mb-4">How it works</p>
             <h2 className="text-[32px] md:text-[44px] font-bold text-[#0A0F1E] leading-tight tracking-tight max-w-2xl">
               Your Costa Rica engineering hub — step by step.
             </h2>
@@ -390,7 +390,7 @@ export default function LandingPage() {
                 className="border border-[#E5E7EB] rounded-2xl p-8 cursor-default group transition-colors hover:border-[#2574A7]/30"
               >
                 <p
-                  className="text-[11px] font-bold tracking-[0.18em] uppercase mb-6"
+                  className="text-[12px] font-bold tracking-[0.18em] uppercase mb-6"
                   style={{ color: card.color }}
                 >
                   {card.num}
@@ -400,7 +400,7 @@ export default function LandingPage() {
                 </h3>
                 <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">{card.desc}</p>
                 <span
-                  className="inline-block text-[11px] font-bold tracking-wide px-3 py-1.5 rounded-[6px]"
+                  className="inline-block text-[12px] font-bold tracking-wide px-3 py-1.5 rounded-[6px]"
                   style={{ color: card.color, background: card.bg }}
                 >
                   {card.tag}
@@ -432,7 +432,7 @@ export default function LandingPage() {
 
         <div className="relative max-w-7xl mx-auto px-6">
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#00A79D] mb-4">Why Costa Rica</p>
+            <p className="text-[12px] font-bold tracking-[0.18em] uppercase text-[#00A79D] mb-4">Why Costa Rica</p>
             <h2 className="text-[32px] md:text-[44px] font-bold text-white leading-tight tracking-tight max-w-2xl">
               Why leading companies build in Costa Rica.
             </h2>
@@ -453,7 +453,7 @@ export default function LandingPage() {
               {
                 icon: 'shield' as IconName,
                 title: 'Industry-Leading Retention',
-                desc: 'Less than 1% involuntary turnover vs. 13–25% industry average. Your people stay and grow with your company.',
+                desc: 'Less than 1% involuntary turnover across our client teams. Your people stay and grow with your company.',
               },
               {
                 icon: 'globe' as IconName,
@@ -481,7 +481,7 @@ export default function LandingPage() {
                   <FeatureIcon name={f.icon} />
                 </div>
                 <h3 className="text-[15px] font-bold text-white mb-3">{f.title}</h3>
-                <p className="text-[13px] font-normal leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                <p className="text-[14px] font-normal leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
                   {f.desc}
                 </p>
               </motion.div>
@@ -496,7 +496,7 @@ export default function LandingPage() {
       <Section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#2574A7] mb-4">Track record</p>
+            <p className="text-[12px] font-bold tracking-[0.18em] uppercase text-[#2574A7] mb-4">Track record</p>
             <h2 className="text-[32px] md:text-[44px] font-bold text-[#0A0F1E] leading-tight tracking-tight max-w-2xl">
               Proven operational experience.
             </h2>
@@ -506,8 +506,8 @@ export default function LandingPage() {
             {[
               { val: '20', label: 'Years operating in Costa Rica', color: '#2574A7' },
               { val: '1000+', label: 'High-value tech jobs created in Costa Rica', color: '#2574A7' },
-              { val: '$1B+', label: 'Combined client revenue', color: '#00A79D' },
-              { val: '<1%', label: 'Involuntary turnover — industry avg. 13%', color: '#00A79D' },
+              { val: '$1B+', label: 'Combined revenue of client companies', color: '#00A79D' },
+              { val: '<1%', label: 'Involuntary turnover', color: '#00A79D' },
               { val: '97.6', label: 'GPTW Trust Index at LTV Co.', color: '#2574A7' },
             ].map(m => (
               <motion.div
@@ -521,7 +521,7 @@ export default function LandingPage() {
                 >
                   {m.val}
                 </p>
-                <p className="text-[12px] text-[#6B7280] font-normal leading-snug">{m.label}</p>
+                <p className="text-[13px] text-[#6B7280] font-normal leading-snug">{m.label}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -534,7 +534,7 @@ export default function LandingPage() {
       <Section className="bg-[#F9FAFB] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#00A79D] mb-4">Case studies</p>
+            <p className="text-[12px] font-bold tracking-[0.18em] uppercase text-[#00A79D] mb-4">Case studies</p>
             <h2 className="text-[32px] md:text-[44px] font-bold text-[#0A0F1E] leading-tight tracking-tight max-w-2xl">
               Real companies. Real operations.
             </h2>
@@ -574,10 +574,10 @@ export default function LandingPage() {
                 className="bg-white border border-[#E5E7EB] rounded-2xl p-8 hover:border-[#2574A7]/25 hover:shadow-xl hover:shadow-gray-100 transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-[6px] bg-[#F4F7FA] text-[#6B7280]">
+                  <span className="text-[12px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-[6px] bg-[#F4F7FA] text-[#6B7280]">
                     {c.badge}
                   </span>
-                  <span className="text-[12px] text-[#9CA3AF]">{c.period}</span>
+                  <span className="text-[13px] text-[#9CA3AF]">{c.period}</span>
                 </div>
                 <h3 className="text-[28px] font-bold text-[#0A0F1E] mb-4 tracking-tight">{c.company}</h3>
                 <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">{c.desc}</p>
@@ -625,7 +625,7 @@ export default function LandingPage() {
 
             {/* Left */}
             <motion.div variants={fadeUp}>
-              <p className="text-[11px] font-bold tracking-[0.18em] uppercase text-[#00A79D] mb-5">Get started</p>
+              <p className="text-[12px] font-bold tracking-[0.18em] uppercase text-[#00A79D] mb-5">Get started</p>
               <h2 className="text-[32px] md:text-[44px] font-bold text-white leading-tight tracking-tight mb-6">
                 Ready to build your engineering hub in Costa Rica?
               </h2>
@@ -686,7 +686,7 @@ export default function LandingPage() {
                     ].map(field => (
                       <div key={field.name}>
                         <label
-                          className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-2"
+                          className="block text-[12px] font-bold tracking-[0.12em] uppercase mb-2"
                           style={{ color: 'rgba(255,255,255,0.45)' }}
                         >
                           {field.label}
@@ -711,7 +711,7 @@ export default function LandingPage() {
 
                     <div>
                       <label
-                        className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-2"
+                        className="block text-[12px] font-bold tracking-[0.12em] uppercase mb-2"
                         style={{ color: 'rgba(255,255,255,0.45)' }}
                       >
                         Team size
@@ -750,7 +750,7 @@ export default function LandingPage() {
                     {loading ? 'Sending…' : 'Get my expansion plan →'}
                   </button>
 
-                  <p className="text-center text-[12px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                  <p className="text-center text-[13px]" style={{ color: 'rgba(255,255,255,0.3)' }}>
                     Or{' '}
                     <BookCallLink className="underline hover:opacity-60 transition-opacity">
                       book a 30-min call
@@ -778,17 +778,17 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-6">
-              <a href="#get-plan" className="text-[13px] font-bold text-[#2574A7] hover:underline">
+              <a href="#get-plan" className="text-[14px] font-bold text-[#2574A7] hover:underline">
                 Get expansion plan
               </a>
-              <BookCallLink className="text-[13px] text-[#6B7280] hover:text-[#2574A7] transition-colors" />
-              <Link href="/case-studies" className="text-[13px] text-[#6B7280] hover:text-[#2574A7] transition-colors">
+              <BookCallLink className="text-[14px] text-[#6B7280] hover:text-[#2574A7] transition-colors" />
+              <Link href="/case-studies" className="text-[14px] text-[#6B7280] hover:text-[#2574A7] transition-colors">
                 Case studies
               </Link>
             </div>
           </div>
           <div className="mt-10 pt-6 border-t border-[#F3F4F6]">
-            <p className="text-[11px] text-[#9CA3AF]">© {new Date().getFullYear()} Crest Partners · San José, Costa Rica</p>
+            <p className="text-[12px] text-[#9CA3AF]">© {new Date().getFullYear()} Crest Partners · San José, Costa Rica</p>
           </div>
         </div>
       </footer>
@@ -797,11 +797,11 @@ export default function LandingPage() {
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-[#E5E7EB] px-4 py-3 flex gap-2.5 shadow-xl">
         <a
           href="#get-plan"
-          className="flex-1 bg-[#2574A7] text-white text-[13px] font-bold py-3 rounded-[8px] text-center"
+          className="flex-1 bg-[#2574A7] text-white text-[14px] font-bold py-3 rounded-[8px] text-center"
         >
           Get expansion plan
         </a>
-        <BookCallLink className="px-4 border border-[#D1D5DB] text-[#0A0F1E] text-[12px] font-bold py-3 rounded-[8px] whitespace-nowrap" />
+        <BookCallLink className="px-4 border border-[#D1D5DB] text-[#0A0F1E] text-[13px] font-bold py-3 rounded-[8px] whitespace-nowrap" />
       </div>
     </div>
   )

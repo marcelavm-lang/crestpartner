@@ -27,6 +27,8 @@ const GRADIENT = 'bg-[linear-gradient(90deg,#2BD4B4_0%,#00A79D_50%,#2574A7_100%)
 export default function Navbar() {
   const pathname = usePathname()
   const isHome = pathname === '/'
+  // The ad landing page keeps visitors focused: logo + one CTA, no site menu.
+  const isLanding = pathname === '/lp'
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -65,7 +67,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-8">
+        <div className={`${isLanding ? 'hidden' : 'hidden lg:flex'} items-center gap-4 xl:gap-8`}>
           {navLinks.map((link) => {
             const active = pathname === link.href || pathname?.startsWith(`${link.href}/`)
             return (
@@ -90,27 +92,28 @@ export default function Navbar() {
         </div>
 
         {/* CTAs */}
-        <div className="hidden lg:flex items-center gap-2 xl:gap-3">
-          <Link
+        <div className={`${isLanding ? 'flex' : 'hidden lg:flex'} items-center gap-2 xl:gap-3`}>
+          {!isLanding && <Link
             href="/expansion-plan"
             className={`whitespace-nowrap text-[13px] font-bold px-3.5 xl:px-4 py-2.5 rounded-full border transition-colors ${
               'border-white/40 text-white hover:border-white'
             }`}
           >
             Build your plan
-          </Link>
+          </Link>}
           <BookCallLink
             className={`whitespace-nowrap text-[13px] font-bold px-4 xl:px-5 py-2.5 rounded-full shadow-[0_8px_22px_-8px_rgba(0,167,157,0.9)] hover:-translate-y-px transition-all ${
               'bg-white text-[#0E2233] hover:bg-[#E9FBF8]'
             }`}
           >
-            Book a 30-min call →
+            <span className="sm:hidden">Book a call →</span>
+            <span className="hidden sm:inline">Book a 30-min call →</span>
           </BookCallLink>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden flex flex-col gap-[5px] p-2"
+          className={`${isLanding ? 'hidden' : 'lg:hidden flex'} flex-col gap-[5px] p-2`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}

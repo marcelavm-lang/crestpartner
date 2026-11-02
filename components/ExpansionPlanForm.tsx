@@ -34,7 +34,7 @@ const mdComponents: Record<string, any> = {
   ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   h3: ({ children }: any) => (
-    <h3 className="text-[13px] font-bold text-gray-900 mt-4 mb-1">{children}</h3>
+    <h3 className="text-[14px] font-bold text-gray-900 mt-4 mb-1">{children}</h3>
   ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   p: ({ children }: any) => (
@@ -223,8 +223,8 @@ function Checkbox({ checked, onChange, label, sub }: { checked: boolean; onChang
         )}
       </div>
       <div>
-        <div className="text-[13px] text-black font-medium leading-tight">{label}</div>
-        {sub && <div className="text-[11px] text-[#5A6A7A] font-normal mt-0.5">{sub}</div>}
+        <div className="text-[14px] text-black font-medium leading-tight">{label}</div>
+        {sub && <div className="text-[12px] text-[#5A6A7A] font-normal mt-0.5">{sub}</div>}
       </div>
     </button>
   )
@@ -242,9 +242,9 @@ function CounterRow({ label, years, value, onDec, onInc, annualRange }: {
     }`}>
       <div className="flex-1 min-w-0">
         <span className="text-[14px] font-medium text-black">{label}</span>
-        <span className="text-[11px] text-[#5A6A7A] font-normal ml-2">{years}</span>
+        <span className="text-[12px] text-[#5A6A7A] font-normal ml-2">{years}</span>
         {annualRange && (
-          <div className="text-[10px] text-[#5A6A7A] mt-0.5">{annualRange}/yr</div>
+          <div className="text-[12px] text-[#5A6A7A] mt-0.5">{annualRange}/yr</div>
         )}
       </div>
       <div className="flex items-center gap-3 ml-3 shrink-0">
@@ -415,13 +415,13 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
 
         <div className="pt-5 mt-4 border-t border-[#D8E2EA] flex gap-3">
           <BookCallLink
-            className="flex-1 bg-[#2574A7] text-white font-bold text-[13px] py-3 rounded-[8px] text-center hover:bg-[#1f6391] transition-colors"
+            className="flex-1 bg-[#2574A7] text-white font-bold text-[14px] py-3 rounded-[8px] text-center hover:bg-[#1f6391] transition-colors"
           >
             Book a 30-min call →
           </BookCallLink>
           <button
             onClick={() => { setPlan(null); setCosts(null); setStep(1); setForm(initial) }}
-            className="px-4 py-3 border border-[#D8E2EA] text-[#5A6A7A] text-[13px] rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors shrink-0"
+            className="px-4 py-3 border border-[#D8E2EA] text-[#5A6A7A] text-[14px] rounded-[8px] hover:border-[#2574A7] hover:text-[#2574A7] transition-colors shrink-0"
           >
             Start over
           </button>
@@ -455,7 +455,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           <div className="space-y-4">
             <h3 className="text-[14px] font-bold text-black mb-3">Your company</h3>
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Company name</label>
+              <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Company name</label>
               <input type="text" value={form.companyName}
                 onChange={e => setForm({ ...form, companyName: e.target.value })}
                 placeholder="e.g. Acme Data Inc."
@@ -463,7 +463,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
               />
             </div>
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Industry</label>
+              <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Industry</label>
               <select value={form.industry}
                 onChange={e => setForm({ ...form, industry: e.target.value })}
                 className="w-full border border-[#D8E2EA] rounded-[8px] px-4 py-2.5 text-[14px] focus:outline-none focus:border-[#2574A7] transition-colors bg-white"
@@ -473,7 +473,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
               </select>
             </div>
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Current U.S. team size</label>
+              <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Current U.S. team size</label>
               <select value={form.usTeamSize}
                 onChange={e => setForm({ ...form, usTeamSize: e.target.value })}
                 className="w-full border border-[#D8E2EA] rounded-[8px] px-4 py-2.5 text-[14px] focus:outline-none focus:border-[#2574A7] transition-colors bg-white"
@@ -489,8 +489,8 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         {step === 2 && (
           <div className="space-y-3">
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1">Team composition</label>
-              <p className="text-[11px] text-[#5A6A7A] font-normal mb-3">Expand a category and select how many professionals you need at each level. Salaries shown in USD/yr, all CR social charges included.</p>
+              <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1">Team composition</label>
+              <p className="text-[12px] text-[#5A6A7A] font-normal mb-3">Expand a category and select how many professionals you need at each level. Salaries shown in USD/yr, all CR social charges included.</p>
             </div>
 
             {/* Accordion groups */}
@@ -515,7 +515,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
                       <div className="flex items-center gap-2.5">
                         <span className="text-[15px] font-medium text-black">{group}</span>
                         {groupCount > 0 && (
-                          <span className="bg-[#2574A7] text-white text-[10px] font-bold px-2 py-0.5 rounded-full leading-none">
+                          <span className="bg-[#2574A7] text-white text-[12px] font-bold px-2 py-0.5 rounded-full leading-none">
                             {groupCount} {groupCount === 1 ? 'person' : 'people'}
                           </span>
                         )}
@@ -555,12 +555,12 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
             {totalHeadcount(form.seniority) > 0 && (
               <div className="mt-1 pt-3 border-t border-[#D8E2EA] space-y-1.5">
                 <div className="flex justify-between items-center">
-                  <span className="text-[12px] font-bold text-[#5A6A7A]">Total headcount</span>
+                  <span className="text-[13px] font-bold text-[#5A6A7A]">Total headcount</span>
                   <span className="text-[20px] font-bold text-[#2574A7]">{totalHeadcount(form.seniority)}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-[11px] text-[#5A6A7A] font-normal">Est. annual cost (incl. 34% CR social charges)</span>
-                  <span className="text-[13px] font-bold text-[#00A79D]">${estimatedSalaries(form.seniority).toLocaleString()}/yr</span>
+                  <span className="text-[12px] text-[#5A6A7A] font-normal">Est. annual cost (incl. 34% CR social charges)</span>
+                  <span className="text-[14px] font-bold text-[#00A79D]">${estimatedSalaries(form.seniority).toLocaleString()}/yr</span>
                 </div>
               </div>
             )}
@@ -593,7 +593,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
               >
                 <div>
                   <div className="text-[14px] font-bold text-black">{t.label}</div>
-                  <div className="text-[12px] text-[#5A6A7A] font-normal">{t.sub}</div>
+                  <div className="text-[13px] text-[#5A6A7A] font-normal">{t.sub}</div>
                 </div>
                 <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${
                   form.timeline === t.value ? 'border-[#2574A7] bg-[#2574A7]' : 'border-[#D8E2EA]'
@@ -609,9 +609,9 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         {step === 5 && (
           <div className="space-y-4">
             <h3 className="text-[14px] font-bold text-black mb-1">Your details</h3>
-            <p className="text-[12px] text-[#5A6A7A] font-normal -mt-1 mb-3">To receive your personalized plan.</p>
+            <p className="text-[13px] text-[#5A6A7A] font-normal -mt-1 mb-3">To receive your personalized plan.</p>
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Full name</label>
+              <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Full name</label>
               <input type="text" value={form.contactName}
                 onChange={e => setForm({ ...form, contactName: e.target.value })}
                 placeholder="Jane Smith"
@@ -619,7 +619,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
               />
             </div>
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Company</label>
+              <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Company</label>
               <input type="text" value={form.contactCompany}
                 onChange={e => setForm({ ...form, contactCompany: e.target.value })}
                 placeholder={form.companyName || 'Acme Corp'}
@@ -627,7 +627,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
               />
             </div>
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Work email</label>
+              <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">Work email</label>
               <input type="email" value={form.contactEmail}
                 onChange={e => setForm({ ...form, contactEmail: e.target.value })}
                 placeholder="jane@company.com"
@@ -635,7 +635,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
               />
             </div>
             <div>
-              <label className="text-[11px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">
+              <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1.5">
                 Anything else we should know? <span className="font-normal normal-case">(optional)</span>
               </label>
               <textarea value={form.message}
@@ -649,19 +649,19 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
         )}
 
         {showErrors && missing().length > 0 && (
-          <div role="alert" className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-[8px] text-[12px] text-amber-800">
+          <div role="alert" className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-[8px] text-[13px] text-amber-800">
             Please add {missing().join(', ').replace(/, ([^,]*)$/, ' and $1')} to continue.
           </div>
         )}
 
         {loading && (
-          <p className="mt-4 text-[12px] text-[#5A6A7A]" aria-live="polite">
+          <p className="mt-4 text-[13px] text-[#5A6A7A]" aria-live="polite">
             We’re preparing your plan — this usually takes 20–30 seconds.
           </p>
         )}
 
         {error && (
-          <div role="alert" className="mt-4 p-3 bg-red-50 border border-red-200 rounded-[8px] text-[12px] text-red-600">
+          <div role="alert" className="mt-4 p-3 bg-red-50 border border-red-200 rounded-[8px] text-[13px] text-red-600">
             {error}
           </div>
         )}
@@ -671,7 +671,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
       <div className="pt-5 mt-4 border-t border-[#D8E2EA] flex justify-between items-center">
         {step > 1 ? (
           <button type="button" onClick={goBack} disabled={loading}
-            className="text-[13px] text-[#5A6A7A] hover:text-black transition-colors font-medium"
+            className="text-[14px] text-[#5A6A7A] hover:text-black transition-colors font-medium"
           >
             ← Back
           </button>
@@ -679,13 +679,13 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
 
         {step < TOTAL_STEPS ? (
           <button type="button" onClick={goNext}
-            className={`bg-[#2574A7] text-white font-bold text-[13px] px-6 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors ${missing().length ? 'opacity-60' : ''}`}
+            className={`bg-[#2574A7] text-white font-bold text-[14px] px-6 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors ${missing().length ? 'opacity-60' : ''}`}
           >
             Continue →
           </button>
         ) : (
           <button type="button" onClick={handleSubmit} disabled={loading}
-            className={`bg-[#2574A7] text-white font-bold text-[13px] px-6 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors disabled:cursor-wait flex items-center gap-2 ${missing().length && !loading ? 'opacity-60' : ''}`}
+            className={`bg-[#2574A7] text-white font-bold text-[14px] px-6 py-2.5 rounded-[8px] hover:bg-[#1f6391] transition-colors disabled:cursor-wait flex items-center gap-2 ${missing().length && !loading ? 'opacity-60' : ''}`}
           >
             {loading ? (
               <>

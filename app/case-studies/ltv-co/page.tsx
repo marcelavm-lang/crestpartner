@@ -15,15 +15,15 @@ export const metadata = pageMetadata({
 export default function LTVCoPage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
-      <Link href="/case-studies" className="text-[13px] text-[#5A6A7A] hover:text-[#2574A7] mb-8 inline-block">
+      <Link href="/case-studies" className="text-[14px] text-[#5A6A7A] hover:text-[#2574A7] mb-8 inline-block">
         ← All case studies
       </Link>
       <div className="mb-6">
         <CompanyLogo company="ltv-co" variant="page" />
       </div>
       <div className="flex items-center gap-3 mb-6">
-        <span className="text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-[6px] bg-[#EBF4FA] text-[#2574A7]">Flagship</span>
-        <span className="text-[13px] text-[#5A6A7A]">2015–2025</span>
+        <span className="text-[12px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-[6px] bg-[#EBF4FA] text-[#2574A7]">Flagship</span>
+        <span className="text-[14px] text-[#5A6A7A]">2015–2025</span>
       </div>
       <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">LTV Co.</h1>
       <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed mb-12 max-w-2xl">
@@ -39,7 +39,7 @@ export default function LTVCoPage() {
         ].map((s) => (
           <div key={s.label} className="border border-[#D8E2EA] rounded-[10px] p-6">
             <p className="text-[32px] font-bold text-[#2574A7] leading-none mb-2">{s.value}</p>
-            <p className="text-[13px] text-[#5A6A7A] font-normal">{s.label}</p>
+            <p className="text-[14px] text-[#5A6A7A] font-normal">{s.label}</p>
           </div>
         ))}
       </div>

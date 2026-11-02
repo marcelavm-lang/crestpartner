@@ -72,12 +72,12 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((s) => (
             <div key={s.num} className="border border-[#D8E2EA] rounded-[10px] p-8 hover:border-[#2574A7] transition-colors">
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">
+              <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">
                 {s.num} — {s.title}
               </p>
               <h3 className="text-[18px] font-bold text-black mb-3 leading-snug">{s.headline}</h3>
               <p className="text-[#3E4C59] font-normal leading-relaxed mb-6 text-[16px]">{s.text}</p>
-              <span className="inline-block text-[11px] font-bold tracking-wide text-[#2574A7] bg-[#EBF4FA] px-3 py-1.5 rounded-[6px]">
+              <span className="inline-block text-[12px] font-bold tracking-wide text-[#2574A7] bg-[#EBF4FA] px-3 py-1.5 rounded-[6px]">
                 {s.tag}
               </span>
             </div>
@@ -108,15 +108,15 @@ export default function HomePage() {
             {cases.map((c) => (
               <Link key={c.name} href={`/case-studies/${c.slug}`} className="bg-white border border-[#D8E2EA] rounded-[10px] p-7 hover:border-[#2574A7] transition-colors block">
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-[10px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-[6px] ${badgeColor[c.badge] || 'bg-[#F4F7FA] text-[#5A6A7A]'}`}>
+                  <span className={`text-[12px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-[6px] ${badgeColor[c.badge] || 'bg-[#F4F7FA] text-[#5A6A7A]'}`}>
                     {c.badge}
                   </span>
-                  <span className="text-[12px] text-[#5A6A7A]">{c.period}</span>
+                  <span className="text-[13px] text-[#5A6A7A]">{c.period}</span>
                 </div>
                 <div className="mb-4 h-12 flex items-center">
                   <CompanyLogo company={c.logo} variant="card" />
                 </div>
-                <p className="text-[13px] text-[#5A6A7A] font-normal">{c.stats}</p>
+                <p className="text-[14px] text-[#5A6A7A] font-normal">{c.stats}</p>
               </Link>
             ))}
           </div>
@@ -140,7 +140,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Other providers */}
           <div className="border border-[#D8E2EA] rounded-[10px] p-8">
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">Other providers</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-6">Other providers</p>
             <ul className="space-y-4">
               {[
                 'Your team is employed by the vendor',
@@ -160,7 +160,7 @@ export default function HomePage() {
 
           {/* Crest Partners */}
           <div className="border border-[#00A79D] rounded-[10px] p-8 bg-[#F9FEFE]">
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-6">Crest Partners</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-6">Crest Partners</p>
             <ul className="space-y-4">
               {[
                 'Design, build and run end to end',
@@ -182,20 +182,12 @@ export default function HomePage() {
             </ul>
             <div className="mt-6 pt-6 border-t border-[#D8E2EA] grid grid-cols-2 gap-3">
               <div>
-                <div className="text-xl font-bold text-[#2574A7]">$1B+</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">Combined client revenue</div>
-              </div>
-              <div>
-                <div className="text-xl font-bold text-[#00A79D]">&lt;1%</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">Involuntary turnover — industry avg. 13%{/* TODO: cite source for 13% industry avg */}</div>
-              </div>
-              <div>
-                <div className="text-xl font-bold text-[#2574A7]">1000+</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">High-value tech jobs created</div>
-              </div>
-              <div>
                 <div className="text-xl font-bold text-[#00A79D]">97.6</div>
-                <div className="text-xs text-[#5A6A7A] mt-1">GPTW Trust Index at LTV Co. — one of the highest scores globally</div>
+                <div className="text-sm text-[#5A6A7A] mt-1">GPTW Trust Index at LTV Co. — one of the highest scores globally</div>
+              </div>
+              <div>
+                <div className="text-xl font-bold text-[#2574A7]">98/100</div>
+                <div className="text-sm text-[#5A6A7A] mt-1">eNPS at LTV Co.</div>
               </div>
             </div>
           </div>
@@ -206,7 +198,7 @@ export default function HomePage() {
       <section className="bg-[#F4F7FA] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="max-w-2xl">
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">Social impact</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">Social impact</p>
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-5">
               Growth only makes sense when everyone grows.
             </h2>

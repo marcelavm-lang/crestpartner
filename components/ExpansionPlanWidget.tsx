@@ -36,7 +36,7 @@ export default function ExpansionPlanWidget() {
       {/* Floating button — only after the user scrolls more than one screen */}
       <button
         onClick={() => setOpen(true)}
-        className={`fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 bg-[#2574A7] text-white font-bold text-[12px] md:text-[13px] px-4 py-2.5 md:px-5 md:py-3 rounded-full shadow-lg hover:bg-[#1f6391] transition-all duration-300 hover:shadow-xl flex items-center gap-2 ${
+        className={`fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 bg-[#2574A7] text-white font-bold text-[13px] md:text-[14px] px-4 py-2.5 md:px-5 md:py-3 rounded-full shadow-lg hover:bg-[#1f6391] transition-all duration-300 hover:shadow-xl flex items-center gap-2 ${
           scrolledPastFold ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
         aria-label="Build your expansion plan"

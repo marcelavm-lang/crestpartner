@@ -17,6 +17,7 @@ const cofounders: Person[] = [
     name: "Marcela Villalta",
     role: "Co-founder & CEO",
     img: "/team/marcela-villalta-cutout.webp",
+    linkedin: "https://www.linkedin.com/in/marcelavillalta-11890127",
     bio: "25+ years building U.S. technology operations in Costa Rica from the ground up — in leadership roles at TARGUSinfo, Infutor and LTV Co., and through Crest Partners. Across that career she has created 1,000+ tech positions, built entire departments and engineering teams from zero, launched data and software products, and grown hubs that went on to exits of up to $400M — with less than 1% involuntary turnover and a 97.6 GPTW Trust Index. MBA, Universidad de Costa Rica. Co-founder of Forward Costa Rica.",
     expertise: ["Operations leadership", "Culture model design", "Inclusive tech education", "HR & people strategy", "Entity setup & management", "U.S. client relations"],
     credentials: ["Business architecture", "Org & culture design", "Nearshore entity model", "Social tech impact"],
@@ -73,12 +74,26 @@ function Row({ p, index, tag }: { p: Person; index: number; tag: string }) {
         <Image src={p.img} alt={p.name} fill sizes="(min-width:1024px) 400px, 320px" className="object-contain object-bottom" />
       </div>
       <div className="flex flex-col gap-5">
-        <p className="text-[13px] font-semibold tracking-[0.16em] text-[#2BD4B4]">
+        <p className="text-[14px] font-semibold tracking-[0.16em] text-[#2BD4B4]">
           {String(index).padStart(2, "0")} — {tag}
         </p>
         <div className="flex flex-col gap-2.5">
           <h3 className="text-4xl font-bold leading-none text-white lg:text-[40px]">{p.name}</h3>
           <p className="text-base font-medium text-[#7FD8CC]">{p.role}</p>
+          {p.linkedin && (
+            <a
+              href={p.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${p.name} on LinkedIn`}
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-white/80 hover:text-white transition-colors"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
+              </svg>
+              LinkedIn
+            </a>
+          )}
         </div>
         <p className="text-base font-normal leading-[1.6] text-[#B9C6D2]">{p.bio}</p>
         <div className="h-px bg-[#26394A]" />
@@ -122,7 +137,7 @@ function Section({ label, people, start, tag }: { label: string; people: Person[
   return (
     <div className="flex flex-col gap-14">
       <div className="flex items-center gap-5">
-        <h2 className="text-[13px] font-semibold tracking-[0.16em] text-[#7E90A1]">{label}</h2>
+        <h2 className="text-[14px] font-semibold tracking-[0.16em] text-[#7E90A1]">{label}</h2>
         <div className="h-px flex-1 bg-[#26394A]" />
       </div>
       <div className="flex flex-col gap-24 lg:gap-[120px]">
@@ -140,7 +155,7 @@ export default function TeamEditorial() {
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-20 lg:pb-36 lg:pt-32">
         <div className="mb-24 flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex flex-col gap-5">
-            <p className="text-[13px] font-bold tracking-[0.16em] text-[#2BD4B4]">OUR PEOPLE</p>
+            <p className="text-[14px] font-bold tracking-[0.16em] text-[#2BD4B4]">OUR PEOPLE</p>
             <h2 className="text-5xl font-bold leading-[1.02] lg:text-[64px]">
               Built by operators.
               <br />

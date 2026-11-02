@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import HideOnLanding from '@/components/HideOnLanding'
 import ExpansionPlanWidget from '@/components/ExpansionPlanWidget'
 import LinkedInInsight from '@/components/LinkedInInsight'
 import { Analytics } from '@vercel/analytics/next'
@@ -71,7 +72,9 @@ export default function RootLayout({
       <body className="font-spartan antialiased pb-16 md:pb-0">
         <Navbar />
         <main>{children}</main>
-        <Footer />
+        <HideOnLanding>
+          <Footer />
+        </HideOnLanding>
         <ExpansionPlanWidget />
         <script
           type="application/ld+json"

@@ -125,7 +125,7 @@ export default function ImpactPage() {
       </section>
 
       {/* ── Founders Connection ── */}
-      <section className="bg-black py-20">
+      <section className="bg-[#0E2233] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 max-w-2xl">
             Why our co-founder helped build it.
@@ -140,7 +140,7 @@ export default function ImpactPage() {
             {founders.map((f) => (
               <div key={f.name} className="border border-white/20 rounded-[10px] p-8">
                 <p className="text-[18px] font-bold text-white mb-1">{f.name}</p>
-                <p className="text-[13px] text-[#00A79D] font-normal mb-4">{f.role}</p>
+                <p className="text-[14px] text-[#00A79D] font-normal mb-4">{f.role}</p>
                 <p className="text-[14px] text-white/60 font-normal leading-relaxed">{f.fwdRole}</p>
               </div>
             ))}
@@ -156,7 +156,7 @@ export default function ImpactPage() {
               "My experience at FWD was incredibly enriching. I learned a skill that allowed me to enter
               the tech industry. Thanks to FWD, I can say I improved my professional situation."
             </p>
-            <p className="text-[13px] font-bold tracking-widest uppercase text-[#5A6A7A]">
+            <p className="text-[14px] font-bold tracking-widest uppercase text-[#5A6A7A]">
               Roger Elliasson — FWD Graduate
             </p>
           </div>

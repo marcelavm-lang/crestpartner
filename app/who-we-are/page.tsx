@@ -28,7 +28,7 @@ export default function WhoWeArePage() {
               { val: '2006', label: 'Crest Partners founded — before nearshore had a name', color: 'text-[#2574A7]' },
               { val: '1000+', label: 'High-value tech jobs created in Costa Rica', color: 'text-[#2574A7]' },
               { val: '<1%', label: 'Involuntary turnover across all partnerships', color: 'text-[#00A79D]' },
-              { val: '$1B+', label: 'Combined client revenue', color: 'text-[#2574A7]' },
+              { val: '$1B+', label: 'Combined revenue of client companies', color: 'text-[#2574A7]' },
               { val: '97.6', label: 'GPTW Trust Index at LTV Co. — among the highest scores globally', color: 'text-[#00A79D]' },
               { val: '98/100', label: 'eNPS at LTV Co.', color: 'text-[#2574A7]' },
             ].map((s) => (
@@ -48,7 +48,7 @@ export default function WhoWeArePage() {
             {values.map((v, i) => (
               <div key={i} className={`py-10 px-6 ${i < values.length - 1 ? 'md:border-r border-[#D8E2EA]' : ''}`}>
                 <h3 className="text-[15px] font-bold text-black mb-2">{v.title}</h3>
-                <p className="text-[13px] text-[#5A6A7A] font-normal">{v.text}</p>
+                <p className="text-[14px] text-[#5A6A7A] font-normal">{v.text}</p>
               </div>
             ))}
           </div>
@@ -70,7 +70,7 @@ export default function WhoWeArePage() {
             </p>
           </div>
           <div>
-            <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Programs</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Programs</p>
             <ul className="space-y-3">
               {[
                 '01  Fullstack development',
@@ -84,8 +84,8 @@ export default function WhoWeArePage() {
               ))}
             </ul>
             <div className="mt-6 pt-5 border-t border-[#D8E2EA]">
-              <p className="text-[11px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-3">Crest Partners co-founder</p>
-              <p className="text-[13px] text-black font-normal">Marcela Villalta — curriculum design</p>
+              <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-3">Crest Partners co-founder</p>
+              <p className="text-[14px] text-black font-normal">Marcela Villalta — curriculum design</p>
             </div>
           </div>
         </div>

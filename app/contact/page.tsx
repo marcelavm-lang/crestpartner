@@ -105,7 +105,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[14px] font-bold text-black group-hover:text-[#2574A7] transition-colors">Book a 30-min call</p>
-                  <p className="text-[12px] text-[#5A6A7A] font-normal">Pick a time that works for you</p>
+                  <p className="text-[13px] text-[#5A6A7A] font-normal">Pick a time that works for you</p>
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#2574A7] transition-colors">→</span>
               </BookCallLink>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[14px] font-bold text-black group-hover:text-[#00A79D] transition-colors">WhatsApp</p>
-                  <p className="text-[12px] text-[#5A6A7A] font-normal">{SITE.whatsappDisplay}</p>
+                  <p className="text-[13px] text-[#5A6A7A] font-normal">{SITE.whatsappDisplay}</p>
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#00A79D] transition-colors">→</span>
               </WhatsAppLink>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[14px] font-bold text-black group-hover:text-[#2574A7] transition-colors">Email</p>
-                  <p className="text-[12px] text-[#5A6A7A] font-normal">{SITE.email}</p>
+                  <p className="text-[13px] text-[#5A6A7A] font-normal">{SITE.email}</p>
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#2574A7] transition-colors">→</span>
               </a>
@@ -150,8 +150,8 @@ export default function ContactPage() {
                 <div key={t.title} className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#00A79D] mt-2 shrink-0" />
                   <div>
-                    <p className="text-[13px] font-bold text-black">{t.title}</p>
-                    <p className="text-[12px] text-[#5A6A7A] font-normal">{t.text}</p>
+                    <p className="text-[14px] font-bold text-black">{t.title}</p>
+                    <p className="text-[13px] text-[#5A6A7A] font-normal">{t.text}</p>
                   </div>
                 </div>
               ))}
@@ -187,7 +187,7 @@ export default function ContactPage() {
                   {/* First + Last name */}
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
+                      <label className="block text-[12px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
                         First name
                       </label>
                       <input
@@ -201,7 +201,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
+                      <label className="block text-[12px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
                         Last name
                       </label>
                       <input
@@ -218,7 +218,7 @@ export default function ContactPage() {
 
                   {/* Company */}
                   <div>
-                    <label className="block text-[11px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
+                    <label className="block text-[12px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
                       Company
                     </label>
                     <input
@@ -234,7 +234,7 @@ export default function ContactPage() {
 
                   {/* Work email */}
                   <div>
-                    <label className="block text-[11px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
+                    <label className="block text-[12px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
                       Work email
                     </label>
                     <input
@@ -250,7 +250,7 @@ export default function ContactPage() {
 
                   {/* What are you looking to build */}
                   <div>
-                    <label className="block text-[11px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
+                    <label className="block text-[12px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
                       What are you looking to build?
                     </label>
                     <select
@@ -270,7 +270,7 @@ export default function ContactPage() {
 
                   {/* Tell us more */}
                   <div>
-                    <label className="block text-[11px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
+                    <label className="block text-[12px] font-bold tracking-wide text-[#5A6A7A] mb-1.5">
                       Tell us more
                     </label>
                     <textarea
@@ -289,7 +289,7 @@ export default function ContactPage() {
                     type="submit"
                     disabled={sending}
                     aria-busy={sending}
-                    className="w-full bg-[#2574A7] text-white font-bold text-[13px] tracking-widest py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors uppercase disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full bg-[#2574A7] text-white font-bold text-[14px] tracking-widest py-3.5 rounded-[8px] hover:bg-[#1f6391] transition-colors uppercase disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {sending ? 'Sending…' : 'Send message →'}
                   </button>
@@ -303,7 +303,7 @@ export default function ContactPage() {
                     </p>
                   )}
 
-                  <p className="text-[11px] text-center text-[#5A6A7A] font-normal">
+                  <p className="text-[12px] text-center text-[#5A6A7A] font-normal">
                     We respond within 24 hours — always from a founder, never from a sales rep.
                   </p>
                 </form>
