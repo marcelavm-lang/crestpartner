@@ -177,7 +177,7 @@ export default function CaseStudiesPage() {
               <p className="text-[#3E4C59] font-normal italic leading-relaxed mb-3 text-[16px]">
                 “Watching her scale that office into the large, thriving organization it is today has been one of my favorite professional and personal experiences.”
               </p>
-              <p className="text-[13px] font-bold text-black">— Joshua Levy, CEO and Co-Founder</p>
+              <p className="text-[13px] font-bold text-black">— Joshua Levy, CEO and Co-Founder, LTV Co.</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[

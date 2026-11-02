@@ -1,4 +1,5 @@
 // Client voices — verbatim source text per the Crest Partners Handbook v2.7 (Section 9 update, 2026-10-09).
+// Joshua Levy approved naming LTV Co. (confirmed by Marcela, Nov 2026).
 // Rules: keep quotes verbatim; mark cuts with […]; Josh Levy's two email typos are corrected (public line).
 export type Testimonial = {
   id: string
@@ -15,7 +16,7 @@ export const TESTIMONIALS: Testimonial[] = [
     quote:
       "I had the pleasure of working closely with Marcela for many years, starting from the very beginning when our Costa Rica presence consisted of just her and Roberto. Watching her scale that office into the large, thriving organization it is today has been one of my favorite professional and personal experiences. […] She didn't just 'hire' a team; she built a world-class engineering hub from scratch. […] We would never have accomplished our goals without her.",
     name: 'Joshua Levy',
-    title: 'CEO and Co-Founder · 10+ year partnership',
+    title: 'CEO and Co-Founder, LTV Co. · 10+ year partnership',
   },
   {
     id: 'gary-walter',
