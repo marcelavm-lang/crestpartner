@@ -37,9 +37,9 @@ const services = [
 const cases = [
   { name: 'TARGUSinfo', slug: 'targusinfo', logo: 'targusinfo' as const, period: '2001–2007', badge: 'Data Operations', stats: '200+ collaborators · $650M Neustar exit' },
   { name: 'Infutor (now Verisk)', slug: 'verisk', logo: 'verisk' as const, period: '2007–2014', badge: 'Consumer Identity', stats: '55x revenue · $225M exit' },
-  { name: '66degrees', slug: '66degrees', logo: '66degrees' as const, period: '2014–present', badge: 'Cloud & DevOps', stats: '11+ years · 0% turnover' },
+  { name: '66degrees', slug: '66degrees', logo: '66degrees' as const, period: '2014–present', badge: 'Cloud & DevOps', stats: '11+ years · <1% involuntary turnover' },
   { name: 'LTV Co.', slug: 'ltv-co', logo: 'ltv-co' as const, period: '2015–2025', badge: 'Consumer Data', stats: '13x revenue · $400M exit · 98/100 eNPS at LTV Co.' },
-  { name: 'Think Unlimited', slug: 'think-unlimited', logo: 'think-unlimited' as const, period: '2023–present', badge: 'AI & Sales Tech', stats: '0% turnover · 100% product built in CR' },
+  { name: 'Think Unlimited', slug: 'think-unlimited', logo: 'think-unlimited' as const, period: '2023–present', badge: 'AI & Sales Tech', stats: '<1% involuntary turnover · 100% product built in CR' },
   { name: 'Strategio', slug: 'strategio', logo: 'strategio' as const, period: '2025–present', badge: 'Talent Operations', stats: '8 collaborators · Talent vertical' },
 ]
 

@@ -554,7 +554,7 @@ export default function LandingPage() {
                 company: '66degrees',
                 badge: 'Cloud & DevOps',
                 period: '2014–present',
-                metric: '0% turnover · 11+ years',
+                metric: '<1% involuntary turnover · 11+ years',
                 desc: 'Built and operated cloud engineering with long-term technical retention. Google Cloud Partner of the Year 2024 & 2025.',
                 color: '#00A79D',
               },

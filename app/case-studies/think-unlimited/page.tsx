@@ -27,12 +27,12 @@ export default function ThinkUnlimitedPage() {
       </div>
       <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">Think Unlimited</h1>
       <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed mb-12 max-w-2xl">
-        A fully product-driven team built entirely in Costa Rica. Zero percent turnover since day one. Think Unlimited shows what's possible when the right company meets the right operational partner.
+        A fully product-driven team built entirely in Costa Rica. Less than 1% involuntary turnover since day one. Think Unlimited shows what's possible when the right company meets the right operational partner.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
         {[
-          { value: '0%', label: 'Turnover rate' },
+          { value: '<1%', label: 'Involuntary turnover' },
           { value: '100%', label: 'Product built in CR' },
           { value: 'Active', label: 'Ongoing engagement' },
         ].map((s) => (
@@ -54,7 +54,7 @@ export default function ThinkUnlimitedPage() {
         </p>
         <h2 className="text-[22px] font-bold text-black mb-4">The outcome</h2>
         <p className="text-[#3E4C59] font-normal leading-relaxed text-[16px]">
-          Zero percent turnover since the engagement began. One hundred percent of Think Unlimited's product has been built by the Costa Rica team. This partnership demonstrates that a fully product-driven nearshore operation isn't an aspiration — it's an execution challenge. And execution is what Crest Partners does.
+          Less than 1% involuntary turnover since the engagement began. One hundred percent of Think Unlimited's product has been built by the Costa Rica team. This partnership demonstrates that a fully product-driven nearshore operation isn't an aspiration — it's an execution challenge. And execution is what Crest Partners does.
         </p>
       </div>
     </div>

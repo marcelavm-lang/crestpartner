@@ -47,7 +47,7 @@ const cases = [
     badge: 'Cloud & DevOps',
     badgeColor: 'bg-[#E6F7F6] text-[#00A79D]',
     tagline: 'Google Cloud Partner of the Year 2024 & 2025',
-    stats: '11+ years · 0% turnover',
+    stats: '11+ years · <1% involuntary turnover',
     tags: ['active', 'cloud'] as Tag[],
   },
   {

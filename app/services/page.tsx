@@ -34,7 +34,7 @@ const operateChecklist = [
 
 const proofCards = [
   { company: 'LTV Co.', result: '$400M exit', note: '120-person engineering hub · 97.6 GPTW Trust Index · 98/100 eNPS · <1% involuntary turnover' },
-  { company: '66degrees', result: '0% turnover', note: 'Google Cloud Partner of the Year 2024 & 2025 · 11+ years' },
+  { company: '66degrees', result: '<1% involuntary turnover', note: 'Google Cloud Partner of the Year 2024 & 2025 · 11+ years' },
   { company: 'Infutor (now Verisk)', result: '55x revenue growth', note: '$225M exit · First data intelligence company in CR' },
 ]
 
