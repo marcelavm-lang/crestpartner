@@ -17,7 +17,7 @@ const cofounders: Person[] = [
     name: "Marcela Villalta",
     role: "Co-founder & CEO",
     img: "/team/marcela-villalta-cutout.webp",
-    bio: "25+ years building U.S. technology operations in Costa Rica from the ground up. At TARGUSinfo she hired 500+ people, created six departments and launched three data products; at Infutor she opened the software development and data processing center and built every team behind it; at LTV Co. she architected the culture model behind less than 1% involuntary turnover and a 97.6 GPTW Trust Index. MBA, Universidad de Costa Rica. Co-founder of Forward Costa Rica.",
+    bio: "25+ years building U.S. technology operations in Costa Rica from the ground up. At TARGUSinfo she hired 500+ people, created six departments and launched three data products; at Infutor she opened the software development and data processing center and built every team behind it; at LTV Co. she grew the Costa Rica hub from one person to a 120-person engineering and data organization that delivered the company's core products through its $400M exit — with less than 1% involuntary turnover and a 97.6 GPTW Trust Index. MBA, Universidad de Costa Rica. Co-founder of Forward Costa Rica.",
     expertise: ["Building tech departments from zero", "Data & software product launches", "Operations leadership", "Culture model design", "Entity setup, legal & finance", "HR & people strategy"],
     credentials: [], // career path below replaces the tag line
     career: [
