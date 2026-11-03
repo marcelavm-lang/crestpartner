@@ -57,7 +57,7 @@ export default function HomeHero() {
               Your engineering hub in Costa Rica. Owned by you. Run by us.
             </h1>
             <p className="text-[18px] md:text-[20px] leading-relaxed text-[#C9D5E0] max-w-[36rem] mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
-              We set up your Costa Rican legal entity, hire your team under your brand, and run payroll,
+              We set up your Costa Rican legal entity, hire your senior, AI-ready team under your brand, and run payroll,
               HR, accounting and compliance — so the team, the IP and the upside stay yours.
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-4">

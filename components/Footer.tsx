@@ -8,6 +8,7 @@ const services = [
   { label: 'Build', href: '/services#build' },
   { label: 'Operate', href: '/services#operate' },
   { label: 'For engineering leaders', href: '/services#engineering' },
+  { label: 'AI & ML teams', href: '/ai-engineering-teams' },
 ]
 
 const company = [

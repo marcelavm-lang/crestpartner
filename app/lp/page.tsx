@@ -555,7 +555,7 @@ export default function LandingPage() {
                 badge: 'Cloud & DevOps',
                 period: '2014–present',
                 metric: '<1% involuntary turnover · 11+ years',
-                desc: 'Built and operated cloud engineering with long-term technical retention. Google Cloud Partner of the Year 2024 & 2025.',
+                desc: 'Built and operated cloud engineering with long-term technical retention. 4x Google Cloud Partner of the Year — 2026 for AI.',
                 color: '#00A79D',
               },
               {

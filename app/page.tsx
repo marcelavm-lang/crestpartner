@@ -3,6 +3,7 @@ import ClientVoices from '@/components/ClientVoices'
 import CompanyLogo from '@/components/CompanyLogo'
 import HomeHero from '@/components/HomeHero'
 import HeroQuote from '@/components/HeroQuote'
+import AiEraSection from '@/components/AiEraSection'
 import { BookCallLink } from '@/components/CtaLinks'
 import { pageMetadata } from '@/lib/metadata'
 
@@ -133,6 +134,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <AiEraSection />
 
       {/* ── Differentiator ── */}
       <section className="max-w-7xl mx-auto px-6 py-20">

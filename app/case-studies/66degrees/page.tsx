@@ -27,14 +27,14 @@ export default function SixtyDegreesPage() {
       </div>
       <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">66degrees</h1>
       <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed mb-12 max-w-2xl">
-        11+ years and counting. 66degrees' Costa Rica engineering team has become an integral part of one of Google Cloud's top partners — with less than 1% involuntary turnover throughout the entire engagement.
+        11+ years and counting. 66degrees' Costa Rica engineering team has become an integral part of one of Google Cloud's top partners — named 2026 Google Cloud Partner of the Year for Artificial Intelligence — with less than 1% involuntary turnover throughout the entire engagement.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
         {[
           { value: '11+', label: 'Years active partnership' },
           { value: '<1%', label: 'Involuntary turnover' },
-          { value: 'Active', label: 'Ongoing engagement' },
+          { value: '2026', label: 'Google Cloud Partner of the Year for AI' },
         ].map((s) => (
           <div key={s.label} className="border border-[#D8E2EA] rounded-[10px] p-6">
             <p className="text-[32px] font-bold text-[#2574A7] leading-none mb-2">{s.value}</p>

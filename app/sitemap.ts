@@ -7,6 +7,7 @@ const STATIC_ROUTES = [
   '/services',
   '/case-studies',
   '/why-costa-rica',
+  '/ai-engineering-teams',
   '/who-we-are',
   '/careers',
   '/contact',

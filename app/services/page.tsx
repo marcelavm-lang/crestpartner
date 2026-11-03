@@ -19,6 +19,8 @@ const launchChecklist = [
 const buildChecklist = [
   'Organization design — team structure, roles and the leadership layer, aligned with your business goals',
   'Complete teams across engineering, product, data, AI, QA and design — not just individual hires',
+  'AI team planning — the AI and ML roles you actually need, plus support adopting AI across your team',
+  'AI-ready hiring — every candidate assessed on how they work with AI coding and productivity tools',
   'Custom job descriptions and recruiting strategy aligned with your stack',
   'Technical & cultural assessments — no shortcuts on quality, ever',
   'Onboarding & cultural integration into your company and values',
@@ -36,7 +38,7 @@ const operateChecklist = [
 
 const proofCards = [
   { company: 'LTV Co.', result: '$400M exit', note: '120-person engineering hub · 97.6 GPTW Trust Index · 98/100 eNPS · <1% involuntary turnover' },
-  { company: '66degrees', result: '<1% involuntary turnover', note: 'Google Cloud Partner of the Year 2024 & 2025 · 11+ years' },
+  { company: '66degrees', result: '<1% involuntary turnover', note: '4x Google Cloud Partner of the Year — 2026 for AI · 11+ years' },
   { company: 'Infutor (now Verisk)', result: '55x revenue growth', note: '$225M exit · First data intelligence company in CR' },
 ]
 
@@ -53,6 +55,10 @@ const ctoFaq = [
   {
     q: 'How do you assess candidates?',
     a: 'We write the job description and recruiting strategy around your stack, then run technical and cultural assessments. No shortcuts on quality.',
+  },
+  {
+    q: 'Do your engineers work with AI?',
+    a: 'Yes. Every candidate is assessed on how they work with AI coding and productivity tools, teams use them day to day, and we help you plan the AI and ML roles you need.',
   },
   {
     q: 'Who owns the code and the IP?',

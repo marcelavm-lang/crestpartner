@@ -25,7 +25,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: '66degrees',
     client: '66degrees',
     summary: `11+ years and counting.`,
-    seoDescription: `11+ years building 66degrees' Costa Rica engineering team — a Google Cloud Partner of the Year — with less than 1% involuntary turnover.`,
+    seoDescription: `11+ years building 66degrees' Costa Rica engineering team — 2026 Google Cloud Partner of the Year for AI — with less than 1% involuntary turnover.`,
   },
   {
     slug: 'ltv-co',
