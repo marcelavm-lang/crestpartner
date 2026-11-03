@@ -5,13 +5,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { BookCallLink } from '@/components/CtaLinks'
-
-const navLinks = [
-  { label: 'Services', href: '/services' },
-  { label: 'Case studies', href: '/case-studies' },
-  { label: 'Why Costa Rica', href: '/why-costa-rica' },
-  { label: 'Who we are', href: '/who-we-are' },
-]
+import { UI, alternatePath, localeFromPath } from '@/lib/i18n'
 
 // Brand gradient (from the logo): light teal → teal → blue (decorative only — never behind text)
 const GRADIENT = 'bg-[linear-gradient(90deg,#2BD4B4_0%,#00A79D_50%,#2574A7_100%)]'
@@ -26,7 +20,13 @@ const GRADIENT = 'bg-[linear-gradient(90deg,#2BD4B4_0%,#00A79D_50%,#2574A7_100%)
  */
 export default function Navbar() {
   const pathname = usePathname()
-  const isHome = pathname === '/'
+  const isHome = pathname === '/' || pathname === '/es'
+  const locale = localeFromPath(pathname)
+  const t = UI[locale]
+  const navLinks = t.nav
+  // Language switch: to the translated page when it exists, otherwise to that language's home.
+  const otherLocale = locale === 'en' ? 'es' : 'en'
+  const switchHref = alternatePath(pathname ?? '/', otherLocale) ?? (otherLocale === 'es' ? '/es' : '/')
   // The ad landing page keeps visitors focused: logo + one CTA, no site menu.
   const isLanding = pathname === '/lp'
   const [open, setOpen] = useState(false)
@@ -54,7 +54,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4 xl:gap-6">
         {/* Logo */}
-        <Link href="/" className="relative flex items-center shrink-0" aria-label="Crest Partners — home">
+        <Link href={locale === 'es' ? '/es' : '/'} className="relative flex items-center shrink-0" aria-label="Crest Partners — home">
           <Image
             src="/crest-partners-logo/svg/crest-partners-logo-reverso.svg"
             alt="Crest Partners"
@@ -93,21 +93,31 @@ export default function Navbar() {
 
         {/* CTAs */}
         <div className={`${isLanding ? 'flex' : 'hidden lg:flex'} items-center gap-2 xl:gap-3`}>
+          {!isLanding && (
+            <Link
+              href={switchHref}
+              hrefLang={otherLocale}
+              aria-label={t.langSwitch}
+              className="text-[13px] font-bold text-white/70 hover:text-white px-2 py-2.5 transition-colors"
+            >
+              {otherLocale.toUpperCase()}
+            </Link>
+          )}
           {!isLanding && <Link
             href="/expansion-plan"
-            className={`whitespace-nowrap text-[13px] font-bold px-3.5 xl:px-4 py-2.5 rounded-full border transition-colors ${
+            className={`hidden xl:inline-block whitespace-nowrap text-[13px] font-bold px-3.5 xl:px-4 py-2.5 rounded-full border transition-colors ${
               'border-white/40 text-white hover:border-white'
             }`}
           >
-            Build your plan
+            {t.buildPlan}
           </Link>}
           <BookCallLink
             className={`whitespace-nowrap text-[13px] font-bold px-4 xl:px-5 py-2.5 rounded-full shadow-[0_8px_22px_-8px_rgba(0,167,157,0.9)] hover:-translate-y-px transition-all ${
               'bg-white text-[#0E2233] hover:bg-[#E9FBF8]'
             }`}
           >
-            <span className="sm:hidden">Book a call →</span>
-            <span className="hidden sm:inline">Book a 30-min call →</span>
+            <span className="xl:hidden">{t.bookCallShort} →</span>
+            <span className="hidden xl:inline">{t.bookCall} →</span>
           </BookCallLink>
         </div>
 
@@ -157,14 +167,17 @@ export default function Navbar() {
             href="/expansion-plan"
             className="mt-5 text-center text-[14px] font-bold px-5 py-3 rounded-full border border-white/40 text-white"
           >
-            Build your plan
+            {t.buildPlan}
           </Link>
           <BookCallLink
             onClick={() => setOpen(false)}
             className="mt-3 text-center text-[14px] font-bold px-5 py-3 rounded-full bg-white text-[#0E2233]"
           >
-            Book a 30-min call →
+            {t.bookCall} →
           </BookCallLink>
+          <Link href={switchHref} hrefLang={otherLocale} className="mt-5 text-center text-[14px] font-bold text-white/80 underline underline-offset-4">
+            {t.langSwitch}
+          </Link>
         </div>
       )}
     </header>

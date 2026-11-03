@@ -3,23 +3,81 @@ import Image from 'next/image'
 import HeroVideo from '@/components/HeroVideo'
 import { BookCallLink, WhatsAppLink } from '@/components/CtaLinks'
 import { SITE } from '@/lib/site'
+import { localHref, type Locale } from '@/lib/i18n'
 
-const ownershipRows = [
-  { label: 'Legal employer', outsourcing: 'The vendor', eor: 'The EOR', crest: 'Your company' },
-  { label: 'Team works under', outsourcing: 'Their brand', eor: 'Your brand', crest: 'Your brand' },
-  // TODO: Marco must confirm this row before merging to production
-  { label: 'IP', outsourcing: 'By contract', eor: 'By contract', crest: 'Your entity' },
-  { label: 'Going in-house later', outsourcing: 'Start over', eor: 'Move every hire', crest: 'Already yours' },
-]
+const ownershipRowsByLocale = {
+  en: [
+    { label: 'Legal employer', outsourcing: 'The vendor', eor: 'The EOR', crest: 'Your company' },
+    { label: 'Team works under', outsourcing: 'Their brand', eor: 'Your brand', crest: 'Your brand' },
+    // TODO: Marco must confirm this row before merging to production
+    { label: 'IP', outsourcing: 'By contract', eor: 'By contract', crest: 'Your entity' },
+    { label: 'Going in-house later', outsourcing: 'Start over', eor: 'Move every hire', crest: 'Already yours' },
+  ],
+  es: [
+    { label: 'Empleador legal', outsourcing: 'El proveedor', eor: 'El EOR', crest: 'Su empresa' },
+    { label: 'El equipo trabaja bajo', outsourcing: 'Marca del proveedor', eor: 'Su marca', crest: 'Su marca' },
+    // TODO: Marco must confirm this row before merging to production
+    { label: 'IP', outsourcing: 'Por contrato', eor: 'Por contrato', crest: 'Su entidad' },
+    { label: 'Internalizarlo después', outsourcing: 'Empezar de cero', eor: 'Trasladar a cada persona', crest: 'Ya es suyo' },
+  ],
+}
 
-const results = [
-  { value: '$650M', text: "Neustar's acquisition of TARGUSinfo, with our founders' team inside", mobile: false },
-  { value: '$400M', text: 'LTV Co. exit, built on a 120-person Costa Rica hub', mobile: true },
-  { value: '11+ yrs', text: 'with 66degrees, and still growing', mobile: true },
-  { value: '$1B+', text: 'combined revenue of the companies we support', mobile: false },
-  { value: '1000+', text: 'high-value tech jobs created in Costa Rica', mobile: true },
-  { value: '<1%', text: 'involuntary turnover across our client teams', mobile: true },
-]
+const resultsByLocale = {
+  en: [
+    { value: '$650M', text: "Neustar's acquisition of TARGUSinfo, with our founders' team inside", mobile: false },
+    { value: '$400M', text: 'LTV Co. exit, built on a 120-person Costa Rica hub', mobile: true },
+    { value: '11+ yrs', text: 'with 66degrees, and still growing', mobile: true },
+    { value: '$1B+', text: 'combined revenue of the companies we support', mobile: false },
+    { value: '1000+', text: 'high-value tech jobs created in Costa Rica', mobile: true },
+    { value: '<1%', text: 'involuntary turnover across our client teams', mobile: true },
+  ],
+  es: [
+    { value: '$650M', text: 'Adquisición de TARGUSinfo por parte de Neustar, con el equipo de nuestros fundadores adentro', mobile: false },
+    { value: '$400M', text: 'Exit de LTV Co., construido sobre un hub de 120 personas en Costa Rica', mobile: true },
+    { value: '11+ años', text: 'con 66degrees, y sigue creciendo', mobile: true },
+    { value: '$1B+', text: 'ingresos combinados de las empresas que apoyamos', mobile: false },
+    { value: '1000+', text: 'empleos tecnológicos de alto valor creados en Costa Rica', mobile: true },
+    { value: '<1%', text: 'de rotación involuntaria en los equipos de nuestros clientes', mobile: true },
+  ],
+}
+
+const COPY = {
+  en: {
+    h1: 'Build your own engineering team in Costa Rica: we set it up and run it for you.',
+    sub: (
+      <>
+        We set up your Costa Rican legal entity, hire your team under your brand, and run payroll,
+        HR, accounting and compliance — so the team, the IP and the upside stay yours.
+      </>
+    ),
+    talk: 'Talk to a founder →',
+    plan: 'Get your expansion plan in 5 min →',
+    reply: 'A founder replies within 24 hours — never a sales rep.',
+    write: 'Prefer to write?',
+    email: 'Email',
+    table: 'Who owns what?',
+    logos: "Teams we've built for",
+    logoAlt: (name: string) => `${name} logo`,
+  },
+  es: {
+    h1: 'Construya su propio equipo de ingeniería en Costa Rica: nosotros lo creamos y lo administramos.',
+    sub: (
+      <>
+        Creamos su entidad legal en Costa Rica, contratamos a su equipo bajo su marca y administramos
+        planilla, recursos humanos, contabilidad y cumplimiento — para que el equipo, la propiedad
+        intelectual (IP) y el valor que generan sigan siendo suyos.
+      </>
+    ),
+    talk: 'Hable con un fundador →',
+    plan: 'Arme su plan de expansión en 5 min →',
+    reply: 'Un fundador responde en menos de 24 horas — nunca un vendedor.',
+    write: '¿Prefiere escribir?',
+    email: 'Correo',
+    table: '¿De quién es cada cosa?',
+    logos: 'Equipos que hemos creado para',
+    logoAlt: (name: string) => `Logo de ${name}`,
+  },
+}
 
 // White single-ink versions of the client logos (public/logos/white).
 const clientLogos = [
@@ -32,7 +90,10 @@ const clientLogos = [
   { name: 'Forward Costa Rica', src: '/logos/white/fwd.png', width: 1200, height: 471, h: 30 },
 ]
 
-export default function HomeHero() {
+export default function HomeHero({ locale = 'en' }: { locale?: Locale }) {
+  const t = COPY[locale]
+  const ownershipRows = ownershipRowsByLocale[locale]
+  const results = resultsByLocale[locale]
   return (
     <section className="relative isolate overflow-hidden bg-[#0E2233] text-white">
       {/* Background: poster/video under a navy overlay */}
@@ -54,30 +115,29 @@ export default function HomeHero() {
           {/* ── Left column ── */}
           <div className="min-w-0">
             <h1 className="text-[34px] leading-[1.1] md:text-[46px] lg:text-[42px] xl:text-[52px] lg:leading-[1.08] font-bold text-white mb-6">
-              Build your own engineering team in Costa Rica: we set it up and run it for you.
+              {t.h1}
             </h1>
             <p className="text-[18px] md:text-[20px] leading-relaxed text-[#C9D5E0] max-w-[36rem] mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
-              We set up your Costa Rican legal entity, hire your team under your brand, and run payroll,
-              HR, accounting and compliance — so the team, the IP and the upside stay yours.
+              {t.sub}
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-4">
               <BookCallLink className="w-full sm:w-auto whitespace-nowrap text-center bg-[#3CC4B9] text-[#0E2233] font-bold text-[15px] px-7 py-3.5 rounded-[10px] hover:bg-[#5FD4CB] transition-colors">
-                Talk to a founder →
+                {t.talk}
               </BookCallLink>
               <Link
-                href="/expansion-plan"
+                href={localHref('/expansion-plan', locale)}
                 className="w-full sm:w-auto whitespace-nowrap text-center border border-[#5B7A94] text-white font-bold text-[14px] sm:text-[15px] px-5 sm:px-7 py-3.5 rounded-[10px] hover:border-white transition-colors"
               >
-                Get your expansion plan in 5 min →
+                {t.plan}
               </Link>
             </div>
             <p className="text-[15px] text-[#9FB3C4] [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
-              A founder replies within 24 hours — never a sales rep.
+              {t.reply}
             </p>
             <p className="mt-2 text-[14px] text-[#9FB3C4] [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
-              Prefer to write?{' '}
+              {t.write}{' '}
               <a href={`mailto:${SITE.email}`} className="text-white underline underline-offset-2 decoration-white/40 hover:decoration-white">
-                <span className="sm:hidden">Email</span>
+                <span className="sm:hidden">{t.email}</span>
                 <span className="hidden sm:inline">{SITE.email}</span>
               </a>
               {' · '}
@@ -91,7 +151,7 @@ export default function HomeHero() {
           <div className="min-w-0 bg-[rgba(20,48,74,0.62)] backdrop-blur-[6px] border border-[#2A4B68] rounded-[16px] p-3 sm:p-6 lg:p-5 xl:p-7">
             <table className="w-full table-fixed border-collapse text-left text-[11px] min-[360px]:text-[12px] leading-snug [hyphens:auto] sm:text-[15px] lg:text-[14px] xl:text-[15px]">
               <caption className="text-left text-[17px] sm:text-[19px] font-bold text-white mb-4">
-                Who owns what?
+                {t.table}
               </caption>
               <colgroup>
                 <col className="w-[25%] sm:w-[28%]" />
@@ -150,7 +210,7 @@ export default function HomeHero() {
         {/* ── Logo banner (infinite marquee; pauses on hover, static with reduced motion) ── */}
         <div className="mt-10 md:mt-12">
           <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#9FB3C4] mb-5">
-            Teams we&apos;ve built for
+            {t.logos}
           </p>
           <div className="group relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_6%,#000_94%,transparent)]">
             <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused] motion-reduce:animate-none motion-reduce:w-full">
@@ -166,7 +226,7 @@ export default function HomeHero() {
                     <li key={logo.name} className="flex items-center">
                       <Image
                         src={logo.src}
-                        alt={isCopy ? '' : `${logo.name} logo`}
+                        alt={isCopy ? '' : t.logoAlt(logo.name)}
                         width={logo.width}
                         height={logo.height}
                         sizes={`${Math.round((logo.h * logo.width) / logo.height)}px`}

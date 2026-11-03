@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { alternatePath, localeFromPath } from '@/lib/i18n'
 
 export const SITE_NAME = 'Crest Partners'
 
@@ -24,17 +25,22 @@ export function pageMetadata({
   image?: { url: string; alt: string }
 }): Metadata {
   const ogImage = image ? { ...DEFAULT_OG_IMAGE, ...image } : DEFAULT_OG_IMAGE
+  // hreflang: pages that exist in English and Spanish point at each other.
+  const locale = localeFromPath(path)
+  const enPath = locale === 'en' ? path : alternatePath(path, 'en')
+  const esPath = locale === 'es' ? path : alternatePath(path, 'es')
+  const languages = enPath && esPath ? { en: enPath, es: esPath, 'x-default': enPath } : undefined
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: path, ...(languages ? { languages } : {}) },
     openGraph: {
       title,
       description,
       url: path,
       siteName: SITE_NAME,
       type: 'website',
-      locale: 'en_US',
+      locale: locale === 'es' ? 'es_CR' : 'en_US',
       images: [ogImage],
     },
     twitter: {

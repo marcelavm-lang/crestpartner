@@ -69,7 +69,91 @@ const partners: Person[] = [
   },
 ];
 
-function Row({ p, index, tag }: { p: Person; index: number; tag: string }) {
+type Locale = "en" | "es";
+
+/** Spanish copy, keyed by person name. Company names and years stay as in English. */
+const ES_PEOPLE: Record<string, Pick<Person, "role" | "bio" | "expertise" | "credentials"> & { career?: string[] }> = {
+  "Marcela Villalta": {
+    role: "Cofundadora y CEO",
+    bio: "Más de 25 años construyendo desde cero operaciones tecnológicas estadounidenses en Costa Rica — en puestos de liderazgo en TARGUSinfo, Infutor y LTV Co., y a través de Crest Partners. A lo largo de esa carrera ha creado más de 1000 puestos tecnológicos, ha construido desde cero departamentos y equipos de ingeniería completos, ha lanzado productos de datos y de software, y ha hecho crecer hubs que luego tuvieron exits de hasta $400M — con menos del 1% de rotación involuntaria y un GPTW Trust Index de 97.6. MBA, Universidad de Costa Rica. Cofundadora de Forward Costa Rica.",
+    expertise: ["Dirección general", "Diseño de organizaciones tecnológicas", "Operaciones de ingeniería y datos", "Lanzamiento de productos", "Escalar hasta el exit", "Cultura y retención"],
+    credentials: ["Arquitectura de negocio", "Modelo de entidad nearshore", "Relación con clientes de EE. UU.", "Impacto social de la tecnología"],
+    // Job titles only, same order as `career` above
+    career: ["Cofundadora", "Gerente de país", "Presidenta", "Gerente de producción"],
+  },
+  "José Villalta": {
+    role: "Socio y Director de Operaciones de Datos",
+    bio: "Más de 25 años construyendo y escalando operaciones de datos para clientes corporativos de EE. UU. Creció a través de cada nivel de una de las operaciones de inteligencia de datos más sofisticadas de Costa Rica — de supervisor de producción a gerente de país.",
+    expertise: ["Operaciones de datos corporativas", "Estrategia de producto", "Liderazgo técnico multifuncional", "Arquitectura y pipelines de datos", "Gestión de operaciones de país", "Entrega a corporaciones de EE. UU."],
+    credentials: ["Estrategia de operaciones de datos", "Arquitectura de datos a escala corporativa", "Liderazgo de operaciones a nivel país"],
+  },
+  "Roberto Fernandez": {
+    role: "Socio y CTO",
+    bio: "Más de 20 años en desarrollo de software, ingeniería de datos y arquitectura de sistemas modernos. Pasó de desarrollador a Director de Ingeniería y VP de Ingeniería de Producto en algunas de las empresas con mayor uso intensivo de datos del mercado estadounidense. Dirige toda la entrega técnica y la contratación de ingeniería para los clientes de Crest Partners.",
+    expertise: ["Arquitectura de software", "Liderazgo de organizaciones de ingeniería", "Estrategia de talento en ingeniería", "Ingeniería de datos", "Liderazgo en ingeniería de producto", "Entrega tecnológica entre países"],
+    credentials: ["Visión y estrategia de ingeniería", "Estrategia y adopción de IA", "Arquitectura de modernización"],
+  },
+  "Gary Walter": {
+    role: "Socio estratégico",
+    bio: "Ejecutivo especializado en acelerar empresas medianas, con amplia trayectoria en dirección general, planificación estratégica, SaaS y Big Data. Llevó a Infutor Data Solutions de $1M hasta su adquisición por Verisk por $225M — con el equipo de Costa Rica en el centro de ese crecimiento. Aporta la perspectiva operativa de alguien que ha vivido el modelo desde el lado del cliente por más de una década.",
+    expertise: ["Dirección general", "SaaS y Big Data", "Desarrollo de negocios", "Planificación estratégica", "Private equity y M&A", "Certificado por Harvard KSC"],
+    credentials: ["SaaS y Big Data", "Private equity", "M&A", "Certificado por Harvard KSC"],
+  },
+  "Marco López Volio": {
+    role: "Socio legal · Zurcher Odio & Raven",
+    bio: "Socio y Director del Departamento de Propiedad Intelectual y Regulatorio de Zurcher Odio & Raven — una de las firmas de abogados más reconocidas de Costa Rica. Más de 20 años asesorando a empresas multinacionales en materia regulatoria, competencia (antitrust), propiedad intelectual, privacidad de datos y cumplimiento. Todas las entidades de los clientes de Crest Partners están respaldadas por su firma.",
+    expertise: ["Constitución de entidades y derecho corporativo", "Protección de propiedad intelectual y marcas", "Antimonopolio y competencia", "Derecho laboral", "Privacidad de datos y regulación", "Contratos comerciales"],
+    credentials: ["Chambers & Partners IP", "Chambers & Partners Antitrust", "Leaders League Band 1 IP"],
+  },
+};
+
+function localize(p: Person, locale: Locale): Person {
+  if (locale === "en") return p;
+  const es = ES_PEOPLE[p.name];
+  if (!es) return p;
+  return {
+    ...p,
+    role: es.role,
+    bio: es.bio,
+    expertise: es.expertise,
+    credentials: es.credentials,
+    career: p.career?.map(([title, company, years], i) => [
+      es.career?.[i] ?? title,
+      company,
+      years.replace("present", "actualidad"),
+    ]),
+  };
+}
+
+const TEXT = {
+  en: {
+    eyebrow: "OUR PEOPLE",
+    h2a: "Built by operators.",
+    h2b: "Not by a sales team.",
+    intro: "A founder-led team with 20 years building Costa Rica's tech ecosystem from the inside — and the partners who back every entity we run.",
+    cofounderLabel: "CO-FOUNDER",
+    cofounderTag: "CO-FOUNDER",
+    partnersLabel: "PARTNERS",
+    partnerTag: "PARTNER",
+    career: "Career",
+    onLinkedIn: (name: string) => `${name} on LinkedIn`,
+  },
+  es: {
+    eyebrow: "NUESTRO EQUIPO",
+    h2a: "Construido por operadores.",
+    h2b: "No por un equipo de ventas.",
+    intro: "Un equipo liderado por sus fundadores, con 20 años construyendo el ecosistema tecnológico de Costa Rica desde adentro — y los socios que respaldan cada entidad que operamos.",
+    cofounderLabel: "COFUNDADORA",
+    cofounderTag: "COFUNDADORA",
+    partnersLabel: "SOCIOS",
+    partnerTag: "SOCIO",
+    career: "Trayectoria",
+    onLinkedIn: (name: string) => `${name} en LinkedIn`,
+  },
+};
+
+function Row({ p, index, tag, locale }: { p: Person; index: number; tag: string; locale: Locale }) {
+  const t = TEXT[locale];
   const flip = index % 2 === 0; // alternate portrait side on desktop
   return (
     <article className={`grid items-center gap-10 lg:gap-20 ${flip ? "lg:grid-cols-[1fr_400px]" : "lg:grid-cols-[400px_1fr]"}`}>
@@ -89,7 +173,7 @@ function Row({ p, index, tag }: { p: Person; index: number; tag: string }) {
               href={p.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${p.name} on LinkedIn`}
+              aria-label={t.onLinkedIn(p.name)}
               className="inline-flex items-center gap-1.5 text-[14px] font-medium text-white/80 hover:text-white transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -111,7 +195,7 @@ function Row({ p, index, tag }: { p: Person; index: number; tag: string }) {
         </ul>
         {p.career && (
           <div className="flex flex-col gap-2.5">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#7E90A1]">Career</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#7E90A1]">{t.career}</p>
             <ol className="flex flex-col">
               {p.career.map(([title, company, years]) => (
                 <li
@@ -137,7 +221,7 @@ function Row({ p, index, tag }: { p: Person; index: number; tag: string }) {
   );
 }
 
-function Section({ label, people, start, tag }: { label: string; people: Person[]; start: number; tag: string }) {
+function Section({ label, people, start, tag, locale }: { label: string; people: Person[]; start: number; tag: string; locale: Locale }) {
   return (
     <div className="flex flex-col gap-14">
       <div className="flex items-center gap-5">
@@ -146,33 +230,34 @@ function Section({ label, people, start, tag }: { label: string; people: Person[
       </div>
       <div className="flex flex-col gap-24 lg:gap-[120px]">
         {people.map((p, i) => (
-          <Row key={p.name} p={p} index={start + i} tag={tag} />
+          <Row key={p.name} p={localize(p, locale)} index={start + i} tag={tag} locale={locale} />
         ))}
       </div>
     </div>
   );
 }
 
-export default function TeamEditorial() {
+export default function TeamEditorial({ locale = "en" }: { locale?: Locale }) {
+  const t = TEXT[locale];
   return (
     <section className="bg-[#0F1A24] text-white font-spartan">
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-20 lg:pb-36 lg:pt-32">
         <div className="mb-24 flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
           <div className="flex flex-col gap-5">
-            <p className="text-[14px] font-bold tracking-[0.16em] text-[#2BD4B4]">OUR PEOPLE</p>
+            <p className="text-[14px] font-bold tracking-[0.16em] text-[#2BD4B4]">{t.eyebrow}</p>
             <h2 className="text-5xl font-bold leading-[1.02] lg:text-[64px]">
-              Built by operators.
+              {t.h2a}
               <br />
-              Not by a sales team.
+              {t.h2b}
             </h2>
           </div>
           <p className="max-w-[420px] text-lg font-normal leading-relaxed text-[#B9C6D2]">
-            A founder-led team with 20 years building Costa Rica&apos;s tech ecosystem from the inside — and the partners who back every entity we run.
+            {t.intro}
           </p>
         </div>
         <div className="flex flex-col gap-[140px]">
-          <Section label="CO-FOUNDER" people={cofounders} start={1} tag="CO-FOUNDER" />
-          <Section label="PARTNERS" people={partners} start={cofounders.length + 1} tag="PARTNER" />
+          <Section label={t.cofounderLabel} people={cofounders} start={1} tag={t.cofounderTag} locale={locale} />
+          <Section label={t.partnersLabel} people={partners} start={cofounders.length + 1} tag={t.partnerTag} locale={locale} />
         </div>
       </div>
     </section>

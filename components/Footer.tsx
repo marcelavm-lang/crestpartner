@@ -1,32 +1,24 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { SITE } from '@/lib/site'
 import { BookCallLink, WhatsAppLink } from '@/components/CtaLinks'
-
-const services = [
-  { label: 'Launch', href: '/services#launch' },
-  { label: 'Build', href: '/services#build' },
-  { label: 'Operate', href: '/services#operate' },
-  { label: 'For engineering leaders', href: '/services#engineering' },
-  { label: 'AI & ML teams', href: '/ai-engineering-teams' },
-]
-
-const company = [
-  { label: 'Who we are', href: '/who-we-are' },
-  { label: 'Case studies', href: '/case-studies' },
-  { label: 'Why Costa Rica', href: '/why-costa-rica' },
-  { label: 'Guides', href: '/guides' },
-  { label: 'Careers', href: '/careers' },
-]
+import { usePathname } from 'next/navigation'
+import { UI, localeFromPath } from '@/lib/i18n'
 
 export default function Footer() {
+  const locale = localeFromPath(usePathname())
+  const t = UI[locale]
+  const services = t.services
+  const company = t.company
   return (
     <footer className="border-t border-[#D8E2EA] bg-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center mb-4">
+            <Link href={locale === 'es' ? '/es' : '/'} className="flex items-center mb-4">
               <Image
                 src="/crest-partners-logo/svg/crest-partners-logo-color.svg"
                 alt="Crest Partners"
@@ -37,13 +29,13 @@ export default function Footer() {
               />
             </Link>
             <p className="text-[#3E4C59] leading-relaxed font-normal text-[16px]">
-              We help tech companies establish and operate their own dedicated tech entity in Costa Rica — your team, your brand, fully administered by us.
+              {t.footerTagline}
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Services</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">{t.footerServices}</p>
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.href}>
@@ -57,7 +49,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Company</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">{t.footerCompany}</p>
             <ul className="space-y-2.5">
               {company.map((c) => (
                 <li key={c.href}>
@@ -71,7 +63,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Contact</p>
+            <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">{t.footerContact}</p>
             <ul className="space-y-2.5">
               <li>
                 <a
@@ -96,7 +88,7 @@ export default function Footer() {
               </li>
               <li>
                 <BookCallLink className="text-[14px] text-[#2574A7] font-semibold hover:underline transition-colors">
-                  Book a 30-min call →
+                  {t.bookCall} →
                 </BookCallLink>
               </li>
             </ul>

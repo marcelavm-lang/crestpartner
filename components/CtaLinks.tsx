@@ -3,6 +3,8 @@
 import type { ReactNode } from 'react'
 import { SITE } from '@/lib/site'
 import { trackEvent } from '@/lib/analytics'
+import { usePathname } from 'next/navigation'
+import { localeFromPath } from '@/lib/i18n'
 
 type LinkProps = {
   className?: string
@@ -30,9 +32,10 @@ export function BookCallLink({ className, children, onClick }: LinkProps) {
 
 /** WhatsApp link with the pre-filled message. */
 export function WhatsAppLink({ className, children, onClick }: LinkProps) {
+  const es = localeFromPath(usePathname()) === 'es'
   return (
     <a
-      href={SITE.whatsappUrl}
+      href={es ? SITE.whatsappUrlEs : SITE.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={className}

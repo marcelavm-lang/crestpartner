@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import HideOnLanding from '@/components/HideOnLanding'
+import HtmlLang from '@/components/HtmlLang'
 import ExpansionPlanWidget from '@/components/ExpansionPlanWidget'
 import LinkedInInsight from '@/components/LinkedInInsight'
 import { Analytics } from '@vercel/analytics/next'
@@ -84,6 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={spartan.variable}>
       <body className="font-spartan antialiased pb-16 md:pb-0">
+        <HtmlLang />
         <Navbar />
         <main>{children}</main>
         <HideOnLanding>
