@@ -3,7 +3,7 @@ import { BookCallLink } from '@/components/CtaLinks'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = pageMetadata({
-  title: 'Services — Launch, Build & Operate Your Costa Rica Entity | Crest Partners',
+  title: 'Services: Launch, Build & Operate in Costa Rica | Crest Partners',
   description: 'Legal entity setup, engineering recruiting and full back-office administration for tech companies building their own team in Costa Rica.',
   path: '/services',
 })

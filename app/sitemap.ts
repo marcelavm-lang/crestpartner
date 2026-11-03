@@ -12,7 +12,6 @@ const STATIC_ROUTES = [
   '/contact',
   '/expansion-plan',
   '/impact',
-  '/lp',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

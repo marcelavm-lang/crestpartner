@@ -3,8 +3,8 @@ import ExpansionPlanForm from '@/components/ExpansionPlanForm'
 import { BookCallLink } from '@/components/CtaLinks'
 
 export const metadata = pageMetadata({
-  title: 'Expansion Plan Generator — Crest Partners',
-  description: 'Generate a personalized Costa Rica expansion plan in minutes.',
+  title: 'Costa Rica Expansion Plan Generator | Crest Partners',
+  description: 'Answer 5 questions and get a personalized Costa Rica expansion plan: team structure, Year-1 costs and an implementation timeline.',
   path: '/expansion-plan',
 })
 

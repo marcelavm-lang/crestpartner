@@ -3,8 +3,8 @@ import { SITE } from '@/lib/site'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = pageMetadata({
-  title: 'Careers | Crest Partners',
-  description: "Join the team building Costa Rica's tech future.",
+  title: 'Careers — Tech Jobs in Costa Rica | Crest Partners',
+  description: "Join the team building Costa Rica's tech future. Crest Partners builds engineering hubs in San José for U.S. technology companies.",
   path: '/careers',
 })
 

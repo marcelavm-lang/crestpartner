@@ -7,7 +7,7 @@ const cs = getCaseStudy('think-unlimited')
 
 export const metadata = pageMetadata({
   title: `${cs.client} Case Study | Crest Partners`,
-  description: cs.summary,
+  description: cs.seoDescription,
   path: `/case-studies/${cs.slug}`,
   image: { url: `/case-studies/${cs.slug}/opengraph-image`, alt: `${cs.client} case study — Crest Partners` },
 })
