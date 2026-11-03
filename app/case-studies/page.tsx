@@ -22,7 +22,7 @@ const cases = [
     name: 'TARGUSinfo',
     slug: 'targusinfo',
     logo: 'targusinfo' as const,
-    period: '2001–2007',
+    period: '2001–2007 · before Crest',
     badge: 'Data Operations',
     badgeColor: 'bg-[#F4F7FA] text-[#5A6A7A]',
     tagline: 'The case that built the playbook',

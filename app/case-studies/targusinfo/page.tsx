@@ -23,11 +23,11 @@ export default function TargusInfoPage() {
       </div>
       <div className="flex items-center gap-3 mb-6">
         <span className="text-[12px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-[6px] bg-[#F4F7FA] text-[#5A6A7A]">Origin</span>
-        <span className="text-[14px] text-[#5A6A7A]">2001–2007</span>
+        <span className="text-[14px] text-[#5A6A7A]">2001–2007 · before Crest Partners was founded (2006)</span>
       </div>
       <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">TARGUSinfo</h1>
       <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed mb-12 max-w-2xl">
-        The partnership that started it all. Crest Partners' founders built TARGUSinfo's Costa Rica operation from the ground up — 200+ collaborators that became the backbone of a company acquired by Neustar for $650M.
+        Where the model was born — before Crest Partners existed. Our founders built TARGUSinfo's Costa Rica operation from the ground up — 200+ collaborators that became the backbone of a company acquired by Neustar for $650M.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
