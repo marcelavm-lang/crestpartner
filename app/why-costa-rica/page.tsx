@@ -13,6 +13,8 @@ const heroStats = [
   { value: 'CST', label: 'Central Time year-round — no daylight saving' },
   { value: '#1', label: 'in Latin America for generative AI adoption (Microsoft, Q2 2026)' },
   { value: '1948', label: 'Army abolished — budget redirected to education' },
+  { value: '3rd', label: 'in Latin America for AI talent (Latin American AI Index, ILIA 2025)' },
+  { value: '516', label: 'English score — above the global average of 488 (EF EPI 2025)' },
 ]
 
 const valueCards = [
