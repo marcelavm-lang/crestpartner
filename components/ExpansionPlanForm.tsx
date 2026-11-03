@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { BookCallLink } from '@/components/CtaLinks'
 import { trackEvent } from '@/lib/analytics'
+import { POSITIONS, GROUPS, GROUP_TO_PROFILE, EMPLOYER_COST_PCT, type PositionKey } from '@/lib/positions'
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const ReactMarkdown = require('react-markdown').default
 // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -66,61 +67,7 @@ const TIMELINES = [
   { value: 'Still exploring', label: 'Still exploring', sub: 'Just researching' },
 ]
 
-// avg = (baseMin + baseMax) / 2 * 1.34 * 12  →  annual all-in cost (incl. 34% CR social charges)
-const POSITION_LEVELS = [
-  // Engineering
-  { key: 'devMgr',      label: 'Engineering Manager',          group: 'Engineering',        years: '10+ yrs',  annualRange: '$112,560 – $160,800', avg: 136680, color: 'text-[#D4890A]' },
-  { key: 'srLead',      label: 'Staff Engineer',               group: 'Engineering',        years: '5–10 yrs', annualRange: '$80,400 – $112,560',  avg: 96480,  color: 'text-[#6C5CE7]' },
-  { key: 'techLead',    label: 'Tech Lead',                    group: 'Engineering',        years: '3–5 yrs',  annualRange: '$64,320 – $96,480',   avg: 80400,  color: 'text-[#2574A7]' },
-  { key: 'srDev',       label: 'Senior Software Engineer',     group: 'Engineering',        years: '5+ yrs',   annualRange: '$64,320 – $104,520',  avg: 84420,  color: 'text-[#00A79D]' },
-  { key: 'midDev',      label: 'Mid-Level Software Engineer',  group: 'Engineering',        years: '2–4 yrs',  annualRange: '$33,768 – $56,280',   avg: 45024,  color: 'text-[#2574A7]' },
-  { key: 'jrDev',       label: 'Junior Software Engineer',     group: 'Engineering',        years: '1–2 yrs',  annualRange: '$20,904 – $32,160',   avg: 26532,  color: 'text-[#5A6A7A]' },
-  { key: 'intern',      label: 'Software Engineering Intern',  group: 'Engineering',        years: '0–1 yrs',  annualRange: '$14,472 – $17,688',   avg: 16080,  color: 'text-[#5A6A7A]' },
-  // QA
-  { key: 'srQaMgr',     label: 'Senior QA Manager',            group: 'QA',                years: '10+ yrs',  annualRange: '$64,320 – $88,440',   avg: 76380,  color: 'text-[#D4890A]' },
-  { key: 'srQa',        label: 'Senior QA Engineer',           group: 'QA',                years: '5+ yrs',   annualRange: '$45,024 – $61,104',   avg: 53064,  color: 'text-[#00A79D]' },
-  { key: 'midQa',       label: 'Mid-Level QA Engineer',        group: 'QA',                years: '2–4 yrs',  annualRange: '$32,160 – $43,416',   avg: 37836,  color: 'text-[#2574A7]' },
-  { key: 'jrQa',        label: 'Junior QA Engineer',           group: 'QA',                years: '0–2 yrs',  annualRange: '$16,080 – $30,552',   avg: 23316,  color: 'text-[#5A6A7A]' },
-  // Data Engineering
-  { key: 'srDataEng',   label: 'Senior Data Engineer',         group: 'Data Engineering',  years: '5+ yrs',   annualRange: '$64,320 – $104,520',  avg: 84420,  color: 'text-[#6C5CE7]' },
-  { key: 'midDataEng',  label: 'Mid-Level Data Engineer',      group: 'Data Engineering',  years: '2–4 yrs',  annualRange: '$40,200 – $64,320',   avg: 52260,  color: 'text-[#6C5CE7]' },
-  { key: 'jrDataEng',   label: 'Junior Data Engineer',         group: 'Data Engineering',  years: '1–2 yrs',  annualRange: '$24,120 – $40,200',   avg: 32160,  color: 'text-[#6C5CE7]' },
-  // DevOps & Cloud
-  { key: 'srDevOps',    label: 'Senior DevOps/Cloud Engineer', group: 'DevOps & Cloud',    years: '5+ yrs',   annualRange: '$64,320 – $112,560',  avg: 88440,  color: 'text-[#27AE60]' },
-  { key: 'midDevOps',   label: 'Mid-Level DevOps/Cloud Eng.',  group: 'DevOps & Cloud',    years: '2–4 yrs',  annualRange: '$40,200 – $72,360',   avg: 56280,  color: 'text-[#27AE60]' },
-  { key: 'jrDevOps',    label: 'Junior DevOps/Cloud Engineer', group: 'DevOps & Cloud',    years: '1–2 yrs',  annualRange: '$24,120 – $40,200',   avg: 32160,  color: 'text-[#27AE60]' },
-  // Product Management
-  { key: 'srPM',        label: 'Senior Product Manager',       group: 'Product',           years: '5+ yrs',   annualRange: '$64,320 – $104,520',  avg: 84420,  color: 'text-[#D4890A]' },
-  { key: 'pm',          label: 'Product Manager',              group: 'Product',           years: '2–5 yrs',  annualRange: '$40,200 – $64,320',   avg: 52260,  color: 'text-[#D4890A]' },
-  { key: 'assocPM',     label: 'Associate Product Manager',    group: 'Product',           years: '0–2 yrs',  annualRange: '$28,944 – $45,024',   avg: 36984,  color: 'text-[#D4890A]' },
-  // UI/UX Design
-  { key: 'srUX',        label: 'Senior UI/UX Designer',        group: 'UI/UX Design',      years: '5+ yrs',   annualRange: '$48,240 – $80,400',   avg: 64320,  color: 'text-[#E91E8C]' },
-  { key: 'midUX',       label: 'Mid-Level UI/UX Designer',     group: 'UI/UX Design',      years: '2–4 yrs',  annualRange: '$32,160 – $56,280',   avg: 44220,  color: 'text-[#E91E8C]' },
-  { key: 'jrUX',        label: 'Junior UI/UX Designer',        group: 'UI/UX Design',      years: '0–2 yrs',  annualRange: '$19,296 – $32,160',   avg: 25728,  color: 'text-[#E91E8C]' },
-  // Data Science
-  { key: 'srDS',        label: 'Senior Data Scientist',        group: 'Data Science',      years: '5+ yrs',   annualRange: '$72,360 – $112,560',  avg: 92460,  color: 'text-[#E24B4A]' },
-  { key: 'ds',          label: 'Data Scientist',               group: 'Data Science',      years: '2–5 yrs',  annualRange: '$45,024 – $72,360',   avg: 58692,  color: 'text-[#E24B4A]' },
-  { key: 'jrDS',        label: 'Junior Data Scientist',        group: 'Data Science',      years: '1–2 yrs',  annualRange: '$28,944 – $45,024',   avg: 36984,  color: 'text-[#E24B4A]' },
-  // Business Analysis
-  { key: 'srBA',        label: 'Senior Business Analyst',      group: 'Business Analysis', years: '5+ yrs',   annualRange: '$48,240 – $72,360',   avg: 60300,  color: 'text-[#5A6A7A]' },
-  { key: 'ba',          label: 'Business Analyst',             group: 'Business Analysis', years: '2–4 yrs',  annualRange: '$32,160 – $48,240',   avg: 40200,  color: 'text-[#5A6A7A]' },
-  { key: 'jrBA',        label: 'Junior Business Analyst',      group: 'Business Analysis', years: '0–2 yrs',  annualRange: '$19,296 – $32,160',   avg: 25728,  color: 'text-[#5A6A7A]' },
-] as const
-
-const GROUPS = ['Engineering', 'QA', 'Data Engineering', 'DevOps & Cloud', 'Product', 'UI/UX Design', 'Data Science', 'Business Analysis'] as const
-const GROUP_TO_PROFILE: Record<string, string[]> = {
-  'Engineering':        ['Software Engineers', 'Engineering Leadership'],
-  'QA':                ['QA Engineers'],
-  'Data Engineering':  ['Data Engineers'],
-  'DevOps & Cloud':    ['DevOps & Cloud Engineers'],
-  'Product':           ['Product Managers'],
-  'UI/UX Design':      ['UI/UX Designers'],
-  'Data Science':      ['Data Scientists'],
-  'Business Analysis': ['Business Analysts'],
-}
-
-type PositionKey = typeof POSITION_LEVELS[number]['key']
-type PositionCount = { [K in PositionKey]: number }
+type PositionCount = Record<PositionKey, number>
 
 const TOTAL_STEPS = 5
 
@@ -139,16 +86,7 @@ interface PlanFormData {
   message: string
 }
 
-const EMPTY_POSITIONS: PositionCount = {
-  devMgr: 0, srLead: 0, techLead: 0, srDev: 0, midDev: 0, jrDev: 0, intern: 0,
-  srQaMgr: 0, srQa: 0, midQa: 0, jrQa: 0,
-  srDataEng: 0, midDataEng: 0, jrDataEng: 0,
-  srDevOps: 0, midDevOps: 0, jrDevOps: 0,
-  srPM: 0, pm: 0, assocPM: 0,
-  srUX: 0, midUX: 0, jrUX: 0,
-  srDS: 0, ds: 0, jrDS: 0,
-  srBA: 0, ba: 0, jrBA: 0,
-}
+const EMPTY_POSITIONS = Object.fromEntries(POSITIONS.map((p) => [p.key, 0])) as PositionCount
 
 const initial: PlanFormData = {
   companyName: '', industry: '', usTeamSize: '',
@@ -178,7 +116,7 @@ function totalHeadcount(s: PositionCount): number {
 }
 
 function estimatedSalaries(s: PositionCount): number {
-  return POSITION_LEVELS.reduce((total, level) => {
+  return POSITIONS.reduce((total, level) => {
     return total + s[level.key as PositionKey] * level.avg
   }, 0)
 }
@@ -232,7 +170,7 @@ function Checkbox({ checked, onChange, label, sub }: { checked: boolean; onChang
 
 // ── Counter row ─────────────────────────────────────────────────────────────
 function CounterRow({ label, years, value, onDec, onInc, annualRange }: {
-  label: string; years: string; color: string; value: number
+  label: string; years: string; value: number
   onDec: () => void; onInc: () => void
   annualRange?: string
 }) {
@@ -316,10 +254,10 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
   function adjustPosition(key: PositionKey, delta: number) {
     setForm(f => {
       const newSeniority = { ...f.seniority, [key]: Math.max(0, f.seniority[key] + delta) }
-      const level = POSITION_LEVELS.find(l => l.key === key)
+      const level = POSITIONS.find(l => l.key === key)
       const group = level?.group || ''
-      const groupProfiles = GROUP_TO_PROFILE[group] || []
-      const groupLevels = POSITION_LEVELS.filter(l => l.group === group)
+      const groupProfiles = level ? GROUP_TO_PROFILE[level.group] : []
+      const groupLevels = POSITIONS.filter(l => l.group === group)
       const groupHasHeadcount = groupLevels.some(l => newSeniority[l.key as PositionKey] > 0)
       let newProfiles = [...f.profiles]
       if (groupHasHeadcount) {
@@ -490,13 +428,13 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
           <div className="space-y-3">
             <div>
               <label className="text-[12px] font-bold tracking-wide uppercase text-[#5A6A7A] block mb-1">Team composition</label>
-              <p className="text-[12px] text-[#5A6A7A] font-normal mb-3">Expand a category and select how many professionals you need at each level. Salaries shown in USD/yr, all CR social charges included.</p>
+              <p className="text-[12px] text-[#5A6A7A] font-normal mb-3">Expand a category and select how many professionals you need at each level. Costs shown in USD/yr, all-in: salary plus ~{EMPLOYER_COST_PCT}% Costa Rica employer costs.</p>
             </div>
 
             {/* Accordion groups */}
             <div className="space-y-2">
               {GROUPS.map(group => {
-                const levels = POSITION_LEVELS.filter(l => l.group === group)
+                const levels = POSITIONS.filter(l => l.group === group)
                 const groupCount = levels.reduce((sum, l) => sum + form.seniority[l.key as PositionKey], 0)
                 const isOpen = openGroups.has(group)
 
@@ -537,7 +475,6 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
                             key={l.key}
                             label={l.label}
                             years={l.years}
-                            color={l.color}
                             annualRange={l.annualRange}
                             value={form.seniority[l.key as PositionKey]}
                             onDec={() => adjustPosition(l.key as PositionKey, -1)}
@@ -559,7 +496,7 @@ export default function ExpansionPlanForm({ onClose }: { onClose?: () => void })
                   <span className="text-[20px] font-bold text-[#2574A7]">{totalHeadcount(form.seniority)}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-[12px] text-[#5A6A7A] font-normal">Est. annual cost (incl. 34% CR social charges)</span>
+                  <span className="text-[12px] text-[#5A6A7A] font-normal">Est. annual cost (incl. {EMPLOYER_COST_PCT}% CR employer costs)</span>
                   <span className="text-[14px] font-bold text-[#00A79D]">${estimatedSalaries(form.seniority).toLocaleString()}/yr</span>
                 </div>
               </div>
