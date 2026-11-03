@@ -463,7 +463,7 @@ export default function LandingPage() {
               {
                 icon: 'chat' as IconName,
                 title: 'English Proficiency',
-                desc: 'Top 2 in Central America on the EF English Proficiency Index. Engineers who communicate clearly, write good documentation, and integrate seamlessly.',
+                desc: 'Above the global average on the EF English Proficiency Index. Engineers who communicate clearly, write good documentation, and integrate seamlessly.',
               },
               {
                 icon: 'map' as IconName,

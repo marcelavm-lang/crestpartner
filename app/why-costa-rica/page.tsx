@@ -4,14 +4,14 @@ import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = pageMetadata({
   title: 'Why Costa Rica for Your Engineering Team | Crest Partners',
-  description: 'Stability, English proficiency, U.S.-aligned hours and talent retention — why tech companies build their own teams in Costa Rica.',
+  description: 'Stability, AI-ready talent, English proficiency, U.S.-aligned hours and retention — why tech companies build their own teams in Costa Rica.',
   path: '/why-costa-rica',
 })
 
 const heroStats = [
   { value: '75+', label: 'years of uninterrupted democracy' },
   { value: 'CST', label: 'Central Time year-round — no daylight saving' },
-  { value: 'Top 2', label: 'English proficiency in Central America (EF EPI 2024)' },
+  { value: '#1', label: 'in Latin America for generative AI adoption (Microsoft, Q2 2026)' },
   { value: '1948', label: 'Army abolished — budget redirected to education' },
 ]
 
@@ -44,8 +44,8 @@ const reasons = [
   },
   {
     num: '02',
-    title: 'Strong English proficiency',
-    text: 'Top 2 in Central America on the EF English Proficiency Index. Engineers who communicate clearly, collaborate fluently and integrate seamlessly.',
+    title: 'English that works with U.S. teams',
+    text: 'Above the global average on the EF English Proficiency Index. Engineers who communicate clearly, collaborate fluently and integrate seamlessly with U.S. teams.',
   },
   {
     num: '03',
@@ -54,8 +54,8 @@ const reasons = [
   },
   {
     num: '04',
-    title: 'Same time zone',
-    text: 'Central Time year-round — full overlap with U.S. business hours. Real-time collaboration, every day.',
+    title: 'AI-ready talent',
+    text: '#1 in Latin America for generative AI adoption — 29.7% of the working-age population uses it (Microsoft, Q2 2026) — and 3rd in the region for AI talent (Latin American AI Index, ILIA 2025).',
   },
   {
     num: '05',
@@ -71,7 +71,8 @@ const reasons = [
 
 const comparisonRows = [
   { factor: 'Time zone alignment', cr: 'Full overlap', other: 'Up to 12 hr gap (Asia, Eastern Europe)' },
-  { factor: 'English proficiency', cr: 'High', other: 'Varies widely' },
+  { factor: 'English proficiency', cr: 'Above global avg.', other: 'Varies widely' },
+  { factor: 'Generative AI adoption', cr: '#1 in Latin America', other: 'Lower across the region' },
   { factor: 'Political stability', cr: '75+ yrs', other: 'Variable' },
   { factor: 'Legal framework', cr: 'Clear & proven', other: 'Complex' },
   { factor: 'Cultural alignment', cr: 'Very high', other: 'Moderate' },
