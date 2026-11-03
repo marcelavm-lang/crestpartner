@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import HeroVideo from '@/components/HeroVideo'
-import { BookCallLink } from '@/components/CtaLinks'
+import { BookCallLink, WhatsAppLink } from '@/components/CtaLinks'
+import { SITE } from '@/lib/site'
 
 const ownershipRows = [
   { label: 'Legal employer', outsourcing: 'The vendor', eor: 'The EOR', crest: 'Your company' },
@@ -72,6 +73,17 @@ export default function HomeHero() {
             </div>
             <p className="text-[15px] text-[#9FB3C4] [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               A founder replies within 24 hours — never a sales rep.
+            </p>
+            <p className="mt-2 text-[14px] text-[#9FB3C4] [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
+              Prefer to write?{' '}
+              <a href={`mailto:${SITE.email}`} className="text-white underline underline-offset-2 decoration-white/40 hover:decoration-white">
+                <span className="sm:hidden">Email</span>
+                <span className="hidden sm:inline">{SITE.email}</span>
+              </a>
+              {' · '}
+              <WhatsAppLink className="text-white underline underline-offset-2 decoration-white/40 hover:decoration-white">
+                WhatsApp
+              </WhatsAppLink>
             </p>
           </div>
 
