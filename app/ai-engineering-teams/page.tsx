@@ -163,7 +163,7 @@ export default function AiEngineeringTeamsPage() {
           </div>
           <div className="border border-white/10 rounded-[14px] p-8 self-start">
             <p className="text-[12px] font-bold tracking-widest uppercase text-[#3CC4B9] mb-3">Technical leadership</p>
-            <p className="text-[18px] font-bold mb-2">Roberto Fernandez, Partner &amp; CTO</p>
+            <p className="text-[18px] font-bold mb-2">Roberto Fernandez, Partner</p>
             <p className="text-[16px] text-white/75 leading-relaxed mb-4">
               20+ years in software development, data engineering and systems architecture — from developer to
               Director of Engineering and VP of Product Engineering. Leads technical delivery, engineering hiring

@@ -164,7 +164,7 @@ export default function AiEngineeringTeamsPageEs() {
           </div>
           <div className="border border-white/10 rounded-[14px] p-8 self-start">
             <p className="text-[12px] font-bold tracking-widest uppercase text-[#3CC4B9] mb-3">Liderazgo técnico</p>
-            <p className="text-[18px] font-bold mb-2">Roberto Fernandez, Partner &amp; CTO</p>
+            <p className="text-[18px] font-bold mb-2">Roberto Fernandez, Socio</p>
             <p className="text-[16px] text-white/75 leading-relaxed mb-4">
               Más de 20 años en desarrollo de software, ingeniería de datos y arquitectura de sistemas — de desarrollador a
               Director of Engineering y VP of Product Engineering. Lidera la entrega técnica, la contratación de ingeniería

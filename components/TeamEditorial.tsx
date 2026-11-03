@@ -33,7 +33,7 @@ const cofounders: Person[] = [
 const partners: Person[] = [
   {
     name: "José Villalta",
-    role: "Partner & Head of Data Operations",
+    role: "Partner",
     img: "/team/jose-villalta-cutout.webp",
     linkedin: "https://www.linkedin.com/in/jose-villalta-091b6525/",
     bio: "25+ years building and scaling data operations for U.S. enterprise clients. Grew through every layer of one of Costa Rica's most sophisticated data intelligence operations — from production supervisor to Country Manager.",
@@ -42,7 +42,7 @@ const partners: Person[] = [
   },
   {
     name: "Roberto Fernandez",
-    role: "Partner & CTO",
+    role: "Partner",
     img: "/team/roberto-fernandez-cutout.webp",
     linkedin: "https://www.linkedin.com/in/roberto-fernandez-75aa2ba/",
     bio: "20+ years in software development, data engineering and modern systems architecture. Grew from developer to Director of Engineering and VP of Product Engineering across some of the most data-intensive companies in the U.S. market. Leads all technical delivery and engineering hiring for Crest Partners clients.",
@@ -82,13 +82,13 @@ const ES_PEOPLE: Record<string, Pick<Person, "role" | "bio" | "expertise" | "cre
     career: ["Cofundadora", "Gerente de país", "Presidenta", "Gerente de producción"],
   },
   "José Villalta": {
-    role: "Socio y Director de Operaciones de Datos",
+    role: "Socio",
     bio: "Más de 25 años construyendo y escalando operaciones de datos para clientes corporativos de EE. UU. Creció a través de cada nivel de una de las operaciones de inteligencia de datos más sofisticadas de Costa Rica — de supervisor de producción a gerente de país.",
     expertise: ["Operaciones de datos corporativas", "Estrategia de producto", "Liderazgo técnico multifuncional", "Arquitectura y pipelines de datos", "Gestión de operaciones de país", "Entrega a corporaciones de EE. UU."],
     credentials: ["Estrategia de operaciones de datos", "Arquitectura de datos a escala corporativa", "Liderazgo de operaciones a nivel país"],
   },
   "Roberto Fernandez": {
-    role: "Socio y CTO",
+    role: "Socio",
     bio: "Más de 20 años en desarrollo de software, ingeniería de datos y arquitectura de sistemas modernos. Pasó de desarrollador a Director de Ingeniería y VP de Ingeniería de Producto en algunas de las empresas con mayor uso intensivo de datos del mercado estadounidense. Dirige toda la entrega técnica y la contratación de ingeniería para los clientes de Crest Partners.",
     expertise: ["Arquitectura de software", "Liderazgo de organizaciones de ingeniería", "Estrategia de talento en ingeniería", "Ingeniería de datos", "Liderazgo en ingeniería de producto", "Entrega tecnológica entre países"],
     credentials: ["Visión y estrategia de ingeniería", "Estrategia y adopción de IA", "Arquitectura de modernización"],
