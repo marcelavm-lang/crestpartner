@@ -85,6 +85,16 @@ export default function Footer() {
                 <WhatsAppLink className="text-[14px] text-black hover:text-[#2574A7] transition-colors" />
               </li>
               <li>
+                <a
+                  href="https://www.linkedin.com/company/102177861/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[14px] text-black hover:text-[#2574A7] transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
                 <BookCallLink className="text-[14px] text-[#2574A7] font-semibold hover:underline transition-colors">
                   Book a 30-min call →
                 </BookCallLink>

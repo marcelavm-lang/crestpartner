@@ -53,8 +53,8 @@ export default function HomeHero() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_1fr] gap-10 lg:gap-14 items-center">
           {/* ── Left column ── */}
           <div className="min-w-0">
-            <h1 className="text-[38px] leading-[1.08] md:text-[52px] lg:text-[48px] xl:text-[62px] lg:leading-[1.04] font-bold text-white mb-6">
-              Your engineering hub in Costa Rica. Owned by you. Run by us.
+            <h1 className="text-[34px] leading-[1.1] md:text-[46px] lg:text-[42px] xl:text-[52px] lg:leading-[1.08] font-bold text-white mb-6">
+              Build your own engineering team in Costa Rica: we set it up and run it for you.
             </h1>
             <p className="text-[18px] md:text-[20px] leading-relaxed text-[#C9D5E0] max-w-[36rem] mb-8 [text-shadow:0_1px_12px_rgba(0,0,0,0.35)]">
               We set up your Costa Rican legal entity, hire your team under your brand, and run payroll,
