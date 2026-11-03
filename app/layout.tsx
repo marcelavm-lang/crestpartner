@@ -59,7 +59,7 @@ const organizationJsonLd = {
     addressCountry: 'CR',
   },
   // TODO: add the company LinkedIn URL, e.g. ['https://www.linkedin.com/company/<crest-partners>']
-  sameAs: [] as string[],
+  sameAs: ["https://www.linkedin.com/company/102177861/"] as string[],
 }
 
 export default function RootLayout({
