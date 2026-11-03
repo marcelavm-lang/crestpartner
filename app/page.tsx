@@ -8,7 +8,7 @@ import { BookCallLink } from '@/components/CtaLinks'
 import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = pageMetadata({
-  title: 'Crest Partners — Your Engineering Hub in Costa Rica, Owned by You',
+  title: 'Build Your Engineering Team in Costa Rica | Crest Partners',
   description: 'We help tech companies establish their own dedicated entity in Costa Rica — your team, your brand, fully administered by us. Not outsourcing. Ownership.',
   path: '/',
 })
@@ -71,7 +71,8 @@ export default function HomePage() {
         <p className="text-[16px] text-[#3E4C59] font-normal max-w-xl mb-12">
           We establish your legal entity in Costa Rica, design and build your engineering organization
           under your brand, and run the infrastructure behind it — legal, HR, payroll and compliance.
-          Your people work for you. We make sure everything around them works.
+          Your people work for you. We make sure everything around them works — a nearshore alternative to
+          outsourcing and EORs, where the engineering team is yours.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((s) => (

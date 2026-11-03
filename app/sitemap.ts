@@ -17,7 +17,8 @@ const STATIC_ROUTES = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url.replace(/\/$/, '')
-  const now = new Date()
+  // Date of the last content update — bump when page content changes (not the build time).
+  const now = new Date('2026-11-03')
   return [
     ...STATIC_ROUTES.map((path) => ({
       url: `${base}${path === '/' ? '' : path}`,

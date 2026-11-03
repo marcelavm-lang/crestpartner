@@ -11,9 +11,9 @@ import { SITE } from '@/lib/site'
 
 const spartan = localFont({
   src: [
-    { path: '../public/fonts/Spartan-Light.ttf', weight: '300', style: 'normal' },
-    { path: '../public/fonts/Spartan-Regular.ttf', weight: '400', style: 'normal' },
-    { path: '../public/fonts/Spartan-Bold.ttf', weight: '700', style: 'normal' },
+    { path: '../public/fonts/Spartan-Light.woff2', weight: '300', style: 'normal' },
+    { path: '../public/fonts/Spartan-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/Spartan-Bold.woff2', weight: '700', style: 'normal' },
   ],
   variable: '--font-spartan',
   display: 'swap',
@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   title: 'Crest Partners — Build Your Tech Operation in Costa Rica',
   description:
     'We help tech companies establish their own dedicated entity in Costa Rica — your team, your brand, fully administered by us. Not outsourcing. Ownership.',
-  keywords: 'Costa Rica operations, dedicated entity, tech expansion, Latin America hub, nearshore operations, dedicated team',
   openGraph: {
     siteName: 'Crest Partners',
     type: 'website',
@@ -47,18 +46,33 @@ export const metadata: Metadata = {
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['Organization', 'ProfessionalService'],
   name: 'Crest Partners',
+  alternateName: 'Crest Partners Costa Rica',
+  description:
+    'Crest Partners sets up your own legal entity in Costa Rica, builds your engineering team under your brand and runs payroll, HR, accounting and compliance — a nearshore alternative to outsourcing and EORs.',
+  foundingDate: '2006',
+  areaServed: ['US', 'Worldwide'],
   url: SITE.url,
   logo: `${SITE.url.replace(/\/$/, '')}/crest-partners-logo/png/crest-partners-logo-color-1200.png`,
   email: SITE.email,
   telephone: '+506 8891-3444',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'San José',
-    addressCountry: 'CR',
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.locality,
+    addressRegion: SITE.address.region,
+    addressCountry: SITE.address.country,
   },
-  // TODO: add the company LinkedIn URL, e.g. ['https://www.linkedin.com/company/<crest-partners>']
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Services',
+    itemListElement: [
+      { name: 'Launch', description: 'Legal entity setup, compliance and back office in Costa Rica — operational in 30 days.' },
+      { name: 'Build', description: 'Design and build your engineering organization: org design, complete teams, AI-ready hiring and retention.' },
+      { name: 'Operate', description: 'Ongoing accounting, legal compliance, HR administration and office management.' },
+    ].map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, description: s.description } })),
+  },
   sameAs: ["https://www.linkedin.com/company/102177861/"] as string[],
 }
 

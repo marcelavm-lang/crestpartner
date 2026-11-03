@@ -142,6 +142,20 @@ export default function ContactPage() {
                 </div>
                 <span className="ml-auto text-[#5A6A7A] group-hover:text-[#2574A7] transition-colors">→</span>
               </a>
+
+              {/* Office */}
+              <div className="border border-[#D8E2EA] rounded-[10px] p-5 flex items-start gap-4">
+                <div className="w-9 h-9 rounded-[8px] bg-[#EBF4FA] flex items-center justify-center shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M8 15s5-4.6 5-8.5A5 5 0 0 0 3 6.5C3 10.4 8 15 8 15z" stroke="#2574A7" strokeWidth="1.5" strokeLinejoin="round" />
+                    <circle cx="8" cy="6.5" r="1.8" stroke="#2574A7" strokeWidth="1.5" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-[14px] font-bold text-black">Office</p>
+                  <p className="text-[13px] text-[#5A6A7A] font-normal">{SITE.address.display}</p>
+                </div>
+              </div>
             </div>
 
             {/* Trust signals */}

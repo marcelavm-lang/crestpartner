@@ -247,6 +247,17 @@ export default function ServicesPage() {
 
       {/* ── For engineering leaders ── */}
       <section id="engineering" className="max-w-7xl mx-auto px-6 py-20">
+        <script
+          type="application/ld+json"
+          // FAQPage structured data from the CTO questions shown below (same text, so Google can show it in results)
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: ctoFaq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+            }),
+          }}
+        />
         <p className="eyebrow mb-4">For engineering leaders</p>
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 max-w-2xl">
           What CTOs ask us first.

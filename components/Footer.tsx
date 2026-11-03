@@ -97,7 +97,7 @@ export default function Footer() {
       <div className="border-t border-[#D8E2EA]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-[13px] text-[#5A6A7A]">
-            © {new Date().getFullYear()} Crest Partners · San José, Costa Rica
+            © {new Date().getFullYear()} Crest Partners · {SITE.address.display}
           </p>
         </div>
       </div>
