@@ -6,7 +6,7 @@ import Link from 'next/link'
 const points = [
   {
     title: 'Leaner teams that ship more',
-    text: 'We design right-sized teams of senior engineers who work with AI tools every day — fewer seats, more output.',
+    text: 'We design right-sized teams — the right mix of senior and junior engineers — who work with AI tools every day. Fewer seats, more output.',
   },
   {
     title: 'Every hire assessed on AI',
@@ -24,11 +24,12 @@ export default function AiEraSection() {
       <div className="max-w-7xl mx-auto px-6">
         <p className="text-[12px] font-bold tracking-widest uppercase text-[#3CC4B9] mb-4">Built for the AI era</p>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 max-w-2xl leading-tight">
-          Smaller, senior, AI-ready teams.
+          Lean, AI-ready teams.
         </h2>
         <p className="text-[17px] text-white/75 leading-relaxed max-w-2xl mb-12">
-          AI is changing how engineering teams are built. Companies need fewer people doing more — senior
-          engineers who work with AI from day one. That&apos;s what we build in Costa Rica.
+          AI is changing how engineering teams are built. Companies need leaner teams that do more —
+          engineers at every level who work with AI from day one, with the right senior leadership.
+          That&apos;s what we build in Costa Rica.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">

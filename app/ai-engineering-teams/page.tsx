@@ -5,7 +5,7 @@ import { pageMetadata } from '@/lib/metadata'
 export const metadata = pageMetadata({
   title: 'AI & ML Engineering Teams in Costa Rica | Crest Partners',
   description:
-    'Senior, AI-ready engineering teams in Costa Rica: AI/ML engineers, data scientists and data engineers, hired under your own entity and assessed on AI.',
+    'AI-ready engineering teams in Costa Rica: AI/ML engineers, data scientists and data engineers, hired under your own entity and assessed on AI.',
   path: '/ai-engineering-teams',
 })
 
@@ -56,10 +56,10 @@ export default function AiEngineeringTeamsPage() {
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-24">
           <p className="text-[12px] font-bold tracking-widest uppercase text-[#3CC4B9] mb-4">AI &amp; ML engineering teams</p>
           <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] mb-6 max-w-3xl">
-            Senior, AI-ready engineering teams in Costa Rica.
+            AI-ready engineering teams in Costa Rica.
           </h1>
           <p className="text-[18px] text-white/80 leading-relaxed max-w-2xl mb-8">
-            AI is changing how engineering teams are built: fewer people, more senior, working with AI from day
+            AI is changing how engineering teams are built: leaner teams, at every level, working with AI from day
             one. We build those teams in Costa Rica — under your brand, inside your own entity.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -83,8 +83,8 @@ export default function AiEngineeringTeamsPage() {
           Teams are getting smaller and more senior.
         </h2>
         <p className="text-[17px] text-[#3E4C59] leading-relaxed max-w-2xl mb-10">
-          Companies are hiring fewer junior engineers and more senior people who can direct AI tools and own
-          outcomes. Costa Rica is where that talent is already working with AI.
+          Companies are building leaner teams, with senior people who direct AI tools and own outcomes, and
+          engineers at every level who work with AI every day. Costa Rica is where that talent already is.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {shift.map((s) => (
