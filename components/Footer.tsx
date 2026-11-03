@@ -15,6 +15,7 @@ const company = [
   { label: 'Who we are', href: '/who-we-are' },
   { label: 'Case studies', href: '/case-studies' },
   { label: 'Why Costa Rica', href: '/why-costa-rica' },
+  { label: 'Guides', href: '/guides' },
   { label: 'Careers', href: '/careers' },
 ]
 

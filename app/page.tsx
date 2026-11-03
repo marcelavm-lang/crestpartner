@@ -9,7 +9,7 @@ import { pageMetadata } from '@/lib/metadata'
 
 export const metadata = pageMetadata({
   title: 'Build Your Engineering Team in Costa Rica | Crest Partners',
-  description: 'We help tech companies establish their own dedicated entity in Costa Rica — your team, your brand, fully administered by us. Not outsourcing. Ownership.',
+  description: 'We set up your own legal entity in Costa Rica, build your engineering team under your brand and run operations for you. Not outsourcing — ownership.',
   path: '/',
 })
 

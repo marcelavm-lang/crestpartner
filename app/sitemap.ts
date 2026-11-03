@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { SITE } from '@/lib/site'
 import { CASE_STUDIES } from '@/lib/case-studies'
+import { GUIDES } from '@/lib/guides'
 
 const STATIC_ROUTES = [
   '/',
@@ -8,6 +9,7 @@ const STATIC_ROUTES = [
   '/case-studies',
   '/why-costa-rica',
   '/ai-engineering-teams',
+  '/guides',
   '/who-we-are',
   '/careers',
   '/contact',
@@ -31,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'yearly' as const,
       priority: 0.6,
+    })),
+    ...GUIDES.map((g) => ({
+      url: `${base}/guides/${g.slug}`,
+      lastModified: new Date(g.updated),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     })),
   ]
 }
