@@ -60,7 +60,9 @@ export default function HomeHero() {
               HR, accounting and compliance — so the team, the IP and the upside stay yours.
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-4">
-              <BookCallLink className="w-full sm:w-auto whitespace-nowrap text-center bg-[#3CC4B9] text-[#0E2233] font-bold text-[15px] px-7 py-3.5 rounded-[10px] hover:bg-[#5FD4CB] transition-colors" />
+              <BookCallLink className="w-full sm:w-auto whitespace-nowrap text-center bg-[#3CC4B9] text-[#0E2233] font-bold text-[15px] px-7 py-3.5 rounded-[10px] hover:bg-[#5FD4CB] transition-colors">
+                Talk to a founder →
+              </BookCallLink>
               <Link
                 href="/expansion-plan"
                 className="w-full sm:w-auto whitespace-nowrap text-center border border-[#5B7A94] text-white font-bold text-[14px] sm:text-[15px] px-5 sm:px-7 py-3.5 rounded-[10px] hover:border-white transition-colors"
