@@ -17,6 +17,8 @@ const launchChecklist = [
 ]
 
 const buildChecklist = [
+  'Organization design — team structure, roles and the leadership layer, aligned with your business goals',
+  'Complete teams across engineering, product, data, AI, QA and design — not just individual hires',
   'Custom job descriptions and recruiting strategy aligned with your stack',
   'Technical & cultural assessments — no shortcuts on quality, ever',
   'Onboarding & cultural integration into your company and values',
@@ -119,8 +121,8 @@ export default function ServicesPage() {
             </Link>
             <Link href="#build" className="bg-gray-50 border border-gray-200 rounded-lg p-5 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
               <div className="text-xs font-bold text-[#00A79D] tracking-widest uppercase mb-2">02 — Build</div>
-              <div className="text-base font-bold text-gray-900 mb-1">Build and lead your nearshore tech team</div>
-              <div className="text-sm font-normal text-[#5A6A7A]">Recruiting, assessments, onboarding, payroll and retention — less than 1% involuntary turnover.</div>
+              <div className="text-base font-bold text-gray-900 mb-1">Build your engineering organization</div>
+              <div className="text-sm font-normal text-[#5A6A7A]">Org design, complete multidisciplinary teams, recruiting and retention — less than 1% involuntary turnover.</div>
             </Link>
             <Link href="#operate" className="bg-gray-50 border border-gray-200 rounded-lg p-5 hover:border-[#00A79D] hover:bg-[#F9FEFE] transition-colors block">
               <div className="text-xs font-bold text-[#00A79D] tracking-widest uppercase mb-2">03 — Operate</div>
@@ -220,11 +222,16 @@ export default function ServicesPage() {
             <div className="order-1 md:order-2">
               <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">02 — Build</p>
               <h2 className="text-3xl font-bold text-black mb-4 leading-snug">
-                Build and lead your nearshore tech team
+                Build your engineering organization
               </h2>
+              <p className="text-[#3E4C59] font-normal leading-relaxed mb-4 text-[16px]">
+                We don't just fill seats. We design the organization — structure, roles and leadership —
+                and build complete teams across engineering, product, data and AI that are aligned with
+                your business goals.
+              </p>
               <p className="text-[#3E4C59] font-normal leading-relaxed mb-8 text-[16px]">
-                We find the right people, assess them rigorously, onboard them into your culture and keep
-                them engaged for the long term.
+                It's what our founders have done for 20+ years: departments built from zero, data and
+                software products launched, and hubs scaled from a handful of people to 200+.
               </p>
               <Checklist items={buildChecklist} />
             </div>

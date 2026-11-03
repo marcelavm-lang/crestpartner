@@ -19,8 +19,8 @@ export default function ExpansionPlanPage() {
             Build your Costa Rica expansion plan
           </h1>
           <p className="text-[17px] text-[#3E4C59] font-normal leading-relaxed">
-            Answer 5 quick questions and get a personalized plan — team structure, timeline and cost
-            considerations — built on 20 years of Crest Partners experience.
+            Answer 5 quick questions and get a personalized plan — team structure, Year-1 costs and an
+            implementation timeline — built on 20 years of Crest Partners experience.
           </p>
         </div>
 
@@ -36,6 +36,24 @@ export default function ExpansionPlanPage() {
 
           {/* Sidebar — takes 2 cols */}
           <div className="lg:col-span-2 space-y-4">
+            <div className="bg-white border border-[#D8E2EA] rounded-[12px] p-6">
+              <p className="text-[12px] font-bold tracking-widest uppercase text-[#00A79D] mb-4">What you'll get</p>
+              <ul className="space-y-3">
+                {[
+                  'Recommended team structure, with estimated cost per role',
+                  'Year-1 investment: setup, management fee, recruiting and total compensation',
+                  'Implementation timeline — Day 1, Week 1, Month 1 and Month 3',
+                  'Suggested benefits package for your industry',
+                  'Clear next steps with Crest Partners',
+                ].map((item) => (
+                  <li key={item} className="flex gap-3 text-[15px] text-[#3E4C59] leading-snug">
+                    <span className="text-[#00A79D] font-bold shrink-0" aria-hidden="true">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div className="bg-white border border-[#D8E2EA] rounded-[12px] p-6">
               <p className="text-[12px] font-bold tracking-widest uppercase text-[#5A6A7A] mb-4">Why Crest Partners</p>
               <div className="space-y-4">

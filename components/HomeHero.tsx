@@ -75,7 +75,7 @@ export default function HomeHero() {
 
           {/* ── Right column: "Who owns what?" ── */}
           <div className="min-w-0 bg-[rgba(20,48,74,0.62)] backdrop-blur-[6px] border border-[#2A4B68] rounded-[16px] p-3 sm:p-6 lg:p-5 xl:p-7">
-            <table className="w-full table-fixed border-collapse text-left text-[12px] leading-snug sm:text-[15px] lg:text-[14px] xl:text-[15px]">
+            <table className="w-full table-fixed border-collapse text-left text-[11px] min-[360px]:text-[12px] leading-snug [hyphens:auto] sm:text-[15px] lg:text-[14px] xl:text-[15px]">
               <caption className="text-left text-[17px] sm:text-[19px] font-bold text-white mb-4">
                 Who owns what?
               </caption>

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import ClientVoices from '@/components/ClientVoices'
 import CompanyLogo from '@/components/CompanyLogo'
 import HomeHero from '@/components/HomeHero'
+import HeroQuote from '@/components/HeroQuote'
 import { BookCallLink } from '@/components/CtaLinks'
 import { pageMetadata } from '@/lib/metadata'
 
@@ -22,8 +23,8 @@ const services = [
   {
     num: '02',
     title: 'Build',
-    headline: 'Build and lead your nearshore tech team',
-    text: 'Recruiting, technical assessments, onboarding, payroll, HR and retention programs — your team, our infrastructure.',
+    headline: 'Build your engineering organization',
+    text: 'We design the team structure and leadership layer, then build complete engineering, product, data and AI teams aligned with your business goals — and keep them growing.',
     tag: 'Less than 1% involuntary turnover.',
   },
   {
@@ -57,6 +58,7 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <HeroQuote />
 
       {/* ── Services ── */}
       <section className="bg-[#F7FAFB] w-full py-20">
@@ -66,9 +68,9 @@ export default function HomePage() {
           One partner. Every layer of your operation.
         </h2>
         <p className="text-[16px] text-[#3E4C59] font-normal max-w-xl mb-12">
-          We set up your legal entity in Costa Rica, recruit your team directly under your brand, and
-          manage all the administrative infrastructure behind it — legal, HR, payroll and compliance.
-          Your people work for you. We make sure everything around them works perfectly.
+          We establish your legal entity in Costa Rica, design and build your engineering organization
+          under your brand, and run the infrastructure behind it — legal, HR, payroll and compliance.
+          Your people work for you. We make sure everything around them works.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((s) => (

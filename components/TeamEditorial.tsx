@@ -19,8 +19,8 @@ const cofounders: Person[] = [
     img: "/team/marcela-villalta-cutout.webp",
     linkedin: "https://www.linkedin.com/in/marcelavillalta-11890127",
     bio: "25+ years building U.S. technology operations in Costa Rica from the ground up — in leadership roles at TARGUSinfo, Infutor and LTV Co., and through Crest Partners. Across that career she has created 1,000+ tech positions, built entire departments and engineering teams from zero, launched data and software products, and grown hubs that went on to exits of up to $400M — with less than 1% involuntary turnover and a 97.6 GPTW Trust Index. MBA, Universidad de Costa Rica. Co-founder of Forward Costa Rica.",
-    expertise: ["Operations leadership", "Culture model design", "Inclusive tech education", "HR & people strategy", "Entity setup & management", "U.S. client relations"],
-    credentials: ["Business architecture", "Org & culture design", "Nearshore entity model", "Social tech impact"],
+    expertise: ["General management", "Tech organization design", "Engineering & data operations", "Product launches", "Scaling to exit", "Culture & retention"],
+    credentials: ["Business architecture", "Nearshore entity model", "U.S. client relations", "Social tech impact"],
     career: [
       ["Co-founder", "Crest Partners", "2006 – present"],
       ["Country Manager", "LTV Co. (f.k.a. BeenVerified)", "2015 – 2025"],
